@@ -22,6 +22,7 @@
 		2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */; };
 		2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1122817FF38001F84D4 /* AddViewController.swift */; };
 		2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1142817FF51001F84D4 /* EditViewController.swift */; };
+		2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2ACEE11728180067001F84D4 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +120,9 @@
 			dependencies = (
 			);
 			name = RestockList;
+			packageProductDependencies = (
+				2ACEE11728180067001F84D4 /* RealmSwift */,
+			);
 			productName = RestockList;
 			productReference = 2A43EED62817B2C4001BD791 /* RestockList.app */;
 			productType = "com.apple.product-type.application";
@@ -146,6 +151,9 @@
 				Base,
 			);
 			mainGroup = 2A43EECD2817B2C4001BD791;
+			packageReferences = (
+				2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 2A43EED72817B2C4001BD791 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -404,6 +412,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2ACEE11728180067001F84D4 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A43EECE2817B2C4001BD791 /* Project object */;
 }
