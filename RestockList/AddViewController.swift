@@ -8,14 +8,14 @@
 import RealmSwift
 import UIKit
 
-class AddUIViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
         
     @IBOutlet weak var periodPickerView: UIPickerView!
     @IBOutlet weak var itemTextField: UITextField!
     
     let realm = try! Realm()
     var data = [TableViewItem]()
-    let myTableViewController = ViewController()
+    let myViewController = ViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()

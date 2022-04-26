@@ -8,7 +8,7 @@
 import RealmSwift
 import UIKit
 
-class EditUIViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
         
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var periodPickerView: UIPickerView!

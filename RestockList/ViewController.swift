@@ -66,7 +66,7 @@ class ViewController: UITableViewController, EditProtocol, UpdateProtocol {
     
     func catchData(selectedCell: Int) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextStoryboard = storyboard.instantiateViewController(withIdentifier: "EditStoryboard") as! EditUIViewController
+        let nextStoryboard = storyboard.instantiateViewController(withIdentifier: "EditStoryboard") as! EditViewController
         nextStoryboard.selectedCell = selectedCell
         self.show(nextStoryboard, sender: self)
     }

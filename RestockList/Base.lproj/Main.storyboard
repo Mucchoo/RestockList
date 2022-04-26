@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="140" id="9bB-1S-YM4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="140" id="9bB-1S-YM4" customClass="TableViewCell" customModule="RestockList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9bB-1S-YM4" id="DXO-74-8pb">
@@ -46,6 +46,9 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                                         <color key="baseForegroundColor" name="AccentColor"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="checkButtonTapped:" destination="9bB-1S-YM4" eventType="touchUpInside" id="lcL-Ed-KHD"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cM-re-RYZ">
                                                     <rect key="frame" x="10" y="15" width="20" height="20"/>
@@ -59,6 +62,7 @@
                                                         <color key="baseForegroundColor" name="AccentColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
+                                                        <action selector="editButtonTapped:" destination="9bB-1S-YM4" eventType="touchUpInside" id="PLr-a0-e4p"/>
                                                         <segue destination="oYV-Dc-2yJ" kind="show" id="2cz-Vn-LFj"/>
                                                     </connections>
                                                 </button>
@@ -73,6 +77,9 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                                         <color key="baseForegroundColor" name="AccentColor"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="plusButtonTapped:" destination="9bB-1S-YM4" eventType="touchUpInside" id="wMA-Rd-rSO"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKs-21-GJP">
                                                     <rect key="frame" x="10" y="90" width="30" height="30"/>
@@ -85,6 +92,9 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                                         <color key="baseForegroundColor" name="AccentColor"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="minusButtonTapped:" destination="9bB-1S-YM4" eventType="touchUpInside" id="LRL-2v-9hI"/>
+                                                    </connections>
                                                 </button>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FjO-38-gaZ">
                                                     <rect key="frame" x="50" y="103" width="294" height="4"/>
@@ -143,6 +153,18 @@
                                         <constraint firstItem="eqf-R9-T7z" firstAttribute="leading" secondItem="DXO-74-8pb" secondAttribute="leading" constant="10" id="WeP-aM-V4f"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="checkButton" destination="YuL-EP-SLh" id="Iyv-A2-m9l"/>
+                                    <outlet property="editButton" destination="4cM-re-RYZ" id="Rze-ZR-vVU"/>
+                                    <outlet property="itemFrame" destination="eqf-R9-T7z" id="6n9-33-zs6"/>
+                                    <outlet property="itemLabel" destination="Rhl-ZN-zop" id="e7T-WW-rCq"/>
+                                    <outlet property="minusButton" destination="nKs-21-GJP" id="Iq7-m0-f7E"/>
+                                    <outlet property="periodFrame" destination="cnH-Uc-xai" id="rFR-cs-WjQ"/>
+                                    <outlet property="periodLabelLeft" destination="6Of-ft-48j" id="o6x-J3-oEa"/>
+                                    <outlet property="periodLabelRight" destination="HD3-qb-QrA" id="ivy-ok-ZL8"/>
+                                    <outlet property="plusButton" destination="wy3-Ta-eQZ" id="JaK-Jf-pnj"/>
+                                    <outlet property="progressBar" destination="FjO-38-gaZ" id="Aqr-MZ-e7d"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -172,7 +194,7 @@
         <!--アイテムを編集-->
         <scene sceneID="mL8-ZY-Zt5">
             <objects>
-                <viewController id="oYV-Dc-2yJ" sceneMemberID="viewController">
+                <viewController id="oYV-Dc-2yJ" customClass="EditViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZS0-dm-h4i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,17 +226,20 @@
                                     <constraint firstAttribute="width" constant="100" id="S03-h7-Wd1"/>
                                 </constraints>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMM-ZT-MAr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMM-ZT-MAr">
                                 <rect key="frame" x="20" y="431" width="374" height="70"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="adL-44-tt5"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="追加">
+                                <buttonConfiguration key="configuration" style="plain" title="完了">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="completeButtonTapped:" destination="oYV-Dc-2yJ" eventType="touchUpInside" id="rhh-PH-O0P"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeZ-Vz-4xX">
                                 <rect key="frame" x="277" y="295" width="14.5" height="17"/>
@@ -222,6 +247,20 @@
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0x-nF-cnA">
+                                <rect key="frame" x="20" y="521" width="374" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="dBM-cC-sNO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="削除">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="oYV-Dc-2yJ" eventType="touchUpInside" id="CQx-Th-fcs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BUR-d2-bEq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -229,18 +268,28 @@
                             <constraint firstItem="BUR-d2-bEq" firstAttribute="trailing" secondItem="pBb-2c-6qg" secondAttribute="trailing" constant="20" id="3N8-wj-qqb"/>
                             <constraint firstItem="2QX-AS-OcE" firstAttribute="top" secondItem="pBb-2c-6qg" secondAttribute="bottom" constant="20" id="62e-lf-tkB"/>
                             <constraint firstItem="YeZ-Vz-4xX" firstAttribute="leading" secondItem="2QX-AS-OcE" secondAttribute="trailing" constant="20" id="B6h-p8-MH5"/>
+                            <constraint firstItem="R0x-nF-cnA" firstAttribute="leading" secondItem="BUR-d2-bEq" secondAttribute="leading" constant="20" id="C2P-wL-rgF"/>
                             <constraint firstItem="pBb-2c-6qg" firstAttribute="leading" secondItem="BUR-d2-bEq" secondAttribute="leading" constant="20" id="DJn-fK-4Ae"/>
+                            <constraint firstItem="R0x-nF-cnA" firstAttribute="top" secondItem="lMM-ZT-MAr" secondAttribute="bottom" constant="20" id="Dr7-Am-bXF"/>
                             <constraint firstItem="YeZ-Vz-4xX" firstAttribute="top" secondItem="pBb-2c-6qg" secondAttribute="bottom" constant="120" id="WsH-4a-tN4"/>
                             <constraint firstItem="2QX-AS-OcE" firstAttribute="centerX" secondItem="ZS0-dm-h4i" secondAttribute="centerX" id="Z6s-ne-pf0"/>
                             <constraint firstItem="nKl-1K-KIM" firstAttribute="top" secondItem="BUR-d2-bEq" secondAttribute="top" constant="10" id="Zqa-D8-fHA"/>
                             <constraint firstItem="lMM-ZT-MAr" firstAttribute="top" secondItem="2QX-AS-OcE" secondAttribute="bottom" constant="20" id="b6n-I2-b0N"/>
                             <constraint firstItem="nKl-1K-KIM" firstAttribute="leading" secondItem="BUR-d2-bEq" secondAttribute="leading" constant="20" id="beC-Hg-bFz"/>
+                            <constraint firstItem="BUR-d2-bEq" firstAttribute="trailing" secondItem="R0x-nF-cnA" secondAttribute="trailing" constant="20" id="fA2-k8-oTJ"/>
+                            <constraint firstItem="lMM-ZT-MAr" firstAttribute="leading" secondItem="BUR-d2-bEq" secondAttribute="leading" constant="20" id="fqP-48-Jjo"/>
+                            <constraint firstItem="BUR-d2-bEq" firstAttribute="trailing" secondItem="lMM-ZT-MAr" secondAttribute="trailing" constant="20" id="lXu-ek-aMS"/>
                             <constraint firstItem="hDI-XY-IGD" firstAttribute="top" secondItem="pBb-2c-6qg" secondAttribute="bottom" constant="120" id="smo-vc-Jua"/>
                             <constraint firstItem="pBb-2c-6qg" firstAttribute="top" secondItem="nKl-1K-KIM" secondAttribute="bottom" constant="10" id="u6D-dt-565"/>
                             <constraint firstItem="2QX-AS-OcE" firstAttribute="leading" secondItem="hDI-XY-IGD" secondAttribute="trailing" constant="20" id="uoP-TC-rKW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="アイテムを編集" id="DJK-Ts-bDh"/>
+                    <connections>
+                        <outlet property="deleteButton" destination="R0x-nF-cnA" id="6F4-XC-9ui"/>
+                        <outlet property="itemTextField" destination="pBb-2c-6qg" id="uhx-uI-v3o"/>
+                        <outlet property="periodPickerView" destination="2QX-AS-OcE" id="UOe-Wh-UTI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWE-q3-YKh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -249,7 +298,7 @@
         <!--アイテムを追加-->
         <scene sceneID="Pj4-by-AIN">
             <objects>
-                <viewController id="NPC-Ev-kK3" sceneMemberID="viewController">
+                <viewController id="NPC-Ev-kK3" customClass="AddViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="obU-gV-sbZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -292,6 +341,9 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="AddButtonTapped:" destination="NPC-Ev-kK3" eventType="touchUpInside" id="IHD-F1-IEB"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hq3-fB-7Js">
                                 <rect key="frame" x="277" y="303" width="14.5" height="17"/>
@@ -321,10 +373,14 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="アイテムを追加" id="Yob-7P-ti3"/>
+                    <connections>
+                        <outlet property="itemTextField" destination="YkB-CK-2Ld" id="1ZB-KO-TUh"/>
+                        <outlet property="periodPickerView" destination="j2u-az-0dz" id="TON-71-ChV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOT-uD-1Iw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="-186"/>
+            <point key="canvasLocation" x="1371" y="-238"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="InE-IH-YOL">
@@ -347,7 +403,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DG9-4o-P2r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-327" y="139"/>
+            <point key="canvasLocation" x="-190" y="139"/>
         </scene>
     </scenes>
     <resources>
