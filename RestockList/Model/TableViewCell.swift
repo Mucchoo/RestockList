@@ -32,7 +32,7 @@ class TableViewCell: UITableViewCell {
         super.awakeFromNib()
         itemFrame.layer.cornerRadius = 15
         periodFrame.layer.borderWidth = 3
-        periodFrame.layer.borderColor = UIColor.tintColor.cgColor
+        periodFrame.layer.borderColor = UIColor(named: "AccentColor")?.cgColor
         progressBar.transform = CGAffineTransform(scaleX: 1, y: 11)
         data = realm.objects(TableViewItem.self).sorted(by: { $0.remainingTime < $1.remainingTime })
     }
@@ -42,7 +42,6 @@ class TableViewCell: UITableViewCell {
     }
     
     @IBAction func editButtonTapped(_ sender: UIButton) {
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
         delegate?.catchData(selectedCell: sender.tag)
     }
     
@@ -67,11 +66,10 @@ class TableViewCell: UITableViewCell {
     }
     
     @IBAction func checkButtonTapped(_ sender: UIButton) {
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
         realm.beginWrite()
         realm.object(ofType: TableViewItem.self, forPrimaryKey: sender.tag)!.remainingTime = realm.object(ofType: TableViewItem.self, forPrimaryKey: sender.tag)!.period
         try! realm.commitWrite()
         updateDelegate?.updateTableView()
     }
-    
+        
 }

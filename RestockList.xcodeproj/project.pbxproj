@@ -88,20 +88,44 @@
 			children = (
 				2A43EED92817B2C4001BD791 /* AppDelegate.swift */,
 				2A43EEDB2817B2C4001BD791 /* SceneDelegate.swift */,
-				2A43EEED2817B597001BD791 /* EditProtocol.swift */,
-				2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */,
-				2A43EEDD2817B2C4001BD791 /* ViewController.swift */,
-				2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */,
-				2ACEE1122817FF38001F84D4 /* AddViewController.swift */,
-				2ACEE1142817FF51001F84D4 /* EditViewController.swift */,
-				2A383D102817B820000BCAF0 /* TableViewItem.swift */,
-				2A43EEDF2817B2C4001BD791 /* Main.storyboard */,
+				2ACEE11D281831AB001F84D4 /* Model */,
+				2ACEE11C28183171001F84D4 /* View */,
+				2ACEE11B2818311B001F84D4 /* Controller */,
 				2A43EEE22817B2C5001BD791 /* Assets.xcassets */,
 				2A383D132817BD39000BCAF0 /* Images */,
-				2A43EEE42817B2C5001BD791 /* LaunchScreen.storyboard */,
 				2A43EEE72817B2C5001BD791 /* Info.plist */,
 			);
 			path = RestockList;
+			sourceTree = "<group>";
+		};
+		2ACEE11B2818311B001F84D4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2ACEE1122817FF38001F84D4 /* AddViewController.swift */,
+				2ACEE1142817FF51001F84D4 /* EditViewController.swift */,
+				2A43EEDD2817B2C4001BD791 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2ACEE11C28183171001F84D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2A43EEDF2817B2C4001BD791 /* Main.storyboard */,
+				2A43EEE42817B2C5001BD791 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2ACEE11D281831AB001F84D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2A43EEED2817B597001BD791 /* EditProtocol.swift */,
+				2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */,
+				2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */,
+				2A383D102817B820000BCAF0 /* TableViewItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

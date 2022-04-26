@@ -59,7 +59,6 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     }
     
     @IBAction func completeButtonTapped(_ sender: UIButton) {
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
         if itemTextField.text != "" {
             let period = periodPickerView.selectedRow(inComponent: 0) + 1
             let item = itemTextField.text!
@@ -78,7 +77,6 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
         realm.beginWrite()
         realm.delete(realm.object(ofType: TableViewItem.self, forPrimaryKey: selectedCell)!)
         try! realm.commitWrite()
