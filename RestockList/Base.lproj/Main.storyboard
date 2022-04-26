@@ -89,6 +89,18 @@
                                                     <color key="textColor" name="FontColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="残り1日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGG-fT-f6S">
+                                                    <rect key="frame" x="60" y="96" width="50" height="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="残り1日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvZ-ep-Khy">
+                                                    <rect key="frame" x="284" y="96" width="50" height="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" name="AccentColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
@@ -98,14 +110,18 @@
                                                 <constraint firstItem="nKs-21-GJP" firstAttribute="leading" secondItem="eqf-R9-T7z" secondAttribute="leading" constant="10" id="8rg-gH-V36"/>
                                                 <constraint firstItem="YuL-EP-SLh" firstAttribute="top" secondItem="eqf-R9-T7z" secondAttribute="top" constant="10" id="B4z-7j-WYP"/>
                                                 <constraint firstAttribute="trailing" secondItem="YuL-EP-SLh" secondAttribute="trailing" constant="10" id="BfN-H0-Ajq"/>
+                                                <constraint firstItem="cGG-fT-f6S" firstAttribute="leading" secondItem="nKs-21-GJP" secondAttribute="trailing" constant="20" id="CZQ-wk-aPg"/>
                                                 <constraint firstAttribute="bottom" secondItem="wy3-Ta-eQZ" secondAttribute="bottom" constant="10" id="DoQ-vk-eob"/>
                                                 <constraint firstItem="YuL-EP-SLh" firstAttribute="leading" secondItem="Rhl-ZN-zop" secondAttribute="trailing" constant="10" id="Ici-zu-paQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="wy3-Ta-eQZ" secondAttribute="trailing" constant="10" id="LXc-1M-caB"/>
                                                 <constraint firstAttribute="bottom" secondItem="nKs-21-GJP" secondAttribute="bottom" constant="10" id="Mod-K2-vS4"/>
                                                 <constraint firstAttribute="height" constant="130" id="Sjn-jW-ORc"/>
+                                                <constraint firstItem="wy3-Ta-eQZ" firstAttribute="leading" secondItem="nvZ-ep-Khy" secondAttribute="trailing" constant="20" id="Ts2-ab-QDa"/>
                                                 <constraint firstItem="Rhl-ZN-zop" firstAttribute="leading" secondItem="4cM-re-RYZ" secondAttribute="trailing" constant="10" id="YI0-rL-e6y"/>
                                                 <constraint firstItem="wy3-Ta-eQZ" firstAttribute="leading" secondItem="FjO-38-gaZ" secondAttribute="trailing" constant="10" id="aVV-Ah-ye9"/>
                                                 <constraint firstAttribute="bottom" secondItem="FjO-38-gaZ" secondAttribute="bottom" constant="23" id="glS-4C-Ivb"/>
+                                                <constraint firstAttribute="bottom" secondItem="cGG-fT-f6S" secondAttribute="bottom" constant="17" id="jma-2V-nAC"/>
+                                                <constraint firstAttribute="bottom" secondItem="nvZ-ep-Khy" secondAttribute="bottom" constant="17" id="kcR-nB-cYg"/>
                                                 <constraint firstItem="Rhl-ZN-zop" firstAttribute="top" secondItem="eqf-R9-T7z" secondAttribute="top" constant="15" id="rV8-N5-i7a"/>
                                             </constraints>
                                         </view>
@@ -135,6 +151,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myTableView" destination="acE-1b-0fM" id="LLQ-yv-JMC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vG7-TU-xfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
