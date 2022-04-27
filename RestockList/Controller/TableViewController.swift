@@ -12,27 +12,24 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     
     var data = [TableViewItem]()
     let realm = try! Realm()
-    var currentDate: Int?
-    var lastDate: LastDate?
+    var currentDate = Int(Date().timeIntervalSince1970)
+    var lastDate: Int? = UserDefaults.standard.object(forKey: "lastDate") as? Int
     @IBOutlet var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         
-        currentDate = Int(Date().timeIntervalSince1970)
-        if let current = currentDate, let last = lastDate?.date {
-            if current > last {
+        if let lastDate = lastDate {
+            if currentDate > lastDate {
                 realm.beginWrite()
                 for Item in realm.objects(TableViewItem.self) {
-                    Item.remainingTime -= (current - last)
+                    Item.remainingTime -= (currentDate - lastDate)
                 }
                 try! realm.commitWrite()
             }
         }
-        realm.beginWrite()
-        realm.object(ofType: LastDate.self, forPrimaryKey: "date")?.date = currentDate!
-        try! realm.commitWrite()
+        UserDefaults.standard.set(currentDate, forKey: "lastDate")
     }
     
     override func viewWillAppear(_ animated: Bool) {
