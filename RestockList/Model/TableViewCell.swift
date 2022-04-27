@@ -24,7 +24,7 @@ class TableViewCell: UITableViewCell {
     var data = [TableViewItem]()
     let realm = try! Realm()
     var editUIViewController = EditViewController()
-    var myTableViewController = ViewController()
+    var myTableViewController = TableViewController()
     var delegate : EditProtocol?
     var updateDelegate: UpdateProtocol?
     

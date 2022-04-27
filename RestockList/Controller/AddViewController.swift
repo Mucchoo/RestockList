@@ -15,7 +15,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     
     let realm = try! Realm()
     var data = [TableViewItem]()
-    let myViewController = ViewController()
+    let myTableViewController = TableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()

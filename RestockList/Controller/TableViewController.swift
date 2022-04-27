@@ -8,7 +8,7 @@
 import RealmSwift
 import UIKit
 
-class ViewController: UITableViewController, EditProtocol, UpdateProtocol {
+class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     
     var data = [TableViewItem]()
     let realm = try! Realm()

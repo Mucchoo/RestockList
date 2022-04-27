@@ -18,7 +18,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     var data = [TableViewItem]()
     var periodArray:[Int] = ([Int])(1...365)
     var selectedCell: Int = 0
-    let myTableViewController = ViewController()
+    let myTableViewController = TableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
