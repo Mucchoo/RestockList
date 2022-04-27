@@ -13,7 +13,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     var data = [TableViewItem]()
     let realm = try! Realm()
     var currentDate: Int?
-    var lastDate: Int?
+    var lastDate: LastDate?
     @IBOutlet var myTableView: UITableView!
     
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         tableView.delegate = self
         
         currentDate = Int(Date().timeIntervalSince1970)
-        if let current = currentDate, let last = lastDate {
+        if let current = currentDate, let last = lastDate?.date {
             if current > last {
                 realm.beginWrite()
                 for Item in realm.objects(TableViewItem.self) {
@@ -30,8 +30,9 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
                 try! realm.commitWrite()
             }
         }
-        //このlastDateをrealmに保存する
-        lastDate = currentDate
+        realm.beginWrite()
+        realm.object(ofType: LastDate.self, forPrimaryKey: "date")?.date = currentDate!
+        try! realm.commitWrite()
     }
     
     override func viewWillAppear(_ animated: Bool) {
