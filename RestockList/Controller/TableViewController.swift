@@ -30,6 +30,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
                 try! realm.commitWrite()
             }
         }
+        //このlastDateをrealmに保存する
         lastDate = currentDate
     }
     

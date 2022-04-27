@@ -19,6 +19,7 @@
 		2A43EEE62817B2C5001BD791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A43EEE42817B2C5001BD791 /* LaunchScreen.storyboard */; };
 		2A43EEEE2817B597001BD791 /* EditProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEED2817B597001BD791 /* EditProtocol.swift */; };
 		2A43EEF02817B5BB001BD791 /* UpdateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */; };
+		2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */; };
 		2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */; };
 		2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1122817FF38001F84D4 /* AddViewController.swift */; };
 		2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1142817FF51001F84D4 /* EditViewController.swift */; };
@@ -40,6 +41,7 @@
 		2A43EEE72817B2C5001BD791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A43EEED2817B597001BD791 /* EditProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProtocol.swift; sourceTree = "<group>"; };
 		2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProtocol.swift; sourceTree = "<group>"; };
+		2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		2ACEE1122817FF38001F84D4 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		2ACEE1142817FF51001F84D4 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
@@ -91,8 +93,8 @@
 				2ACEE11D281831AB001F84D4 /* Model */,
 				2ACEE11C28183171001F84D4 /* View */,
 				2ACEE11B2818311B001F84D4 /* Controller */,
-				2A43EEE22817B2C5001BD791 /* Assets.xcassets */,
 				2A383D132817BD39000BCAF0 /* Images */,
+				2A43EEE22817B2C5001BD791 /* Assets.xcassets */,
 				2A43EEE72817B2C5001BD791 /* Info.plist */,
 			);
 			path = RestockList;
@@ -104,6 +106,7 @@
 				2ACEE1122817FF38001F84D4 /* AddViewController.swift */,
 				2ACEE1142817FF51001F84D4 /* EditViewController.swift */,
 				2A43EEDD2817B2C4001BD791 /* TableViewController.swift */,
+				2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */,
 				2A43EEDA2817B2C4001BD791 /* AppDelegate.swift in Sources */,
 				2A43EEDC2817B2C4001BD791 /* SceneDelegate.swift in Sources */,
+				2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */,
 				2A383D112817B820000BCAF0 /* TableViewItem.swift in Sources */,
 				2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */,
 				2A43EEF02817B5BB001BD791 /* UpdateProtocol.swift in Sources */,

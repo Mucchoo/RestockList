@@ -12,6 +12,8 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
         
     @IBOutlet weak var periodPickerView: UIPickerView!
     @IBOutlet weak var itemTextField: UITextField!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var textFieldBackground: UIView!
     
     let realm = try! Realm()
     var data = [TableViewItem]()
@@ -20,10 +22,9 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        itemTextField.layer.borderWidth = 3
-        itemTextField.layer.cornerRadius = 15
-        itemTextField.layer.borderColor = UIColor.tintColor.cgColor
+        textFieldBackground.layer.cornerRadius = 10
         itemTextField.becomeFirstResponder()
+        addButton.layer.cornerRadius = 20
         
         itemTextField.delegate = self
         periodPickerView.dataSource = self

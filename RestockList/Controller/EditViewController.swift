@@ -10,6 +10,8 @@ import UIKit
 
 class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
         
+    @IBOutlet weak var textFieldBackground: UIView!
+    @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var periodPickerView: UIPickerView!
     @IBOutlet weak var itemTextField: UITextField!
@@ -23,21 +25,20 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        itemTextField.layer.borderWidth = 3
-        itemTextField.layer.cornerRadius = 15
-        itemTextField.layer.borderColor = UIColor.tintColor.cgColor
         itemTextField.becomeFirstResponder()
-        deleteButton.layer.cornerRadius = 15
-        deleteButton.layer.borderColor = UIColor.tintColor.cgColor
+        completeButton.layer.cornerRadius = 20
+        deleteButton.layer.cornerRadius = 20
+        deleteButton.layer.borderColor = UIColor(named: "AccentColor")?.cgColor
         deleteButton.layer.borderWidth = 3
+        textFieldBackground.layer.cornerRadius = 10
         
         itemTextField.delegate = self
         periodPickerView.dataSource = self
         periodPickerView.delegate = self
         
         data = realm.objects(TableViewItem.self).sorted(by: { $0.remainingTime < $1.remainingTime })
-        periodPickerView.selectRow(realm.object(ofType: TableViewItem.self, forPrimaryKey: selectedCell)!.period - 1, inComponent: 0, animated: true)
-        itemTextField.text = realm.object(ofType: TableViewItem.self, forPrimaryKey: selectedCell)!.item
+        periodPickerView.selectRow(realm.object(ofType: TableViewItem.self, forPrimaryKey: selectedCell)?.period ?? 1 - 1, inComponent: 0, animated: true)
+        itemTextField.text = realm.object(ofType: TableViewItem.self, forPrimaryKey: selectedCell)?.item ?? ""
         
     }
         
