@@ -12,24 +12,22 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     
     var data = [TableViewItem]()
     let realm = try! Realm()
-    var currentDate = Int(Date().timeIntervalSince1970)
-    var lastDate: Int? = UserDefaults.standard.object(forKey: "lastDate") as? Int
+    let calender = Calendar(identifier: .gregorian)
     @IBOutlet var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         
-        if let lastDate = lastDate {
-            if currentDate > lastDate {
-                realm.beginWrite()
-                for Item in realm.objects(TableViewItem.self) {
-                    Item.remainingTime -= (currentDate - lastDate)
-                }
-                try! realm.commitWrite()
+        let elapsedDays = calender.dateComponents([.day], from: UserDefaults.standard.object(forKey: "lastDate") as? Date ?? Date(), to: Date()).day!
+        if elapsedDays > 0 {
+            realm.beginWrite()
+            for Item in realm.objects(TableViewItem.self) {
+                Item.remainingTime -= elapsedDays
             }
+            try! realm.commitWrite()
         }
-        UserDefaults.standard.set(currentDate, forKey: "lastDate")
+        UserDefaults.standard.set(Date(), forKey: "lastDate")
     }
     
     override func viewWillAppear(_ animated: Bool) {
