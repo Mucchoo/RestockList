@@ -7,7 +7,7 @@
 
 import WidgetKit
 import SwiftUI
-import Intents
+import RealmSwift
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
