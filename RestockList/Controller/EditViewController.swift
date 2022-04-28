@@ -25,7 +25,6 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        itemTextField.becomeFirstResponder()
         completeButton.layer.cornerRadius = 20
         deleteButton.layer.cornerRadius = 20
         deleteButton.layer.borderColor = UIColor(named: "AccentColor")?.cgColor

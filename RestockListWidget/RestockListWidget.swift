@@ -66,7 +66,7 @@ struct WidgetEntryView : View {
                             .foregroundColor(Color.white)
                             .padding(.bottom, 5)
                     }
-                } else {
+                } else if family == .systemMedium {
                     ForEach(0..<4){ num in
                         HStack(spacing: 0){
                             Text("ここに文章が入ります")
@@ -83,10 +83,18 @@ struct WidgetEntryView : View {
                             .foregroundColor(Color.white)
                             .padding(.bottom, 5)
                     }
+                } else {
+                    ForEach(0..<5){ num in
+                        Text("ここに文章が入りますううう")
+                            .foregroundColor(.white)
+                            .font(.system(size: 14, weight: .bold))
+                            .lineLimit(1)
+                            .padding(.bottom, 5)
+                    }
                 }
                 Spacer()
             }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .padding(20)
+                .padding(15)
         }
     }
 }
