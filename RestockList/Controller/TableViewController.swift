@@ -19,15 +19,21 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         super.viewDidLoad()
         tableView.delegate = self
         
-        let elapsedDays = calender.dateComponents([.day], from: UserDefaults.standard.object(forKey: "lastDate") as? Date ?? Date(), to: Date()).day!
-        if elapsedDays > 0 {
-            realm.beginWrite()
-            for Item in realm.objects(Item.self) {
-                Item.remainingTime -= elapsedDays
+        let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
+        print("currentは\(currentDate)")
+        if let lastDate = UserDefaults.standard.object(forKey: "lastDate") as? Int {
+            print("lastは\(lastDate)")
+            let elapsedDays = currentDate - lastDate
+            if elapsedDays > 0 {
+                realm.beginWrite()
+                for Item in realm.objects(Item.self) {
+                    Item.remainingTime -= elapsedDays
+                }
+                try! realm.commitWrite()
             }
-            try! realm.commitWrite()
         }
-        UserDefaults.standard.set(Date(), forKey: "lastDate")
+        
+        UserDefaults.standard.set(currentDate, forKey: "lastDate")
     }
     
     override func viewWillAppear(_ animated: Bool) {
