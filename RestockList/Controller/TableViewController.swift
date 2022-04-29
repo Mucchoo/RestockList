@@ -41,7 +41,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell") as! TableViewCell
-        cell.itemLabel.text = data[indexPath.row].item
+        cell.itemLabel.text = data[indexPath.row].name
         cell.progressBar.progress = Float(data[indexPath.row].remainingTime) / Float(data[indexPath.row].period)
         if Float(data[indexPath.row].remainingTime) / Float(data[indexPath.row].period) < 0.5 {
             cell.periodLabelRight.text = "残り\(data[indexPath.row].remainingTime)日"

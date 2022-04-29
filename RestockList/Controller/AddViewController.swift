@@ -61,7 +61,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
             let newItem = Item()
             newItem.period = period
             newItem.remainingTime = period
-            newItem.item = item
+            newItem.name = item
             realm.add(newItem)
             try! realm.commitWrite()
             

@@ -37,7 +37,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
         
         data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         periodPickerView.selectRow(realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.period ?? 1 - 1, inComponent: 0, animated: true)
-        itemTextField.text = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.item ?? ""
+        itemTextField.text = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.name ?? ""
         
     }
         
@@ -65,7 +65,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
             realm.beginWrite()
             let editingItem = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)!
             editingItem.period = period
-            editingItem.item = item
+            editingItem.name = item
             if editingItem.period < editingItem.remainingTime {
                 editingItem.remainingTime = editingItem.period
             }
