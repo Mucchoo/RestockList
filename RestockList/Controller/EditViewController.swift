@@ -17,7 +17,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     @IBOutlet weak var itemTextField: UITextField!
     
     let realm = try! Realm()
-    var data = [TableViewItem]()
+    var data = [Item]()
     var periodArray:[Int] = ([Int])(1...365)
     var selectedCell: Int = 0
     let myTableViewController = TableViewController()
@@ -35,9 +35,9 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
         periodPickerView.dataSource = self
         periodPickerView.delegate = self
         
-        data = realm.objects(TableViewItem.self).sorted(by: { $0.remainingTime < $1.remainingTime })
-        periodPickerView.selectRow(realm.object(ofType: TableViewItem.self, forPrimaryKey: selectedCell)?.period ?? 1 - 1, inComponent: 0, animated: true)
-        itemTextField.text = realm.object(ofType: TableViewItem.self, forPrimaryKey: selectedCell)?.item ?? ""
+        data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+        periodPickerView.selectRow(realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.period ?? 1 - 1, inComponent: 0, animated: true)
+        itemTextField.text = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.item ?? ""
         
     }
         
@@ -63,7 +63,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
             let period = periodPickerView.selectedRow(inComponent: 0) + 1
             let item = itemTextField.text!
             realm.beginWrite()
-            let editingItem = realm.object(ofType: TableViewItem.self, forPrimaryKey: selectedCell)!
+            let editingItem = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)!
             editingItem.period = period
             editingItem.item = item
             if editingItem.period < editingItem.remainingTime {
@@ -78,7 +78,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
         realm.beginWrite()
-        realm.delete(realm.object(ofType: TableViewItem.self, forPrimaryKey: selectedCell)!)
+        realm.delete(realm.object(ofType: Item.self, forPrimaryKey: selectedCell)!)
         try! realm.commitWrite()
         
         navigationController?.popToRootViewController(animated: true)

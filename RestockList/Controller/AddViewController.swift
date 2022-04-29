@@ -16,7 +16,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     @IBOutlet weak var textFieldBackground: UIView!
     
     let realm = try! Realm()
-    var data = [TableViewItem]()
+    var data = [Item]()
     let myTableViewController = TableViewController()
     
     override func viewDidLoad() {
@@ -58,7 +58,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
             let item = itemTextField.text!
             
             realm.beginWrite()
-            let newItem = TableViewItem()
+            let newItem = Item()
             newItem.period = period
             newItem.remainingTime = period
             newItem.item = item

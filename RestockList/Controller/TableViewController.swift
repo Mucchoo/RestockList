@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     
-    var data = [TableViewItem]()
+    var data = [Item]()
     let realm = try! Realm()
     let calender = Calendar(identifier: .gregorian)
     @IBOutlet var myTableView: UITableView!
@@ -22,7 +22,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         let elapsedDays = calender.dateComponents([.day], from: UserDefaults.standard.object(forKey: "lastDate") as? Date ?? Date(), to: Date()).day!
         if elapsedDays > 0 {
             realm.beginWrite()
-            for Item in realm.objects(TableViewItem.self) {
+            for Item in realm.objects(Item.self) {
                 Item.remainingTime -= elapsedDays
             }
             try! realm.commitWrite()
@@ -31,7 +31,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        data = realm.objects(TableViewItem.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+        data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         tableView.reloadData()
     }
     

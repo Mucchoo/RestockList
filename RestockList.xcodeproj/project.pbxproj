@@ -16,7 +16,7 @@
 		2A11AD0C2819696F00170751 /* RestockListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A11AD082819696E00170751 /* RestockListWidget.intentdefinition */; };
 		2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A11AD082819696E00170751 /* RestockListWidget.intentdefinition */; };
 		2A11AD102819696F00170751 /* RestockListWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A11ACFF2819696E00170751 /* RestockListWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2A383D112817B820000BCAF0 /* TableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* TableViewItem.swift */; };
+		2A383D112817B820000BCAF0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Item.swift */; };
 		2A383D172817BD55000BCAF0 /* Bitmap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A383D142817BD55000BCAF0 /* Bitmap@2x.png */; };
 		2A383D182817BD55000BCAF0 /* Bitmap@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A383D152817BD55000BCAF0 /* Bitmap@3x.png */; };
 		2A383D192817BD55000BCAF0 /* Bitmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A383D162817BD55000BCAF0 /* Bitmap.png */; };
@@ -28,6 +28,7 @@
 		2A43EEE62817B2C5001BD791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A43EEE42817B2C5001BD791 /* LaunchScreen.storyboard */; };
 		2A43EEEE2817B597001BD791 /* EditProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEED2817B597001BD791 /* EditProtocol.swift */; };
 		2A43EEF02817B5BB001BD791 /* UpdateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */; };
+		2A45CF7D281BC74000671727 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Item.swift */; };
 		2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */; };
 		2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */; };
 		2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1122817FF38001F84D4 /* AddViewController.swift */; };
@@ -67,7 +68,7 @@
 		2A11AD082819696E00170751 /* RestockListWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = RestockListWidget.intentdefinition; sourceTree = "<group>"; };
 		2A11AD092819696F00170751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A11AD0B2819696F00170751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A383D102817B820000BCAF0 /* TableViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewItem.swift; sourceTree = "<group>"; };
+		2A383D102817B820000BCAF0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		2A383D142817BD55000BCAF0 /* Bitmap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bitmap@2x.png"; sourceTree = "<group>"; };
 		2A383D152817BD55000BCAF0 /* Bitmap@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bitmap@3x.png"; sourceTree = "<group>"; };
 		2A383D162817BD55000BCAF0 /* Bitmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bitmap.png; sourceTree = "<group>"; };
@@ -200,7 +201,7 @@
 				2A43EEED2817B597001BD791 /* EditProtocol.swift */,
 				2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */,
 				2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */,
-				2A383D102817B820000BCAF0 /* TableViewItem.swift */,
+				2A383D102817B820000BCAF0 /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A11AD0C2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
+				2A45CF7D281BC74000671727 /* Item.swift in Sources */,
 				2A11AD072819696E00170751 /* RestockListWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +337,7 @@
 				2A43EEDA2817B2C4001BD791 /* AppDelegate.swift in Sources */,
 				2A43EEDC2817B2C4001BD791 /* SceneDelegate.swift in Sources */,
 				2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */,
-				2A383D112817B820000BCAF0 /* TableViewItem.swift in Sources */,
+				2A383D112817B820000BCAF0 /* Item.swift in Sources */,
 				2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */,
 				2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
 				2A43EEF02817B5BB001BD791 /* UpdateProtocol.swift in Sources */,
