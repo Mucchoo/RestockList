@@ -22,7 +22,6 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var progressBar: UIProgressView!
     
     var data = [Item]()
-    let realm = try! Realm()
     var editUIViewController = EditViewController()
     var myTableViewController = TableViewController()
     var delegate : EditProtocol?
@@ -34,6 +33,10 @@ class TableViewCell: UITableViewCell {
         periodFrame.layer.borderWidth = 3
         periodFrame.layer.borderColor = UIColor(named: "AccentColor")?.cgColor
         progressBar.transform = CGAffineTransform(scaleX: 1, y: 10)
+        var config = Realm.Configuration()
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
+        config.fileURL = url.appendingPathComponent("db.realm")
+        let realm = try! Realm(configuration: config)
         data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
     }
     
@@ -46,6 +49,10 @@ class TableViewCell: UITableViewCell {
     }
     
     @IBAction func plusButtonTapped(_ sender: UIButton) {
+        var config = Realm.Configuration()
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
+        config.fileURL = url.appendingPathComponent("db.realm")
+        let realm = try! Realm(configuration: config)
         if realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.remainingTime < realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.period {
             realm.beginWrite()
             realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.remainingTime += 1
@@ -56,6 +63,10 @@ class TableViewCell: UITableViewCell {
     }
     
     @IBAction func minusButtonTapped(_ sender: UIButton) {
+        var config = Realm.Configuration()
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
+        config.fileURL = url.appendingPathComponent("db.realm")
+        let realm = try! Realm(configuration: config)
         if realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.remainingTime > 0 {
             realm.beginWrite()
             realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.remainingTime -= 1
@@ -66,6 +77,10 @@ class TableViewCell: UITableViewCell {
     }
     
     @IBAction func checkButtonTapped(_ sender: UIButton) {
+        var config = Realm.Configuration()
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
+        config.fileURL = url.appendingPathComponent("db.realm")
+        let realm = try! Realm(configuration: config)
         realm.beginWrite()
         realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.remainingTime = realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.period
         try! realm.commitWrite()

@@ -210,6 +210,13 @@
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view clipsSubviews="YES" alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xq6-4a-pxv">
+                                <rect key="frame" x="20" y="81" width="374" height="50"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vaC-aR-qtL"/>
+                                </constraints>
+                            </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pBb-2c-6qg">
                                 <rect key="frame" x="30" y="81" width="354" height="50"/>
                                 <constraints>
@@ -266,13 +273,6 @@
                                     <action selector="deleteButtonTapped:" destination="oYV-Dc-2yJ" eventType="touchUpInside" id="CQx-Th-fcs"/>
                                 </connections>
                             </button>
-                            <view clipsSubviews="YES" alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xq6-4a-pxv">
-                                <rect key="frame" x="20" y="81" width="374" height="50"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="vaC-aR-qtL"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BUR-d2-bEq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

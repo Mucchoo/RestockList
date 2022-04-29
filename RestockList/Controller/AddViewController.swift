@@ -15,7 +15,6 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var textFieldBackground: UIView!
     
-    let realm = try! Realm()
     var data = [Item]()
     let myTableViewController = TableViewController()
     
@@ -56,6 +55,11 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
         if itemTextField.text != "" {
             let period = periodPickerView.selectedRow(inComponent: 0) + 1
             let item = itemTextField.text!
+            
+            var config = Realm.Configuration()
+            let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
+            config.fileURL = url.appendingPathComponent("db.realm")
+            let realm = try! Realm(configuration: config)
             
             realm.beginWrite()
             let newItem = Item()

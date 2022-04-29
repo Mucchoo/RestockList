@@ -11,13 +11,16 @@ import UIKit
 class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     
     var data = [Item]()
-    let realm = try! Realm()
-    let calender = Calendar(identifier: .gregorian)
     @IBOutlet var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
+        
+        var config = Realm.Configuration()
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
+        config.fileURL = url.appendingPathComponent("db.realm")
+        let realm = try! Realm(configuration: config)
         
         let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
         print("currentは\(currentDate)")
@@ -37,6 +40,10 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        var config = Realm.Configuration()
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
+        config.fileURL = url.appendingPathComponent("db.realm")
+        let realm = try! Realm(configuration: config)
         data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         tableView.reloadData()
     }
