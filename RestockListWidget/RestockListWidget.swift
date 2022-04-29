@@ -58,49 +58,101 @@ struct WidgetEntryView : View {
             VStack (spacing: 5){
                 Spacer()
                 if family == .systemLarge {
-                    ForEach(0..<10){ num in
-                        HStack(spacing: 0){
-                            Text("\(data[num].name) ")
-                                .foregroundColor(.white)
-                                .font(.system(size: 14, weight: .bold))
-                                .lineLimit(1)
-                            Spacer()
-                            Text("\(data[num].remainingTime)日 ")
-                                .foregroundColor(.white)
-                                .font(.system(size: 14, weight: .bold))
+                    if data.count > 10 {
+                        ForEach(0..<10){ num in
+                            HStack(spacing: 0){
+                                Text("\(data[num].name) ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .lineLimit(1)
+                                Spacer()
+                                Text("\(data[num].remainingTime)日 ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                            }
+                            Rectangle()
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
+                                .background(Color.white)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 5)
                         }
-                        Rectangle()
-                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
-                            .background(Color.white)
-                            .foregroundColor(Color.white)
-                            .padding(.bottom, 5)
+                    } else {
+                        ForEach(0..<data.count, id: \.self){ num in
+                            HStack(spacing: 0){
+                                Text("\(data[num].name) ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .lineLimit(1)
+                                Spacer()
+                                Text("\(data[num].remainingTime)日 ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                            }
+                            Rectangle()
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
+                                .background(Color.white)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 5)
+                        }
                     }
                 } else if family == .systemMedium {
-                    ForEach(0..<4){ num in
-                        HStack(spacing: 0){
-                            Text("\(data[num].name) ")
-                                .foregroundColor(.white)
-                                .font(.system(size: 14, weight: .bold))
-                                .lineLimit(1)
-                            Spacer()
-                            Text("\(data[num].remainingTime)日 ")
-                                .foregroundColor(.white)
-                                .font(.system(size: 14, weight: .bold))
+                    if data.count > 4 {
+                        ForEach(0..<4){ num in
+                            HStack(spacing: 0){
+                                Text("\(data[num].name) ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .lineLimit(1)
+                                Spacer()
+                                Text("\(data[num].remainingTime)日 ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                            }
+                            Rectangle()
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 5)
                         }
-                        Rectangle()
-                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
-                            .foregroundColor(Color.white)
-                            .padding(.bottom, 5)
+                    } else {
+                        ForEach(0..<data.count, id: \.self){ num in
+                            HStack(spacing: 0){
+                                Text("\(data[num].name) ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .lineLimit(1)
+                                Spacer()
+                                Text("\(data[num].remainingTime)日 ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                            }
+                            Rectangle()
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 5)
+                        }
                     }
                 } else {
-                    ForEach(0..<5){ num in
-                        HStack {
-                            Text("\(data[num].name) ")
-                                .foregroundColor(.white)
-                                .font(.system(size: 14, weight: .bold))
-                                .lineLimit(1)
-                                .padding(.bottom, 5)
-                            Spacer()
+                    if data.count > 5 {
+                        ForEach(0..<5){ num in
+                            HStack {
+                                Text("\(data[num].name) ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .lineLimit(1)
+                                    .padding(.bottom, 5)
+                                Spacer()
+                            }
+                        }
+                    } else {
+                        ForEach(0..<data.count, id: \.self){ num in
+                            HStack {
+                                Text("\(data[num].name) ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .lineLimit(1)
+                                    .padding(.bottom, 5)
+                                Spacer()
+                            }
                         }
                     }
                 }

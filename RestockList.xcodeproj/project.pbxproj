@@ -563,6 +563,7 @@
 				DEVELOPMENT_TEAM = 4WXTDSDQPZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestockList/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Restock List";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -594,6 +595,7 @@
 				DEVELOPMENT_TEAM = 4WXTDSDQPZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestockList/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Restock List";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
