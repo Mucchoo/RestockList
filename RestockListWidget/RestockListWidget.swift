@@ -111,16 +111,3 @@ struct MyWidget: Widget {
         .description("リストを残り日数が少ない順に表示します。")
     }
 }
-
-struct Widget_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            WidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-                .previewContext(WidgetPreviewContext(family: .systemLarge))
-            WidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
-            WidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
-        }
-    }
-}

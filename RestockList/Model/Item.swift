@@ -16,17 +16,3 @@ class Item: Object {
         return "id"
     }
 }
-
-extension Item {
-    private static var realm: Realm = try! Realm()
- 
-    static func all() -> Results<Item> {
-        realm.objects(self)
-    }
- 
-    static func create(with item: Item) {
-        try! realm.write {
-            realm.create(Item.self, value: item, update: .all)
-        }
-    }
-}
