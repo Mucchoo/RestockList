@@ -706,13 +706,21 @@
                                             <segue destination="8GG-py-0kt" kind="show" id="34O-RA-IBw"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ol0-ec-hOv">
+                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ol0-ec-hOv">
                                         <rect key="frame" x="20" y="318" width="374" height="46.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ol0-ec-hOv" id="3we-n4-4Ib">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mul-VQ-ACc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                    <connections>
+                                                        <action selector="shareButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="HU4-V5-1VN"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アプリをシェア" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff4-CG-3wF">
                                                     <rect key="frame" x="60" y="13" width="121.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -739,21 +747,33 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="mul-VQ-ACc" firstAttribute="leading" secondItem="3we-n4-4Ib" secondAttribute="leading" id="3GU-JJ-kXY"/>
                                                 <constraint firstItem="ff4-CG-3wF" firstAttribute="leading" secondItem="LFS-Kb-XBp" secondAttribute="trailing" constant="10" id="Aca-ej-laA"/>
                                                 <constraint firstItem="LFS-Kb-XBp" firstAttribute="top" secondItem="3we-n4-4Ib" secondAttribute="top" constant="8" id="Kpr-XN-8jP"/>
                                                 <constraint firstAttribute="bottom" secondItem="LFS-Kb-XBp" secondAttribute="bottom" constant="8" id="NCD-BR-5O1"/>
                                                 <constraint firstItem="LFS-Kb-XBp" firstAttribute="leading" secondItem="3we-n4-4Ib" secondAttribute="leading" constant="20" id="Vq4-Jf-fZH"/>
+                                                <constraint firstAttribute="bottom" secondItem="mul-VQ-ACc" secondAttribute="bottom" id="WYh-r4-S8y"/>
                                                 <constraint firstItem="ff4-CG-3wF" firstAttribute="centerY" secondItem="3we-n4-4Ib" secondAttribute="centerY" id="cRn-s9-Nd3"/>
+                                                <constraint firstAttribute="trailing" secondItem="mul-VQ-ACc" secondAttribute="trailing" id="lSo-iQ-e83"/>
+                                                <constraint firstItem="mul-VQ-ACc" firstAttribute="top" secondItem="3we-n4-4Ib" secondAttribute="top" id="mkQ-Og-ZxC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9Bo-oM-FGz">
+                                    <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9Bo-oM-FGz">
                                         <rect key="frame" x="20" y="364.5" width="374" height="46.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Bo-oM-FGz" id="Yvv-Fb-7ZM">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VS-09-yEL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                    <connections>
+                                                        <action selector="reviewButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="Jqt-2f-Dgz"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="レビューで応援！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2C-kK-DJi">
                                                     <rect key="frame" x="60" y="13" width="139" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -783,18 +803,30 @@
                                                 <constraint firstAttribute="bottom" secondItem="7kO-PS-mgv" secondAttribute="bottom" constant="8" id="42Z-Jc-5qH"/>
                                                 <constraint firstItem="7kO-PS-mgv" firstAttribute="leading" secondItem="Yvv-Fb-7ZM" secondAttribute="leading" constant="20" id="BOS-JH-j4b"/>
                                                 <constraint firstItem="b2C-kK-DJi" firstAttribute="centerY" secondItem="Yvv-Fb-7ZM" secondAttribute="centerY" id="IVV-iK-cnB"/>
+                                                <constraint firstItem="7VS-09-yEL" firstAttribute="leading" secondItem="Yvv-Fb-7ZM" secondAttribute="leading" id="Niv-4N-HbN"/>
                                                 <constraint firstItem="b2C-kK-DJi" firstAttribute="leading" secondItem="7kO-PS-mgv" secondAttribute="trailing" constant="10" id="Opo-Bt-Lg2"/>
+                                                <constraint firstAttribute="trailing" secondItem="7VS-09-yEL" secondAttribute="trailing" id="WLO-jk-H7q"/>
                                                 <constraint firstItem="7kO-PS-mgv" firstAttribute="top" secondItem="Yvv-Fb-7ZM" secondAttribute="top" constant="8" id="a4p-TG-H2i"/>
+                                                <constraint firstAttribute="bottom" secondItem="7VS-09-yEL" secondAttribute="bottom" id="bTF-90-cxI"/>
+                                                <constraint firstItem="7VS-09-yEL" firstAttribute="top" secondItem="Yvv-Fb-7ZM" secondAttribute="top" id="j8s-gb-bbG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PJh-vG-GZd">
+                                    <tableViewCell clipsSubviews="YES" tag="3" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PJh-vG-GZd">
                                         <rect key="frame" x="20" y="411" width="374" height="46.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PJh-vG-GZd" id="MAk-EH-buo">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSc-c3-7nl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                    <connections>
+                                                        <action selector="emailButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="21l-OI-J4B"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ご意見・ご要望" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1a-Zb-IUO">
                                                     <rect key="frame" x="60" y="13" width="121.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -823,8 +855,12 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Nh0-5P-3gS" secondAttribute="bottom" constant="8" id="6WX-XZ-sg7"/>
                                                 <constraint firstItem="s1a-Zb-IUO" firstAttribute="leading" secondItem="Nh0-5P-3gS" secondAttribute="trailing" constant="10" id="8YL-yv-VA1"/>
+                                                <constraint firstAttribute="bottom" secondItem="lSc-c3-7nl" secondAttribute="bottom" id="ASk-PT-0Vh"/>
+                                                <constraint firstItem="lSc-c3-7nl" firstAttribute="leading" secondItem="MAk-EH-buo" secondAttribute="leading" id="GsM-Qt-pSF"/>
                                                 <constraint firstItem="Nh0-5P-3gS" firstAttribute="leading" secondItem="MAk-EH-buo" secondAttribute="leading" constant="20" id="b2F-62-PSY"/>
+                                                <constraint firstAttribute="trailing" secondItem="lSc-c3-7nl" secondAttribute="trailing" id="hag-WC-SUs"/>
                                                 <constraint firstItem="s1a-Zb-IUO" firstAttribute="centerY" secondItem="MAk-EH-buo" secondAttribute="centerY" id="pK3-ri-h5W"/>
+                                                <constraint firstItem="lSc-c3-7nl" firstAttribute="top" secondItem="MAk-EH-buo" secondAttribute="top" id="ssQ-hh-WJb"/>
                                                 <constraint firstItem="Nh0-5P-3gS" firstAttribute="top" secondItem="MAk-EH-buo" secondAttribute="top" constant="8" id="xsh-RT-xlG"/>
                                             </constraints>
                                         </tableViewCellContentView>
