@@ -31,7 +31,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
         
     }
     
-    var pickerArray:[Int] = ([Int])(1...365)
+    let pickerArray:[Int] = ([Int])(1...365)
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         itemTextField.endEditing(true)
@@ -51,7 +51,6 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     }
     
     @IBAction func AddButtonTapped(_ sender: Any) {
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
         if itemTextField.text != "" {
             let period = periodPickerView.selectedRow(inComponent: 0) + 1
             let item = itemTextField.text!
@@ -69,7 +68,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
             realm.add(newItem)
             try! realm.commitWrite()
             
-            navigationController?.popToRootViewController(animated: true)
+            navigationController?.popViewController(animated: true)
         } else {
             itemTextField.placeholder = "アイテム名を入力してください"
         }

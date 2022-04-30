@@ -411,7 +411,7 @@
             </objects>
             <point key="canvasLocation" x="1342" y="-514"/>
         </scene>
-        <!--View Controller-->
+        <!--Proにアップグレード-->
         <scene sceneID="Fz6-Fx-t4U">
             <objects>
                 <viewController id="G2H-NW-Fjt" sceneMemberID="viewController">
@@ -433,7 +433,7 @@
                             <constraint firstItem="Nv8-lO-wSw" firstAttribute="centerX" secondItem="FZi-kS-1tn" secondAttribute="centerX" id="qSt-dS-fMt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ksj-ye-fMl"/>
+                    <navigationItem key="navigationItem" title="Proにアップグレード" id="Ksj-ye-fMl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14F-nJ-zg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -853,7 +853,7 @@
             </objects>
             <point key="canvasLocation" x="1340.5797101449277" y="138.61607142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--テーマカラー-->
         <scene sceneID="6kg-La-0c2">
             <objects>
                 <viewController id="idJ-WR-CfA" sceneMemberID="viewController">
@@ -875,41 +875,92 @@
                             <constraint firstItem="seW-Bk-daf" firstAttribute="centerX" secondItem="Tlx-c0-vib" secondAttribute="centerX" id="dCD-QF-uJq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2OS-OK-Lay"/>
+                    <navigationItem key="navigationItem" title="テーマカラー" id="2OS-OK-Lay"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98B-ap-L4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2130" y="141"/>
         </scene>
-        <!--View Controller-->
+        <!--通知設定-->
         <scene sceneID="dIy-DD-eJs">
             <objects>
-                <viewController id="8GG-py-0kt" sceneMemberID="viewController">
+                <viewController id="8GG-py-0kt" customClass="NotificationViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="brH-UP-uCf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NotificationView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnS-vw-6pW">
-                                <rect key="frame" x="145" y="437.5" width="124" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設定された日数以下の時通知されます。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnS-vw-6pW">
+                                <rect key="frame" x="20" y="135" width="374" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" name="FontColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイテムの残り日数が" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qn-Y2-dOb">
+                                <rect key="frame" x="20" y="108" width="374" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" name="FontColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twd-sX-QxL">
+                                <rect key="frame" x="20" y="408" width="374" height="70"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="vfz-Zm-0yA"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="完了">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="8GG-py-0kt" eventType="touchUpInside" id="oXv-tr-r9d"/>
+                                    <action selector="completeButtonTapped:" destination="oYV-Dc-2yJ" eventType="touchUpInside" id="um1-Ok-JzQ"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEb-mO-tDi">
+                                <rect key="frame" x="157" y="172" width="100" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="OSd-eN-x6Z"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wD-Bh-WrR">
+                                <rect key="frame" x="267" y="272" width="14.5" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xRD-1s-JSc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZnS-vw-6pW" firstAttribute="centerY" secondItem="brH-UP-uCf" secondAttribute="centerY" id="3pf-C8-naU"/>
+                            <constraint firstItem="6Qn-Y2-dOb" firstAttribute="centerX" secondItem="brH-UP-uCf" secondAttribute="centerX" id="1v7-3O-s3c"/>
+                            <constraint firstItem="5wD-Bh-WrR" firstAttribute="top" secondItem="ZnS-vw-6pW" secondAttribute="bottom" constant="120" id="584-P7-wcw"/>
+                            <constraint firstItem="bEb-mO-tDi" firstAttribute="centerX" secondItem="brH-UP-uCf" secondAttribute="centerX" id="6Vt-5j-mWs"/>
+                            <constraint firstItem="ZnS-vw-6pW" firstAttribute="leading" secondItem="xRD-1s-JSc" secondAttribute="leading" constant="20" id="AVc-Ec-RQi"/>
+                            <constraint firstItem="xRD-1s-JSc" firstAttribute="trailing" secondItem="6Qn-Y2-dOb" secondAttribute="trailing" constant="20" id="Db2-LH-hAV"/>
+                            <constraint firstItem="bEb-mO-tDi" firstAttribute="top" secondItem="ZnS-vw-6pW" secondAttribute="bottom" constant="20" id="F2e-QQ-saN"/>
+                            <constraint firstItem="xRD-1s-JSc" firstAttribute="trailing" secondItem="Twd-sX-QxL" secondAttribute="trailing" constant="20" id="Hbm-RM-RZo"/>
+                            <constraint firstItem="ZnS-vw-6pW" firstAttribute="top" secondItem="6Qn-Y2-dOb" secondAttribute="bottom" constant="10" id="Ue9-wV-BcQ"/>
                             <constraint firstItem="ZnS-vw-6pW" firstAttribute="centerX" secondItem="brH-UP-uCf" secondAttribute="centerX" id="VGN-bK-rvz"/>
+                            <constraint firstItem="Twd-sX-QxL" firstAttribute="leading" secondItem="xRD-1s-JSc" secondAttribute="leading" constant="20" id="bEk-0Y-USU"/>
+                            <constraint firstItem="xRD-1s-JSc" firstAttribute="trailing" secondItem="ZnS-vw-6pW" secondAttribute="trailing" constant="20" id="cdN-hy-wwf"/>
+                            <constraint firstItem="6Qn-Y2-dOb" firstAttribute="leading" secondItem="xRD-1s-JSc" secondAttribute="leading" constant="20" id="u1d-3r-tec"/>
+                            <constraint firstItem="5wD-Bh-WrR" firstAttribute="leading" secondItem="bEb-mO-tDi" secondAttribute="trailing" constant="10" id="waX-dM-dvR"/>
+                            <constraint firstItem="Twd-sX-QxL" firstAttribute="top" secondItem="bEb-mO-tDi" secondAttribute="bottom" constant="20" id="xQy-VP-D0E"/>
+                            <constraint firstItem="6Qn-Y2-dOb" firstAttribute="top" secondItem="xRD-1s-JSc" secondAttribute="top" constant="20" id="zD1-0h-DFj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VBm-Ab-MZL"/>
+                    <navigationItem key="navigationItem" title="通知設定" id="VBm-Ab-MZL"/>
+                    <connections>
+                        <outlet property="button" destination="Twd-sX-QxL" id="rfL-Yp-5q9"/>
+                        <outlet property="picker" destination="bEb-mO-tDi" id="GCy-e2-Xj0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiU-0h-Fu2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1341" y="862"/>
+            <point key="canvasLocation" x="1340.5797101449277" y="861.83035714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--アイコン-->
         <scene sceneID="SOZ-ha-cnm">
             <objects>
                 <viewController id="cXf-2x-mZ1" sceneMemberID="viewController">
@@ -931,7 +982,7 @@
                             <constraint firstItem="Eax-PT-rhs" firstAttribute="centerY" secondItem="EL5-Z4-RnR" secondAttribute="centerY" id="kBN-wn-ADc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="l6y-8R-ao9"/>
+                    <navigationItem key="navigationItem" title="アイコン" id="l6y-8R-ao9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DfP-kt-Jkb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -95,7 +95,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
         realm.delete(realm.object(ofType: Item.self, forPrimaryKey: selectedCell)!)
         try! realm.commitWrite()
         
-        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
 }

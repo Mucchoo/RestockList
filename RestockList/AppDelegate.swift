@@ -9,6 +9,7 @@ import UIKit
 import RealmSwift
 import WidgetKit
 import BackgroundTasks
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
         config.fileURL = url.appendingPathComponent("db.realm")
         let realm = try! Realm(configuration: config)
+        let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         
         let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
         if let lastDate = UserDefaults.standard.object(forKey: "lastDate") as? Int {
@@ -43,12 +45,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 try! realm.commitWrite()
                 WidgetCenter.shared.reloadAllTimelines()
                 
+                var itemNotRemaining = ""
+                let notificationCondition = UserDefaults.standard.object(forKey: "notificationCondition") as? Int ?? 3
+                data.filter({$0.remainingTime < notificationCondition + 1}).forEach({ item in
+                    itemNotRemaining += "\(item.name) "
+                })
+                if itemNotRemaining != "" {
+                    let content = UNMutableNotificationContent()
+                    content.title = "\(itemNotRemaining)が残りわずかです"
+                    content.sound = UNNotificationSound.default
+                    
+                    let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
+                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                }
             }
         }
         UserDefaults.standard.set(currentDate, forKey: "lastDate")
     }
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UNUserNotificationCenter.current().requestAuthorization(
+        options: [.alert, .sound]){ (granted, _) in
+            if granted{
+                UNUserNotificationCenter.current().delegate = self
+            }
+        }
         return true
     }
 
@@ -59,5 +80,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     }
 
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate{
+   func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+       completionHandler([.banner, .list, .sound])
+   }
 }
 
