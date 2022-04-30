@@ -23,9 +23,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         let realm = try! Realm(configuration: config)
         
         let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
-        print("currentは\(currentDate)")
         if let lastDate = UserDefaults.standard.object(forKey: "lastDate") as? Int {
-            print("lastは\(lastDate)")
             let elapsedDays = currentDate - lastDate
             if elapsedDays > 0 {
                 realm.beginWrite()

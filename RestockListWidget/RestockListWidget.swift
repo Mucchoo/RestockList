@@ -11,29 +11,42 @@ import RealmSwift
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        return SimpleEntry(date: Date(), data: [Item]())
+        var config = Realm.Configuration()
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
+        config.fileURL = url.appendingPathComponent("db.realm")
+        let realm = try! Realm(configuration: config)
+        let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+        
+        return SimpleEntry(date: Date(), data: data)
     }
     
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let entry = SimpleEntry(date: Date(), data: [Item]())
+        var config = Realm.Configuration()
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
+        config.fileURL = url.appendingPathComponent("db.realm")
+        let realm = try! Realm(configuration: config)
+        let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+        
+        let entry = SimpleEntry(date: Date(), data: data)
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
+        var config = Realm.Configuration()
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
+        config.fileURL = url.appendingPathComponent("db.realm")
+        let realm = try! Realm(configuration: config)
+        let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+        
+        let entry = SimpleEntry(date: Date(), data: data)
         var entries: [SimpleEntry] = []
-
-        let currentDate = Date()
-        for hourOffset in 0 ..< 6 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: Date(), data: [Item]())
-            entries.append(entry)
-        }
-
+        entries.append(entry)
+        
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
-
+    
 }
 
 struct SimpleEntry: TimelineEntry {
@@ -43,15 +56,11 @@ struct SimpleEntry: TimelineEntry {
 
 struct WidgetEntryView : View {
     @Environment(\.widgetFamily) var family
-    var data = [Item]()
+    var data: [Item]
     var entry: Provider.Entry
     init(entry: Provider.Entry){
         self.entry = entry
-        var config = Realm.Configuration()
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
-        config.fileURL = url.appendingPathComponent("db.realm")
-        let realm = try! Realm(configuration: config)
-        data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+        data = entry.data
     }
     var body: some View {
         //3.アイテム名と残り日数を取得する
@@ -168,7 +177,7 @@ struct WidgetEntryView : View {
 @main
 struct MyWidget: Widget {
     let kind: String = "Widget"
-
+    
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WidgetEntryView(entry: entry)

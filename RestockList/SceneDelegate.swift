@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WidgetKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,12 +23,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
 }
