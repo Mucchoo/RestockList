@@ -23,7 +23,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
-        WidgetCenter.shared.reloadAllTimelines()
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {

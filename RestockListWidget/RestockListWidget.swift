@@ -145,25 +145,29 @@ struct WidgetEntryView : View {
                 } else {
                     if data.count > 5 {
                         ForEach(0..<5){ num in
-                            HStack {
+                            HStack(spacing: 0) {
                                 Text("\(data[num].name) ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
-                                    .padding(.bottom, 5)
                                 Spacer()
-                            }
+                                Text("\(data[num].remainingTime)日 ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                            }.padding(.bottom, 5)
                         }
                     } else {
                         ForEach(0..<data.count, id: \.self){ num in
-                            HStack {
+                            HStack(spacing: 0) {
                                 Text("\(data[num].name) ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
-                                    .padding(.bottom, 5)
                                 Spacer()
-                            }
+                                Text("\(data[num].remainingTime)日 ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                            }.padding(.bottom, 5)
                         }
                     }
                 }

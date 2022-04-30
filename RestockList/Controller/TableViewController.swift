@@ -33,8 +33,8 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
                 try! realm.commitWrite()
             }
         }
-        
         UserDefaults.standard.set(currentDate, forKey: "lastDate")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
