@@ -20,6 +20,10 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     }
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
+        sender.backgroundColor = UIColor(.black.opacity(0.3))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            sender.backgroundColor = UIColor(.black.opacity(0))
+        }
         let link = URL(string: "https://www.google.com")!
         let activityViewController = UIActivityViewController(activityItems: [link], applicationActivities: nil)
         let scenes = UIApplication.shared.connectedScenes
@@ -29,12 +33,20 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     }
     
     @IBAction func reviewButtonTapped(_ sender: UIButton) {
+        sender.backgroundColor = UIColor(.black.opacity(0.3))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            sender.backgroundColor = UIColor(.black.opacity(0))
+        }
         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
             SKStoreReviewController.requestReview(in: scene)
         }
     }
     
     @IBAction func emailButtonTapped(_ sender: UIButton) {
+        sender.backgroundColor = UIColor(.black.opacity(0.3))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            sender.backgroundColor = UIColor(.black.opacity(0))
+        }
         let mailViewController = MFMailComposeViewController()
         let toRecipients = ["yazujumusa@gmail.com"]
         mailViewController.mailComposeDelegate = self
