@@ -31,6 +31,8 @@
 		2A45CF7D281BC74000671727 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Item.swift */; };
 		2A55FE41281D151600380AF0 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A55FE40281D151600380AF0 /* NotificationViewController.swift */; };
 		2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */; };
+		2A9A8191281E6F6900186477 /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8190281E6F6900186477 /* IconViewController.swift */; };
+		2A9A8193281E6FB000186477 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8192281E6FB000186477 /* IconCell.swift */; };
 		2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */; };
 		2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1122817FF38001F84D4 /* AddViewController.swift */; };
 		2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1142817FF51001F84D4 /* EditViewController.swift */; };
@@ -85,6 +87,8 @@
 		2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProtocol.swift; sourceTree = "<group>"; };
 		2A55FE40281D151600380AF0 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		2A9A8190281E6F6900186477 /* IconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewController.swift; sourceTree = "<group>"; };
+		2A9A8192281E6FB000186477 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		2AB9A282281C331B00698C11 /* RestockList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RestockList.entitlements; sourceTree = "<group>"; };
 		2AB9A283281C332200698C11 /* RestockListWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RestockListWidgetExtension.entitlements; sourceTree = "<group>"; };
 		2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				2ACEE1122817FF38001F84D4 /* AddViewController.swift */,
+				2A9A8190281E6F6900186477 /* IconViewController.swift */,
 				2ACEE1142817FF51001F84D4 /* EditViewController.swift */,
 				2A43EEDD2817B2C4001BD791 /* TableViewController.swift */,
 				2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */,
@@ -208,6 +213,7 @@
 				2A43EEED2817B597001BD791 /* EditProtocol.swift */,
 				2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */,
 				2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */,
+				2A9A8192281E6FB000186477 /* IconCell.swift */,
 				2A383D102817B820000BCAF0 /* Item.swift */,
 			);
 			path = Model;
@@ -342,9 +348,11 @@
 				2A43EEEE2817B597001BD791 /* EditProtocol.swift in Sources */,
 				2A55FE41281D151600380AF0 /* NotificationViewController.swift in Sources */,
 				2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */,
+				2A9A8191281E6F6900186477 /* IconViewController.swift in Sources */,
 				2A43EEDA2817B2C4001BD791 /* AppDelegate.swift in Sources */,
 				2A43EEDC2817B2C4001BD791 /* SceneDelegate.swift in Sources */,
 				2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */,
+				2A9A8193281E6FB000186477 /* IconCell.swift in Sources */,
 				2A383D112817B820000BCAF0 /* Item.swift in Sources */,
 				2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */,
 				2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
@@ -559,7 +567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon0;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RestockList/RestockList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -591,7 +599,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon0;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RestockList/RestockList.entitlements;
 				CODE_SIGN_STYLE = Automatic;

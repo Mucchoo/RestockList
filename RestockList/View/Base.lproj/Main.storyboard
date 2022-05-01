@@ -6,6 +6,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -411,33 +412,53 @@
             </objects>
             <point key="canvasLocation" x="1342" y="-514"/>
         </scene>
-        <!--Proにアップグレード-->
-        <scene sceneID="Fz6-Fx-t4U">
+        <!--アイコン-->
+        <scene sceneID="EFD-Mk-Ueu">
             <objects>
-                <viewController id="G2H-NW-Fjt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FZi-kS-1tn">
+                <collectionViewController id="yiL-4X-AlS" customClass="IconViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="sZE-qN-f4C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nv8-lO-wSw">
-                                <rect key="frame" x="176" y="437.5" width="62" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="P1e-w6-KyV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Nv8-lO-wSw" firstAttribute="centerY" secondItem="FZi-kS-1tn" secondAttribute="centerY" id="kE9-zU-iYI"/>
-                            <constraint firstItem="Nv8-lO-wSw" firstAttribute="centerX" secondItem="FZi-kS-1tn" secondAttribute="centerX" id="qSt-dS-fMt"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Proにアップグレード" id="Ksj-ye-fMl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="14F-nJ-zg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="xqI-zb-L9E">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Pgj-8a-cgt" customClass="IconCell" customModule="RestockList" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="88D-Fl-ekP">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYZ-W5-R5l">
+                                            <rect key="frame" x="-56" y="0.0" width="240" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <connections>
+                                    <outlet property="image" destination="LYZ-W5-R5l" id="S6v-yX-331"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="yiL-4X-AlS" id="RKE-aP-cnm"/>
+                            <outlet property="delegate" destination="yiL-4X-AlS" id="h11-9C-E8H"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="アイコン" id="Yoe-Zb-daU"/>
+                    <connections>
+                        <outlet property="layout" destination="xqI-zb-L9E" id="TWC-HL-pyX"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F4R-gv-kil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2117" y="-514"/>
+            <point key="canvasLocation" x="2129" y="-514"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="InE-IH-YOL">
@@ -525,9 +546,6 @@
                                                 <constraint firstItem="hwM-1u-xlQ" firstAttribute="centerY" secondItem="TA6-zc-KpF" secondAttribute="centerY" id="Rxb-ok-dd2"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="G2H-NW-Fjt" kind="show" id="cmw-8I-qY8"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="haC-cy-sTD">
                                         <rect key="frame" x="20" y="96" width="374" height="46.5"/>
@@ -614,7 +632,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="cXf-2x-mZ1" kind="show" id="poI-hs-8aJ"/>
+                                            <segue destination="yiL-4X-AlS" kind="show" id="vOn-Nr-JlP"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1041,7 +1059,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiU-0h-Fu2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340.5797101449277" y="861.83035714285711"/>
+            <point key="canvasLocation" x="1341" y="828"/>
         </scene>
         <!--アイコン-->
         <scene sceneID="SOZ-ha-cnm">
@@ -1069,7 +1087,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DfP-kt-Jkb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2129" y="862"/>
+            <point key="canvasLocation" x="2129" y="828"/>
         </scene>
     </scenes>
     <resources>
