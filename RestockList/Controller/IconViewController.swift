@@ -30,8 +30,11 @@ class IconViewController: UICollectionViewController {
         cell.layer.cornerRadius = 20
         return cell
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: CGFloat(collectionView.frame.width/3 - 40), height: CGFloat(collectionView.frame.width/3 - 40))
-//    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            UIApplication.shared.setAlternateIconName(nil)
+        }
+        UIApplication.shared.setAlternateIconName("AppIcon\(indexPath.row)")
+    }
 }
