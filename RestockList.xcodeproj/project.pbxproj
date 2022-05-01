@@ -31,6 +31,8 @@
 		2A45CF7D281BC74000671727 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Item.swift */; };
 		2A55FE41281D151600380AF0 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A55FE40281D151600380AF0 /* NotificationViewController.swift */; };
 		2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */; };
+		2A967C0F281EBAE8002A2210 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A967C0E281EBAE8002A2210 /* UIColor.swift */; };
+		2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A967C10281EBCBF002A2210 /* ThemeViewController.swift */; };
 		2A9A8191281E6F6900186477 /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8190281E6F6900186477 /* IconViewController.swift */; };
 		2A9A8193281E6FB000186477 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8192281E6FB000186477 /* IconCell.swift */; };
 		2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */; };
@@ -87,6 +89,8 @@
 		2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProtocol.swift; sourceTree = "<group>"; };
 		2A55FE40281D151600380AF0 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		2A967C0E281EBAE8002A2210 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		2A967C10281EBCBF002A2210 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		2A9A8190281E6F6900186477 /* IconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewController.swift; sourceTree = "<group>"; };
 		2A9A8192281E6FB000186477 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		2AB9A282281C331B00698C11 /* RestockList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RestockList.entitlements; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				2A9A8190281E6F6900186477 /* IconViewController.swift */,
 				2ACEE1142817FF51001F84D4 /* EditViewController.swift */,
 				2A43EEDD2817B2C4001BD791 /* TableViewController.swift */,
+				2A967C10281EBCBF002A2210 /* ThemeViewController.swift */,
 				2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */,
 				2A55FE40281D151600380AF0 /* NotificationViewController.swift */,
 			);
@@ -215,6 +220,7 @@
 				2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */,
 				2A9A8192281E6FB000186477 /* IconCell.swift */,
 				2A383D102817B820000BCAF0 /* Item.swift */,
+				2A967C0E281EBAE8002A2210 /* UIColor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,7 +354,9 @@
 				2A43EEEE2817B597001BD791 /* EditProtocol.swift in Sources */,
 				2A55FE41281D151600380AF0 /* NotificationViewController.swift in Sources */,
 				2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */,
+				2A967C0F281EBAE8002A2210 /* UIColor.swift in Sources */,
 				2A9A8191281E6F6900186477 /* IconViewController.swift in Sources */,
+				2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */,
 				2A43EEDA2817B2C4001BD791 /* AppDelegate.swift in Sources */,
 				2A43EEDC2817B2C4001BD791 /* SceneDelegate.swift in Sources */,
 				2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */,

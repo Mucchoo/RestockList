@@ -44,6 +44,10 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         let realm = try! Realm(configuration: config)
         data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         tableView.reloadData()
+        
+        if let theme = UserDefaults.standard.object(forKey: "theme") {
+            UINavigationBar.appearance().backgroundColor = UIColor(named: "AccentColor\(theme)")
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
