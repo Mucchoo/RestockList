@@ -1078,7 +1078,7 @@
         <!--Proにアップグレード-->
         <scene sceneID="SOZ-ha-cnm">
             <objects>
-                <viewController id="cXf-2x-mZ1" sceneMemberID="viewController">
+                <viewController id="cXf-2x-mZ1" customClass="ProViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EL5-Z4-RnR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1136,17 +1136,17 @@
                                                         <rect key="frame" x="20" y="20" width="30" height="30"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bitmap.png" translatesAutoresizingMaskIntoConstraints="NO" id="nCa-UR-a70">
-                                                                <rect key="frame" x="4" y="4" width="22" height="22"/>
+                                                                <rect key="frame" x="7" y="7" width="15" height="15"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" name="AccentColor1"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="U9P-53-gzu"/>
-                                                            <constraint firstItem="nCa-UR-a70" firstAttribute="leading" secondItem="tRZ-L0-SCH" secondAttribute="leading" constant="4" id="YYY-bI-pT4"/>
-                                                            <constraint firstAttribute="bottom" secondItem="nCa-UR-a70" secondAttribute="bottom" constant="4" id="ZBZ-XZ-gMa"/>
-                                                            <constraint firstAttribute="trailing" secondItem="nCa-UR-a70" secondAttribute="trailing" constant="4" id="f8u-z5-hez"/>
+                                                            <constraint firstItem="nCa-UR-a70" firstAttribute="leading" secondItem="tRZ-L0-SCH" secondAttribute="leading" constant="7" id="YYY-bI-pT4"/>
+                                                            <constraint firstAttribute="bottom" secondItem="nCa-UR-a70" secondAttribute="bottom" constant="8" id="ZBZ-XZ-gMa"/>
+                                                            <constraint firstAttribute="trailing" secondItem="nCa-UR-a70" secondAttribute="trailing" constant="8" id="f8u-z5-hez"/>
                                                             <constraint firstAttribute="width" constant="30" id="kXg-7m-4kc"/>
-                                                            <constraint firstItem="nCa-UR-a70" firstAttribute="top" secondItem="tRZ-L0-SCH" secondAttribute="top" constant="4" id="wcw-1I-xlb"/>
+                                                            <constraint firstItem="nCa-UR-a70" firstAttribute="top" secondItem="tRZ-L0-SCH" secondAttribute="top" constant="7" id="wcw-1I-xlb"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイコン解放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6K-DM-Z8e">
@@ -1159,38 +1159,38 @@
                                                         <rect key="frame" x="20" y="279" width="30" height="30"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hammer.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="X0c-uT-t1S">
-                                                                <rect key="frame" x="4" y="2.5" width="22" height="24.5"/>
+                                                                <rect key="frame" x="5" y="3.5" width="20" height="22.5"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" name="AccentColor1"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="X0c-uT-t1S" secondAttribute="trailing" constant="4" id="6Ng-K4-DvX"/>
+                                                            <constraint firstAttribute="trailing" secondItem="X0c-uT-t1S" secondAttribute="trailing" constant="5" id="6Ng-K4-DvX"/>
                                                             <constraint firstAttribute="width" constant="30" id="8ty-ud-SEl"/>
-                                                            <constraint firstItem="X0c-uT-t1S" firstAttribute="top" secondItem="Xdg-Xt-Ihn" secondAttribute="top" constant="4" id="95r-cu-MBG"/>
+                                                            <constraint firstItem="X0c-uT-t1S" firstAttribute="top" secondItem="Xdg-Xt-Ihn" secondAttribute="top" constant="5" id="95r-cu-MBG"/>
                                                             <constraint firstAttribute="height" constant="30" id="9Gu-bd-VjA"/>
-                                                            <constraint firstAttribute="bottom" secondItem="X0c-uT-t1S" secondAttribute="bottom" constant="4" id="Qub-uM-ddN"/>
-                                                            <constraint firstItem="X0c-uT-t1S" firstAttribute="leading" secondItem="Xdg-Xt-Ihn" secondAttribute="leading" constant="4" id="TnZ-Yc-NeM"/>
+                                                            <constraint firstAttribute="bottom" secondItem="X0c-uT-t1S" secondAttribute="bottom" constant="5" id="Qub-uM-ddN"/>
+                                                            <constraint firstItem="X0c-uT-t1S" firstAttribute="leading" secondItem="Xdg-Xt-Ihn" secondAttribute="leading" constant="5" id="TnZ-Yc-NeM"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0O-O9-uT8">
                                                         <rect key="frame" x="20" y="573.5" width="30" height="30"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zaf-C3-EAc">
-                                                                <rect key="frame" x="4" y="3.5" width="22" height="20.5"/>
+                                                                <rect key="frame" x="5" y="5.5" width="20" height="18.5"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" name="AccentColor1"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="07s-Xv-7NN"/>
-                                                            <constraint firstItem="zaf-C3-EAc" firstAttribute="top" secondItem="r0O-O9-uT8" secondAttribute="top" constant="3" id="Ckh-WE-q0n"/>
-                                                            <constraint firstItem="zaf-C3-EAc" firstAttribute="leading" secondItem="r0O-O9-uT8" secondAttribute="leading" constant="4" id="HcS-6J-VXh"/>
+                                                            <constraint firstItem="zaf-C3-EAc" firstAttribute="top" secondItem="r0O-O9-uT8" secondAttribute="top" constant="5" id="Ckh-WE-q0n"/>
+                                                            <constraint firstItem="zaf-C3-EAc" firstAttribute="leading" secondItem="r0O-O9-uT8" secondAttribute="leading" constant="5" id="HcS-6J-VXh"/>
                                                             <constraint firstAttribute="bottom" secondItem="zaf-C3-EAc" secondAttribute="bottom" constant="5" id="Jac-Ja-y0H"/>
                                                             <constraint firstAttribute="width" constant="30" id="WYk-7p-hbc"/>
-                                                            <constraint firstAttribute="trailing" secondItem="zaf-C3-EAc" secondAttribute="trailing" constant="4" id="YKb-Ux-S0I"/>
+                                                            <constraint firstAttribute="trailing" secondItem="zaf-C3-EAc" secondAttribute="trailing" constant="5" id="YKb-Ux-S0I"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイテム数 20個 → 無制限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0k-tH-1MW">
-                                                        <rect key="frame" x="60" y="576.5" width="241" height="24"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイテム数：20個 → 無制限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0k-tH-1MW">
+                                                        <rect key="frame" x="60" y="576.5" width="257" height="24"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <color key="textColor" name="FontColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1255,6 +1255,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Proにアップグレード" id="l6y-8R-ao9"/>
+                    <connections>
+                        <outlet property="button" destination="S7b-LR-RJZ" id="Gmr-mq-mjn"/>
+                        <outletCollection property="iconBackground" destination="tRZ-L0-SCH" collectionClass="NSMutableArray" id="7fR-lf-X25"/>
+                        <outletCollection property="iconBackground" destination="Xdg-Xt-Ihn" collectionClass="NSMutableArray" id="DbK-sd-5Oo"/>
+                        <outletCollection property="iconBackground" destination="r0O-O9-uT8" collectionClass="NSMutableArray" id="QDB-tZ-COC"/>
+                        <outletCollection property="image" destination="nMv-Mu-uYT" collectionClass="NSMutableArray" id="HAu-8F-shg"/>
+                        <outletCollection property="image" destination="mYf-gW-UYC" collectionClass="NSMutableArray" id="Rle-6v-Q3i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DfP-kt-Jkb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
