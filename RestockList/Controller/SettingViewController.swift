@@ -25,6 +25,10 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     @IBAction func shareButtonTapped(_ sender: UIButton) {
         sender.backgroundColor = UIColor(.black.opacity(0.3))
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
