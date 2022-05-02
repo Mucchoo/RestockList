@@ -50,6 +50,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
             completeButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
             deleteButton.tintColor = UIColor(named: "AccentColor\(theme)")
             deleteButton.layer.borderColor = UIColor(named: "AccentColor\(theme)")?.cgColor
+            textFieldBackground.backgroundColor = UIColor(named: "AccentColor\(theme)")
         }
     }
         

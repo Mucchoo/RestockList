@@ -34,6 +34,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     override func viewWillAppear(_ animated: Bool) {
         if let theme = UserDefaults.standard.object(forKey: "theme") {
             addButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
+            textFieldBackground.backgroundColor = UIColor(named: "AccentColor\(theme)")
         }
     }
     
