@@ -44,20 +44,15 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         config.fileURL = url.appendingPathComponent("db.realm")
         let realm = try! Realm(configuration: config)
         data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
-        tableView.reloadData()
-        let scenes = UIApplication.shared.connectedScenes
-        let windowScene = scenes.first as? UIWindowScene
-        let window = windowScene?.windows.first
-        
         if let theme = UserDefaults.standard.object(forKey: "theme") {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = UIColor(named: "AccentColor\(theme)")
             navigationController?.navigationBar.standardAppearance = appearance
             navigationController?.navigationBar.scrollEdgeAppearance = appearance
-            window?.tintColor = UIColor(named: "AccentColor\(theme)")
-            tableView.reloadData()
         }
+        tableView.reloadData()
+
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
