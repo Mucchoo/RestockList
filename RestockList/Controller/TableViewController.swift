@@ -7,6 +7,7 @@
 
 import RealmSwift
 import UIKit
+import SwiftUI
 
 class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     
@@ -44,9 +45,18 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         let realm = try! Realm(configuration: config)
         data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         tableView.reloadData()
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        let window = windowScene?.windows.first
         
         if let theme = UserDefaults.standard.object(forKey: "theme") {
-            UINavigationBar.appearance().backgroundColor = UIColor(named: "AccentColor\(theme)")
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor(named: "AccentColor\(theme)")
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+            window?.tintColor = UIColor(named: "AccentColor\(theme)")
+            tableView.reloadData()
         }
     }
     
@@ -73,6 +83,15 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         cell.checkButton.tag = data[indexPath.row].id
         cell.delegate = self
         cell.updateDelegate = self
+        if let theme = UserDefaults.standard.object(forKey: "theme") {
+            cell.periodFrame.layer.borderColor = UIColor(named: "AccentColor\(theme)")?.cgColor
+            cell.progressBar.tintColor = UIColor(named: "AccentColor\(theme)")
+            cell.editButton.tintColor = UIColor(named: "AccentColor\(theme)")
+            cell.checkButton.tintColor = UIColor(named: "AccentColor\(theme)")
+            cell.minusButton.tintColor = UIColor(named: "AccentColor\(theme)")
+            cell.plusButton.tintColor = UIColor(named: "AccentColor\(theme)")
+            cell.periodLabelRight.textColor = UIColor(named: "AccentColor\(theme)")
+        }
         return cell
     }
     

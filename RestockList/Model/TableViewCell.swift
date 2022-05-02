@@ -40,6 +40,7 @@ class TableViewCell: UITableViewCell {
         data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
     }
     
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

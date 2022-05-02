@@ -36,10 +36,10 @@
                                                         <constraint firstAttribute="height" constant="35" id="RcU-6X-Aji"/>
                                                         <constraint firstAttribute="width" constant="35" id="c0r-W1-Lik"/>
                                                     </constraints>
+                                                    <color key="tintColor" name="AccentColor"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="checkmark.circle.fill" catalog="system" title="">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25"/>
-                                                        <color key="baseForegroundColor" name="AccentColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="checkButtonTapped:" destination="9bB-1S-YM4" eventType="touchUpInside" id="lcL-Ed-KHD"/>
@@ -51,10 +51,10 @@
                                                         <constraint firstAttribute="width" constant="20" id="65k-zr-8aM"/>
                                                         <constraint firstAttribute="height" constant="20" id="ZSm-Vp-DzY"/>
                                                     </constraints>
+                                                    <color key="tintColor" name="AccentColor"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="ellipsis.circle" catalog="system" title="">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="15"/>
-                                                        <color key="baseForegroundColor" name="AccentColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="editButtonTapped:" destination="9bB-1S-YM4" eventType="touchUpInside" id="PLr-a0-e4p"/>
@@ -66,10 +66,10 @@
                                                         <constraint firstAttribute="height" constant="30" id="hb1-Un-1dg"/>
                                                         <constraint firstAttribute="width" constant="30" id="lVd-90-cLF"/>
                                                     </constraints>
+                                                    <color key="tintColor" name="AccentColor"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
-                                                        <color key="baseForegroundColor" name="AccentColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="plusButtonTapped:" destination="9bB-1S-YM4" eventType="touchUpInside" id="wMA-Rd-rSO"/>
@@ -81,10 +81,10 @@
                                                         <constraint firstAttribute="height" constant="30" id="a1U-BC-y4s"/>
                                                         <constraint firstAttribute="width" constant="30" id="u4A-k9-Bwd"/>
                                                     </constraints>
+                                                    <color key="tintColor" name="AccentColor"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
-                                                        <color key="baseForegroundColor" name="AccentColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="minusButtonTapped:" destination="9bB-1S-YM4" eventType="touchUpInside" id="LRL-2v-9hI"/>
@@ -268,7 +268,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="削除">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
-                                    <color key="baseForegroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="deleteButtonTapped:" destination="oYV-Dc-2yJ" eventType="touchUpInside" id="CQx-Th-fcs"/>
@@ -930,7 +929,7 @@
                                                     <action selector="buttonTapped:" destination="idJ-WR-CfA" eventType="touchUpInside" id="AFq-py-nqZ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLN-DM-oce">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLN-DM-oce">
                                                 <rect key="frame" x="138" y="0.0" width="138" height="387"/>
                                                 <color key="backgroundColor" name="AccentColor1"/>
                                                 <state key="normal" title="Button"/>
@@ -939,7 +938,7 @@
                                                     <action selector="buttonTapped:" destination="idJ-WR-CfA" eventType="touchUpInside" id="N1t-mS-zGR"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvK-O9-4S4">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvK-O9-4S4">
                                                 <rect key="frame" x="276" y="0.0" width="138" height="387"/>
                                                 <color key="backgroundColor" name="AccentColor2"/>
                                                 <state key="normal" title="Button"/>
@@ -953,7 +952,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Epq-no-W6H">
                                         <rect key="frame" x="0.0" y="387" width="414" height="387"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEH-8m-mN0">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEH-8m-mN0">
                                                 <rect key="frame" x="0.0" y="0.0" width="138" height="387"/>
                                                 <color key="backgroundColor" name="AccentColor3"/>
                                                 <state key="normal" title="Button"/>
@@ -962,7 +961,7 @@
                                                     <action selector="buttonTapped:" destination="idJ-WR-CfA" eventType="touchUpInside" id="s32-sa-qac"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJX-IO-0jU">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJX-IO-0jU">
                                                 <rect key="frame" x="138" y="0.0" width="138" height="387"/>
                                                 <color key="backgroundColor" name="AccentColor4"/>
                                                 <state key="normal" title="Button"/>
@@ -971,7 +970,7 @@
                                                     <action selector="buttonTapped:" destination="idJ-WR-CfA" eventType="touchUpInside" id="ePJ-xx-t0F"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAX-om-1tu">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAX-om-1tu">
                                                 <rect key="frame" x="276" y="0.0" width="138" height="387"/>
                                                 <color key="backgroundColor" name="AccentColor5"/>
                                                 <state key="normal" title="Button"/>

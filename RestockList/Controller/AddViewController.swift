@@ -31,6 +31,12 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let theme = UserDefaults.standard.object(forKey: "theme") {
+            addButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        }
+    }
+    
     let pickerArray:[Int] = ([Int])(1...365)
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

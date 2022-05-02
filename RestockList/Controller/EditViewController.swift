@@ -44,6 +44,14 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
         itemTextField.text = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.name ?? ""
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let theme = UserDefaults.standard.object(forKey: "theme") {
+            completeButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
+            deleteButton.tintColor = UIColor(named: "AccentColor\(theme)")
+            deleteButton.layer.borderColor = UIColor(named: "AccentColor\(theme)")?.cgColor
+        }
+    }
         
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         itemTextField.endEditing(true)

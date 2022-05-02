@@ -19,6 +19,12 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         iconBackground.forEach{ $0.layer.cornerRadius = 8}
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let theme = UserDefaults.standard.object(forKey: "theme") {
+            iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
+        }
+    }
+    
     @IBAction func shareButtonTapped(_ sender: UIButton) {
         sender.backgroundColor = UIColor(.black.opacity(0.3))
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
