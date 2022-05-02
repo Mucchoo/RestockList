@@ -996,6 +996,14 @@
             </objects>
             <point key="canvasLocation" x="2128.985507246377" y="140.625"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="LmA-8g-LXY">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Qjf-uX-GnN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ku-ye-6OE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="561" y="828"/>
+        </scene>
         <!--通知設定-->
         <scene sceneID="dIy-DD-eJs">
             <objects>
