@@ -70,6 +70,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 UNUserNotificationCenter.current().delegate = self
             }
         }
+        let theme = UserDefaults.standard.object(forKey: "Theme") ?? 1
+        let appearance = UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
+        appearance.pageIndicatorTintColor = UIColor.white
+        appearance.currentPageIndicatorTintColor = UIColor(named: "AccentColor\(theme)")
         return true
     }
 

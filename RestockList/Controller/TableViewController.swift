@@ -44,13 +44,12 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         config.fileURL = url.appendingPathComponent("db.realm")
         let realm = try! Realm(configuration: config)
         data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
-        if let theme = UserDefaults.standard.object(forKey: "theme") {
-            let appearance = UINavigationBarAppearance()
-            appearance.backgroundColor = UIColor(named: "AccentColor\(theme)")
-            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-            navigationController?.navigationBar.standardAppearance = appearance
-            navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        }
+        let theme = UserDefaults.standard.object(forKey: "Theme") ?? 1
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         tableView.reloadData()
 
     }

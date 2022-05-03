@@ -46,12 +46,11 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let theme = UserDefaults.standard.object(forKey: "theme") {
-            completeButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
-            deleteButton.tintColor = UIColor(named: "AccentColor\(theme)")
-            deleteButton.layer.borderColor = UIColor(named: "AccentColor\(theme)")?.cgColor
-            textFieldBackground.backgroundColor = UIColor(named: "AccentColor\(theme)")
-        }
+        let theme = UserDefaults.standard.object(forKey: "Theme") ?? 1
+        completeButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        deleteButton.tintColor = UIColor(named: "AccentColor\(theme)")
+        deleteButton.layer.borderColor = UIColor(named: "AccentColor\(theme)")?.cgColor
+        textFieldBackground.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }
         
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

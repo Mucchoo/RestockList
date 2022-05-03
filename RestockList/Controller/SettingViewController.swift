@@ -20,9 +20,8 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let theme = UserDefaults.standard.object(forKey: "theme") {
-            iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
-        }
+        let theme = UserDefaults.standard.object(forKey: "Theme") ?? 1
+        iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -58,10 +57,9 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
             sender.backgroundColor = UIColor(.black.opacity(0))
         }
         let mailViewController = MFMailComposeViewController()
-        let toRecipients = ["yazujumusa@gmail.com"]
         mailViewController.mailComposeDelegate = self
         mailViewController.setSubject("ご意見・ご要望")
-        mailViewController.setToRecipients(toRecipients) //Toアドレスの表示
+        mailViewController.setToRecipients(["yazujumusa@gmail.com"])
         mailViewController.setMessageBody("メールの本文", isHTML: false)
         present(mailViewController, animated: true, completion: nil)
     }

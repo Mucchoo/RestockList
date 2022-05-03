@@ -457,7 +457,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4R-gv-kil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2129" y="828"/>
+            <point key="canvasLocation" x="2864" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="InE-IH-YOL">
@@ -675,6 +675,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="JEw-10-5Ji" secondAttribute="bottom" constant="8" id="rVd-4c-r4I"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Qjf-uX-GnN" kind="show" id="ih6-RN-HNt"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0Ar-8J-VoF">
                                         <rect key="frame" x="20" y="271.5" width="374" height="46.5"/>
@@ -996,13 +999,75 @@
             </objects>
             <point key="canvasLocation" x="2128.985507246377" y="140.625"/>
         </scene>
-        <!--Page View Controller-->
+        <!--使い方-->
         <scene sceneID="LmA-8g-LXY">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Qjf-uX-GnN" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Qjf-uX-GnN" customClass="PageViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="使い方" id="AKI-YU-iS4"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ku-ye-6OE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="828"/>
+            <point key="canvasLocation" x="-191" y="806"/>
+        </scene>
+        <!--Tutorial1 View Controller-->
+        <scene sceneID="N7H-La-dbu">
+            <objects>
+                <viewController storyboardIdentifier="Tutorial1" id="JdZ-pD-C7n" customClass="Tutorial1ViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ekf-9q-7z5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="d0q-rr-6SQ"/>
+                        <color key="backgroundColor" name="AccentColor1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9H4-9h-fRh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="561" y="806"/>
+        </scene>
+        <!--Tutorial2 View Controller-->
+        <scene sceneID="fnj-89-kfT">
+            <objects>
+                <viewController storyboardIdentifier="Tutorial2" id="b6d-TE-rdV" customClass="Tutorial2ViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3RA-U0-ZEY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="KFz-wB-0W7"/>
+                        <color key="backgroundColor" name="AccentColor2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KLB-Cl-9hO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1341" y="806"/>
+        </scene>
+        <!--Tutorial3 View Controller-->
+        <scene sceneID="Ta4-tt-3wk">
+            <objects>
+                <viewController storyboardIdentifier="Tutorial3" id="4Fc-I0-nki" customClass="Tutorial3ViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hzm-0c-xgf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ClY-gy-WeU"/>
+                        <color key="backgroundColor" name="AccentColor3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SaV-kQ-58j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2129" y="806"/>
+        </scene>
+        <!--Tutorial4 View Controller-->
+        <scene sceneID="LHt-QD-lh8">
+            <objects>
+                <viewController storyboardIdentifier="Tutorial4" id="VtA-tc-sw3" customClass="Tutorial4ViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ak-OM-ZfP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="CJl-61-laO"/>
+                        <color key="backgroundColor" name="AccentColor4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QbK-U5-r7H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2864" y="806"/>
         </scene>
         <!--通知設定-->
         <scene sceneID="dIy-DD-eJs">
@@ -1081,7 +1146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiU-0h-Fu2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1341" y="828"/>
+            <point key="canvasLocation" x="2864" y="-514"/>
         </scene>
         <!--Proにアップグレード-->
         <scene sceneID="SOZ-ha-cnm">

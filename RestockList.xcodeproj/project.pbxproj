@@ -31,6 +31,11 @@
 		2A45CF7D281BC74000671727 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Item.swift */; };
 		2A55FE41281D151600380AF0 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A55FE40281D151600380AF0 /* NotificationViewController.swift */; };
 		2A628C2528200D2E00952956 /* ProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2428200D2E00952956 /* ProViewController.swift */; };
+		2A628C272820A88E00952956 /* Tutorial1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C262820A88E00952956 /* Tutorial1ViewController.swift */; };
+		2A628C292820A8A300952956 /* Tutorial2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C282820A8A300952956 /* Tutorial2ViewController.swift */; };
+		2A628C2B2820A8B000952956 /* Tutorial3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2A2820A8B000952956 /* Tutorial3ViewController.swift */; };
+		2A628C2D2820A8BD00952956 /* Tutorial4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2C2820A8BD00952956 /* Tutorial4ViewController.swift */; };
+		2A628C2F2820A95100952956 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2E2820A95100952956 /* PageViewController.swift */; };
 		2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */; };
 		2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A967C10281EBCBF002A2210 /* ThemeViewController.swift */; };
 		2A9A8191281E6F6900186477 /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8190281E6F6900186477 /* IconViewController.swift */; };
@@ -89,6 +94,11 @@
 		2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProtocol.swift; sourceTree = "<group>"; };
 		2A55FE40281D151600380AF0 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		2A628C2428200D2E00952956 /* ProViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
+		2A628C262820A88E00952956 /* Tutorial1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial1ViewController.swift; sourceTree = "<group>"; };
+		2A628C282820A8A300952956 /* Tutorial2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial2ViewController.swift; sourceTree = "<group>"; };
+		2A628C2A2820A8B000952956 /* Tutorial3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial3ViewController.swift; sourceTree = "<group>"; };
+		2A628C2C2820A8BD00952956 /* Tutorial4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial4ViewController.swift; sourceTree = "<group>"; };
+		2A628C2E2820A95100952956 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2A967C10281EBCBF002A2210 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		2A9A8190281E6F6900186477 /* IconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewController.swift; sourceTree = "<group>"; };
@@ -196,9 +206,14 @@
 				2ACEE1122817FF38001F84D4 /* AddViewController.swift */,
 				2A9A8190281E6F6900186477 /* IconViewController.swift */,
 				2ACEE1142817FF51001F84D4 /* EditViewController.swift */,
+				2A628C2E2820A95100952956 /* PageViewController.swift */,
 				2A43EEDD2817B2C4001BD791 /* TableViewController.swift */,
 				2A967C10281EBCBF002A2210 /* ThemeViewController.swift */,
 				2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */,
+				2A628C262820A88E00952956 /* Tutorial1ViewController.swift */,
+				2A628C282820A8A300952956 /* Tutorial2ViewController.swift */,
+				2A628C2A2820A8B000952956 /* Tutorial3ViewController.swift */,
+				2A628C2C2820A8BD00952956 /* Tutorial4ViewController.swift */,
 				2A55FE40281D151600380AF0 /* NotificationViewController.swift */,
 			);
 			path = Controller;
@@ -351,16 +366,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A43EEDE2817B2C4001BD791 /* TableViewController.swift in Sources */,
+				2A628C272820A88E00952956 /* Tutorial1ViewController.swift in Sources */,
 				2A43EEEE2817B597001BD791 /* EditProtocol.swift in Sources */,
 				2A628C2528200D2E00952956 /* ProViewController.swift in Sources */,
 				2A55FE41281D151600380AF0 /* NotificationViewController.swift in Sources */,
 				2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */,
 				2A9A8191281E6F6900186477 /* IconViewController.swift in Sources */,
+				2A628C2D2820A8BD00952956 /* Tutorial4ViewController.swift in Sources */,
+				2A628C292820A8A300952956 /* Tutorial2ViewController.swift in Sources */,
 				2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */,
 				2A43EEDA2817B2C4001BD791 /* AppDelegate.swift in Sources */,
+				2A628C2B2820A8B000952956 /* Tutorial3ViewController.swift in Sources */,
 				2A43EEDC2817B2C4001BD791 /* SceneDelegate.swift in Sources */,
 				2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */,
 				2A9A8193281E6FB000186477 /* IconCell.swift in Sources */,
+				2A628C2F2820A95100952956 /* PageViewController.swift in Sources */,
 				2A383D112817B820000BCAF0 /* Item.swift in Sources */,
 				2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */,
 				2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,

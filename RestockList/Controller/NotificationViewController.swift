@@ -24,9 +24,8 @@ class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let theme = UserDefaults.standard.object(forKey: "theme") {
-            button.backgroundColor = UIColor(named: "AccentColor\(theme)")
-        }
+        let theme = UserDefaults.standard.object(forKey: "Theme") ?? 1
+        button.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }
     
     let pickerArray: [Int] = ([Int])(1...30)
