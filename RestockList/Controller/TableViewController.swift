@@ -30,6 +30,9 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
                 realm.beginWrite()
                 for Item in realm.objects(Item.self) {
                     Item.remainingTime -= elapsedDays
+                    if Item.remainingTime < 0 {
+                        Item.remainingTime = 0
+                    }
                 }
                 try! realm.commitWrite()
             }

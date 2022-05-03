@@ -15,9 +15,9 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func scheduleAppRefresh() {
-
         let request = BGAppRefreshTaskRequest(identifier: "com.yazujumusa.RestockList.refresh")
-        request.earliestBeginDate = Date(timeIntervalSinceNow: 30 * 60)
+        //15分に1度更新 本当は30分にしとく
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 15 * 60)
         do {
             try BGTaskScheduler.shared.submit(request)
         }
@@ -41,6 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 realm.beginWrite()
                 for Item in realm.objects(Item.self) {
                     Item.remainingTime -= elapsedDays
+                    if Item.remainingTime < 0 {
+                        Item.remainingTime = 0
+                    }
                 }
                 try! realm.commitWrite()
                 WidgetCenter.shared.reloadAllTimelines()
@@ -52,7 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 })
                 if itemNotRemaining != "" {
                     let content = UNMutableNotificationContent()
-                    content.title = "\(itemNotRemaining)が残りわずかです"
+                    content.title = "無くなりそうなアイテムがあります"
+                    content.body = "\(itemNotRemaining)が残りわずかです。"
                     content.sound = UNNotificationSound.default
                     
                     let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
@@ -64,6 +68,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.yazujumusa.RestockList.refresh", using: nil) { task in
+            self.handleAppRefresh(task: task as! BGAppRefreshTask)
+        }
         UNUserNotificationCenter.current().requestAuthorization(
         options: [.alert, .sound]){ (granted, _) in
             if granted{
