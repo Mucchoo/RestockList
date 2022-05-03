@@ -35,7 +35,10 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
             }
         }
         UserDefaults.standard.set(currentDate, forKey: "lastDate")
-        
+        if UserDefaults.standard.bool(forKey: "tutorial") == false {
+            performSegue(withIdentifier: "showTutorial", sender: nil)
+            UserDefaults.standard.set(true, forKey: "tutorial")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

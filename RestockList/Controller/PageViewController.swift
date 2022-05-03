@@ -15,10 +15,7 @@ class PageViewController: UIPageViewController {
         super.viewDidLoad()
         
         initPageViewController()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-
+        navigationItem.setHidesBackButton(true, animated: true)
     }
     
     private func initPageViewController() {

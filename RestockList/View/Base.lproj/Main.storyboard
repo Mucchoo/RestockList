@@ -191,6 +191,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="acE-1b-0fM" id="Tej-DM-Dys"/>
+                        <segue destination="Qjf-uX-GnN" kind="show" identifier="showTutorial" id="i63-5U-zSb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vG7-TU-xfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1612,6 +1613,9 @@
             <point key="canvasLocation" x="2128.985507246377" y="-514.28571428571422"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="i63-5U-zSb"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Bitmap.png" width="330" height="330"/>
