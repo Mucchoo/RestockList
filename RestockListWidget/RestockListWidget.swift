@@ -11,18 +11,19 @@ import RealmSwift
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        return SimpleEntry(date: Date(), data: [])
+        return SimpleEntry(date: Date(), data: [], theme: 1)
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let entry = SimpleEntry(date: Date(), data: [])
+        let entry = SimpleEntry(date: Date(), data: [], theme: 1)
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
         let realm = r.realm
         let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
-        let entry = SimpleEntry(date: Date(), data: data)
+        let theme: Int = r.user.object(forKey: "theme") as? Int ?? 1
+        let entry = SimpleEntry(date: Date(), data: data, theme: theme)
         var entries: [SimpleEntry] = []
         entries.append(entry)
         let timeline = Timeline(entries: entries, policy: .atEnd)
@@ -34,19 +35,22 @@ struct Provider: TimelineProvider {
 struct SimpleEntry: TimelineEntry {
     var date: Date
     let data: [Item]
+    let theme: Int
 }
 
 struct WidgetEntryView : View {
     @Environment(\.widgetFamily) var family
     var data: [Item]
+    var theme: Int
     var entry: Provider.Entry
     init(entry: Provider.Entry){
         self.entry = entry
         data = entry.data
+        theme = entry.theme
     }
     var body: some View {
         ZStack {
-            Color("AccentColor1")
+            Color("AccentColor\(theme)")
             VStack (spacing: 5){
                 Spacer()
                 if family == .systemLarge {

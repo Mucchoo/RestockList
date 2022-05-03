@@ -29,7 +29,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let theme = UserDefaults.standard.object(forKey: "theme") ?? 1
+        let theme = r.user.object(forKey: "theme") ?? 1
         addButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
         textFieldBackground.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }

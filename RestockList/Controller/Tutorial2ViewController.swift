@@ -18,7 +18,7 @@ class Tutorial2ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let theme = UserDefaults.standard.object(forKey: "theme") ?? 1
+        let theme = r.user.object(forKey: "theme") ?? 1
         arrow.tintColor = UIColor(named: "AccentColor\(theme)")
         background.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }

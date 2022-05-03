@@ -21,9 +21,8 @@ class ProViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let theme = UserDefaults.standard.object(forKey: "theme") {
-            iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
-            button.backgroundColor = UIColor(named: "AccentColor\(theme)")
-        }
+        let theme = r.user.object(forKey: "theme") ?? 1
+        iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
+        button.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }
 }

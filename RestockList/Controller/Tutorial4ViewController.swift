@@ -21,7 +21,7 @@ class Tutorial4ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let theme = UserDefaults.standard.object(forKey: "theme") ?? 1
+        let theme = r.user.object(forKey: "theme") ?? 1
         image.tintColor = UIColor(named: "AccentColor\(theme)")
         button.backgroundColor = UIColor(named: "AccentColor\(theme)")
         background.backgroundColor = UIColor(named: "AccentColor\(theme)")
