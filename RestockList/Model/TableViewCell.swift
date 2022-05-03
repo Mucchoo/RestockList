@@ -48,7 +48,6 @@ class TableViewCell: UITableViewCell {
     
     @IBAction func plusButtonTapped(_ sender: UIButton) {
         let realm = r.realm
-
         if realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.remainingTime < realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.period {
             realm.beginWrite()
             realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.remainingTime += 1
