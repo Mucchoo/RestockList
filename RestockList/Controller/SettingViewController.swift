@@ -20,7 +20,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let theme = UserDefaults.standard.object(forKey: "Theme") ?? 1
+        let theme = UserDefaults.standard.object(forKey: "theme") ?? 1
         iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
     }
     

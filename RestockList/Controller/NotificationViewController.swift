@@ -24,7 +24,7 @@ class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let theme = UserDefaults.standard.object(forKey: "Theme") ?? 1
+        let theme = UserDefaults.standard.object(forKey: "theme") ?? 1
         button.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }
     
