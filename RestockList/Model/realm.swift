@@ -16,4 +16,6 @@ struct r {
         let realm = try! Realm(configuration: config)
         return realm
     }()
+    
+    static var user = UserDefaults(suiteName: "group.com.yazujumusa.RestockListWidget")!
 }

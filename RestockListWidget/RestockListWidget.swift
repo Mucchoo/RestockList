@@ -11,16 +11,11 @@ import RealmSwift
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        let realm = r.realm
-        let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
-        return SimpleEntry(date: Date(), data: data)
+        return SimpleEntry(date: Date(), data: [])
     }
     
-    
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let realm = r.realm
-        let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
-        let entry = SimpleEntry(date: Date(), data: data)
+        let entry = SimpleEntry(date: Date(), data: [])
         completion(entry)
     }
     
@@ -51,7 +46,7 @@ struct WidgetEntryView : View {
     }
     var body: some View {
         ZStack {
-            Color("WidgetBackground")
+            Color("AccentColor1")
             VStack (spacing: 5){
                 Spacer()
                 if family == .systemLarge {
