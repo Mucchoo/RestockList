@@ -56,32 +56,104 @@ struct WidgetEntryView : View {
                 Spacer()
                 if family == .systemLarge {
                     if data.count > 10 {
-                        ForEach(0..<10){ i in
-                            WidgetRowView(text: data[i].name, period: data[i].period, isSmall: false)
+                        ForEach(0..<10){ num in
+                            HStack(spacing: 0){
+                                Text("\(data[num].name) ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .lineLimit(1)
+                                Spacer()
+                                Text("\(data[num].remainingTime)日 ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                            }
+                            Rectangle()
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
+                                .background(Color.white)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 5)
                         }
                     } else {
-                        ForEach(0..<data.count, id: \.self){ i in
-                            WidgetRowView(text: data[i].name, period: data[i].period, isSmall: false)
+                        ForEach(0..<data.count, id: \.self){ num in
+                            HStack(spacing: 0){
+                                Text("\(data[num].name) ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .lineLimit(1)
+                                Spacer()
+                                Text("\(data[num].remainingTime)日 ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                            }
+                            Rectangle()
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
+                                .background(Color.white)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 5)
                         }
                     }
                 } else if family == .systemMedium {
                     if data.count > 4 {
-                        ForEach(0..<4){ i in
-                            WidgetRowView(text: data[i].name, period: data[i].period, isSmall: false)
+                        ForEach(0..<4){ num in
+                            HStack(spacing: 0){
+                                Text("\(data[num].name) ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .lineLimit(1)
+                                Spacer()
+                                Text("\(data[num].remainingTime)日 ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                            }
+                            Rectangle()
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 5)
                         }
                     } else {
-                        ForEach(0..<data.count, id: \.self){ i in
-                            WidgetRowView(text: data[i].name, period: data[i].period, isSmall: false)
+                        ForEach(0..<data.count, id: \.self){ num in
+                            HStack(spacing: 0){
+                                Text("\(data[num].name) ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .lineLimit(1)
+                                Spacer()
+                                Text("\(data[num].remainingTime)日 ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                            }
+                            Rectangle()
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 5)
                         }
                     }
                 } else {
                     if data.count > 5 {
-                        ForEach(0..<5){ i in
-                            WidgetRowView(text: data[i].name, period: data[i].period, isSmall: true)
+                        ForEach(0..<5){ num in
+                            HStack(spacing: 0) {
+                                Text("\(data[num].name) ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .lineLimit(1)
+                                Spacer()
+                                Text("\(data[num].remainingTime)日 ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                            }.padding(.bottom, 5)
                         }
                     } else {
-                        ForEach(0..<data.count, id: \.self){ i in
-                            WidgetRowView(text: data[i].name, period: data[i].period, isSmall: true)
+                        ForEach(0..<data.count, id: \.self){ num in
+                            HStack(spacing: 0) {
+                                Text("\(data[num].name) ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .lineLimit(1)
+                                Spacer()
+                                Text("\(data[num].remainingTime)日 ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .bold))
+                            }.padding(.bottom, 5)
                         }
                     }
                 }
@@ -105,28 +177,28 @@ struct MyWidget: Widget {
     }
 }
 
-struct WidgetRowView: View {
-    var text: String
-    var period: Int
-    var isSmall: Bool
-    var body: some View {
-        HStack(spacing: 0) {
-            Text("\(text) ")
-                .foregroundColor(.white)
-                .font(.system(size: 14, weight: .bold))
-                .lineLimit(1)
-            Spacer()
-            Text("\(period)日 ")
-                .foregroundColor(.white)
-                .font(.system(size: 14, weight: .bold))
-        }
-        if isSmall {
-            self.padding(.bottom, 5)
-        } else {
-            Rectangle()
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
-                .foregroundColor(Color.white)
-                .padding(.bottom, 5)
-        }
-    }
-}
+//struct WidgetRowView: View {
+//    var text: String
+//    var period: Int
+//    var isSmall: Bool
+//    var body: some View {
+//        HStack(spacing: 0) {
+//            Text("\(text) ")
+//                .foregroundColor(.white)
+//                .font(.system(size: 14, weight: .bold))
+//                .lineLimit(1)
+//            Spacer()
+//            Text("\(period)日 ")
+//                .foregroundColor(.white)
+//                .font(.system(size: 14, weight: .bold))
+//        }
+//        if isSmall {
+//            self.padding(.bottom, 5)
+//        } else {
+//            Rectangle()
+//                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
+//                .foregroundColor(Color.white)
+//                .padding(.bottom, 5)
+//        }
+//    }
+//}
