@@ -51,6 +51,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
         deleteButton.tintColor = UIColor(named: "AccentColor\(theme)")
         deleteButton.layer.borderColor = UIColor(named: "AccentColor\(theme)")?.cgColor
         textFieldBackground.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        itemTextField.tintColor = UIColor(named: "AccentColor\(theme)")
     }
         
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
