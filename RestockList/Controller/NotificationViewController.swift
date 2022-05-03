@@ -14,11 +14,9 @@ class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         button.layer.cornerRadius = 20
         picker.dataSource = self
         picker.delegate = self
-        
         let notificationCondition = UserDefaults.standard.object(forKey: "notificationCondition") as? Int ?? 3
         picker.selectRow(notificationCondition - 1 , inComponent: 0, animated: true)
     }
@@ -47,5 +45,4 @@ class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPick
         UserDefaults.standard.set(selected, forKey: "notificationCondition")
         navigationController?.popViewController(animated: true)
     }
-    
 }

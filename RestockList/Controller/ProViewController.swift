@@ -18,7 +18,6 @@ class ProViewController: UIViewController {
         iconBackground.forEach{ $0.layer.cornerRadius = 15}
         button.layer.cornerRadius = 20
         image.forEach{ $0.layer.cornerRadius = 20 }
-
     }
     
     override func viewWillAppear(_ animated: Bool) {

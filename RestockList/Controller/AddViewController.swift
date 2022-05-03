@@ -20,15 +20,12 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         textFieldBackground.layer.cornerRadius = 10
         itemTextField.becomeFirstResponder()
         addButton.layer.cornerRadius = 20
-        
         itemTextField.delegate = self
         periodPickerView.dataSource = self
         periodPickerView.delegate = self
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,12 +57,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
         if itemTextField.text != "" {
             let period = periodPickerView.selectedRow(inComponent: 0) + 1
             let item = itemTextField.text!
-            
-            var config = Realm.Configuration()
-            let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
-            config.fileURL = url.appendingPathComponent("db.realm")
-            let realm = try! Realm(configuration: config)
-            
+            let realm = r.realm
             realm.beginWrite()
             let newItem = Item()
             newItem.period = period
@@ -73,7 +65,6 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
             newItem.name = item
             realm.add(newItem)
             try! realm.commitWrite()
-            
             navigationController?.popViewController(animated: true)
         } else {
             itemTextField.placeholder = "アイテム名を入力してください"

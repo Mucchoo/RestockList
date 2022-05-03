@@ -18,11 +18,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         super.viewDidLoad()
         tableView.delegate = self
         
-        var config = Realm.Configuration()
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
-        config.fileURL = url.appendingPathComponent("db.realm")
-        let realm = try! Realm(configuration: config)
-        
+        let realm = r.realm
         let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
         if let lastDate = UserDefaults.standard.object(forKey: "lastDate") as? Int {
             let elapsedDays = currentDate - lastDate
@@ -45,10 +41,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        var config = Realm.Configuration()
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
-        config.fileURL = url.appendingPathComponent("db.realm")
-        let realm = try! Realm(configuration: config)
+        let realm = r.realm
         data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         let theme = UserDefaults.standard.object(forKey: "theme") ?? 1
         let appearance = UINavigationBarAppearance()

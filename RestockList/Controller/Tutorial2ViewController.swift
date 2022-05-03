@@ -14,7 +14,6 @@ class Tutorial2ViewController: UIViewController {
     @IBOutlet weak var background: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         card.layer.cornerRadius = 20
     }
     

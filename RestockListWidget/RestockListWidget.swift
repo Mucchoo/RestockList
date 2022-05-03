@@ -11,38 +11,25 @@ import RealmSwift
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        var config = Realm.Configuration()
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
-        config.fileURL = url.appendingPathComponent("db.realm")
-        let realm = try! Realm(configuration: config)
+        let realm = r.realm
         let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
-        
         return SimpleEntry(date: Date(), data: data)
     }
     
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        var config = Realm.Configuration()
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
-        config.fileURL = url.appendingPathComponent("db.realm")
-        let realm = try! Realm(configuration: config)
+        let realm = r.realm
         let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
-        
         let entry = SimpleEntry(date: Date(), data: data)
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
-        var config = Realm.Configuration()
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
-        config.fileURL = url.appendingPathComponent("db.realm")
-        let realm = try! Realm(configuration: config)
+        let realm = r.realm
         let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
-        
         let entry = SimpleEntry(date: Date(), data: data)
         var entries: [SimpleEntry] = []
         entries.append(entry)
-        
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -63,7 +50,6 @@ struct WidgetEntryView : View {
         data = entry.data
     }
     var body: some View {
-        //3.アイテム名と残り日数を取得する
         ZStack {
             Color("WidgetBackground")
             VStack (spacing: 5){

@@ -16,8 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func scheduleAppRefresh() {
         let request = BGAppRefreshTaskRequest(identifier: "com.yazujumusa.RestockList.refresh")
-        //15分に1度更新 本当は30分にしとく
-        request.earliestBeginDate = Date(timeIntervalSinceNow: 15 * 60)
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 30 * 60)
         do {
             try BGTaskScheduler.shared.submit(request)
         }
@@ -28,12 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func handleAppRefresh(task: BGAppRefreshTask) {
         self.scheduleAppRefresh()
-        var config = Realm.Configuration()
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
-        config.fileURL = url.appendingPathComponent("db.realm")
-        let realm = try! Realm(configuration: config)
+        let realm = r.realm
         let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
-        
         let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
         if let lastDate = UserDefaults.standard.object(forKey: "lastDate") as? Int {
             let elapsedDays = currentDate - lastDate
@@ -47,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
                 try! realm.commitWrite()
                 WidgetCenter.shared.reloadAllTimelines()
-                
                 var itemNotRemaining = ""
                 let notificationCondition = UserDefaults.standard.object(forKey: "notificationCondition") as? Int ?? 3
                 data.filter({$0.remainingTime < notificationCondition + 1}).forEach({ item in
@@ -58,7 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     content.title = "無くなりそうなアイテムがあります"
                     content.body = "\(itemNotRemaining)が残りわずかです。"
                     content.sound = UNNotificationSound.default
-                    
                     let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
                     UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                 }
@@ -86,7 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     }
-
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate{

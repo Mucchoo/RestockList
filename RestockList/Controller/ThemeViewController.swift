@@ -17,5 +17,4 @@ class ThemeViewController: UIViewController {
         UserDefaults.standard.set(sender.tag, forKey: "theme")
         navigationController?.popToRootViewController(animated: true)
     }
-    
 }

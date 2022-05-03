@@ -23,26 +23,19 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         completeButton.layer.cornerRadius = 20
         deleteButton.layer.cornerRadius = 20
         deleteButton.layer.borderColor = UIColor(named: "AccentColor")?.cgColor
         deleteButton.layer.borderWidth = 3
         textFieldBackground.layer.cornerRadius = 10
-        
         itemTextField.delegate = self
         periodPickerView.dataSource = self
         periodPickerView.delegate = self
-        
-        var config = Realm.Configuration()
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
-        config.fileURL = url.appendingPathComponent("db.realm")
-        let realm = try! Realm(configuration: config)
+        let realm = r.realm
         data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         let period = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.period ?? 1
         periodPickerView.selectRow(period - 1 , inComponent: 0, animated: true)
         itemTextField.text = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.name ?? ""
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,11 +66,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     
     @IBAction func completeButtonTapped(_ sender: UIButton) {
         if itemTextField.text != "" {
-            var config = Realm.Configuration()
-            let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
-            config.fileURL = url.appendingPathComponent("db.realm")
-            let realm = try! Realm(configuration: config)
-            
+            let realm = r.realm
             let period = periodPickerView.selectedRow(inComponent: 0) + 1
             let item = itemTextField.text!
             realm.beginWrite()
@@ -95,15 +84,10 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
-        var config = Realm.Configuration()
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
-        config.fileURL = url.appendingPathComponent("db.realm")
-        let realm = try! Realm(configuration: config)
-        
+        let realm = r.realm
         realm.beginWrite()
         realm.delete(realm.object(ofType: Item.self, forPrimaryKey: selectedCell)!)
         try! realm.commitWrite()
-        
         navigationController?.popViewController(animated: true)
     }
     

@@ -13,7 +13,6 @@ class PageViewController: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initPageViewController()
         navigationItem.setHidesBackButton(true, animated: true)
     }
@@ -52,5 +51,4 @@ extension PageViewController: UIPageViewControllerDataSource {
             return nil
         }
     }
-
 }

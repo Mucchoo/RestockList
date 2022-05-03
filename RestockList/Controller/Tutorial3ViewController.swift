@@ -15,7 +15,6 @@ class Tutorial3ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         card.layer.cornerRadius = 20
     }
     
