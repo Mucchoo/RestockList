@@ -53,10 +53,10 @@ struct WidgetEntryView : View {
             Color("AccentColor\(theme)")
             VStack (spacing: 5){
                 Spacer()
-                if family == .systemLarge {
-                    if data.count > 10 {
-                        ForEach(0..<10){ num in
-                            HStack(spacing: 0){
+                if family == .systemSmall {
+                    if data.count > 5 {
+                        ForEach(0..<5){ num in
+                            HStack(spacing: 0) {
                                 Text("\(data[num].name) ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
@@ -65,16 +65,11 @@ struct WidgetEntryView : View {
                                 Text("\(data[num].remainingTime)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
-                            }
-                            Rectangle()
-                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
-                                .background(Color.white)
-                                .foregroundColor(Color.white)
-                                .padding(.bottom, 5)
+                            }.padding(.bottom, 2)
                         }
                     } else {
                         ForEach(0..<data.count, id: \.self){ num in
-                            HStack(spacing: 0){
+                            HStack(spacing: 0) {
                                 Text("\(data[num].name) ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
@@ -83,12 +78,7 @@ struct WidgetEntryView : View {
                                 Text("\(data[num].remainingTime)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
-                            }
-                            Rectangle()
-                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
-                                .background(Color.white)
-                                .foregroundColor(Color.white)
-                                .padding(.bottom, 5)
+                            }.padding(.bottom, 2)
                         }
                     }
                 } else if family == .systemMedium {
@@ -107,7 +97,7 @@ struct WidgetEntryView : View {
                             Rectangle()
                                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
                                 .foregroundColor(Color.white)
-                                .padding(.bottom, 5)
+                                .padding(.bottom, 2)
                         }
                     } else {
                         ForEach(0..<data.count, id: \.self){ num in
@@ -124,13 +114,13 @@ struct WidgetEntryView : View {
                             Rectangle()
                                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
                                 .foregroundColor(Color.white)
-                                .padding(.bottom, 5)
+                                .padding(.bottom, 2)
                         }
                     }
                 } else {
-                    if data.count > 5 {
-                        ForEach(0..<5){ num in
-                            HStack(spacing: 0) {
+                    if data.count > 10 {
+                        ForEach(0..<10){ num in
+                            HStack(spacing: 0){
                                 Text("\(data[num].name) ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
@@ -139,11 +129,16 @@ struct WidgetEntryView : View {
                                 Text("\(data[num].remainingTime)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
-                            }.padding(.bottom, 5)
+                            }
+                            Rectangle()
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
+                                .background(Color.white)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 2)
                         }
                     } else {
                         ForEach(0..<data.count, id: \.self){ num in
-                            HStack(spacing: 0) {
+                            HStack(spacing: 0){
                                 Text("\(data[num].name) ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
@@ -152,7 +147,12 @@ struct WidgetEntryView : View {
                                 Text("\(data[num].remainingTime)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
-                            }.padding(.bottom, 5)
+                            }
+                            Rectangle()
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
+                                .background(Color.white)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 2)
                         }
                     }
                 }
