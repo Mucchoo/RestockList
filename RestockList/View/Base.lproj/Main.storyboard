@@ -1464,7 +1464,7 @@
                                                             <constraint firstAttribute="width" secondItem="mYf-gW-UYC" secondAttribute="height" multiplier="187:112" id="1RY-JJ-GBc"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proプラン 300円/月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-JG-OP1">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proプラン 120円/月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-JG-OP1">
                                                         <rect key="frame" x="20" y="623.5" width="374" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="oFr-JJ-fXM"/>
@@ -1635,12 +1635,12 @@
     <resources>
         <image name="Bitmap.png" width="330" height="330"/>
         <image name="Icons" width="750" height="375"/>
-        <image name="Themes" width="1523" height="914"/>
-        <image name="Tutorial1" width="828" height="185"/>
-        <image name="Tutorial2" width="828" height="438"/>
-        <image name="Tutorial3" width="828" height="250"/>
-        <image name="Tutorial4" width="414" height="126"/>
-        <image name="Tutorial5" width="414" height="441"/>
+        <image name="Themes" width="2447" height="1380"/>
+        <image name="Tutorial1" width="827" height="181"/>
+        <image name="Tutorial2" width="828" height="435"/>
+        <image name="Tutorial3" width="828" height="241"/>
+        <image name="Tutorial4" width="828" height="244"/>
+        <image name="Tutorial5" width="370" height="388"/>
         <image name="arrow.down.circle.fill" catalog="system" width="128" height="121"/>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <image name="bell" catalog="system" width="128" height="124"/>
