@@ -59,7 +59,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         mailViewController.mailComposeDelegate = self
         mailViewController.setSubject("ご意見・ご要望")
         mailViewController.setToRecipients(["yazujumusa@gmail.com"])
-        mailViewController.setMessageBody("\n\n\n\n\nーーーーーーーーーーーーーーー\nこの上へお気軽にご記入ください。\nRestock List", isHTML: false)
+        mailViewController.setMessageBody("\n\n\n\n\nーーーーーーーーーーーーーーー\nこの上へお気軽にご記入ください。\n消耗品リスト", isHTML: false)
         present(mailViewController, animated: true, completion: nil)
     }
     

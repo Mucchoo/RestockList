@@ -171,7 +171,7 @@ struct MyWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Restock List")
+        .configurationDisplayName("消耗品リスト")
         .description("リストを残り日数が少ない順に表示します。")
     }
 }

@@ -436,7 +436,7 @@
 				DEVELOPMENT_TEAM = 4WXTDSDQPZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestockListWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Restock List";
+				INFOPLIST_KEY_CFBundleDisplayName = "消耗品リスト";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -465,7 +465,7 @@
 				DEVELOPMENT_TEAM = 4WXTDSDQPZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestockListWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Restock List";
+				INFOPLIST_KEY_CFBundleDisplayName = "消耗品リスト";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -610,7 +610,7 @@
 				DEVELOPMENT_TEAM = 4WXTDSDQPZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestockList/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Restock List";
+				INFOPLIST_KEY_CFBundleDisplayName = "消耗品リスト";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -643,7 +643,7 @@
 				DEVELOPMENT_TEAM = 4WXTDSDQPZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestockList/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Restock List";
+				INFOPLIST_KEY_CFBundleDisplayName = "消耗品リスト";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
