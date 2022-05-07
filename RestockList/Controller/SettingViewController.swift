@@ -12,9 +12,9 @@ import MessageUI
 class SettingViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet var iconBackground: [UIView]!
-    @IBOutlet weak var proView: UIView!
     @IBOutlet weak var themeView: UIView!
     @IBOutlet weak var iconView: UIView!
+    @IBOutlet weak var proLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,10 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         let theme = r.user.object(forKey: "theme") ?? 1
         iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
         if Pro.isPro {
-            proView.layer.opacity = 0.5
+            proLabel.text = "Pro アンロック済み"
             themeView.layer.opacity = 1
             iconView.layer.opacity = 1
         } else {
-            proView.layer.opacity = 1
             themeView.layer.opacity = 0.5
             iconView.layer.opacity = 0.5
         }

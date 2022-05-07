@@ -29,7 +29,7 @@ class ProViewController: UIViewController {
     
     @IBAction func ButtonTapped(_ sender: UIButton) {
         Purchases.shared.getOfferings { (offerings, error) in
-            if let package = offerings?.current?.monthly?.storeProduct {
+            if let package = offerings?.current?.lifetime?.storeProduct {
                 Purchases.shared.purchase(product: package) { (transaction, customerInfo, error, userCancelled) in
                     if customerInfo?.entitlements.all["Pro"]?.isActive == true {
                         self.navigationController?.popToRootViewController(animated: true)

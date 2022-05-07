@@ -526,8 +526,8 @@
                                                         <action selector="proButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="Ej3-PN-7ca"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proにアップグレード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwM-1u-xlQ">
-                                                    <rect key="frame" x="60" y="13" width="164.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proをアンロック" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwM-1u-xlQ">
+                                                    <rect key="frame" x="60" y="13" width="130" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="FontColor"/>
                                                     <nil key="highlightedColor"/>
@@ -932,7 +932,7 @@
                     <navigationItem key="navigationItem" title="設定" id="EXK-ZO-u1h"/>
                     <connections>
                         <outlet property="iconView" destination="GSD-Gw-Mst" id="OJX-lP-irz"/>
-                        <outlet property="proView" destination="TA6-zc-KpF" id="o7i-a4-0Ln"/>
+                        <outlet property="proLabel" destination="hwM-1u-xlQ" id="mMP-c2-qvI"/>
                         <outlet property="themeView" destination="nXK-sh-qu7" id="Hsj-t2-p2V"/>
                         <outletCollection property="iconBackground" destination="xlw-xP-XLS" collectionClass="NSMutableArray" id="KOp-0Z-3dk"/>
                         <outletCollection property="iconBackground" destination="cYl-Vr-ovs" collectionClass="NSMutableArray" id="AQe-o2-jXc"/>
@@ -1463,7 +1463,7 @@
             </objects>
             <point key="canvasLocation" x="2864" y="-514"/>
         </scene>
-        <!--Proにアップグレード-->
+        <!--Proをアンロック-->
         <scene sceneID="SOZ-ha-cnm">
             <objects>
                 <viewController id="cXf-2x-mZ1" customClass="ProViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
@@ -1499,7 +1499,7 @@
                                                             <constraint firstAttribute="width" secondItem="mYf-gW-UYC" secondAttribute="height" multiplier="187:112" id="1RY-JJ-GBc"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proプラン 120円/月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-JG-OP1">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proをアンロック - 490円" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-JG-OP1">
                                                         <rect key="frame" x="20" y="623.5" width="374" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="oFr-JJ-fXM"/>
@@ -1649,7 +1649,7 @@
                             <constraint firstItem="pka-Bk-gUl" firstAttribute="leading" secondItem="0HN-Qv-m0D" secondAttribute="leading" id="vcs-PR-GGe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Proにアップグレード" id="l6y-8R-ao9"/>
+                    <navigationItem key="navigationItem" title="Proをアンロック" id="l6y-8R-ao9"/>
                     <connections>
                         <outlet property="button" destination="S7b-LR-RJZ" id="Gmr-mq-mjn"/>
                         <outletCollection property="iconBackground" destination="tRZ-L0-SCH" collectionClass="NSMutableArray" id="7fR-lf-X25"/>
@@ -1665,8 +1665,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QJf-Ra-cZa"/>
-        <segue reference="i63-5U-zSb"/>
+        <segue reference="a6M-6k-SrB"/>
+        <segue reference="ih6-RN-HNt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
@@ -1699,7 +1699,7 @@
             <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor1">
-            <color red="0.082352941176470587" green="0.70980392156862748" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor2">
             <color red="0.0" green="0.45882352941176469" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1708,7 +1708,7 @@
             <color red="0.25882352941176473" green="0.27058823529411763" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor4">
-            <color red="0.77647058823529413" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77600002288818359" green="0.0" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor5">
             <color red="0.8666666666666667" green="0.13725490196078433" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
