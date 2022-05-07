@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RevenueCat
 
 class ProViewController: UIViewController {
 
@@ -24,5 +25,17 @@ class ProViewController: UIViewController {
         let theme = r.user.object(forKey: "theme") ?? 1
         iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
         button.backgroundColor = UIColor(named: "AccentColor\(theme)")
+    }
+    
+    @IBAction func ButtonTapped(_ sender: UIButton) {
+        Purchases.shared.getOfferings { (offerings, error) in
+            if let package = offerings?.current?.monthly?.storeProduct {
+                Purchases.shared.purchase(product: package) { (transaction, customerInfo, error, userCancelled) in
+                    if customerInfo?.entitlements.all["Pro"]?.isActive == true {
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                }
+            }
+        }
     }
 }

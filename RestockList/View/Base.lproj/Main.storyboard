@@ -189,13 +189,15 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="O6G-Gh-rqb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="NPC-Ev-kK3" kind="show" id="XAA-Ff-3PT"/>
+                                <action selector="addButtonTapped:" destination="mnu-J1-1eu" id="opL-DU-nrQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="acE-1b-0fM" id="Tej-DM-Dys"/>
                         <segue destination="Qjf-uX-GnN" kind="show" identifier="showTutorial" id="i63-5U-zSb"/>
+                        <segue destination="NPC-Ev-kK3" kind="show" identifier="AddSegue" id="ZEH-CP-QX6"/>
+                        <segue destination="cXf-2x-mZ1" kind="show" identifier="ProFromTopSegue" id="QJf-Ra-cZa"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vG7-TU-xfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -516,6 +518,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXK-sV-hGt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <connections>
+                                                        <action selector="proButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="Ej3-PN-7ca"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proにアップグレード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwM-1u-xlQ">
                                                     <rect key="frame" x="60" y="13" width="164.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -545,13 +555,14 @@
                                                 <constraint firstAttribute="bottom" secondItem="xlw-xP-XLS" secondAttribute="bottom" constant="8" id="Cp5-du-g0v"/>
                                                 <constraint firstItem="xlw-xP-XLS" firstAttribute="top" secondItem="TA6-zc-KpF" secondAttribute="top" constant="8" id="Doc-SW-E1I"/>
                                                 <constraint firstItem="xlw-xP-XLS" firstAttribute="leading" secondItem="TA6-zc-KpF" secondAttribute="leading" constant="20" id="Fle-xM-mCl"/>
+                                                <constraint firstAttribute="bottom" secondItem="MXK-sV-hGt" secondAttribute="bottom" id="IrY-bI-vNF"/>
                                                 <constraint firstItem="hwM-1u-xlQ" firstAttribute="leading" secondItem="xlw-xP-XLS" secondAttribute="trailing" constant="10" id="Rod-U2-4pO"/>
+                                                <constraint firstAttribute="trailing" secondItem="MXK-sV-hGt" secondAttribute="trailing" id="Rvc-vr-YMP"/>
                                                 <constraint firstItem="hwM-1u-xlQ" firstAttribute="centerY" secondItem="TA6-zc-KpF" secondAttribute="centerY" id="Rxb-ok-dd2"/>
+                                                <constraint firstItem="MXK-sV-hGt" firstAttribute="top" secondItem="TA6-zc-KpF" secondAttribute="top" id="hb9-dK-Vbg"/>
+                                                <constraint firstItem="MXK-sV-hGt" firstAttribute="leading" secondItem="TA6-zc-KpF" secondAttribute="leading" id="q7a-ch-AaO"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="cXf-2x-mZ1" kind="show" id="haU-eY-HLn"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="haC-cy-sTD">
                                         <rect key="frame" x="20" y="96" width="374" height="46.5"/>
@@ -560,6 +571,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCh-Tj-0yV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <connections>
+                                                        <action selector="themeButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="PId-lf-v3E"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テーマカラー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTa-g5-e9w">
                                                     <rect key="frame" x="60" y="13" width="104" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -586,16 +605,17 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="HCh-Tj-0yV" secondAttribute="trailing" id="3aR-ZS-yEE"/>
                                                 <constraint firstItem="eTa-g5-e9w" firstAttribute="centerY" secondItem="nXK-sh-qu7" secondAttribute="centerY" id="BYH-0W-e58"/>
                                                 <constraint firstItem="eTa-g5-e9w" firstAttribute="leading" secondItem="cYl-Vr-ovs" secondAttribute="trailing" constant="10" id="DiZ-uo-ddf"/>
                                                 <constraint firstItem="cYl-Vr-ovs" firstAttribute="top" secondItem="nXK-sh-qu7" secondAttribute="top" constant="8" id="f17-hU-cXG"/>
+                                                <constraint firstItem="HCh-Tj-0yV" firstAttribute="top" secondItem="nXK-sh-qu7" secondAttribute="top" id="l3e-mn-Q8M"/>
+                                                <constraint firstAttribute="bottom" secondItem="HCh-Tj-0yV" secondAttribute="bottom" id="odc-sK-ibL"/>
                                                 <constraint firstAttribute="bottom" secondItem="cYl-Vr-ovs" secondAttribute="bottom" constant="8" id="tdw-ZS-DJt"/>
                                                 <constraint firstItem="cYl-Vr-ovs" firstAttribute="leading" secondItem="nXK-sh-qu7" secondAttribute="leading" constant="20" id="vds-02-Deo"/>
+                                                <constraint firstItem="HCh-Tj-0yV" firstAttribute="leading" secondItem="nXK-sh-qu7" secondAttribute="leading" id="vkk-xz-OVy"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="idJ-WR-CfA" kind="show" id="Sy7-S8-nYp"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QxL-8m-FQB">
                                         <rect key="frame" x="20" y="142.5" width="374" height="46.5"/>
@@ -604,6 +624,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU9-Pz-mmG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <connections>
+                                                        <action selector="iconButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="c1z-OL-ba2"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイコン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrI-nJ-IeN">
                                                     <rect key="frame" x="60" y="13" width="69.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -630,16 +658,17 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="fU9-Pz-mmG" firstAttribute="top" secondItem="GSD-Gw-Mst" secondAttribute="top" id="1DD-gf-hkW"/>
+                                                <constraint firstItem="fU9-Pz-mmG" firstAttribute="leading" secondItem="GSD-Gw-Mst" secondAttribute="leading" id="4fB-Qv-BxJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="fU9-Pz-mmG" secondAttribute="trailing" id="5Ux-WE-OkW"/>
                                                 <constraint firstItem="v4N-pw-hGY" firstAttribute="leading" secondItem="GSD-Gw-Mst" secondAttribute="leading" constant="20" id="7ff-St-key"/>
                                                 <constraint firstItem="v4N-pw-hGY" firstAttribute="top" secondItem="GSD-Gw-Mst" secondAttribute="top" constant="8" id="P4a-M6-09W"/>
                                                 <constraint firstItem="RrI-nJ-IeN" firstAttribute="centerY" secondItem="GSD-Gw-Mst" secondAttribute="centerY" id="SH0-6d-Bs7"/>
                                                 <constraint firstAttribute="bottom" secondItem="v4N-pw-hGY" secondAttribute="bottom" constant="8" id="WAh-zH-uTV"/>
+                                                <constraint firstAttribute="bottom" secondItem="fU9-Pz-mmG" secondAttribute="bottom" id="ffz-2r-ijH"/>
                                                 <constraint firstItem="RrI-nJ-IeN" firstAttribute="leading" secondItem="v4N-pw-hGY" secondAttribute="trailing" constant="10" id="m5T-QD-91r"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="yiL-4X-AlS" kind="show" id="vOn-Nr-JlP"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -902,6 +931,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="設定" id="EXK-ZO-u1h"/>
                     <connections>
+                        <outlet property="iconView" destination="GSD-Gw-Mst" id="OJX-lP-irz"/>
+                        <outlet property="proView" destination="TA6-zc-KpF" id="o7i-a4-0Ln"/>
+                        <outlet property="themeView" destination="nXK-sh-qu7" id="Hsj-t2-p2V"/>
                         <outletCollection property="iconBackground" destination="xlw-xP-XLS" collectionClass="NSMutableArray" id="KOp-0Z-3dk"/>
                         <outletCollection property="iconBackground" destination="cYl-Vr-ovs" collectionClass="NSMutableArray" id="AQe-o2-jXc"/>
                         <outletCollection property="iconBackground" destination="v4N-pw-hGY" collectionClass="NSMutableArray" id="L5W-YF-Ncg"/>
@@ -910,6 +942,9 @@
                         <outletCollection property="iconBackground" destination="LFS-Kb-XBp" collectionClass="NSMutableArray" id="1gc-ul-mA5"/>
                         <outletCollection property="iconBackground" destination="7kO-PS-mgv" collectionClass="NSMutableArray" id="mdY-BL-PFl"/>
                         <outletCollection property="iconBackground" destination="Nh0-5P-3gS" collectionClass="NSMutableArray" id="gnU-7d-ORg"/>
+                        <segue destination="cXf-2x-mZ1" kind="show" identifier="ProSegue" id="a6M-6k-SrB"/>
+                        <segue destination="idJ-WR-CfA" kind="show" identifier="ThemeSegue" id="Daf-sY-FDz"/>
+                        <segue destination="yiL-4X-AlS" kind="show" identifier="IconSegue" id="3zV-om-TDf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Jm-cf-cSe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1486,6 +1521,7 @@
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="AddButtonTapped:" destination="NPC-Ev-kK3" eventType="touchUpInside" id="ie1-Uv-1Fi"/>
+                                                            <action selector="ButtonTapped:" destination="cXf-2x-mZ1" eventType="touchUpInside" id="rhq-oo-4HJ"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRZ-L0-SCH">
@@ -1629,6 +1665,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="QJf-Ra-cZa"/>
         <segue reference="i63-5U-zSb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1662,7 +1699,7 @@
             <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor1">
-            <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.082352941176470587" green="0.70980392156862748" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor2">
             <color red="0.0" green="0.45882352941176469" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1671,10 +1708,10 @@
             <color red="0.25882352941176473" green="0.27058823529411763" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor4">
-            <color red="0.77600002288818359" green="0.0" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058823529413" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor5">
-            <color red="0.86699998378753662" green="0.13699999451637268" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8666666666666667" green="0.13725490196078433" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor6">
             <color red="0.85490196078431369" green="0.32156862745098042" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

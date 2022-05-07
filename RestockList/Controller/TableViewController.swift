@@ -97,4 +97,23 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     func updateTableView() {
         tableView.reloadData()
     }
+    
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+        if data.count > 19 {
+            if Pro.isPro {
+                performSegue(withIdentifier: "AddSegue", sender: nil)
+            } else {
+                let alert = UIAlertController(title: "無料版で追加できるアイテムは20個です", message: "Proにアップグレードすれば、無制限に追加することができます。", preferredStyle:  UIAlertController.Style.alert)
+                let proAction = UIAlertAction(title: "Proを見る", style: .default) { action in
+                    self.performSegue(withIdentifier: "ProFromTopSegue", sender: nil)
+                }
+                let closeAction = UIAlertAction(title: "閉じる", style: .default)
+                alert.addAction(closeAction)
+                alert.addAction(proAction)
+                present(alert, animated: true)
+            }
+        } else {
+            performSegue(withIdentifier: "AddSegue", sender: nil)
+        }
+    }
 }
