@@ -8,11 +8,13 @@
 import RealmSwift
 import UIKit
 import SwiftUI
+import RevenueCat
 
 class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     
-    var data = [Item]()
     @IBOutlet var myTableView: UITableView!
+    private var data = [Item]()
+    private var isPro = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,11 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        Purchases.shared.getCustomerInfo { customerInfo, error in
+            if customerInfo?.entitlements["Pro"]?.isActive == true {
+                self.isPro = true
+            }
+        }
         let realm = r.realm
         data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         let theme = r.user.object(forKey: "theme") ?? 1
@@ -100,7 +107,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         if data.count > 19 {
-            if Pro.isPro {
+            if isPro {
                 performSegue(withIdentifier: "AddSegue", sender: nil)
             } else {
                 let alert = UIAlertController(title: "無料版で追加できるアイテムは20個です", message: "Proにアップグレードすれば、無制限に追加することができます。", preferredStyle:  UIAlertController.Style.alert)

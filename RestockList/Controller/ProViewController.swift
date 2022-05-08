@@ -28,6 +28,7 @@ class ProViewController: UIViewController {
     }
     
     @IBAction func ButtonTapped(_ sender: UIButton) {
+        print("ボタンタップ発動")
         Purchases.shared.getOfferings { (offerings, error) in
             if let package = offerings?.current?.lifetime?.storeProduct {
                 Purchases.shared.purchase(product: package) { (transaction, customerInfo, error, userCancelled) in

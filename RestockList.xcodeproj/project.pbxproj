@@ -10,7 +10,6 @@
 		2A013624281A7F4B0083402F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A013623281A7F4B0083402F /* RealmSwift */; };
 		2A013626281A7F500083402F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2A013625281A7F500083402F /* Realm */; };
 		2A0D5B3928266BDD002F1542 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0D5B3828266BDD002F1542 /* RevenueCat */; };
-		2A0D5B3B2826717C002F1542 /* Pro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0D5B3A2826717C002F1542 /* Pro.swift */; };
 		2A0D5B3D28269385002F1542 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0D5B3C28269385002F1542 /* StoreKit.framework */; };
 		2A11AD022819696E00170751 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A11AD012819696E00170751 /* WidgetKit.framework */; };
 		2A11AD042819696E00170751 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A11AD032819696E00170751 /* SwiftUI.framework */; };
@@ -76,7 +75,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2A0D5B3A2826717C002F1542 /* Pro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pro.swift; sourceTree = "<group>"; };
 		2A0D5B3C28269385002F1542 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2A11ACFF2819696E00170751 /* RestockListWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RestockListWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A11AD012819696E00170751 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -248,7 +246,6 @@
 				2A9A8192281E6FB000186477 /* IconCell.swift */,
 				2A628C302821055300952956 /* realm.swift */,
 				2A383D102817B820000BCAF0 /* Item.swift */,
-				2A0D5B3A2826717C002F1542 /* Pro.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,7 +385,6 @@
 				2A55FE41281D151600380AF0 /* NotificationViewController.swift in Sources */,
 				2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */,
 				2A9A8191281E6F6900186477 /* IconViewController.swift in Sources */,
-				2A0D5B3B2826717C002F1542 /* Pro.swift in Sources */,
 				2A628C2D2820A8BD00952956 /* Tutorial4ViewController.swift in Sources */,
 				2A628C292820A8A300952956 /* Tutorial2ViewController.swift in Sources */,
 				2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */,
@@ -618,7 +614,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = RestockList/RestockList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4WXTDSDQPZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestockList/Info.plist;
@@ -651,7 +647,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = RestockList/RestockList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4WXTDSDQPZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestockList/Info.plist;

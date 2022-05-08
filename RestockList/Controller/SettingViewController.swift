@@ -8,6 +8,7 @@
 import UIKit
 import StoreKit
 import MessageUI
+import RevenueCat
 
 class SettingViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
@@ -15,6 +16,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     @IBOutlet weak var themeView: UIView!
     @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var proLabel: UILabel!
+    private var isPro = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,12 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     override func viewWillAppear(_ animated: Bool) {
         let theme = r.user.object(forKey: "theme") ?? 1
         iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
-        if Pro.isPro {
+        Purchases.shared.getCustomerInfo { customerInfo, error in
+            if customerInfo?.entitlements["Pro"]?.isActive == true {
+                self.isPro = true
+            }
+        }
+        if isPro {
             proLabel.text = "Pro アンロック済み"
             themeView.layer.opacity = 1
             iconView.layer.opacity = 1
@@ -39,19 +46,19 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     }
     
     @IBAction func proButtonTapped(_ sender: UIButton) {
-        if Pro.isPro == false {
+        if isPro == false {
             performSegue(withIdentifier: "ProSegue", sender: nil)
         }
     }
     
     @IBAction func themeButtonTapped(_ sender: UIButton) {
-        if Pro.isPro {
+        if isPro {
             performSegue(withIdentifier: "ThemeSegue", sender: nil)
         }
     }
     
     @IBAction func iconButtonTapped(_ sender: UIButton) {
-        if Pro.isPro {
+        if isPro {
             performSegue(withIdentifier: "IconSegue", sender: nil)
         }
     }
