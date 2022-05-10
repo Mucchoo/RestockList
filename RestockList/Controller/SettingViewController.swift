@@ -68,7 +68,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             sender.backgroundColor = UIColor(.black.opacity(0))
         }
-        let link = URL(string: "https://www.google.com")!
+        let link = URL(string: "https://apps.apple.com/us/app/%E6%B6%88%E8%80%97%E5%93%81%E3%83%AA%E3%82%B9%E3%83%88-%E5%AE%9A%E6%9C%9F%E7%9A%84%E3%81%AB%E8%B3%BC%E5%85%A5%E3%81%99%E3%82%8B%E7%94%9F%E6%B4%BB-%E4%BA%8B%E5%8B%99%E7%94%A8%E5%93%81%E3%81%AE%E7%AE%A1%E7%90%86/id1622760822?itsct=apps_box_link&itscg=30200")!
         let activityViewController = UIActivityViewController(activityItems: [link], applicationActivities: nil)
         let scenes = UIApplication.shared.connectedScenes
         let windowScenes = scenes.first as? UIWindowScene
