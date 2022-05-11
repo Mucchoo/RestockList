@@ -17,7 +17,7 @@
 		2A11AD0A2819696F00170751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A11AD092819696F00170751 /* Assets.xcassets */; };
 		2A11AD0C2819696F00170751 /* RestockListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A11AD082819696E00170751 /* RestockListWidget.intentdefinition */; };
 		2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A11AD082819696E00170751 /* RestockListWidget.intentdefinition */; };
-		2A11AD102819696F00170751 /* RestockListWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A11ACFF2819696E00170751 /* RestockListWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A11AD102819696F00170751 /* RestockListWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A11ACFF2819696E00170751 /* RestockListWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A383D112817B820000BCAF0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Item.swift */; };
 		2A383D172817BD55000BCAF0 /* Bitmap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A383D142817BD55000BCAF0 /* Bitmap@2x.png */; };
 		2A383D182817BD55000BCAF0 /* Bitmap@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A383D152817BD55000BCAF0 /* Bitmap@3x.png */; };
@@ -408,6 +408,7 @@
 /* Begin PBXTargetDependency section */
 		2A11AD0F2819696F00170751 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 2A11ACFE2819696E00170751 /* RestockListWidgetExtension */;
 			targetProxy = 2A11AD0E2819696F00170751 /* PBXContainerItemProxy */;
 		};
@@ -456,6 +457,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yazujumusa.RestockList.RestockListWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -485,6 +487,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yazujumusa.RestockList.RestockListWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -619,6 +622,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestockList/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "消耗品リスト";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -632,6 +636,7 @@
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yazujumusa.RestockList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -652,6 +657,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestockList/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "消耗品リスト";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -665,6 +671,7 @@
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yazujumusa.RestockList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
