@@ -69,11 +69,15 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
             sender.backgroundColor = UIColor(.black.opacity(0))
         }
         let link = URL(string: "https://apps.apple.com/us/app/%E6%B6%88%E8%80%97%E5%93%81%E3%83%AA%E3%82%B9%E3%83%88-%E5%AE%9A%E6%9C%9F%E7%9A%84%E3%81%AB%E8%B3%BC%E5%85%A5%E3%81%99%E3%82%8B%E7%94%9F%E6%B4%BB-%E4%BA%8B%E5%8B%99%E7%94%A8%E5%93%81%E3%81%AE%E7%AE%A1%E7%90%86/id1622760822?itsct=apps_box_link&itscg=30200")!
-        let activityViewController = UIActivityViewController(activityItems: [link], applicationActivities: nil)
+        let av = UIActivityViewController(activityItems: [link], applicationActivities: nil)
         let scenes = UIApplication.shared.connectedScenes
         let windowScenes = scenes.first as? UIWindowScene
-        let rootVC = windowScenes?.keyWindow?.rootViewController
-        rootVC?.present(activityViewController, animated: true, completion: nil)
+        let window = windowScenes?.keyWindow
+        window?.rootViewController?.present(av, animated: true, completion: nil)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            av.popoverPresentationController?.sourceView = window
+            av.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width/2.1, y: UIScreen.main.bounds.height/1.3, width: 200, height: 200)
+        }
     }
     
     @IBAction func reviewButtonTapped(_ sender: UIButton) {
