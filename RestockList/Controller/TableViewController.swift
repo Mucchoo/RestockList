@@ -5,9 +5,10 @@
 //  Created by Musa Yazuju on 2022/04/26.
 //
 
-import RealmSwift
 import UIKit
 import SwiftUI
+import StoreKit
+import RealmSwift
 import RevenueCat
 
 class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
@@ -39,6 +40,12 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         if UserDefaults.standard.bool(forKey: "tutorial") == false {
             performSegue(withIdentifier: "showTutorial", sender: nil)
             UserDefaults.standard.set(true, forKey: "tutorial")
+        }
+        
+        if UserDefaults.standard.integer(forKey: "LaunchedTimes") > 20 {
+            if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: scene)
+            }
         }
     }
     

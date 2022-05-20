@@ -6,14 +6,37 @@
 //
 
 import UIKit
-import RealmSwift
 import WidgetKit
+import RevenueCat
+import RealmSwift
 import BackgroundTasks
 import UserNotifications
-import RevenueCat
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let launchedTimes = UserDefaults.standard.object(forKey: "LaunchedTimes") as? Int ?? 0
+        UserDefaults.standard.set(launchedTimes + 1, forKey: "LaunchedTimes")
+        Purchases.configure(withAPIKey: "appl_iJTYZXESAQcDrvNZmKCudSLubQU")
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.yazujumusa.RestockList.refresh", using: nil) { task in
+            self.handleAppRefresh(task: task as! BGAppRefreshTask)
+        }
+        UNUserNotificationCenter.current().requestAuthorization(
+        options: [.alert, .sound]){ (granted, _) in
+            if granted{
+                UNUserNotificationCenter.current().delegate = self
+            }
+        }
+        return true
+    }
+
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+    }
     
     func scheduleAppRefresh() {
         let request = BGAppRefreshTaskRequest(identifier: "com.yazujumusa.RestockList.refresh")
@@ -59,28 +82,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         UserDefaults.standard.set(currentDate, forKey: "lastDate")
-    }
-        
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Purchases.configure(withAPIKey: "appl_iJTYZXESAQcDrvNZmKCudSLubQU")
-        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.yazujumusa.RestockList.refresh", using: nil) { task in
-            self.handleAppRefresh(task: task as! BGAppRefreshTask)
-        }
-        UNUserNotificationCenter.current().requestAuthorization(
-        options: [.alert, .sound]){ (granted, _) in
-            if granted{
-                UNUserNotificationCenter.current().delegate = self
-            }
-        }
-        return true
-    }
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     }
 }
 

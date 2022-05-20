@@ -104,19 +104,15 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
         if result == .sent {
-            DispatchQueue.main.async {
-                let alert = UIAlertController(title: "メールを送信しました", message: "", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                self.present(alert, animated: true, completion: nil)
-            }
+            let alert = UIAlertController(title: "メールを送信しました", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
         } else if result == .failed {
-            DispatchQueue.main.async {
-                let alert = UIAlertController(title: "メールの送信に失敗しました", message: "時間を置いてからもう一度お試しください。", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                self.present(alert, animated: true, completion: nil)
-            }
+            let alert = UIAlertController(title: "メールを送信できませんでした", message: "時間を置いてからもう一度お試しください。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
         }
-        controller.dismiss(animated: true, completion: nil)
     }
 }
