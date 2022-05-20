@@ -45,6 +45,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         if UserDefaults.standard.integer(forKey: "LaunchedTimes") > 20 {
             if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: scene)
+                UserDefaults.standard.set(0, forKey: "LaunchedTimes")
             }
         }
     }
