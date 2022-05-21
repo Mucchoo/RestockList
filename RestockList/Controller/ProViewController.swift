@@ -34,6 +34,9 @@ class ProViewController: UIViewController {
         Purchases.shared.getOfferings { (offerings, error) in
             if let package = offerings?.current?.lifetime?.storeProduct {
                 Purchases.shared.purchase(product: package) { (transaction, customerInfo, error, userCancelled) in
+                    if customerInfo?.entitlements.all["Pro"]?.isActive == true {
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
                 }
             }
         }
@@ -43,8 +46,9 @@ class ProViewController: UIViewController {
         Purchases.shared.restorePurchases { customerInfo, error in
             if customerInfo?.entitlements.all["Pro"]?.isActive == true {
                 let alert = UIAlertController(title: "購入を復元しました", message: "", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK", style: .default)
-                alert.addAction(ok)
+                alert.addAction(UIAlertAction(title: "OK", style: .default) { action in
+                    self.navigationController?.popToRootViewController(animated: true)
+                })
                 self.present(alert, animated: true)
             }
         }

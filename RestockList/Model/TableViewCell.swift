@@ -21,16 +21,9 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     
-<<<<<<< HEAD:RestockList/Model/TableViewCell.swift
     var data = [Item]()
     var editUIViewController = EditViewController()
     var myTableViewController = TableViewController()
-=======
-    var data = [TableViewItem]()
-    let realm = try! Realm()
-    var editUIViewController = EditUIViewController()
-    var myViewController = ViewController()
->>>>>>> main:RestockList/TableViewCell.swift
     var delegate : EditProtocol?
     var updateDelegate: UpdateProtocol?
     
