@@ -1432,17 +1432,35 @@
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg0-z1-KnP">
+                                <rect key="frame" x="20" y="410" width="374" height="70"/>
+                                <color key="backgroundColor" name="AccentColor1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="01c-MS-ePb"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="テスト通知">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="testButtonTapped:" destination="8GG-py-0kt" eventType="touchUpInside" id="lfJ-Px-XP6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xRD-1s-JSc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Qn-Y2-dOb" firstAttribute="centerX" secondItem="brH-UP-uCf" secondAttribute="centerX" id="1v7-3O-s3c"/>
+                            <constraint firstItem="xRD-1s-JSc" firstAttribute="trailing" secondItem="eg0-z1-KnP" secondAttribute="trailing" constant="20" id="4q6-1z-Q0j"/>
                             <constraint firstItem="5wD-Bh-WrR" firstAttribute="top" secondItem="ZnS-vw-6pW" secondAttribute="bottom" constant="120" id="584-P7-wcw"/>
                             <constraint firstItem="bEb-mO-tDi" firstAttribute="centerX" secondItem="brH-UP-uCf" secondAttribute="centerX" id="6Vt-5j-mWs"/>
                             <constraint firstItem="ZnS-vw-6pW" firstAttribute="leading" secondItem="xRD-1s-JSc" secondAttribute="leading" constant="20" id="AVc-Ec-RQi"/>
                             <constraint firstItem="xRD-1s-JSc" firstAttribute="trailing" secondItem="6Qn-Y2-dOb" secondAttribute="trailing" constant="20" id="Db2-LH-hAV"/>
                             <constraint firstItem="bEb-mO-tDi" firstAttribute="top" secondItem="ZnS-vw-6pW" secondAttribute="bottom" constant="20" id="F2e-QQ-saN"/>
                             <constraint firstItem="xRD-1s-JSc" firstAttribute="trailing" secondItem="Twd-sX-QxL" secondAttribute="trailing" constant="20" id="Hbm-RM-RZo"/>
+                            <constraint firstItem="eg0-z1-KnP" firstAttribute="top" secondItem="Twd-sX-QxL" secondAttribute="bottom" constant="20" id="OX3-Pg-LgL"/>
+                            <constraint firstItem="eg0-z1-KnP" firstAttribute="leading" secondItem="xRD-1s-JSc" secondAttribute="leading" constant="20" id="OkV-aK-78a"/>
                             <constraint firstItem="ZnS-vw-6pW" firstAttribute="top" secondItem="6Qn-Y2-dOb" secondAttribute="bottom" constant="10" id="Ue9-wV-BcQ"/>
                             <constraint firstItem="ZnS-vw-6pW" firstAttribute="centerX" secondItem="brH-UP-uCf" secondAttribute="centerX" id="VGN-bK-rvz"/>
                             <constraint firstItem="Twd-sX-QxL" firstAttribute="leading" secondItem="xRD-1s-JSc" secondAttribute="leading" constant="20" id="bEk-0Y-USU"/>
@@ -1688,19 +1706,19 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <namedColor name="AccentColor1">
-            <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.082352941176470587" green="0.70980392156862748" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor2">
-            <color red="0.0" green="0.45882352941176469" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.45899999141693115" blue="0.71799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor3">
             <color red="0.25882352941176473" green="0.27058823529411763" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor4">
-            <color red="0.77647058823529413" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77600002288818359" green="0.0" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor5">
-            <color red="0.86699998378753662" green="0.13699999451637268" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8666666666666667" green="0.13725490196078433" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor6">
             <color red="0.85500001907348633" green="0.32199999690055847" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

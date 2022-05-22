@@ -83,6 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         UserDefaults.standard.set(currentDate, forKey: "lastDate")
     }
+    
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate{
