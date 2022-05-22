@@ -29,7 +29,7 @@ class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPick
     override func viewWillAppear(_ animated: Bool) {
         let theme = r.user.object(forKey: "theme") ?? 1
         button.backgroundColor = UIColor(named: "AccentColor\(theme)")
-        let notificationCondition = UserDefaults.standard.object(forKey: "notificationCondition") as? Int ?? 3
+        let notificationCondition = r.user.object(forKey: "notificationCondition") as? Int ?? 3
         picker.selectRow(notificationCondition - 1 , inComponent: 0, animated: true)
     }
     
@@ -47,7 +47,7 @@ class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         let selected = picker.selectedRow(inComponent: 0) + 1
-        UserDefaults.standard.set(selected, forKey: "notificationCondition")
+        r.user.set(selected, forKey: "notificationCondition")
         navigationController?.popViewController(animated: true)
     }
     

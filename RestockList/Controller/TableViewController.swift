@@ -23,7 +23,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         
         let realm = r.realm
         let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
-        if let lastDate = UserDefaults.standard.object(forKey: "lastDate") as? Int {
+        if let lastDate = r.user.object(forKey: "lastDate") as? Int {
             let elapsedDays = currentDate - lastDate
             if elapsedDays > 0 {
                 realm.beginWrite()
@@ -36,16 +36,16 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
                 try! realm.commitWrite()
             }
         }
-        UserDefaults.standard.set(currentDate, forKey: "lastDate")
-        if UserDefaults.standard.bool(forKey: "tutorial") == false {
+        r.user.set(currentDate, forKey: "lastDate")
+        if r.user.bool(forKey: "tutorial") == false {
             performSegue(withIdentifier: "showTutorial", sender: nil)
-            UserDefaults.standard.set(true, forKey: "tutorial")
+            r.user.set(true, forKey: "tutorial")
         }
         
-        if UserDefaults.standard.integer(forKey: "LaunchedTimes") > 20 {
+        if r.user.integer(forKey: "LaunchedTimes") > 20 {
             if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: scene)
-                UserDefaults.standard.set(0, forKey: "LaunchedTimes")
+                r.user.set(0, forKey: "LaunchedTimes")
             }
         }
     }

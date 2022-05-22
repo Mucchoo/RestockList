@@ -16,8 +16,8 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let launchedTimes = UserDefaults.standard.object(forKey: "LaunchedTimes") as? Int ?? 0
-        UserDefaults.standard.set(launchedTimes + 1, forKey: "LaunchedTimes")
+        let launchedTimes = r.user.object(forKey: "LaunchedTimes") as? Int ?? 0
+        r.user.set(launchedTimes + 1, forKey: "LaunchedTimes")
         Purchases.configure(withAPIKey: "appl_iJTYZXESAQcDrvNZmKCudSLubQU")
         BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.yazujumusa.RestockList.refresh", using: nil) { task in
             self.handleAppRefresh(task: task as! BGAppRefreshTask)
@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let realm = r.realm
         let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
-        if let lastDate = UserDefaults.standard.object(forKey: "lastDate") as? Int {
+        if let lastDate = r.user.object(forKey: "lastDate") as? Int {
             let elapsedDays = currentDate - lastDate
             if elapsedDays > 0 {
                 realm.beginWrite()
@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 try! realm.commitWrite()
                 WidgetCenter.shared.reloadAllTimelines()
                 var itemNotRemaining = ""
-                let notificationCondition = UserDefaults.standard.object(forKey: "notificationCondition") as? Int ?? 3
+                let notificationCondition = r.user.object(forKey: "notificationCondition") as? Int ?? 3
                 data.filter({$0.remainingTime < notificationCondition + 1}).forEach({ item in
                     itemNotRemaining += "\(item.name) "
                 })
@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-        UserDefaults.standard.set(currentDate, forKey: "lastDate")
+        r.user.set(currentDate, forKey: "lastDate")
     }
     
 }

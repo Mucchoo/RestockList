@@ -22,11 +22,27 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
         let realm = r.realm
         let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+        let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
+        if let lastDate = r.user.object(forKey: "lastDate") as? Int {
+            let elapsedDays = currentDate - lastDate
+            if elapsedDays > 0 {
+                realm.beginWrite()
+                for Item in realm.objects(Item.self) {
+                    Item.remainingTime -= elapsedDays
+                    if Item.remainingTime < 0 {
+                        Item.remainingTime = 0
+                    }
+                }
+                try! realm.commitWrite()
+            }
+        }
+        r.user.set(currentDate, forKey: "lastDate")
         let theme: Int = r.user.object(forKey: "theme") as? Int ?? 1
         let entry = SimpleEntry(date: Date(), data: data, theme: theme)
         var entries: [SimpleEntry] = []
         entries.append(entry)
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        let morning = Calendar.current.date(from: DateComponents(hour: 9, minute: 30))!
+        let timeline = Timeline(entries: entries, policy: .after(morning))
         completion(timeline)
     }
     
