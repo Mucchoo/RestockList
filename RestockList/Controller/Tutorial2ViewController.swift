@@ -15,6 +15,7 @@ class Tutorial2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         card.layer.cornerRadius = 20
+        Shadow.setTo(card)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -20,6 +20,8 @@ class ProViewController: UIViewController {
         iconBackground.forEach{ $0.layer.cornerRadius = 15}
         button.layer.cornerRadius = 20
         restoreButton.layer.cornerRadius = 20
+        Shadow.setTo(button)
+        Shadow.setTo(restoreButton)
         image.forEach{ $0.layer.cornerRadius = 20 }
     }
     

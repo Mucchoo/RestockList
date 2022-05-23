@@ -48,6 +48,7 @@
 		2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1122817FF38001F84D4 /* AddViewController.swift */; };
 		2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1142817FF51001F84D4 /* EditViewController.swift */; };
 		2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2ACEE11728180067001F84D4 /* RealmSwift */; };
+		2AEA5704283B0457000AD25E /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEA5703283B0457000AD25E /* Shadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		2ACEE1122817FF38001F84D4 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		2ACEE1142817FF51001F84D4 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		2AEA5703283B0457000AD25E /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 				2A9A8192281E6FB000186477 /* IconCell.swift */,
 				2A628C302821055300952956 /* realm.swift */,
 				2A383D102817B820000BCAF0 /* Item.swift */,
+				2AEA5703283B0457000AD25E /* Shadow.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AEA5704283B0457000AD25E /* Shadow.swift in Sources */,
 				2A43EEDE2817B2C4001BD791 /* TableViewController.swift in Sources */,
 				2A628C272820A88E00952956 /* Tutorial1ViewController.swift in Sources */,
 				2A43EEEE2817B597001BD791 /* EditProtocol.swift in Sources */,

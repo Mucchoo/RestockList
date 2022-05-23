@@ -33,6 +33,7 @@ class TableViewCell: UITableViewCell {
         periodFrame.layer.borderWidth = 3
         periodFrame.layer.borderColor = UIColor(named: "AccentColor")?.cgColor
         progressBar.transform = CGAffineTransform(scaleX: 1, y: 10)
+        Shadow.setTo(itemFrame)
         let realm = r.realm
         data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
     }

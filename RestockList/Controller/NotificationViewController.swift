@@ -6,24 +6,20 @@
 //
 
 import UIKit
-import UserNotifications
 
-class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UNUserNotificationCenterDelegate {
+class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var button: UIButton!
     let pickerArray: [Int] = ([Int])(1...30)
-    let notificationCenter = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         button.layer.cornerRadius = 20
+        Shadow.setTo(button)
         picker.dataSource = self
         picker.delegate = self
-        notificationCenter.requestAuthorization(options: [.alert, .sound]) { isPermitted, error in
-            print("許可：\(isPermitted)")
-        }
-        notificationCenter.delegate = self
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,22 +47,4 @@ class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPick
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func testButtonTapped(_ sender: UIButton) {
-        notificationCenter.getNotificationSettings { settings in
-            if settings.authorizationStatus == .authorized {
-                let content = UNMutableNotificationContent()
-                content.title = "title"
-                content.body = "BODY"
-                content.sound = UNNotificationSound.default
-                var date = DateComponents()
-                date.hour = 15
-                date.minute = 35
-                let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
-                let request = UNNotificationRequest(identifier: "xxx", content: content, trigger: trigger)
-                let center = UNUserNotificationCenter.current()
-                center.add(request) { error in }
-                print("リクエスト\(request)")
-            }
-        }
-    }
 }

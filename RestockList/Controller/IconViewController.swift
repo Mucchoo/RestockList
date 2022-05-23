@@ -28,6 +28,7 @@ class IconViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! IconCell
         cell.setImage(row: indexPath.row)
         cell.layer.cornerRadius = 20
+        Shadow.setTo(cell)
         return cell
     }
     

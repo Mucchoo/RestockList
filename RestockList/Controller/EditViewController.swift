@@ -25,8 +25,8 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
         super.viewDidLoad()
         completeButton.layer.cornerRadius = 20
         deleteButton.layer.cornerRadius = 20
-        deleteButton.layer.borderColor = UIColor(named: "AccentColor")?.cgColor
-        deleteButton.layer.borderWidth = 3
+        Shadow.setTo(completeButton)
+        Shadow.setTo(deleteButton)
         textFieldBackground.layer.cornerRadius = 10
         itemTextField.delegate = self
         periodPickerView.dataSource = self

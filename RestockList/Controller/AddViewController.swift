@@ -23,6 +23,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
         textFieldBackground.layer.cornerRadius = 10
         itemTextField.becomeFirstResponder()
         addButton.layer.cornerRadius = 20
+        Shadow.setTo(addButton)
         itemTextField.delegate = self
         periodPickerView.dataSource = self
         periodPickerView.delegate = self
