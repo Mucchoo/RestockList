@@ -41,7 +41,7 @@ struct Provider: TimelineProvider {
         let entry = SimpleEntry(date: Date(), data: data, theme: theme)
         var entries: [SimpleEntry] = []
         entries.append(entry)
-        let morning = Calendar.current.date(from: DateComponents(hour: 9, minute: 30))!
+        let morning = Calendar.current.date(from: DateComponents(hour: 9))!
         let timeline = Timeline(entries: entries, policy: .after(morning))
         completion(timeline)
     }
