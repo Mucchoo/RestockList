@@ -246,9 +246,9 @@
 				2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */,
 				2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */,
 				2A9A8192281E6FB000186477 /* IconCell.swift */,
+				2AEA5703283B0457000AD25E /* Shadow.swift */,
 				2A628C302821055300952956 /* realm.swift */,
 				2A383D102817B820000BCAF0 /* Item.swift */,
-				2AEA5703283B0457000AD25E /* Shadow.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
