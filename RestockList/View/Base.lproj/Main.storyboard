@@ -1049,10 +1049,10 @@
         <!--使い方-->
         <scene sceneID="LmA-8g-LXY">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ku-ye-6OE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Qjf-uX-GnN" customClass="PageViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="使い方" id="AKI-YU-iS4"/>
                 </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ku-ye-6OE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-191" y="806"/>
         </scene>
@@ -1065,10 +1065,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ZK-CY-ZsB">
-                                <rect key="frame" x="20" y="64" width="374" height="748"/>
+                                <rect key="frame" x="20" y="64" width="374" height="768"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aoI-LN-VtB">
-                                        <rect key="frame" x="172" y="216.5" width="30" height="29"/>
+                                        <rect key="frame" x="172" y="226.5" width="30" height="29"/>
                                         <color key="tintColor" name="AccentColor1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="dtc-Iv-i0g"/>
@@ -1076,19 +1076,19 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial1" translatesAutoresizingMaskIntoConstraints="NO" id="hCm-iJ-8wG">
-                                        <rect key="frame" x="20" y="121" width="334" height="75"/>
+                                        <rect key="frame" x="20" y="131" width="334" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hCm-iJ-8wG" secondAttribute="height" multiplier="334:75" id="rT2-8G-jfk"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial2" translatesAutoresizingMaskIntoConstraints="NO" id="L1c-fJ-ZWd">
-                                        <rect key="frame" x="20" y="266" width="334" height="176"/>
+                                        <rect key="frame" x="20" y="276" width="334" height="176"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="L1c-fJ-ZWd" secondAttribute="height" multiplier="167:88" id="a2i-Lt-QgO"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="まずは右上の＋ボタンからアイテムを追加！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqU-HH-SXM">
-                                        <rect key="frame" x="20" y="462" width="334" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="まずは右上の＋ボタンからアイテムを追加しましょう" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqU-HH-SXM">
+                                        <rect key="frame" x="20" y="472" width="334" height="36"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1110,7 +1110,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYZ-31-KVY">
-                                <rect key="frame" x="-193" y="712" width="800" height="800"/>
+                                <rect key="frame" x="-193" y="732" width="800" height="800"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="800" id="dz5-RO-q1x"/>
@@ -1125,7 +1125,7 @@
                             <constraint firstItem="3ZK-CY-ZsB" firstAttribute="leading" secondItem="d0q-rr-6SQ" secondAttribute="leading" constant="20" id="JXh-Nw-BP2"/>
                             <constraint firstItem="tYZ-31-KVY" firstAttribute="top" secondItem="3ZK-CY-ZsB" secondAttribute="bottom" constant="-100" id="MRE-1Y-f10"/>
                             <constraint firstItem="tYZ-31-KVY" firstAttribute="centerX" secondItem="Ekf-9q-7z5" secondAttribute="centerX" id="dq2-Mw-Ico"/>
-                            <constraint firstItem="d0q-rr-6SQ" firstAttribute="bottom" secondItem="3ZK-CY-ZsB" secondAttribute="bottom" constant="50" id="uMa-kc-Eyi"/>
+                            <constraint firstItem="d0q-rr-6SQ" firstAttribute="bottom" secondItem="3ZK-CY-ZsB" secondAttribute="bottom" constant="30" id="uMa-kc-Eyi"/>
                             <constraint firstItem="3ZK-CY-ZsB" firstAttribute="top" secondItem="d0q-rr-6SQ" secondAttribute="top" constant="20" id="wXo-W3-QdM"/>
                         </constraints>
                     </view>
@@ -1152,10 +1152,10 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agD-40-TGs">
-                                        <rect key="frame" x="20" y="64" width="374" height="748"/>
+                                        <rect key="frame" x="20" y="64" width="374" height="768"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CjF-b3-TZc">
-                                                <rect key="frame" x="172" y="272.5" width="30" height="29"/>
+                                                <rect key="frame" x="172" y="282.5" width="30" height="29"/>
                                                 <color key="tintColor" name="AccentColor1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="3bT-Am-z7r"/>
@@ -1163,19 +1163,19 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial3" translatesAutoresizingMaskIntoConstraints="NO" id="fRa-ht-UvB">
-                                                <rect key="frame" x="20" y="150" width="334" height="102"/>
+                                                <rect key="frame" x="20" y="160" width="334" height="102"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="fRa-ht-UvB" secondAttribute="height" multiplier="167:51" id="Ujh-Tk-c4w"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial4" translatesAutoresizingMaskIntoConstraints="NO" id="2OD-m5-lYv">
-                                                <rect key="frame" x="20" y="322" width="334" height="104"/>
+                                                <rect key="frame" x="20" y="332" width="334" height="104"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="2OD-m5-lYv" secondAttribute="height" multiplier="167:52" id="480-EP-Uh5"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="入荷後は✔︎を押して残り期間をリセット！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU2-UL-qhT">
-                                                <rect key="frame" x="20" y="446" width="334" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="入荷したアイテムは✔︎を押して残り期間をリセットできます" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU2-UL-qhT">
+                                                <rect key="frame" x="20" y="456" width="334" height="36"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="highlightedColor" systemColor="labelColor"/>
@@ -1197,7 +1197,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73d-g8-2n7">
-                                        <rect key="frame" x="-193" y="712" width="800" height="800"/>
+                                        <rect key="frame" x="-193" y="732" width="800" height="800"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="800" id="FfW-iG-LCk"/>
@@ -1214,7 +1214,7 @@
                                     <constraint firstItem="73d-g8-2n7" firstAttribute="centerX" secondItem="RLy-B2-UQY" secondAttribute="centerX" id="DHj-Kq-Hgn"/>
                                     <constraint firstItem="73d-g8-2n7" firstAttribute="top" secondItem="agD-40-TGs" secondAttribute="bottom" constant="-100" id="Jmg-mY-wk6"/>
                                     <constraint firstItem="agD-40-TGs" firstAttribute="top" secondItem="W0D-cz-Af9" secondAttribute="top" constant="20" id="a1e-3a-60p"/>
-                                    <constraint firstItem="W0D-cz-Af9" firstAttribute="bottom" secondItem="agD-40-TGs" secondAttribute="bottom" constant="50" id="e4d-XU-H41"/>
+                                    <constraint firstItem="W0D-cz-Af9" firstAttribute="bottom" secondItem="agD-40-TGs" secondAttribute="bottom" constant="30" id="e4d-XU-H41"/>
                                     <constraint firstItem="agD-40-TGs" firstAttribute="leading" secondItem="W0D-cz-Af9" secondAttribute="leading" constant="20" id="gn7-X3-KJ2"/>
                                 </constraints>
                             </view>
@@ -1245,16 +1245,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RH5-65-Xq3">
-                                        <rect key="frame" x="20" y="64" width="374" height="748"/>
+                                        <rect key="frame" x="20" y="64" width="374" height="768"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ウィジェットを追加して一目で確認！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvV-FX-KF3">
-                                                <rect key="frame" x="20" y="492.5" width="334" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ウィジェットを追加すれば残り少ないアイテムを一目で確認できます" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvV-FX-KF3">
+                                                <rect key="frame" x="20" y="502.5" width="334" height="36"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial5" translatesAutoresizingMaskIntoConstraints="NO" id="HPa-4W-5dN">
-                                                <rect key="frame" x="20" y="135.5" width="334" height="357"/>
+                                                <rect key="frame" x="20" y="145.5" width="334" height="357"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="HPa-4W-5dN" secondAttribute="height" multiplier="334:357" id="arw-Kb-2PB"/>
                                                 </constraints>
@@ -1271,7 +1271,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2c-Id-gCe">
-                                        <rect key="frame" x="-193" y="712" width="800" height="800"/>
+                                        <rect key="frame" x="-193" y="732" width="800" height="800"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="800" id="AL4-Qi-YXh"/>
@@ -1287,7 +1287,7 @@
                                 <color key="backgroundColor" name="AccentColor1"/>
                                 <constraints>
                                     <constraint firstItem="RH5-65-Xq3" firstAttribute="leading" secondItem="ftr-fm-qvT" secondAttribute="leading" constant="20" id="2qW-UM-hMM"/>
-                                    <constraint firstItem="ftr-fm-qvT" firstAttribute="bottom" secondItem="RH5-65-Xq3" secondAttribute="bottom" constant="50" id="3BU-QH-Xh9"/>
+                                    <constraint firstItem="ftr-fm-qvT" firstAttribute="bottom" secondItem="RH5-65-Xq3" secondAttribute="bottom" constant="30" id="3BU-QH-Xh9"/>
                                     <constraint firstItem="RH5-65-Xq3" firstAttribute="top" secondItem="ftr-fm-qvT" secondAttribute="top" constant="20" id="5Ub-w2-LaB"/>
                                     <constraint firstItem="n2c-Id-gCe" firstAttribute="top" secondItem="RH5-65-Xq3" secondAttribute="bottom" constant="-100" id="9PT-ue-gnV"/>
                                     <constraint firstItem="n2c-Id-gCe" firstAttribute="centerX" secondItem="EHn-Zk-UW5" secondAttribute="centerX" id="EMg-G3-ys8"/>
@@ -1321,17 +1321,17 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNX-5y-nF5">
-                                        <rect key="frame" x="20" y="64" width="374" height="748"/>
+                                        <rect key="frame" x="20" y="64" width="374" height="768"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list.bullet.rectangle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qG6-jJ-cCw">
-                                                <rect key="frame" x="40" y="217" width="294" height="213.5"/>
+                                                <rect key="frame" x="40" y="227" width="294" height="213.5"/>
                                                 <color key="tintColor" name="AccentColor1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qG6-jJ-cCw" secondAttribute="height" multiplier="49:36" id="yHc-qm-BZd"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自分だけの消耗品リストを作成しましょう！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMW-v2-zoJ">
-                                                <rect key="frame" x="20" y="432" width="334" height="17"/>
+                                                <rect key="frame" x="20" y="442" width="334" height="17"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1348,7 +1348,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lQ-xR-icn">
-                                        <rect key="frame" x="-193" y="712" width="800" height="800"/>
+                                        <rect key="frame" x="-193" y="732" width="800" height="800"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="800" id="20B-WZ-Gze"/>
@@ -1367,7 +1367,7 @@
                                     <constraint firstItem="0lQ-xR-icn" firstAttribute="top" secondItem="YNX-5y-nF5" secondAttribute="bottom" constant="-100" id="J26-xd-dzP"/>
                                     <constraint firstItem="YNX-5y-nF5" firstAttribute="leading" secondItem="bSo-QJ-QsN" secondAttribute="leading" constant="20" id="JAp-61-rZV"/>
                                     <constraint firstItem="0lQ-xR-icn" firstAttribute="centerX" secondItem="K0q-HJ-4eK" secondAttribute="centerX" id="LwO-Su-0N7"/>
-                                    <constraint firstItem="bSo-QJ-QsN" firstAttribute="bottom" secondItem="YNX-5y-nF5" secondAttribute="bottom" constant="50" id="Nhj-1A-7N9"/>
+                                    <constraint firstItem="bSo-QJ-QsN" firstAttribute="bottom" secondItem="YNX-5y-nF5" secondAttribute="bottom" constant="30" id="Nhj-1A-7N9"/>
                                     <constraint firstItem="bSo-QJ-QsN" firstAttribute="trailing" secondItem="YNX-5y-nF5" secondAttribute="trailing" constant="20" id="n6x-RR-7ER"/>
                                 </constraints>
                             </view>
@@ -1657,7 +1657,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="QJf-Ra-cZa"/>
-        <segue reference="i63-5U-zSb"/>
+        <segue reference="ih6-RN-HNt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
@@ -1689,10 +1689,10 @@
             <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor1">
-            <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.082352941176470587" green="0.70980392156862748" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor2">
-            <color red="0.0" green="0.45882352941176469" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.45899999141693115" blue="0.71799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor3">
             <color red="0.25882352941176473" green="0.27058823529411763" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

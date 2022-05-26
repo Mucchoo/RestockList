@@ -34,14 +34,15 @@ class PageViewController: UIPageViewController {
         nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         nextButton.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40).isActive = true
-        nextButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        nextButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         pageControl.numberOfPages = 4
         pageControl.currentPage = 0
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80).isActive = true
         pageControl.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40).isActive = true
         pageControl.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        pageControl.isUserInteractionEnabled = false
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = .gray
         appearance.currentPageIndicatorTintColor = .white
@@ -61,24 +62,28 @@ extension PageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         var index = viewController.view.tag
+        pageControl.currentPage = index
         if index == 3 {
             return nil
         }
         index += 1
+        print("めくった")
         return controllers[index]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = viewController.view.tag
+        pageControl.currentPage = index
         index -= 1
+        print("もどした")
         if index < 0 {
             return nil
         }
         return controllers[index]
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        let currentPage = pageViewController.viewControllers![0]
-        pageControl.currentPage = self.controllers.firstIndex(of: currentPage)!
+    func tutorialPageViewController(tutorialPageViewController: PageViewController,
+        didUpdatePageIndex index: Int) {
+        pageControl.currentPage = index
     }
 }
