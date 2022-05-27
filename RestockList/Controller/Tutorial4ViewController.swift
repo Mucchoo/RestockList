@@ -30,6 +30,7 @@ class Tutorial4ViewController: UIViewController {
         image.tintColor = UIColor(named: "AccentColor\(theme)")
         background.backgroundColor = UIColor(named: "AccentColor\(theme)")
         startButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        circle.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }
     //チュートリアルを閉じる
     @IBAction func startAction(_ sender: UIButton) {

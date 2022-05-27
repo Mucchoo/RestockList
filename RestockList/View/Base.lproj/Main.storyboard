@@ -41,6 +41,9 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="checkmark.circle.fill" catalog="system" title="">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="checkAction:" destination="9bB-1S-YM4" eventType="touchUpInside" id="rHY-dS-AFc"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cM-re-RYZ">
                                                     <rect key="frame" x="15" y="15" width="20" height="20"/>
@@ -53,6 +56,9 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="ellipsis.circle" catalog="system" title="">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="15"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="editAction:" destination="9bB-1S-YM4" eventType="touchUpInside" id="n5I-r3-0kP"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-Ta-eQZ">
                                                     <rect key="frame" x="349" y="80" width="30" height="30"/>
@@ -65,6 +71,9 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="plusAction:" destination="9bB-1S-YM4" eventType="touchUpInside" id="VKJ-6J-Ae4"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKs-21-GJP">
                                                     <rect key="frame" x="15" y="80" width="30" height="30"/>
@@ -77,6 +86,9 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="minusAction:" destination="9bB-1S-YM4" eventType="touchUpInside" id="OsS-zY-1L3"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイテム名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhl-ZN-zop">
                                                     <rect key="frame" x="40" y="15" width="294" height="17"/>
@@ -246,7 +258,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="completeButtonTapped:" destination="oYV-Dc-2yJ" eventType="touchUpInside" id="rhh-PH-O0P"/>
+                                    <action selector="completeAction:" destination="oYV-Dc-2yJ" eventType="touchUpInside" id="A5X-pM-3pp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeZ-Vz-4xX">
@@ -266,7 +278,7 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="deleteButtonTapped:" destination="oYV-Dc-2yJ" eventType="touchUpInside" id="CQx-Th-fcs"/>
+                                    <action selector="deleteAction:" destination="oYV-Dc-2yJ" eventType="touchUpInside" id="Wdp-g5-xv2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -346,7 +358,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="AddButtonTapped:" destination="NPC-Ev-kK3" eventType="touchUpInside" id="IHD-F1-IEB"/>
+                                    <action selector="addAction:" destination="NPC-Ev-kK3" eventType="touchUpInside" id="If6-TI-avi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hq3-fB-7Js">
@@ -397,7 +409,7 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="アイテムを追加" id="Yob-7P-ti3"/>
                     <connections>
-                        <outlet property="addButton" destination="h2r-eK-pYQ" id="8tk-g2-9r1"/>
+                        <outlet property="addButton" destination="h2r-eK-pYQ" id="Prp-Xu-lnn"/>
                         <outlet property="itemTextField" destination="YkB-CK-2Ld" id="1ZB-KO-TUh"/>
                         <outlet property="periodPickerView" destination="j2u-az-0dz" id="TON-71-ChV"/>
                         <outlet property="textFieldBackground" destination="5dl-vY-nAN" id="1hg-7d-vtI"/>
@@ -512,7 +524,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain"/>
                                                     <connections>
-                                                        <action selector="proButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="Ej3-PN-7ca"/>
+                                                        <action selector="proAction:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="GVv-Jc-KcK"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proをアンロック" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwM-1u-xlQ">
@@ -565,7 +577,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain"/>
                                                     <connections>
-                                                        <action selector="themeButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="PId-lf-v3E"/>
+                                                        <action selector="themeAction:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="iG8-hC-n4K"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テーマカラー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTa-g5-e9w">
@@ -618,7 +630,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain"/>
                                                     <connections>
-                                                        <action selector="iconButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="c1z-OL-ba2"/>
+                                                        <action selector="iconAction:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="5o6-tY-cph"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイコン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrI-nJ-IeN">
@@ -763,7 +775,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain"/>
                                                     <connections>
-                                                        <action selector="shareButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="HU4-V5-1VN"/>
+                                                        <action selector="shareAction:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="ddw-oD-UVs"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アプリをシェア" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff4-CG-3wF">
@@ -817,7 +829,6 @@
                                                     <buttonConfiguration key="configuration" style="plain"/>
                                                     <connections>
                                                         <action selector="reviewAction:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="nLV-Xj-A0b"/>
-                                                        <action selector="reviewButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="Jqt-2f-Dgz"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="レビューで応援！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2C-kK-DJi">
@@ -870,7 +881,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain"/>
                                                     <connections>
-                                                        <action selector="emailButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="21l-OI-J4B"/>
+                                                        <action selector="emailAction:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="onI-VW-FII"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ご意見・ご要望" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1a-Zb-IUO">
@@ -961,7 +972,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <action selector="buttonTapped:" destination="idJ-WR-CfA" eventType="touchUpInside" id="AFq-py-nqZ"/>
+                                                    <action selector="themeAction:" destination="idJ-WR-CfA" eventType="touchUpInside" id="NaP-xx-6nh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLN-DM-oce">
@@ -970,7 +981,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <action selector="buttonTapped:" destination="idJ-WR-CfA" eventType="touchUpInside" id="N1t-mS-zGR"/>
+                                                    <action selector="themeAction:" destination="idJ-WR-CfA" eventType="touchUpInside" id="Mxu-sy-pzu"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvK-O9-4S4">
@@ -979,7 +990,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <action selector="buttonTapped:" destination="idJ-WR-CfA" eventType="touchUpInside" id="vgo-Dy-TjO"/>
+                                                    <action selector="themeAction:" destination="idJ-WR-CfA" eventType="touchUpInside" id="MPr-uR-hNf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -993,7 +1004,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <action selector="buttonTapped:" destination="idJ-WR-CfA" eventType="touchUpInside" id="s32-sa-qac"/>
+                                                    <action selector="themeAction:" destination="idJ-WR-CfA" eventType="touchUpInside" id="7QF-bP-5ux"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJX-IO-0jU">
@@ -1002,7 +1013,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <action selector="buttonTapped:" destination="idJ-WR-CfA" eventType="touchUpInside" id="ePJ-xx-t0F"/>
+                                                    <action selector="themeAction:" destination="idJ-WR-CfA" eventType="touchUpInside" id="JVq-rE-XHk"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAX-om-1tu">
@@ -1011,7 +1022,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <action selector="buttonTapped:" destination="idJ-WR-CfA" eventType="touchUpInside" id="SxP-Gp-1vt"/>
+                                                    <action selector="themeAction:" destination="idJ-WR-CfA" eventType="touchUpInside" id="qT7-7h-dPh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1424,10 +1435,6 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="8GG-py-0kt" eventType="touchUpInside" id="oXv-tr-r9d"/>
-                                    <action selector="completeButtonTapped:" destination="oYV-Dc-2yJ" eventType="touchUpInside" id="um1-Ok-JzQ"/>
-                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEb-mO-tDi">
                                 <rect key="frame" x="157" y="84" width="100" height="216"/>
@@ -1516,8 +1523,7 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="AddButtonTapped:" destination="NPC-Ev-kK3" eventType="touchUpInside" id="ie1-Uv-1Fi"/>
-                                                    <action selector="ButtonTapped:" destination="cXf-2x-mZ1" eventType="touchUpInside" id="rhq-oo-4HJ"/>
+                                                    <action selector="purchaseAction:" destination="cXf-2x-mZ1" eventType="touchUpInside" id="s5N-ze-2MS"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRZ-L0-SCH">
@@ -1593,9 +1599,7 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="AddButtonTapped:" destination="NPC-Ev-kK3" eventType="touchUpInside" id="HF5-Ip-ghg"/>
-                                                    <action selector="ButtonTapped:" destination="cXf-2x-mZ1" eventType="touchUpInside" id="cId-FG-PTF"/>
-                                                    <action selector="restoreButtonTapped:" destination="cXf-2x-mZ1" eventType="touchUpInside" id="u2e-Kj-CSX"/>
+                                                    <action selector="restoreAction:" destination="cXf-2x-mZ1" eventType="touchUpInside" id="U7T-sW-j70"/>
                                                 </connections>
                                             </button>
                                         </subviews>

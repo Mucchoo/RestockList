@@ -11,6 +11,7 @@ class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPick
 
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var button: UIButton!
+    
     let pickerArray = ([Int])(1...30)
     
     override func viewDidLoad() {

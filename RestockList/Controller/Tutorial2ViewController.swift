@@ -24,5 +24,6 @@ class Tutorial2ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let theme = Data.user.object(forKey: "theme") ?? 1
         background.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        circle.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }
 }
