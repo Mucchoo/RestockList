@@ -16,57 +16,58 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     @IBOutlet weak var periodPickerView: UIPickerView!
     @IBOutlet weak var itemTextField: UITextField!
     
-    var data = [Item]()
-    var periodArray:[Int] = ([Int])(1...365)
-    var selectedCell: Int = 0
+    var periodArray = ([Int])(1...365)
+    var selectedCell = 0
     let myTableViewController = TableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //delegate設定
+        itemTextField.delegate = self
+        periodPickerView.dataSource = self
+        periodPickerView.delegate = self
+        //UI調整
+        textFieldBackground.layer.cornerRadius = 10
         completeButton.layer.cornerRadius = 20
         deleteButton.layer.cornerRadius = 20
         Shadow.setTo(completeButton)
         Shadow.setTo(deleteButton)
-        textFieldBackground.layer.cornerRadius = 10
-        itemTextField.delegate = self
-        periodPickerView.dataSource = self
-        periodPickerView.delegate = self
-        let realm = r.realm
-        data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+        //編集中のアイテム情報を反映
+        let realm = Data.realm
         let period = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.period ?? 1
         periodPickerView.selectRow(period - 1 , inComponent: 0, animated: true)
         itemTextField.text = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.name ?? ""
     }
-    
+    //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        let theme = r.user.object(forKey: "theme") ?? 1
+        let theme = Data.user.object(forKey: "theme") ?? 1
         completeButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
         deleteButton.tintColor = UIColor(named: "AccentColor\(theme)")
         deleteButton.layer.borderColor = UIColor(named: "AccentColor\(theme)")?.cgColor
         textFieldBackground.backgroundColor = UIColor(named: "AccentColor\(theme)")
         itemTextField.tintColor = UIColor(named: "AccentColor\(theme)")
     }
-        
+    //決定ボタンでキーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         itemTextField.endEditing(true)
         return true
     }
-    
+    //Pickerの列の数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+    //Pickerの行の数
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return periodArray.count
     }
-    
+    //Pickerの選択項目
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return String(periodArray[row])
     }
-    
-    @IBAction func completeButtonTapped(_ sender: UIButton) {
+    //編集内容を保存
+    @IBAction func completeAction(_ sender: UIButton) {
         if itemTextField.text != "" {
-            let realm = r.realm
+            let realm = Data.realm
             let period = periodPickerView.selectedRow(inComponent: 0) + 1
             let item = itemTextField.text!
             realm.beginWrite()
@@ -82,9 +83,9 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
             itemTextField.placeholder = "アイテム名を入力してください"
         }
     }
-    
-    @IBAction func deleteButtonTapped(_ sender: UIButton) {
-        let realm = r.realm
+    //アイテムを削除
+    @IBAction func deleteAction(_ sender: UIButton) {
+        let realm = Data.realm
         realm.beginWrite()
         realm.delete(realm.object(ofType: Item.self, forPrimaryKey: selectedCell)!)
         try! realm.commitWrite()

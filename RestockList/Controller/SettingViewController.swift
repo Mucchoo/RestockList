@@ -20,12 +20,15 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //UI調整
         iconBackground.forEach{ $0.layer.cornerRadius = 8}
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let theme = r.user.object(forKey: "theme") ?? 1
+        //テーマカラー反映
+        let theme = Data.user.object(forKey: "theme") ?? 1
         iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
+        //課金状態で表示内容を変更
         Purchases.shared.getCustomerInfo { customerInfo, error in
             if customerInfo?.entitlements["Pro"]?.isActive == true {
                 self.isPro = true
@@ -40,30 +43,31 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
             iconView.layer.opacity = 0.5
         }
     }
-    
+    //cell選択時に背景が黒くなるのをすぐに戻す
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    @IBAction func proButtonTapped(_ sender: UIButton) {
+    //ProViewに遷移
+    @IBAction func proAction(_ sender: UIButton) {
         if isPro == false {
             performSegue(withIdentifier: "ProSegue", sender: nil)
         }
     }
-    
-    @IBAction func themeButtonTapped(_ sender: UIButton) {
+    //ThemeViewに遷移
+    @IBAction func themeAction(_ sender: UIButton) {
         if isPro {
             performSegue(withIdentifier: "ThemeSegue", sender: nil)
         }
     }
-    
-    @IBAction func iconButtonTapped(_ sender: UIButton) {
+    //IconViewに遷移
+    @IBAction func iconAction(_ sender: UIButton) {
         if isPro {
             performSegue(withIdentifier: "IconSegue", sender: nil)
         }
     }
-    
-    @IBAction func shareButtonTapped(_ sender: UIButton) {
+    //アプリをシェア
+    @IBAction func shareAction(_ sender: UIButton) {
+        //選択時に一瞬背景を黒くする
         sender.backgroundColor = UIColor(.black.opacity(0.3))
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             sender.backgroundColor = UIColor(.black.opacity(0))
@@ -74,13 +78,10 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         let windowScenes = scenes.first as? UIWindowScene
         let window = windowScenes?.keyWindow
         window?.rootViewController?.present(av, animated: true, completion: nil)
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            av.popoverPresentationController?.sourceView = window
-            av.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width/2.1, y: UIScreen.main.bounds.height/1.3, width: 200, height: 200)
-        }
     }
-    
-    @IBAction func reviewButtonTapped(_ sender: UIButton) {
+    //レビューアラートを表示
+    @IBAction func reviewAction(_ sender: UIButton) {
+        //選択時に一瞬背景を黒くする
         sender.backgroundColor = UIColor(.black.opacity(0.3))
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             sender.backgroundColor = UIColor(.black.opacity(0))
@@ -89,8 +90,9 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
             SKStoreReviewController.requestReview(in: scene)
         }
     }
-    
-    @IBAction func emailButtonTapped(_ sender: UIButton) {
+    //メールフォームを表示
+    @IBAction func emailAction(_ sender: UIButton) {
+        //選択時に一瞬背景を黒くする
         sender.backgroundColor = UIColor(.black.opacity(0.3))
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             sender.backgroundColor = UIColor(.black.opacity(0))
@@ -102,7 +104,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         mailViewController.setMessageBody("\n\n\n\n\nーーーーーーーーーーーーーーー\nこの上へお気軽にご記入ください。\n消耗品リスト", isHTML: false)
         present(mailViewController, animated: true, completion: nil)
     }
-    
+    //メールフォームを閉じた後の処理
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
         if result == .sent {

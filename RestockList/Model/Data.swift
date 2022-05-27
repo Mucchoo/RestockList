@@ -7,8 +7,8 @@
 
 import Foundation
 import RealmSwift
-
-struct r {
+struct Data {
+    //realmの保存先をapp groupに設定してwidgetと共有
     static var realm: Realm = {
         var config = Realm.Configuration()
         let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.yazujumusa.RestockListWidget")!
@@ -16,6 +16,6 @@ struct r {
         let realm = try! Realm(configuration: config)
         return realm
     }()
-    
+    //userDefaultsの保存先をapp groupに設定してwidgetと共有
     static var user = UserDefaults(suiteName: "group.com.yazujumusa.RestockListWidget")!
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+//realmに保存するアイテム
 class Item: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var period: Int = 1

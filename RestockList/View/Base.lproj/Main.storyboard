@@ -41,9 +41,6 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="checkmark.circle.fill" catalog="system" title="">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25"/>
                                                     </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="checkButtonTapped:" destination="9bB-1S-YM4" eventType="touchUpInside" id="lcL-Ed-KHD"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cM-re-RYZ">
                                                     <rect key="frame" x="15" y="15" width="20" height="20"/>
@@ -56,9 +53,6 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="ellipsis.circle" catalog="system" title="">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="15"/>
                                                     </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="editButtonTapped:" destination="9bB-1S-YM4" eventType="touchUpInside" id="PLr-a0-e4p"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-Ta-eQZ">
                                                     <rect key="frame" x="349" y="80" width="30" height="30"/>
@@ -71,9 +65,6 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                                     </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="plusButtonTapped:" destination="9bB-1S-YM4" eventType="touchUpInside" id="wMA-Rd-rSO"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKs-21-GJP">
                                                     <rect key="frame" x="15" y="80" width="30" height="30"/>
@@ -86,9 +77,6 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                                     </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="minusButtonTapped:" destination="9bB-1S-YM4" eventType="touchUpInside" id="LRL-2v-9hI"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイテム名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhl-ZN-zop">
                                                     <rect key="frame" x="40" y="15" width="294" height="17"/>
@@ -190,12 +178,11 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="O6G-Gh-rqb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="addButtonTapped:" destination="mnu-J1-1eu" id="opL-DU-nrQ"/>
+                                <action selector="addAction:" destination="mnu-J1-1eu" id="kQr-HH-cBd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="myTableView" destination="acE-1b-0fM" id="Tej-DM-Dys"/>
                         <segue destination="Qjf-uX-GnN" kind="presentation" identifier="showTutorial" id="i63-5U-zSb"/>
                         <segue destination="NPC-Ev-kK3" kind="show" identifier="AddSegue" id="ZEH-CP-QX6"/>
                         <segue destination="cXf-2x-mZ1" kind="show" identifier="ProFromTopSegue" id="QJf-Ra-cZa"/>
@@ -829,6 +816,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain"/>
                                                     <connections>
+                                                        <action selector="reviewAction:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="nLV-Xj-A0b"/>
                                                         <action selector="reviewButtonTapped:" destination="5uc-ni-dZZ" eventType="touchUpInside" id="Jqt-2f-Dgz"/>
                                                     </connections>
                                                 </button>
@@ -1496,7 +1484,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ptk-K1-utD" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="787"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テーマカラー解放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0o-Pr-xHU">
                                                 <rect key="frame" x="60" y="279" width="164" height="24"/>
@@ -1617,7 +1605,6 @@
                                             <constraint firstItem="S7b-LR-RJZ" firstAttribute="top" secondItem="r0O-O9-uT8" secondAttribute="bottom" constant="20" id="E8T-Iz-FHw"/>
                                             <constraint firstItem="mYf-gW-UYC" firstAttribute="leading" secondItem="Ptk-K1-utD" secondAttribute="leading" constant="20" id="Fbb-5o-Zno"/>
                                             <constraint firstItem="Xdg-Xt-Ihn" firstAttribute="leading" secondItem="Ptk-K1-utD" secondAttribute="leading" constant="20" id="JyW-IP-5AI"/>
-                                            <constraint firstAttribute="height" constant="1200" id="R9W-IT-jRa"/>
                                             <constraint firstItem="a0o-Pr-xHU" firstAttribute="top" secondItem="nMv-Mu-uYT" secondAttribute="bottom" constant="23" id="RZx-dE-B1D"/>
                                             <constraint firstItem="K0k-tH-1MW" firstAttribute="top" secondItem="mYf-gW-UYC" secondAttribute="bottom" constant="23" id="TGm-Gk-QWN"/>
                                             <constraint firstItem="R6K-DM-Z8e" firstAttribute="top" secondItem="Ptk-K1-utD" secondAttribute="top" constant="23" id="VJ3-zd-gQn"/>
@@ -1626,6 +1613,7 @@
                                             <constraint firstItem="nMv-Mu-uYT" firstAttribute="top" secondItem="tRZ-L0-SCH" secondAttribute="bottom" constant="20" id="gin-nL-OT0"/>
                                             <constraint firstAttribute="trailing" secondItem="S7b-LR-RJZ" secondAttribute="trailing" constant="20" id="gmv-Pq-IBn"/>
                                             <constraint firstItem="EzX-Aj-dTN" firstAttribute="leading" secondItem="Ptk-K1-utD" secondAttribute="leading" constant="20" id="h8D-5f-LNm"/>
+                                            <constraint firstAttribute="bottom" secondItem="EzX-Aj-dTN" secondAttribute="bottom" constant="20" id="ji7-ic-PzS"/>
                                             <constraint firstItem="nMv-Mu-uYT" firstAttribute="leading" secondItem="Ptk-K1-utD" secondAttribute="leading" constant="20" id="kuq-J3-lJJ"/>
                                             <constraint firstAttribute="trailing" secondItem="EzX-Aj-dTN" secondAttribute="trailing" constant="20" id="nTf-cQ-cTO"/>
                                             <constraint firstItem="tRZ-L0-SCH" firstAttribute="top" secondItem="Ptk-K1-utD" secondAttribute="top" constant="20" id="nXr-SZ-AVX"/>
@@ -1675,8 +1663,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QJf-Ra-cZa"/>
-        <segue reference="i63-5U-zSb"/>
+        <segue reference="a6M-6k-SrB"/>
+        <segue reference="ih6-RN-HNt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

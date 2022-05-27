@@ -21,34 +21,25 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     
-    var data = [Item]()
-    var editUIViewController = EditViewController()
-    var myTableViewController = TableViewController()
     var delegate : EditProtocol?
     var updateDelegate: UpdateProtocol?
+    let realm = Data.realm
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //UI調整
         itemFrame.layer.cornerRadius = 15
         periodFrame.layer.borderWidth = 3
         periodFrame.layer.borderColor = UIColor(named: "AccentColor")?.cgColor
         progressBar.transform = CGAffineTransform(scaleX: 1, y: 10)
         Shadow.setTo(itemFrame)
-        let realm = r.realm
-        data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
     }
-    
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
-    @IBAction func editButtonTapped(_ sender: UIButton) {
+    //アイテムの編集
+    @IBAction func editAction(_ sender: UIButton) {
         delegate?.catchData(selectedCell: sender.tag)
     }
-    
-    @IBAction func plusButtonTapped(_ sender: UIButton) {
-        let realm = r.realm
+    //残り期間を1日増やす
+    @IBAction func plusAction(_ sender: UIButton) {
         if realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.remainingTime < realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.period {
             realm.beginWrite()
             realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.remainingTime += 1
@@ -57,9 +48,8 @@ class TableViewCell: UITableViewCell {
             UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
         }
     }
-    
-    @IBAction func minusButtonTapped(_ sender: UIButton) {
-        let realm = r.realm
+    //残り期間を1日減らす
+    @IBAction func minusAction(_ sender: UIButton) {
         if realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.remainingTime > 0 {
             realm.beginWrite()
             realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.remainingTime -= 1
@@ -68,14 +58,12 @@ class TableViewCell: UITableViewCell {
             UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
         }
     }
-    
-    @IBAction func checkButtonTapped(_ sender: UIButton) {
-        let realm = r.realm
+    //残り期間を完全に回復する
+    @IBAction func checkAction(_ sender: UIButton) {
         realm.beginWrite()
         realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.remainingTime = realm.object(ofType: Item.self, forPrimaryKey: sender.tag)!.period
         try! realm.commitWrite()
         updateDelegate?.updateTableView()
         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
     }
-        
 }

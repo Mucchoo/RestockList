@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PageViewController: UIPageViewController {
+class PageViewController: UIPageViewController, UIPageViewControllerDataSource{
     
     private var controllers: [UIViewController] = []
     private let usageLabel = UILabel()
@@ -15,15 +15,16 @@ class PageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //表示するページを登録
+        dataSource = self
         let VC1 = storyboard!.instantiateViewController(withIdentifier: "Tutorial1")
         let VC2 = storyboard!.instantiateViewController(withIdentifier: "Tutorial2")
         let VC3 = storyboard!.instantiateViewController(withIdentifier: "Tutorial3")
         let VC4 = storyboard!.instantiateViewController(withIdentifier: "Tutorial4")
         controllers = [VC1, VC2, VC3, VC4]
         setViewControllers([controllers[0]], direction: .forward, animated: true)
-        dataSource = self
+        //使い方Labelを表示
         view.addSubview(usageLabel)
-        view.addSubview(pageControl)
         usageLabel.layer.cornerRadius = 20
         usageLabel.text = "使い方"
         usageLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
@@ -36,6 +37,8 @@ class PageViewController: UIPageViewController {
         usageLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         usageLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 80).isActive = true
         usageLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        //PageControlを表示
+        view.addSubview(pageControl)
         pageControl.numberOfPages = 4
         pageControl.currentPage = 0
         pageControl.translatesAutoresizingMaskIntoConstraints = false
@@ -48,19 +51,16 @@ class PageViewController: UIPageViewController {
         appearance.pageIndicatorTintColor = .gray
         appearance.currentPageIndicatorTintColor = .white
     }
-    
+    //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        let theme = r.user.object(forKey: "theme") ?? 1
+        let theme = Data.user.object(forKey: "theme") ?? 1
         usageLabel.textColor = UIColor(named: "AccentColor\(theme)")
     }
-}
-
-extension PageViewController: UIPageViewControllerDataSource {
-    
+    //ページ数
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return 4
     }
-    
+    //次へ進む
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         var index = viewController.view.tag
         pageControl.currentPage = index
@@ -70,7 +70,7 @@ extension PageViewController: UIPageViewControllerDataSource {
         index += 1
         return controllers[index]
     }
-    
+    //前へ戻る
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = viewController.view.tag
         pageControl.currentPage = index

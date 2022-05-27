@@ -12,15 +12,17 @@ class Tutorial2ViewController: UIViewController {
     @IBOutlet weak var card: UIView!
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var circle: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //UI調整
         card.layer.cornerRadius = 20
-        Shadow.setTo(card)
         circle.layer.cornerRadius = 400
+        Shadow.setTo(card)
     }
-    
+    //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        let theme = r.user.object(forKey: "theme") ?? 1
+        let theme = Data.user.object(forKey: "theme") ?? 1
         background.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }
 }

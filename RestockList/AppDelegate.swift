@@ -16,28 +16,24 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let launchedTimes = r.user.object(forKey: "LaunchedTimes") as? Int ?? 0
-        r.user.set(launchedTimes + 1, forKey: "LaunchedTimes")
+        //アプリ起動回数を記録
+        let launchedTimes = Data.user.object(forKey: "LaunchedTimes") as? Int ?? 0
+        Data.user.set(launchedTimes + 1, forKey: "LaunchedTimes")
+        //内課金有効化
         Purchases.configure(withAPIKey: "appl_iJTYZXESAQcDrvNZmKCudSLubQU")
+        //バックグラウンド更新有効化
         BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.yazujumusa.RestockList.refresh", using: nil) { task in
             self.handleAppRefresh(task: task as! BGAppRefreshTask)
         }
-        UNUserNotificationCenter.current().requestAuthorization(
-        options: [.alert, .sound]){ (granted, _) in
+        //通知の許可
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]){ (granted, _) in
             if granted{
                 UNUserNotificationCenter.current().delegate = self
             }
         }
         return true
     }
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-    }
-    
+    //30分毎にバックグラウンド更新をセット
     func scheduleAppRefresh() {
         let request = BGAppRefreshTaskRequest(identifier: "com.yazujumusa.RestockList.refresh")
         request.earliestBeginDate = Date(timeIntervalSinceNow: 30 * 60)
@@ -48,13 +44,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Could not schedule app refresh: \(error)")
         }
     }
-    
+    //バックグラウンド更新
     func handleAppRefresh(task: BGAppRefreshTask) {
+        //次のバックグラウンド処理を予約
         self.scheduleAppRefresh()
-        let realm = r.realm
+        //日付が変わっていた場合アイテムの残り日数を更新
+        let realm = Data.realm
         let data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
-        if let lastDate = r.user.object(forKey: "lastDate") as? Int {
+        if let lastDate = Data.user.object(forKey: "lastDate") as? Int {
             let elapsedDays = currentDate - lastDate
             if elapsedDays > 0 {
                 realm.beginWrite()
@@ -65,9 +63,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                 }
                 try! realm.commitWrite()
+                Data.user.set(currentDate, forKey: "lastDate")
                 WidgetCenter.shared.reloadAllTimelines()
+                //残り少ないアイテムを通知
                 var itemNotRemaining = ""
-                let notificationCondition = r.user.object(forKey: "notificationCondition") as? Int ?? 3
+                let notificationCondition = Data.user.object(forKey: "notificationCondition") as? Int ?? 3
                 data.filter({$0.remainingTime < notificationCondition + 1}).forEach({ item in
                     itemNotRemaining += "\(item.name) "
                 })
@@ -81,11 +81,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-        r.user.set(currentDate, forKey: "lastDate")
     }
     
 }
-
+//フォアグラウンド状態で通知
 extension AppDelegate: UNUserNotificationCenterDelegate{
    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
        completionHandler([.banner, .list, .sound])

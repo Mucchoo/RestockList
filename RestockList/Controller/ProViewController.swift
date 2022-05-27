@@ -17,22 +17,22 @@ class ProViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //UI調整
         iconBackground.forEach{ $0.layer.cornerRadius = 15}
+        image.forEach{ $0.layer.cornerRadius = 20 }
         button.layer.cornerRadius = 20
         restoreButton.layer.cornerRadius = 20
         Shadow.setTo(button)
         Shadow.setTo(restoreButton)
-        image.forEach{ $0.layer.cornerRadius = 20 }
     }
-    
+    //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        let theme = r.user.object(forKey: "theme") ?? 1
+        let theme = Data.user.object(forKey: "theme") ?? 1
         iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
         button.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }
-    
-    @IBAction func ButtonTapped(_ sender: UIButton) {
-        print("ボタンタップ発動")
+    //内課金アイテムを購入
+    @IBAction func purchaseAction(_ sender: UIButton) {
         Purchases.shared.getOfferings { (offerings, error) in
             if let package = offerings?.current?.lifetime?.storeProduct {
                 Purchases.shared.purchase(product: package) { (transaction, customerInfo, error, userCancelled) in
@@ -43,8 +43,8 @@ class ProViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func restoreButtonTapped(_ sender: UIButton) {
+    //購入した内課金アイテムを復元
+    @IBAction func restoreAction(_ sender: UIButton) {
         Purchases.shared.restorePurchases { customerInfo, error in
             if customerInfo?.entitlements.all["Pro"]?.isActive == true {
                 let alert = UIAlertController(title: "購入を復元しました", message: "", preferredStyle: .alert)

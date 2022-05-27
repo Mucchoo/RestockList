@@ -38,8 +38,8 @@
 		2A628C2B2820A8B000952956 /* Tutorial3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2A2820A8B000952956 /* Tutorial3ViewController.swift */; };
 		2A628C2D2820A8BD00952956 /* Tutorial4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2C2820A8BD00952956 /* Tutorial4ViewController.swift */; };
 		2A628C2F2820A95100952956 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2E2820A95100952956 /* PageViewController.swift */; };
-		2A628C312821055300952956 /* realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* realm.swift */; };
-		2A628C32282107BB00952956 /* realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* realm.swift */; };
+		2A628C312821055300952956 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* Data.swift */; };
+		2A628C32282107BB00952956 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* Data.swift */; };
 		2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */; };
 		2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A967C10281EBCBF002A2210 /* ThemeViewController.swift */; };
 		2A9A8191281E6F6900186477 /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8190281E6F6900186477 /* IconViewController.swift */; };
@@ -105,7 +105,7 @@
 		2A628C2A2820A8B000952956 /* Tutorial3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial3ViewController.swift; sourceTree = "<group>"; };
 		2A628C2C2820A8BD00952956 /* Tutorial4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial4ViewController.swift; sourceTree = "<group>"; };
 		2A628C2E2820A95100952956 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		2A628C302821055300952956 /* realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = realm.swift; sourceTree = "<group>"; };
+		2A628C302821055300952956 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2A967C10281EBCBF002A2210 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		2A9A8190281E6F6900186477 /* IconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewController.swift; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 				2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */,
 				2A9A8192281E6FB000186477 /* IconCell.swift */,
 				2AEA5703283B0457000AD25E /* Shadow.swift */,
-				2A628C302821055300952956 /* realm.swift */,
+				2A628C302821055300952956 /* Data.swift */,
 				2A383D102817B820000BCAF0 /* Item.swift */,
 			);
 			path = Model;
@@ -373,7 +373,7 @@
 				2A11AD0C2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
 				2A45CF7D281BC74000671727 /* Item.swift in Sources */,
 				2A11AD072819696E00170751 /* RestockListWidget.swift in Sources */,
-				2A628C32282107BB00952956 /* realm.swift in Sources */,
+				2A628C32282107BB00952956 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +401,7 @@
 				2A383D112817B820000BCAF0 /* Item.swift in Sources */,
 				2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */,
 				2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
-				2A628C312821055300952956 /* realm.swift in Sources */,
+				2A628C312821055300952956 /* Data.swift in Sources */,
 				2A43EEF02817B5BB001BD791 /* UpdateProtocol.swift in Sources */,
 				2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */,
 			);
@@ -457,7 +457,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yazujumusa.RestockList.RestockListWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -487,7 +487,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yazujumusa.RestockList.RestockListWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

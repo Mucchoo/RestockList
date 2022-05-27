@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//影の追加を1行にまとめる
 struct Shadow {
     static func setTo(_ view: UIView) {
         view.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)

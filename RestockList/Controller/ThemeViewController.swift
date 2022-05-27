@@ -12,9 +12,9 @@ class ThemeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        r.user.set(sender.tag, forKey: "theme")
+    //テーマカラーを更新
+    @IBAction func themeAction(_ sender: UIButton) {
+        Data.user.set(sender.tag, forKey: "theme")
         navigationController?.popToRootViewController(animated: true)
     }
 }

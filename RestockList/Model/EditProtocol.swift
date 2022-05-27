@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+//アイテム編集ボタンを押した時にcellを判別する
 protocol EditProtocol {
     func catchData(selectedCell: Int)
 }
