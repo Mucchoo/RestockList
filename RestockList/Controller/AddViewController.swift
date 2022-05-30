@@ -15,7 +15,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var textFieldBackground: UIView!
     //アイテム消費期間の選択肢の配列
-    let pickerArray = ([Int])(1...365)
+    private let pickerArray = ([Int])(1...365)
         
     override func viewDidLoad() {
         super.viewDidLoad()

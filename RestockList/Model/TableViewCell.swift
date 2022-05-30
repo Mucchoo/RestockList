@@ -21,9 +21,9 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     
+    private let realm = Data.realm
     var delegate : EditProtocol?
     var updateDelegate: UpdateProtocol?
-    let realm = Data.realm
     
     override func awakeFromNib() {
         super.awakeFromNib()

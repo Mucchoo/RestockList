@@ -16,6 +16,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     @IBOutlet weak var themeView: UIView!
     @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var proLabel: UILabel!
+    
     private var isPro = false
     
     override func viewDidLoad() {

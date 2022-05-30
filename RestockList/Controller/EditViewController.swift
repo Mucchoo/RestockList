@@ -16,9 +16,9 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     @IBOutlet weak var periodPickerView: UIPickerView!
     @IBOutlet weak var itemTextField: UITextField!
     
-    var periodArray = ([Int])(1...365)
+    private let myTableViewController = TableViewController()
+    private var periodArray = ([Int])(1...365)
     var selectedCell = 0
-    let myTableViewController = TableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
