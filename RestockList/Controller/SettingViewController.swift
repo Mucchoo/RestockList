@@ -16,7 +16,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     @IBOutlet weak var proLabel: UILabel!
     @IBOutlet weak var themeView: UIView!
     @IBOutlet var iconBackground: [UIView]!
-    //サブスク購入状態
+
     private var isPro = false
     
     override func viewDidLoad() {
@@ -35,9 +35,8 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
                 print("内課金状態取得時のエラー\(error!)")
                 return
             }
-            if customerInfo?.entitlements["Pro"]?.isActive == true {
-                self.isPro = true
-            }
+            guard (customerInfo?.entitlements["Pro"]?.isActive)! else { return }
+            self.isPro = true
         }
         if isPro {
             proLabel.text = "Pro アンロック済み"
@@ -91,9 +90,8 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             sender.backgroundColor = UIColor(.black.opacity(0))
         }
-        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-            SKStoreReviewController.requestReview(in: scene)
-        }
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+        SKStoreReviewController.requestReview(in: scene)
     }
     //メールフォームを表示
     @IBAction func emailAction(_ sender: UIButton) {

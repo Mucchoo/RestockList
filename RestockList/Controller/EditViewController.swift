@@ -66,22 +66,24 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     }
     //編集内容を保存
     @IBAction func completeAction(_ sender: UIButton) {
-        if itemTextField.text != "" {
-            let realm = Data.realm
-            let period = periodPickerView.selectedRow(inComponent: 0) + 1
-            let item = itemTextField.text!
-            realm.beginWrite()
-            let editingItem = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)!
-            editingItem.period = period
-            editingItem.name = item
-            if editingItem.period < editingItem.remainingTime {
-                editingItem.remainingTime = editingItem.period
-            }
-            try! realm.commitWrite()
-            navigationController?.popToRootViewController(animated: true)
-        } else {
+        //アイテム名が空白の時はreturn
+        guard !itemTextField.text!.isEmpty else {
             itemTextField.placeholder = "アイテム名を入力してください"
+            return
         }
+        //編集内容を保存
+        let realm = Data.realm
+        let period = periodPickerView.selectedRow(inComponent: 0) + 1
+        let item = itemTextField.text!
+        realm.beginWrite()
+        let editingItem = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)!
+        editingItem.period = period
+        editingItem.name = item
+        if editingItem.period < editingItem.remainingTime {
+            editingItem.remainingTime = editingItem.period
+        }
+        try! realm.commitWrite()
+        navigationController?.popToRootViewController(animated: true)
     }
     //アイテムを削除
     @IBAction func deleteAction(_ sender: UIButton) {

@@ -54,21 +54,23 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     }
     //アイテムをrealmデータに追加
     @IBAction func addAction(_ sender: Any) {
-        if itemTextField.text != "" {
-            let period = periodPickerView.selectedRow(inComponent: 0) + 1
-            let item = itemTextField.text!
-            let realm = Data.realm
-            realm.beginWrite()
-            let newItem = Item()
-            newItem.period = period
-            newItem.remainingTime = period
-            newItem.name = item
-            realm.add(newItem)
-            try! realm.commitWrite()
-            navigationController?.popViewController(animated: true)
-        } else {
+        //アイテム名が空白の時はreturn
+        guard !itemTextField.text!.isEmpty else {
             itemTextField.placeholder = "アイテム名を入力してください"
+            return
         }
+        //アイテムを追加
+        let period = periodPickerView.selectedRow(inComponent: 0) + 1
+        let item = itemTextField.text!
+        let realm = Data.realm
+        realm.beginWrite()
+        let newItem = Item()
+        newItem.period = period
+        newItem.remainingTime = period
+        newItem.name = item
+        realm.add(newItem)
+        try! realm.commitWrite()
+        navigationController?.popViewController(animated: true)
     }
 
 }

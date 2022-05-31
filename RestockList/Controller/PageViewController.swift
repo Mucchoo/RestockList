@@ -63,21 +63,17 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource{
     //次へ進む
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         var index = viewController.view.tag
+        guard index < 3 else { return nil }
         pageControl.currentPage = index
-        if index == 3 {
-            return nil
-        }
         index += 1
         return controllers[index]
     }
     //前へ戻る
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = viewController.view.tag
+        guard index > 0 else { return nil }
         pageControl.currentPage = index
         index -= 1
-        if index < 0 {
-            return nil
-        }
         return controllers[index]
     }
 }

@@ -29,24 +29,22 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
         if let lastDate = Data.user.object(forKey: "lastDate") as? Int {
             let elapsedDays = currentDate - lastDate
-            if elapsedDays > 0 {
-                realm.beginWrite()
-                for Item in realm.objects(Item.self) {
-                    Item.remainingTime -= elapsedDays
-                    if Item.remainingTime < 0 {
-                        Item.remainingTime = 0
-                    }
+            guard elapsedDays > 0 else { return }
+            realm.beginWrite()
+            for Item in realm.objects(Item.self) {
+                Item.remainingTime -= elapsedDays
+                if Item.remainingTime < 0 {
+                    Item.remainingTime = 0
                 }
-                try! realm.commitWrite()
             }
+            try! realm.commitWrite()
         }
         Data.user.set(currentDate, forKey: "lastDate")
         //アプリを20回起動する毎にレビューアラートを表示
         if Data.user.integer(forKey: "launchedTimes") > 20 {
-            if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                SKStoreReviewController.requestReview(in: scene)
-                Data.user.set(0, forKey: "launchedTimes")
-            }
+            guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+            SKStoreReviewController.requestReview(in: scene)
+            Data.user.set(0, forKey: "launchedTimes")
         }
     }
     
@@ -123,21 +121,18 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
                     print("内課金状態取得時のエラー\(error!)")
                     return
                 }
-                if customerInfo?.entitlements["Pro"]?.isActive == true {
-                    isPro = true
-                }
+                guard (customerInfo?.entitlements["Pro"]?.isActive)! else { return }
+                isPro = true
             }
             //非課金ユーザーは20個以上登録できない
             if isPro {
                 performSegue(withIdentifier: "AddSegue", sender: nil)
             } else {
                 let alert = UIAlertController(title: "無料版で追加できるアイテムは20個です", message: "Proにアップグレードすれば、無制限に追加することができます。", preferredStyle:  UIAlertController.Style.alert)
-                let proAction = UIAlertAction(title: "Proを見る", style: .default) { action in
+                alert.addAction(UIAlertAction(title: "閉じる", style: .default))
+                alert.addAction(UIAlertAction(title: "Proを見る", style: .default) { action in
                     self.performSegue(withIdentifier: "ProFromTopSegue", sender: nil)
-                }
-                let closeAction = UIAlertAction(title: "閉じる", style: .default)
-                alert.addAction(closeAction)
-                alert.addAction(proAction)
+                })
                 present(alert, animated: true)
             }
         } else {

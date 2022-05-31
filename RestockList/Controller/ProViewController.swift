@@ -35,15 +35,17 @@ class ProViewController: UIViewController {
     @IBAction func purchaseAction(_ sender: UIButton) {
         Purchases.shared.getOfferings { (offerings, error) in
             guard error == nil else {
-                print("内課金購入時のエラー\(error!)")
+                print("offerings取得時のエラー\(error!)")
                 return
             }
-            if let package = offerings?.current?.lifetime?.storeProduct {
-                Purchases.shared.purchase(product: package) { (transaction, customerInfo, error, userCancelled) in
-                    if customerInfo?.entitlements.all["Pro"]?.isActive == true {
-                        self.navigationController?.popToRootViewController(animated: true)
-                    }
+            guard let package = offerings?.current?.lifetime?.storeProduct else { return }
+            Purchases.shared.purchase(product: package) { (transaction, customerInfo, error, userCancelled) in
+                guard error == nil else {
+                    print("内課金購入時のエラー\(error!)")
+                    return
                 }
+                guard !(customerInfo?.entitlements.all["Pro"]?.isActive)! else { return }
+                self.navigationController?.popToRootViewController(animated: true)
             }
         }
     }
@@ -54,13 +56,12 @@ class ProViewController: UIViewController {
                 print("内課金復元時のエラー\(error!)")
                 return
             }
-            if customerInfo?.entitlements.all["Pro"]?.isActive == true {
-                let alert = UIAlertController(title: "購入を復元しました", message: "", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
-                    self.navigationController?.popToRootViewController(animated: true)
-                })
-                self.present(alert, animated: true)
-            }
+            guard !(customerInfo?.entitlements.all["Pro"]?.isActive)! else { return }
+            let alert = UIAlertController(title: "購入を復元しました", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                self.navigationController?.popToRootViewController(animated: true)
+            })
+            self.present(alert, animated: true)
         }
     }
 }
