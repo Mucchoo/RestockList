@@ -44,8 +44,9 @@ class ProViewController: UIViewController {
                     print("内課金購入時のエラー\(error!)")
                     return
                 }
-                guard !(customerInfo?.entitlements.all["Pro"]?.isActive)! else { return }
-                self.navigationController?.popToRootViewController(animated: true)
+                if customerInfo?.entitlements.all["Pro"]?.isActive == true {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
             }
         }
     }

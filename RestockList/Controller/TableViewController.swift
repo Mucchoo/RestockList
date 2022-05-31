@@ -74,7 +74,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         //realm情報をアイテムに反映
         cell.itemLabel.text = items[indexPath.row].name
         cell.progressBar.progress = Float(items[indexPath.row].remainingTime) / Float(items[indexPath.row].period)
-        //残り期間が半分以上のアイテムと半分以下のアイテムで表示場所を切り替え
+        //残り期間が半分あるかどうかで残り日数の場所を切り替え
         if Float(items[indexPath.row].remainingTime) / Float(items[indexPath.row].period) < 0.5 {
             cell.periodLabelRight.text = "残り\(items[indexPath.row].remainingTime)日"
             cell.periodLabelLeft.text = ""

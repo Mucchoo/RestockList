@@ -49,6 +49,7 @@
 		2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1142817FF51001F84D4 /* EditViewController.swift */; };
 		2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2ACEE11728180067001F84D4 /* RealmSwift */; };
 		2AEA5704283B0457000AD25E /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEA5703283B0457000AD25E /* Shadow.swift */; };
+		2AF65EF028463F3200A6BE42 /* Darken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF65EEF28463F3200A6BE42 /* Darken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		2ACEE1122817FF38001F84D4 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		2ACEE1142817FF51001F84D4 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		2AEA5703283B0457000AD25E /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		2AF65EEF28463F3200A6BE42 /* Darken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Darken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 			children = (
 				2A383D102817B820000BCAF0 /* Item.swift */,
 				2A628C302821055300952956 /* Data.swift */,
+				2AF65EEF28463F3200A6BE42 /* Darken.swift */,
 				2AEA5703283B0457000AD25E /* Shadow.swift */,
 				2A9A8192281E6FB000186477 /* IconCell.swift */,
 				2A43EEED2817B597001BD791 /* EditProtocol.swift */,
@@ -399,6 +402,7 @@
 				2A9A8193281E6FB000186477 /* IconCell.swift in Sources */,
 				2A628C2F2820A95100952956 /* PageViewController.swift in Sources */,
 				2A383D112817B820000BCAF0 /* Item.swift in Sources */,
+				2AF65EF028463F3200A6BE42 /* Darken.swift in Sources */,
 				2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */,
 				2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
 				2A628C312821055300952956 /* Data.swift in Sources */,

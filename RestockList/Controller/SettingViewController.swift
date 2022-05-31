@@ -22,7 +22,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         //UI調整
-        iconBackground.forEach{ $0.layer.cornerRadius = 8}
+        iconBackground.forEach{ $0.layer.cornerRadius = 8 }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,8 +35,9 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
                 print("内課金状態取得時のエラー\(error!)")
                 return
             }
-            guard (customerInfo?.entitlements["Pro"]?.isActive)! else { return }
-            self.isPro = true
+            if customerInfo?.entitlements["Pro"]?.isActive == true {
+                self.isPro = true
+            }
         }
         if isPro {
             proLabel.text = "Pro アンロック済み"
@@ -71,11 +72,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     }
     //アプリをシェア
     @IBAction func shareAction(_ sender: UIButton) {
-        //選択時に一瞬背景を黒くする
-        sender.backgroundColor = UIColor(.black.opacity(0.3))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            sender.backgroundColor = UIColor(.black.opacity(0))
-        }
+        Darken.SelectedView(sender)
         let link = URL(string: "https://apps.apple.com/us/app/%E6%B6%88%E8%80%97%E5%93%81%E3%83%AA%E3%82%B9%E3%83%88-%E5%AE%9A%E6%9C%9F%E7%9A%84%E3%81%AB%E8%B3%BC%E5%85%A5%E3%81%99%E3%82%8B%E7%94%9F%E6%B4%BB-%E4%BA%8B%E5%8B%99%E7%94%A8%E5%93%81%E3%81%AE%E7%AE%A1%E7%90%86/id1622760822?itsct=apps_box_link&itscg=30200")!
         let av = UIActivityViewController(activityItems: [link], applicationActivities: nil)
         let scenes = UIApplication.shared.connectedScenes
@@ -85,21 +82,13 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     }
     //レビューアラートを表示
     @IBAction func reviewAction(_ sender: UIButton) {
-        //選択時に一瞬背景を黒くする
-        sender.backgroundColor = UIColor(.black.opacity(0.3))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            sender.backgroundColor = UIColor(.black.opacity(0))
-        }
+        Darken.SelectedView(sender)
         guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
         SKStoreReviewController.requestReview(in: scene)
     }
     //メールフォームを表示
     @IBAction func emailAction(_ sender: UIButton) {
-        //選択時に一瞬背景を黒くする
-        sender.backgroundColor = UIColor(.black.opacity(0.3))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            sender.backgroundColor = UIColor(.black.opacity(0))
-        }
+        Darken.SelectedView(sender)
         let mailViewController = MFMailComposeViewController()
         mailViewController.mailComposeDelegate = self
         mailViewController.setSubject("ご意見・ご要望")
