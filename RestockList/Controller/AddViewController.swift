@@ -10,10 +10,10 @@ import RealmSwift
 
 class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
         
-    @IBOutlet weak var periodPickerView: UIPickerView!
-    @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var textFieldBackground: UIView!
+    @IBOutlet weak var periodPickerView: UIPickerView!
     //アイテム消費期間の選択肢の配列
     private let pickerArray = ([Int])(1...365)
         

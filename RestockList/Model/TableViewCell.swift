@@ -10,15 +10,15 @@ import RealmSwift
 
 class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var periodLabelLeft: UILabel!
-    @IBOutlet weak var periodLabelRight: UILabel!
-    @IBOutlet weak var itemLabel: UILabel!
     @IBOutlet weak var itemFrame: UIView!
+    @IBOutlet weak var itemLabel: UILabel!
     @IBOutlet weak var periodFrame: UIView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var periodLabelLeft: UILabel!
+    @IBOutlet weak var periodLabelRight: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     
     private let realm = Data.realm

@@ -10,9 +10,9 @@ import UIKit
 class Tutorial4ViewController: UIViewController {
 
     @IBOutlet weak var card: UIView!
+    @IBOutlet weak var circle: UIView!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var background: UIView!
-    @IBOutlet weak var circle: UIView!
     @IBOutlet weak var startButton: UIButton!
     
     override func viewDidLoad() {

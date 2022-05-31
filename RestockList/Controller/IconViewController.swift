@@ -14,7 +14,7 @@ class IconViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //コレクションのアイテムサイズ
-        layout.itemSize = CGSize(width: (collectionView.frame.width - 40)/3, height: (collectionView.frame.width - 40)/3)
+        layout.itemSize = CGSize(width: (collectionView.bounds.width - 40)/3, height: (collectionView.bounds.width - 40)/3)
     }
     //セクションの数
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

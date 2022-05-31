@@ -12,8 +12,8 @@ import RealmSwift
 import RevenueCat
 
 class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
-    
-    private var data = [Item]()
+
+    private var items = [Item]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +42,10 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         }
         Data.user.set(currentDate, forKey: "lastDate")
         //アプリを20回起動する毎にレビューアラートを表示
-        if Data.user.integer(forKey: "LaunchedTimes") > 20 {
+        if Data.user.integer(forKey: "launchedTimes") > 20 {
             if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: scene)
-                Data.user.set(0, forKey: "LaunchedTimes")
+                Data.user.set(0, forKey: "launchedTimes")
             }
         }
     }
@@ -60,12 +60,12 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         //realmからアイテムを取得
         let realm = Data.realm
-        data = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+        items = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         tableView.reloadData()
     }
     //セクションの数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return items.count
     }
     //セルの生成
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,23 +74,23 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         cell.delegate = self
         cell.updateDelegate = self
         //realm情報をアイテムに反映
-        cell.itemLabel.text = data[indexPath.row].name
-        cell.progressBar.progress = Float(data[indexPath.row].remainingTime) / Float(data[indexPath.row].period)
+        cell.itemLabel.text = items[indexPath.row].name
+        cell.progressBar.progress = Float(items[indexPath.row].remainingTime) / Float(items[indexPath.row].period)
         //残り期間が半分以上のアイテムと半分以下のアイテムで表示場所を切り替え
-        if Float(data[indexPath.row].remainingTime) / Float(data[indexPath.row].period) < 0.5 {
-            cell.periodLabelRight.text = "残り\(data[indexPath.row].remainingTime)日"
+        if Float(items[indexPath.row].remainingTime) / Float(items[indexPath.row].period) < 0.5 {
+            cell.periodLabelRight.text = "残り\(items[indexPath.row].remainingTime)日"
             cell.periodLabelLeft.text = ""
 
         } else {
-            cell.periodLabelLeft.text = "残り\(data[indexPath.row].remainingTime)日"
+            cell.periodLabelLeft.text = "残り\(items[indexPath.row].remainingTime)日"
             cell.periodLabelRight.text = ""
 
         }
         //cell内のボタンの判別用タグ設定
-        cell.editButton.tag = data[indexPath.row].id
-        cell.plusButton.tag = data[indexPath.row].id
-        cell.minusButton.tag = data[indexPath.row].id
-        cell.checkButton.tag = data[indexPath.row].id
+        cell.editButton.tag = items[indexPath.row].id
+        cell.plusButton.tag = items[indexPath.row].id
+        cell.minusButton.tag = items[indexPath.row].id
+        cell.checkButton.tag = items[indexPath.row].id
         //テーマカラーを反映
         let theme = Data.user.object(forKey: "theme") ?? 1
         cell.periodFrame.layer.borderColor = UIColor(named: "AccentColor\(theme)")?.cgColor
@@ -115,10 +115,14 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     }
     //アイテム追加アクション
     @IBAction func addAction(_ sender: UIBarButtonItem) {
-        if data.count > 19 {
+        if items.count > 19 {
             //内課金購入状態を取得
             var isPro = false
             Purchases.shared.getCustomerInfo { customerInfo, error in
+                guard error == nil else {
+                    print("内課金状態取得時のエラー\(error!)")
+                    return
+                }
                 if customerInfo?.entitlements["Pro"]?.isActive == true {
                     isPro = true
                 }

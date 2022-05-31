@@ -9,9 +9,9 @@ import UIKit
 
 class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var button: UIButton!
-    
+    @IBOutlet weak var picker: UIPickerView!
+    //通知期間の選択肢の配列
     private let pickerArray = ([Int])(1...30)
     
     override func viewDidLoad() {

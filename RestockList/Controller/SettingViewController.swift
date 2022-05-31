@@ -12,11 +12,11 @@ import RevenueCat
 
 class SettingViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
-    @IBOutlet var iconBackground: [UIView]!
-    @IBOutlet weak var themeView: UIView!
     @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var proLabel: UILabel!
-    
+    @IBOutlet weak var themeView: UIView!
+    @IBOutlet var iconBackground: [UIView]!
+    //サブスク購入状態
     private var isPro = false
     
     override func viewDidLoad() {
@@ -31,6 +31,10 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
         //課金状態で表示内容を変更
         Purchases.shared.getCustomerInfo { customerInfo, error in
+            guard error == nil else {
+                print("内課金状態取得時のエラー\(error!)")
+                return
+            }
             if customerInfo?.entitlements["Pro"]?.isActive == true {
                 self.isPro = true
             }

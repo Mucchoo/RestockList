@@ -10,12 +10,12 @@ import UIKit
 
 class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
         
-    @IBOutlet weak var textFieldBackground: UIView!
-    @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
-    @IBOutlet weak var periodPickerView: UIPickerView!
+    @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var itemTextField: UITextField!
-    
+    @IBOutlet weak var textFieldBackground: UIView!
+    @IBOutlet weak var periodPickerView: UIPickerView!
+
     private let myTableViewController = TableViewController()
     private var periodArray = ([Int])(1...365)
     var selectedCell = 0

@@ -12,11 +12,11 @@ import RealmSwift
 struct Provider: TimelineProvider {
     //ほとんど使われない情報
     func placeholder(in context: Context) -> SimpleEntry {
-        return SimpleEntry(date: Date(), data: [], theme: 1)
+        return SimpleEntry(date: Date(), items: [], theme: 1)
     }
     //widget追加時に表示される情報
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let entry = SimpleEntry(date: Date(), data: [], theme: 1)
+        let entry = SimpleEntry(date: Date(), items: [], theme: 1)
         completion(entry)
     }
     //毎日9時1分にwidgetを更新
@@ -44,7 +44,7 @@ struct Provider: TimelineProvider {
         Data.user.set(currentDate, forKey: "lastDate")
         //毎日9時1分に更新
         var entries: [SimpleEntry] = []
-        let entry = SimpleEntry(date: Date(), data: data, theme: theme)
+        let entry = SimpleEntry(date: Date(), items: data, theme: theme)
         entries.append(entry)
         let morning = Calendar.current.date(from: DateComponents(hour: 9, minute: 1))!
         let timeline = Timeline(entries: entries, policy: .after(morning))
@@ -55,7 +55,7 @@ struct Provider: TimelineProvider {
 //widget更新時に受け取る情報
 struct SimpleEntry: TimelineEntry {
     var date: Date
-    let data: [Item]
+    let items: [Item]
     let theme: Int
 }
 
@@ -67,7 +67,7 @@ struct WidgetEntryView : View {
     //更新時に受け取った情報を反映
     init(entry: Provider.Entry){
         self.entry = entry
-        data = entry.data
+        data = entry.items
         theme = entry.theme
     }
     
@@ -208,29 +208,3 @@ struct MyWidget: Widget {
         .description("リストを残り日数が少ない順に表示します。")
     }
 }
-//構造体を使うとWidgetが表示されなくなる
-//struct WidgetRowView: View {
-//    var text: String
-//    var period: Int
-//    var isSmall: Bool
-//    var body: some View {
-//        HStack(spacing: 0) {
-//            Text("\(text) ")
-//                .foregroundColor(.white)
-//                .font(.system(size: 14, weight: .bold))
-//                .lineLimit(1)
-//            Spacer()
-//            Text("\(period)日 ")
-//                .foregroundColor(.white)
-//                .font(.system(size: 14, weight: .bold))
-//        }
-//        if isSmall {
-//            self.padding(.bottom, 5)
-//        } else {
-//            Rectangle()
-//                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 1, maxHeight: 1)
-//                .foregroundColor(Color.white)
-//                .padding(.bottom, 5)
-//        }
-//    }
-//}

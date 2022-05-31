@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //アプリ起動回数を記録
-        let launchedTimes = Data.user.object(forKey: "LaunchedTimes") as? Int ?? 0
-        Data.user.set(launchedTimes + 1, forKey: "LaunchedTimes")
+        let launchedTimes = Data.user.object(forKey: "launchedTimes") as? Int ?? 0
+        Data.user.set(launchedTimes + 1, forKey: "launchedTimes")
         //内課金有効化
         Purchases.configure(withAPIKey: "appl_iJTYZXESAQcDrvNZmKCudSLubQU")
         //バックグラウンド更新有効化
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             try BGTaskScheduler.shared.submit(request)
         }
         catch {
-            print("Could not schedule app refresh: \(error)")
+            print("app refreshを予約時のエラー: \(error)")
         }
     }
     //バックグラウンド更新
