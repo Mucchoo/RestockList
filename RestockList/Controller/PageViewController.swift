@@ -8,9 +8,8 @@
 import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource{
-    //めくられるページの配列
+    
     private var controllers: [UIViewController] = []
-    //ページ下部に固定表示されるUI
     private let usageLabel = UILabel()
     private let pageControl = UIPageControl()
     
