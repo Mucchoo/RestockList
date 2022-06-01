@@ -33,6 +33,7 @@
 		2A45CF7D281BC74000671727 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Item.swift */; };
 		2A55FE41281D151600380AF0 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A55FE40281D151600380AF0 /* NotificationViewController.swift */; };
 		2A5FF6F12847390500028F79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A5FF6F02847390500028F79 /* GoogleService-Info.plist */; };
+		2A5FF6F42847395C00028F79 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2A5FF6F32847395C00028F79 /* FirebaseAnalytics */; };
 		2A628C2528200D2E00952956 /* ProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2428200D2E00952956 /* ProViewController.swift */; };
 		2A628C272820A88E00952956 /* Tutorial1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C262820A88E00952956 /* Tutorial1ViewController.swift */; };
 		2A628C292820A8A300952956 /* Tutorial2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C282820A8A300952956 /* Tutorial2ViewController.swift */; };
@@ -49,7 +50,6 @@
 		2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1122817FF38001F84D4 /* AddViewController.swift */; };
 		2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1142817FF51001F84D4 /* EditViewController.swift */; };
 		2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2ACEE11728180067001F84D4 /* RealmSwift */; };
-		2AD2198E2847671B00EEF104 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD2198D2847671B00EEF104 /* FirebaseMessaging */; };
 		2AEA5704283B0457000AD25E /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEA5703283B0457000AD25E /* Shadow.swift */; };
 		2AF65EF028463F3200A6BE42 /* Darken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF65EEF28463F3200A6BE42 /* Darken.swift */; };
 /* End PBXBuildFile section */
@@ -141,7 +141,7 @@
 			files = (
 				2A0D5B3D28269385002F1542 /* StoreKit.framework in Frameworks */,
 				2A0D5B3928266BDD002F1542 /* RevenueCat in Frameworks */,
-				2AD2198E2847671B00EEF104 /* FirebaseMessaging in Frameworks */,
+				2A5FF6F42847395C00028F79 /* FirebaseAnalytics in Frameworks */,
 				2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,7 +303,7 @@
 			packageProductDependencies = (
 				2ACEE11728180067001F84D4 /* RealmSwift */,
 				2A0D5B3828266BDD002F1542 /* RevenueCat */,
-				2AD2198D2847671B00EEF104 /* FirebaseMessaging */,
+				2A5FF6F32847395C00028F79 /* FirebaseAnalytics */,
 			);
 			productName = RestockList;
 			productReference = 2A43EED62817B2C4001BD791 /* RestockList.app */;
@@ -339,7 +339,7 @@
 			packageReferences = (
 				2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				2A0D5B3728266BDD002F1542 /* XCRemoteSwiftPackageReference "purchases-ios" */,
-				2AD2198C2847671B00EEF104 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2A5FF6F22847395C00028F79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 2A43EED72817B2C4001BD791 /* Products */;
 			projectDirPath = "";
@@ -669,7 +669,7 @@
 				CODE_SIGN_ENTITLEMENTS = RestockList/RestockList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DS86AF5N83;
+				DEVELOPMENT_TEAM = 4WXTDSDQPZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestockList/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "消耗品リスト";
@@ -735,17 +735,17 @@
 				kind = branch;
 			};
 		};
+		2A5FF6F22847395C00028F79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		2AD2198C2847671B00EEF104 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -769,15 +769,15 @@
 			package = 2A0D5B3728266BDD002F1542 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCat;
 		};
+		2A5FF6F32847395C00028F79 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A5FF6F22847395C00028F79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
 		2ACEE11728180067001F84D4 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
-		};
-		2AD2198D2847671B00EEF104 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2AD2198C2847671B00EEF104 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

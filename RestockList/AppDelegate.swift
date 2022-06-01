@@ -6,16 +6,14 @@
 //
 
 import UIKit
-import Firebase
 import WidgetKit
 import RevenueCat
 import RealmSwift
 import BackgroundTasks
 import UserNotifications
-import FirebaseMessaging
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //アプリ起動回数を記録
@@ -27,20 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.yazujumusa.RestockList.refresh", using: nil) { task in
             self.handleAppRefresh(task: task as! BGAppRefreshTask)
         }
-        //プッシュ通知用設定
-        FirebaseApp.configure()
-        Messaging.messaging().delegate = self
-        application.registerForRemoteNotifications()
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]){ (granted, _) in
-            guard granted else { return }
-            UNUserNotificationCenter.current().delegate = self
+        //通知の許可
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]){ (granted, _) in
+            if granted{
+                UNUserNotificationCenter.current().delegate = self
+            }
         }
         return true
-    }
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        messaging.token { token, _ in
-            guard let _ = token else { return }
-        }
     }
     //30分毎にバックグラウンド更新をセット
     func scheduleAppRefresh() {
@@ -50,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             try BGTaskScheduler.shared.submit(request)
         }
         catch {
-            print("app refresh予約時のエラー: \(error)")
+            print("app refreshを予約時のエラー: \(error)")
         }
     }
     //バックグラウンド更新
@@ -87,10 +78,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
-    //フォアグラウンド状態で通知
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.banner, .list, .sound])
-    }
     
+}
+//フォアグラウンド状態で通知
+extension AppDelegate: UNUserNotificationCenterDelegate{
+   func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+       completionHandler([.banner, .list, .sound])
+   }
 }
 
