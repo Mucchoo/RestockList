@@ -10,8 +10,8 @@ import UIKit
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource{
     
     private var controllers: [UIViewController] = []
+    private var pageControl: UIPageControl!
     private let usageLabel = UILabel()
-    private let pageControl = UIPageControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource{
         usageLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 80).isActive = true
         usageLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         //PageControlを表示
+        pageControl = UIPageControl()
         view.addSubview(pageControl)
         pageControl.numberOfPages = 4
         pageControl.currentPage = 0
@@ -62,17 +63,17 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource{
     }
     //次へ進む
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        var index = viewController.view.tag
-        guard index < 3 else { return nil }
+        var index = controllers.firstIndex(of: viewController)!
         pageControl.currentPage = index
+        guard index < 3 else { return nil }
         index += 1
         return controllers[index]
     }
     //前へ戻る
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        var index = viewController.view.tag
-        guard index > 0 else { return nil }
+        var index = controllers.firstIndex(of: viewController)!
         pageControl.currentPage = index
+        guard index > 0 else { return nil }
         index -= 1
         return controllers[index]
     }
