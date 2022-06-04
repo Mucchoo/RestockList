@@ -29,6 +29,9 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         //テーマカラー反映
         let theme = Data.user.object(forKey: "theme") ?? 1
         iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
+        //デフォルトでPro無効状態のUIに変更
+        themeView.layer.opacity = 0.5
+        iconView.layer.opacity = 0.5
         //課金状態で表示内容を変更
         Purchases.shared.getCustomerInfo { customerInfo, error in
             guard error == nil else {
@@ -37,64 +40,54 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
             }
             if customerInfo?.entitlements["Pro"]?.isActive == true {
                 self.isPro = true
+                self.proLabel.text = "Pro アンロック済み"
+                self.themeView.layer.opacity = 1
+                self.iconView.layer.opacity = 1
             }
         }
-        if isPro {
-            proLabel.text = "Pro アンロック済み"
-            themeView.layer.opacity = 1
-            iconView.layer.opacity = 1
-        } else {
-            themeView.layer.opacity = 0.5
-            iconView.layer.opacity = 0.5
-        }
     }
-    //cell選択時に背景が黒くなるのをすぐに戻す
+    //cell選択時
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Proセクション
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0://Proをアンロック
+                if !isPro { performSegue(withIdentifier: "ProSegue", sender: nil) }
+            case 1://テーマカラー
+                if isPro { performSegue(withIdentifier: "ThemeSegue", sender: nil) }
+            case 2://アイコン
+                if isPro { performSegue(withIdentifier: "IconSegue", sender: nil) }
+            default: return
+            }
+        //アプリケーションセクション
+        } else {
+            switch indexPath.row {
+            case 0://使い方
+                performSegue(withIdentifier: "TutorialSegue", sender: nil)
+            case 1://通知設定
+                performSegue(withIdentifier: "NotificationSegue", sender: nil)
+            case 2://アプリをシェア
+                let link = URL(string: "https://apps.apple.com/us/app/%E6%B6%88%E8%80%97%E5%93%81%E3%83%AA%E3%82%B9%E3%83%88-%E5%AE%9A%E6%9C%9F%E7%9A%84%E3%81%AB%E8%B3%BC%E5%85%A5%E3%81%99%E3%82%8B%E7%94%9F%E6%B4%BB-%E4%BA%8B%E5%8B%99%E7%94%A8%E5%93%81%E3%81%AE%E7%AE%A1%E7%90%86/id1622760822?itsct=apps_box_link&itscg=30200")!
+                let av = UIActivityViewController(activityItems: [link], applicationActivities: nil)
+                let scenes = UIApplication.shared.connectedScenes
+                let windowScenes = scenes.first as? UIWindowScene
+                let window = windowScenes?.keyWindow
+                window?.rootViewController?.present(av, animated: true, completion: nil)
+            case 3://レビューで応援！
+                guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                SKStoreReviewController.requestReview(in: scene)
+            case 4://ご意見・ご要望
+                let mailViewController = MFMailComposeViewController()
+                mailViewController.mailComposeDelegate = self
+                mailViewController.setSubject("ご意見・ご要望")
+                mailViewController.setToRecipients(["yazujumusa@gmail.com"])
+                mailViewController.setMessageBody("\n\n\n\n\nーーーーーーーーーーーーーーー\nこの上へお気軽にご記入ください。\n消耗品リスト", isHTML: false)
+                present(mailViewController, animated: true, completion: nil)
+            default: return
+            }
+        }
+        //背景が黒くなるのをすぐに戻す
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    //ProViewに遷移
-    @IBAction func proAction(_ sender: UIButton) {
-        if isPro == false {
-            performSegue(withIdentifier: "ProSegue", sender: nil)
-        }
-    }
-    //ThemeViewに遷移
-    @IBAction func themeAction(_ sender: UIButton) {
-        if isPro {
-            performSegue(withIdentifier: "ThemeSegue", sender: nil)
-        }
-    }
-    //IconViewに遷移
-    @IBAction func iconAction(_ sender: UIButton) {
-        if isPro {
-            performSegue(withIdentifier: "IconSegue", sender: nil)
-        }
-    }
-    //アプリをシェア
-    @IBAction func shareAction(_ sender: UIButton) {
-        Darken.view(sender)
-        let link = URL(string: "https://apps.apple.com/us/app/%E6%B6%88%E8%80%97%E5%93%81%E3%83%AA%E3%82%B9%E3%83%88-%E5%AE%9A%E6%9C%9F%E7%9A%84%E3%81%AB%E8%B3%BC%E5%85%A5%E3%81%99%E3%82%8B%E7%94%9F%E6%B4%BB-%E4%BA%8B%E5%8B%99%E7%94%A8%E5%93%81%E3%81%AE%E7%AE%A1%E7%90%86/id1622760822?itsct=apps_box_link&itscg=30200")!
-        let av = UIActivityViewController(activityItems: [link], applicationActivities: nil)
-        let scenes = UIApplication.shared.connectedScenes
-        let windowScenes = scenes.first as? UIWindowScene
-        let window = windowScenes?.keyWindow
-        window?.rootViewController?.present(av, animated: true, completion: nil)
-    }
-    //レビューアラートを表示
-    @IBAction func reviewAction(_ sender: UIButton) {
-        Darken.view(sender)
-        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-        SKStoreReviewController.requestReview(in: scene)
-    }
-    //メールフォームを表示
-    @IBAction func emailAction(_ sender: UIButton) {
-        Darken.view(sender)
-        let mailViewController = MFMailComposeViewController()
-        mailViewController.mailComposeDelegate = self
-        mailViewController.setSubject("ご意見・ご要望")
-        mailViewController.setToRecipients(["yazujumusa@gmail.com"])
-        mailViewController.setMessageBody("\n\n\n\n\nーーーーーーーーーーーーーーー\nこの上へお気軽にご記入ください。\n消耗品リスト", isHTML: false)
-        present(mailViewController, animated: true, completion: nil)
     }
     //メールフォームを閉じた後の処理
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
