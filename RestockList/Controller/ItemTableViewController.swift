@@ -9,7 +9,6 @@ import UIKit
 import SwiftUI
 import StoreKit
 import RealmSwift
-
 //アイテム編集ボタンを押した時にcellを判別する
 protocol EditProtocol {
     func catchData(selectedCell: Int)
@@ -49,7 +48,7 @@ class ItemTableViewController: UITableViewController, EditProtocol, UpdateProtoc
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         //realmからアイテムを取得
-        items = RealmModel.getItems()
+        items = RealmModel.items
         tableView.reloadData()
     }
     //セクションの数

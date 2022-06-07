@@ -22,8 +22,7 @@ class TutorialSecondViewController: UIViewController {
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        let theme = DataModel.user.object(forKey: "theme") ?? 1
-        backgroundView.backgroundColor = UIColor(named: "AccentColor\(theme)")
-        circleView.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        backgroundView.backgroundColor = ThemeModel.color
+        circleView.backgroundColor = ThemeModel.color
     }
 }

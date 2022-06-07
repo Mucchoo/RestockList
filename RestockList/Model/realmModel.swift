@@ -96,8 +96,18 @@ struct RealmModel {
         try! realm.commitWrite()
     }
     //アイテムを取得
-    static func getItems() -> [Item] {
+    static var items: [Item] {
         let realm = DataModel.realm
         return realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+    }
+    //アイテムの期間取得
+    static func getItemPeriod(from: Int) -> Int {
+        let realm = DataModel.realm
+        return realm.object(ofType: Item.self, forPrimaryKey: from)?.period ?? 1
+    }
+    //アイテム名取得
+    static func getItemName(from: Int) -> String {
+        let realm = DataModel.realm
+        return realm.object(ofType: Item.self, forPrimaryKey: from)?.name ?? ""
     }
 }

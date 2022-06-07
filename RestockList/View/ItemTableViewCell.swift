@@ -21,7 +21,6 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var periodLabelRight: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     
-    private let realm = DataModel.realm
     var editDelegate: EditProtocol?
     var updateDelegate: UpdateProtocol?
     
@@ -31,7 +30,7 @@ class ItemTableViewCell: UITableViewCell {
         itemFrame.layer.cornerRadius = 15
         itemFrame.setShadow()
         periodFrame.layer.borderWidth = 3
-        periodFrame.layer.borderColor = UIColor(named: "AccentColor")?.cgColor
+        periodFrame.layer.borderColor = ThemeModel.color.cgColor
         progressBar.transform = CGAffineTransform(scaleX: 1, y: 10)
     }
     //アイテムの編集

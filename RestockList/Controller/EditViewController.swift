@@ -32,10 +32,8 @@ class EditViewController: UIViewController {
         saveButton.setShadow()
         deleteButton.setShadow()
         //編集中のアイテム情報を反映
-        let realm = DataModel.realm
-        let period = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.period ?? 1
-        periodPickerView.selectRow(period - 1 , inComponent: 0, animated: true)
-        itemTextField.text = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.name ?? ""
+        periodPickerView.selectRow(RealmModel.getItemPeriod(from: selectedCell) - 1 , inComponent: 0, animated: true)
+        itemTextField.text = RealmModel.getItemName(from: selectedCell)
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {

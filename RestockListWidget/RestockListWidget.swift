@@ -12,38 +12,20 @@ import RealmSwift
 struct Provider: TimelineProvider {
     //ほとんど使われない情報
     func placeholder(in context: Context) -> SimpleEntry {
-        return SimpleEntry(date: Date(), items: [], theme: 1)
+        return SimpleEntry(date: Date(), items: [])
     }
     //widget追加時に表示される情報
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let entry = SimpleEntry(date: Date(), items: [], theme: 1)
+        let entry = SimpleEntry(date: Date(), items: [])
         completion(entry)
     }
     //毎日9時1分にwidgetを更新
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
-        let theme = DataModel.user.object(forKey: "theme") as? Int ?? 1
-        let realm = DataModel.realm
-        //アイテムを残り期間が少ない順に取得
-        let items = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         //日付が変わっていた場合アイテムの残り日数を更新
-        let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
-        if let lastDate = DataModel.user.object(forKey: "lastDate") as? Int {
-            let elapsedDays = currentDate - lastDate
-            if elapsedDays > 0 {
-                realm.beginWrite()
-                for Item in realm.objects(Item.self) {
-                    Item.remainingTime -= elapsedDays
-                    guard Item.remainingTime < 0 else { return }
-                    Item.remainingTime = 0
-                }
-                try! realm.commitWrite()
-            }
-        }
-        DataModel.user.set(currentDate, forKey: "lastDate")
-        print("ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーアイテム\(items)")
+        RealmModel.reflectElapsedDays()
         //毎日9時1分に更新
         var entries: [SimpleEntry] = []
-        let entry = SimpleEntry(date: Date(), items: items, theme: theme)
+        let entry = SimpleEntry(date: Date(), items: RealmModel.items)
         entries.append(entry)
         let morning = Calendar.current.date(from: DateComponents(hour: 9, minute: 1))!
         let timeline = Timeline(entries: entries, policy: .after(morning))
@@ -55,25 +37,22 @@ struct Provider: TimelineProvider {
 struct SimpleEntry: TimelineEntry {
     var date: Date
     let items: [Item]
-    let theme: Int
 }
 
 struct WidgetEntryView : View {
     @Environment(\.widgetFamily) var family
     var items: [Item]
-    var theme: Int
     var entry: Provider.Entry
     //更新時に受け取った情報を反映
     init(entry: Provider.Entry){
         self.entry = entry
         items = entry.items
-        theme = entry.theme
     }
     
     var body: some View {
         ZStack {
             //背景色
-            Color("AccentColor\(theme)")
+            Color(ThemeModel.color)
             
             VStack (spacing: 5){
                 Spacer()

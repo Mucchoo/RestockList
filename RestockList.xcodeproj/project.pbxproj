@@ -41,6 +41,8 @@
 		2A628C312821055300952956 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* DataModel.swift */; };
 		2A628C32282107BB00952956 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* DataModel.swift */; };
 		2A63B012284EE7310098EB09 /* PurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A63B011284EE7310098EB09 /* PurchaseModel.swift */; };
+		2A63B019284F23C90098EB09 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C57284EE1E300CA1F1C /* ThemeModel.swift */; };
+		2A63B01A284F2A150098EB09 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C55284ED8CD00CA1F1C /* RealmModel.swift */; };
 		2A935CB92818EEE7001D9ED1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */; };
 		2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A967C10281EBCBF002A2210 /* ThemeViewController.swift */; };
 		2A9A8191281E6F6900186477 /* IconCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8190281E6F6900186477 /* IconCollectionViewController.swift */; };
@@ -370,7 +372,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A11AD0C2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
+				2A63B01A284F2A150098EB09 /* RealmModel.swift in Sources */,
 				2A45CF7D281BC74000671727 /* Item.swift in Sources */,
+				2A63B019284F23C90098EB09 /* ThemeModel.swift in Sources */,
 				2A11AD072819696E00170751 /* RestockListWidget.swift in Sources */,
 				2A628C32282107BB00952956 /* DataModel.swift in Sources */,
 			);

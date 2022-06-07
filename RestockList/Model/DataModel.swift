@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+
 struct DataModel {
     //realmの保存先をapp groupに設定してwidgetと共有
     static var realm: Realm = {
