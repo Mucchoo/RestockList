@@ -54,8 +54,7 @@ class TutorialPageViewController: UIPageViewController {
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        let theme = Data.user.object(forKey: "theme") ?? 1
-        usageLabel.textColor = UIColor(named: "AccentColor\(theme)")
+        usageLabel.textColor = themeModel.color
     }
 }
 //ページビュー関連

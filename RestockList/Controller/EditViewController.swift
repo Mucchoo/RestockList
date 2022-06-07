@@ -39,12 +39,11 @@ class EditViewController: UIViewController {
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        let theme = Data.user.object(forKey: "theme") ?? 1
-        saveButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
-        deleteButton.tintColor = UIColor(named: "AccentColor\(theme)")
-        deleteButton.layer.borderColor = UIColor(named: "AccentColor\(theme)")?.cgColor
-        textFieldBackground.backgroundColor = UIColor(named: "AccentColor\(theme)")
-        itemTextField.tintColor = UIColor(named: "AccentColor\(theme)")
+        saveButton.backgroundColor = themeModel.color
+        deleteButton.tintColor = themeModel.color
+        deleteButton.layer.borderColor = themeModel.color.cgColor
+        textFieldBackground.backgroundColor = themeModel.color
+        itemTextField.tintColor = themeModel.color
     }
     //編集内容を保存
     @IBAction func saveAction(_ sender: UIButton) {

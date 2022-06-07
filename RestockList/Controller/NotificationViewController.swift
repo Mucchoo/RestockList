@@ -26,8 +26,7 @@ class NotificationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         //テーマカラーを反映
-        let theme = Data.user.object(forKey: "theme") ?? 1
-        saveButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        saveButton.backgroundColor = themeModel.color
         //通知設定を初期値に反映
         let notificationCondition = Data.user.object(forKey: "notificationCondition") as? Int ?? 3
         periodPicker.selectRow(notificationCondition - 1 , inComponent: 0, animated: true)

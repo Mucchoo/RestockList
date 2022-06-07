@@ -31,9 +31,8 @@ class AddViewController: UIViewController {
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        let theme = Data.user.object(forKey: "theme") ?? 1
-        addButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
-        textFieldBackground.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        addButton.backgroundColor = themeModel.color
+        textFieldBackground.backgroundColor = themeModel.color
     }
     //アイテムをrealmデータに追加
     @IBAction func addAction(_ sender: Any) {

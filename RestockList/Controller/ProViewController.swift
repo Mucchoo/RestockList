@@ -27,9 +27,8 @@ class ProViewController: UIViewController {
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        let theme = Data.user.object(forKey: "theme") ?? 1
-        iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
-        purchaseButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        iconBackground.forEach{ $0.backgroundColor = themeModel.color }
+        purchaseButton.backgroundColor = themeModel.color
     }
     //内課金アイテムを購入
     @IBAction func purchaseAction(_ sender: UIButton) {

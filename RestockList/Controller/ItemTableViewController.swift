@@ -44,10 +44,8 @@ class ItemTableViewController: UITableViewController, EditProtocol, UpdateProtoc
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //テーマカラーの反映
-        let theme = Data.user.object(forKey: "theme") ?? 1
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        appearance.backgroundColor = themeModel.color
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
@@ -84,14 +82,13 @@ class ItemTableViewController: UITableViewController, EditProtocol, UpdateProtoc
         cell.minusButton.tag = items[indexPath.row].id
         cell.checkButton.tag = items[indexPath.row].id
         //テーマカラーを反映
-        let theme = Data.user.object(forKey: "theme") ?? 1
-        cell.periodFrame.layer.borderColor = UIColor(named: "AccentColor\(theme)")?.cgColor
-        cell.progressBar.tintColor = UIColor(named: "AccentColor\(theme)")
-        cell.editButton.tintColor = UIColor(named: "AccentColor\(theme)")
-        cell.checkButton.tintColor = UIColor(named: "AccentColor\(theme)")
-        cell.minusButton.tintColor = UIColor(named: "AccentColor\(theme)")
-        cell.plusButton.tintColor = UIColor(named: "AccentColor\(theme)")
-        cell.periodLabelRight.textColor = UIColor(named: "AccentColor\(theme)")
+        cell.periodFrame.layer.borderColor = themeModel.color.cgColor
+        cell.progressBar.tintColor = themeModel.color
+        cell.editButton.tintColor = themeModel.color
+        cell.checkButton.tintColor = themeModel.color
+        cell.minusButton.tintColor = themeModel.color
+        cell.plusButton.tintColor = themeModel.color
+        cell.periodLabelRight.textColor = themeModel.color
         return cell
     }
     //編集ボタンを押したときに押されたアイテムの情報を送信

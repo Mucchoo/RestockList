@@ -26,13 +26,10 @@ class SettingTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //テーマカラー反映
-        let theme = Data.user.object(forKey: "theme") ?? 1
-        iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
-        //デフォルトでPro無効状態のUIに変更
+        iconBackground.forEach{ $0.backgroundColor = themeModel.color }
+        //課金状態で表示内容を変更
         themeView.layer.opacity = 0.5
         iconView.layer.opacity = 0.5
-        //課金状態で表示内容を変更
         Purchases.shared.getCustomerInfo { customerInfo, error in
             guard error == nil else {
                 print("内課金状態取得時のエラー\(error!)")
