@@ -31,16 +31,10 @@ class ProViewController: UIViewController {
     }
     //内課金アイテムを購入
     @IBAction func purchaseAction(_ sender: UIButton) {
-        PurchaseModel.purchase()
-        //ロード画面もつける
-        //購入したらpoptorootviewする
-        //self.navigationController?.popToRootViewController(animated: true)
+        PurchaseModel.purchase(view: self)
     }
     //購入した内課金アイテムを復元
     @IBAction func restoreAction(_ sender: UIButton) {
-        PurchaseModel.restore()
-        //ロード画面もつける
-        //購入したらpoptorootviewする
-        //self.navigationController?.popToRootViewController(animated: true)
+        PurchaseModel.restore(view: self)
     }
 }
