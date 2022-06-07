@@ -19,36 +19,34 @@
 		2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A11AD082819696E00170751 /* RestockListWidget.intentdefinition */; };
 		2A11AD102819696F00170751 /* RestockListWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A11ACFF2819696E00170751 /* RestockListWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A383D112817B820000BCAF0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Item.swift */; };
-		2A383D172817BD55000BCAF0 /* Bitmap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A383D142817BD55000BCAF0 /* Bitmap@2x.png */; };
-		2A383D182817BD55000BCAF0 /* Bitmap@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A383D152817BD55000BCAF0 /* Bitmap@3x.png */; };
-		2A383D192817BD55000BCAF0 /* Bitmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A383D162817BD55000BCAF0 /* Bitmap.png */; };
+		2A3C4C56284ED8CD00CA1F1C /* realmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C55284ED8CD00CA1F1C /* realmModel.swift */; };
 		2A43EEDA2817B2C4001BD791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EED92817B2C4001BD791 /* AppDelegate.swift */; };
 		2A43EEDC2817B2C4001BD791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEDB2817B2C4001BD791 /* SceneDelegate.swift */; };
-		2A43EEDE2817B2C4001BD791 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEDD2817B2C4001BD791 /* TableViewController.swift */; };
+		2A43EEDE2817B2C4001BD791 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEDD2817B2C4001BD791 /* ItemTableViewController.swift */; };
 		2A43EEE12817B2C4001BD791 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A43EEDF2817B2C4001BD791 /* Main.storyboard */; };
 		2A43EEE32817B2C5001BD791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A43EEE22817B2C5001BD791 /* Assets.xcassets */; };
 		2A43EEE62817B2C5001BD791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A43EEE42817B2C5001BD791 /* LaunchScreen.storyboard */; };
-		2A43EEEE2817B597001BD791 /* EditProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEED2817B597001BD791 /* EditProtocol.swift */; };
-		2A43EEF02817B5BB001BD791 /* UpdateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */; };
 		2A45CF7D281BC74000671727 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Item.swift */; };
+		2A52D2F4284E3ADB007A8A16 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A52D2F3284E3ADB007A8A16 /* UIViewExtension.swift */; };
+		2A52D2F6284E40C2007A8A16 /* TutorialView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A52D2F5284E40C2007A8A16 /* TutorialView.storyboard */; };
+		2A52D2F8284E41F6007A8A16 /* SettingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A52D2F7284E41F6007A8A16 /* SettingView.storyboard */; };
 		2A55FE41281D151600380AF0 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A55FE40281D151600380AF0 /* NotificationViewController.swift */; };
 		2A628C2528200D2E00952956 /* ProViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2428200D2E00952956 /* ProViewController.swift */; };
-		2A628C272820A88E00952956 /* Tutorial1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C262820A88E00952956 /* Tutorial1ViewController.swift */; };
-		2A628C292820A8A300952956 /* Tutorial2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C282820A8A300952956 /* Tutorial2ViewController.swift */; };
-		2A628C2B2820A8B000952956 /* Tutorial3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2A2820A8B000952956 /* Tutorial3ViewController.swift */; };
-		2A628C2D2820A8BD00952956 /* Tutorial4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2C2820A8BD00952956 /* Tutorial4ViewController.swift */; };
-		2A628C2F2820A95100952956 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2E2820A95100952956 /* PageViewController.swift */; };
+		2A628C272820A88E00952956 /* TutorialFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C262820A88E00952956 /* TutorialFirstViewController.swift */; };
+		2A628C292820A8A300952956 /* TutorialSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C282820A8A300952956 /* TutorialSecondViewController.swift */; };
+		2A628C2B2820A8B000952956 /* TutorialThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2A2820A8B000952956 /* TutorialThirdViewController.swift */; };
+		2A628C2D2820A8BD00952956 /* TutorialFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2C2820A8BD00952956 /* TutorialFourthViewController.swift */; };
+		2A628C2F2820A95100952956 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2E2820A95100952956 /* TutorialPageViewController.swift */; };
 		2A628C312821055300952956 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* Data.swift */; };
 		2A628C32282107BB00952956 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* Data.swift */; };
-		2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */; };
+		2A935CB92818EEE7001D9ED1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */; };
 		2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A967C10281EBCBF002A2210 /* ThemeViewController.swift */; };
-		2A9A8191281E6F6900186477 /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8190281E6F6900186477 /* IconViewController.swift */; };
-		2A9A8193281E6FB000186477 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8192281E6FB000186477 /* IconCell.swift */; };
-		2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */; };
+		2A9A8191281E6F6900186477 /* IconCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8190281E6F6900186477 /* IconCollectionViewController.swift */; };
+		2A9A8193281E6FB000186477 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8192281E6FB000186477 /* IconCollectionViewCell.swift */; };
+		2ACEE1112817FF1E001F84D4 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1102817FF1E001F84D4 /* ItemTableViewCell.swift */; };
 		2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1122817FF38001F84D4 /* AddViewController.swift */; };
 		2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1142817FF51001F84D4 /* EditViewController.swift */; };
 		2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2ACEE11728180067001F84D4 /* RealmSwift */; };
-		2AEA5704283B0457000AD25E /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEA5703283B0457000AD25E /* Shadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,37 +83,35 @@
 		2A11AD092819696F00170751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A11AD0B2819696F00170751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A383D102817B820000BCAF0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		2A383D142817BD55000BCAF0 /* Bitmap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bitmap@2x.png"; sourceTree = "<group>"; };
-		2A383D152817BD55000BCAF0 /* Bitmap@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bitmap@3x.png"; sourceTree = "<group>"; };
-		2A383D162817BD55000BCAF0 /* Bitmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bitmap.png; sourceTree = "<group>"; };
+		2A3C4C55284ED8CD00CA1F1C /* realmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = realmModel.swift; sourceTree = "<group>"; };
 		2A43EED62817B2C4001BD791 /* RestockList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestockList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A43EED92817B2C4001BD791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A43EEDB2817B2C4001BD791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A43EEDD2817B2C4001BD791 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		2A43EEDD2817B2C4001BD791 /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 		2A43EEE02817B2C4001BD791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A43EEE22817B2C5001BD791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A43EEE52817B2C5001BD791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A43EEE72817B2C5001BD791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A43EEED2817B597001BD791 /* EditProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProtocol.swift; sourceTree = "<group>"; };
-		2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProtocol.swift; sourceTree = "<group>"; };
+		2A52D2F3284E3ADB007A8A16 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		2A52D2F5284E40C2007A8A16 /* TutorialView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TutorialView.storyboard; sourceTree = "<group>"; };
+		2A52D2F7284E41F6007A8A16 /* SettingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingView.storyboard; sourceTree = "<group>"; };
 		2A55FE40281D151600380AF0 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		2A628C2428200D2E00952956 /* ProViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
-		2A628C262820A88E00952956 /* Tutorial1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial1ViewController.swift; sourceTree = "<group>"; };
-		2A628C282820A8A300952956 /* Tutorial2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial2ViewController.swift; sourceTree = "<group>"; };
-		2A628C2A2820A8B000952956 /* Tutorial3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial3ViewController.swift; sourceTree = "<group>"; };
-		2A628C2C2820A8BD00952956 /* Tutorial4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial4ViewController.swift; sourceTree = "<group>"; };
-		2A628C2E2820A95100952956 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		2A628C262820A88E00952956 /* TutorialFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFirstViewController.swift; sourceTree = "<group>"; };
+		2A628C282820A8A300952956 /* TutorialSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSecondViewController.swift; sourceTree = "<group>"; };
+		2A628C2A2820A8B000952956 /* TutorialThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialThirdViewController.swift; sourceTree = "<group>"; };
+		2A628C2C2820A8BD00952956 /* TutorialFourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFourthViewController.swift; sourceTree = "<group>"; };
+		2A628C2E2820A95100952956 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		2A628C302821055300952956 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		2A967C10281EBCBF002A2210 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
-		2A9A8190281E6F6900186477 /* IconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewController.swift; sourceTree = "<group>"; };
-		2A9A8192281E6FB000186477 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
+		2A9A8190281E6F6900186477 /* IconCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewController.swift; sourceTree = "<group>"; };
+		2A9A8192281E6FB000186477 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		2AB9A282281C331B00698C11 /* RestockList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RestockList.entitlements; sourceTree = "<group>"; };
 		2AB9A283281C332200698C11 /* RestockListWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RestockListWidgetExtension.entitlements; sourceTree = "<group>"; };
-		2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		2ACEE1102817FF1E001F84D4 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		2ACEE1122817FF38001F84D4 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		2ACEE1142817FF51001F84D4 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
-		2AEA5703283B0457000AD25E /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,16 +160,6 @@
 			path = RestockListWidget;
 			sourceTree = "<group>";
 		};
-		2A383D132817BD39000BCAF0 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				2A383D162817BD55000BCAF0 /* Bitmap.png */,
-				2A383D142817BD55000BCAF0 /* Bitmap@2x.png */,
-				2A383D152817BD55000BCAF0 /* Bitmap@3x.png */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
 		2A43EECD2817B2C4001BD791 = {
 			isa = PBXGroup;
 			children = (
@@ -197,17 +183,28 @@
 		2A43EED82817B2C4001BD791 /* RestockList */ = {
 			isa = PBXGroup;
 			children = (
+				2A43EEE72817B2C5001BD791 /* Info.plist */,
+				2A43EEE22817B2C5001BD791 /* Assets.xcassets */,
 				2AB9A282281C331B00698C11 /* RestockList.entitlements */,
 				2A43EED92817B2C4001BD791 /* AppDelegate.swift */,
 				2A43EEDB2817B2C4001BD791 /* SceneDelegate.swift */,
 				2ACEE11D281831AB001F84D4 /* Model */,
 				2ACEE11C28183171001F84D4 /* View */,
 				2ACEE11B2818311B001F84D4 /* Controller */,
-				2A383D132817BD39000BCAF0 /* Images */,
-				2A43EEE22817B2C5001BD791 /* Assets.xcassets */,
-				2A43EEE72817B2C5001BD791 /* Info.plist */,
+				2A52D2F2284E3347007A8A16 /* Resources */,
 			);
 			path = RestockList;
+			sourceTree = "<group>";
+		};
+		2A52D2F2284E3347007A8A16 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A43EEDF2817B2C4001BD791 /* Main.storyboard */,
+				2A52D2F5284E40C2007A8A16 /* TutorialView.storyboard */,
+				2A52D2F7284E41F6007A8A16 /* SettingView.storyboard */,
+				2A43EEE42817B2C5001BD791 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		2ACEE11B2818311B001F84D4 /* Controller */ = {
@@ -216,15 +213,15 @@
 				2ACEE1122817FF38001F84D4 /* AddViewController.swift */,
 				2ACEE1142817FF51001F84D4 /* EditViewController.swift */,
 				2A628C2428200D2E00952956 /* ProViewController.swift */,
-				2A9A8190281E6F6900186477 /* IconViewController.swift */,
-				2A628C2E2820A95100952956 /* PageViewController.swift */,
-				2A43EEDD2817B2C4001BD791 /* TableViewController.swift */,
-				2A935CB82818EEE7001D9ED1 /* SettingViewController.swift */,
+				2A9A8190281E6F6900186477 /* IconCollectionViewController.swift */,
+				2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */,
+				2A43EEDD2817B2C4001BD791 /* ItemTableViewController.swift */,
 				2A967C10281EBCBF002A2210 /* ThemeViewController.swift */,
-				2A628C262820A88E00952956 /* Tutorial1ViewController.swift */,
-				2A628C282820A8A300952956 /* Tutorial2ViewController.swift */,
-				2A628C2A2820A8B000952956 /* Tutorial3ViewController.swift */,
-				2A628C2C2820A8BD00952956 /* Tutorial4ViewController.swift */,
+				2A628C262820A88E00952956 /* TutorialFirstViewController.swift */,
+				2A628C282820A8A300952956 /* TutorialSecondViewController.swift */,
+				2A628C2A2820A8B000952956 /* TutorialThirdViewController.swift */,
+				2A628C2C2820A8BD00952956 /* TutorialFourthViewController.swift */,
+				2A628C2E2820A95100952956 /* TutorialPageViewController.swift */,
 				2A55FE40281D151600380AF0 /* NotificationViewController.swift */,
 			);
 			path = Controller;
@@ -233,8 +230,8 @@
 		2ACEE11C28183171001F84D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2A43EEDF2817B2C4001BD791 /* Main.storyboard */,
-				2A43EEE42817B2C5001BD791 /* LaunchScreen.storyboard */,
+				2ACEE1102817FF1E001F84D4 /* ItemTableViewCell.swift */,
+				2A9A8192281E6FB000186477 /* IconCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,11 +241,8 @@
 			children = (
 				2A383D102817B820000BCAF0 /* Item.swift */,
 				2A628C302821055300952956 /* Data.swift */,
-				2AEA5703283B0457000AD25E /* Shadow.swift */,
-				2A9A8192281E6FB000186477 /* IconCell.swift */,
-				2A43EEED2817B597001BD791 /* EditProtocol.swift */,
-				2ACEE1102817FF1E001F84D4 /* TableViewCell.swift */,
-				2A43EEEF2817B5BB001BD791 /* UpdateProtocol.swift */,
+				2A3C4C55284ED8CD00CA1F1C /* realmModel.swift */,
+				2A52D2F3284E3ADB007A8A16 /* UIViewExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,12 +348,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A52D2F8284E41F6007A8A16 /* SettingView.storyboard in Resources */,
 				2A43EEE62817B2C5001BD791 /* LaunchScreen.storyboard in Resources */,
+				2A52D2F6284E40C2007A8A16 /* TutorialView.storyboard in Resources */,
 				2A43EEE32817B2C5001BD791 /* Assets.xcassets in Resources */,
-				2A383D192817BD55000BCAF0 /* Bitmap.png in Resources */,
 				2A43EEE12817B2C4001BD791 /* Main.storyboard in Resources */,
-				2A383D182817BD55000BCAF0 /* Bitmap@3x.png in Resources */,
-				2A383D172817BD55000BCAF0 /* Bitmap@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,28 +374,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AEA5704283B0457000AD25E /* Shadow.swift in Sources */,
-				2A43EEDE2817B2C4001BD791 /* TableViewController.swift in Sources */,
-				2A628C272820A88E00952956 /* Tutorial1ViewController.swift in Sources */,
-				2A43EEEE2817B597001BD791 /* EditProtocol.swift in Sources */,
+				2A43EEDE2817B2C4001BD791 /* ItemTableViewController.swift in Sources */,
+				2A52D2F4284E3ADB007A8A16 /* UIViewExtension.swift in Sources */,
+				2A628C272820A88E00952956 /* TutorialFirstViewController.swift in Sources */,
 				2A628C2528200D2E00952956 /* ProViewController.swift in Sources */,
 				2A55FE41281D151600380AF0 /* NotificationViewController.swift in Sources */,
 				2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */,
-				2A9A8191281E6F6900186477 /* IconViewController.swift in Sources */,
-				2A628C2D2820A8BD00952956 /* Tutorial4ViewController.swift in Sources */,
-				2A628C292820A8A300952956 /* Tutorial2ViewController.swift in Sources */,
+				2A9A8191281E6F6900186477 /* IconCollectionViewController.swift in Sources */,
+				2A628C2D2820A8BD00952956 /* TutorialFourthViewController.swift in Sources */,
+				2A628C292820A8A300952956 /* TutorialSecondViewController.swift in Sources */,
 				2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */,
 				2A43EEDA2817B2C4001BD791 /* AppDelegate.swift in Sources */,
-				2A628C2B2820A8B000952956 /* Tutorial3ViewController.swift in Sources */,
+				2A628C2B2820A8B000952956 /* TutorialThirdViewController.swift in Sources */,
 				2A43EEDC2817B2C4001BD791 /* SceneDelegate.swift in Sources */,
-				2A935CB92818EEE7001D9ED1 /* SettingViewController.swift in Sources */,
-				2A9A8193281E6FB000186477 /* IconCell.swift in Sources */,
-				2A628C2F2820A95100952956 /* PageViewController.swift in Sources */,
+				2A935CB92818EEE7001D9ED1 /* SettingTableViewController.swift in Sources */,
+				2A9A8193281E6FB000186477 /* IconCollectionViewCell.swift in Sources */,
+				2A628C2F2820A95100952956 /* TutorialPageViewController.swift in Sources */,
 				2A383D112817B820000BCAF0 /* Item.swift in Sources */,
-				2ACEE1112817FF1E001F84D4 /* TableViewCell.swift in Sources */,
+				2ACEE1112817FF1E001F84D4 /* ItemTableViewCell.swift in Sources */,
 				2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
+				2A3C4C56284ED8CD00CA1F1C /* realmModel.swift in Sources */,
 				2A628C312821055300952956 /* Data.swift in Sources */,
-				2A43EEF02817B5BB001BD791 /* UpdateProtocol.swift in Sources */,
 				2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

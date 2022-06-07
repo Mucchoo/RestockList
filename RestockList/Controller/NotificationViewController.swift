@@ -7,31 +7,41 @@
 
 import UIKit
 
-class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class NotificationViewController: UIViewController {
 
-    @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var periodPicker: UIPickerView!
     
     private let pickerArray = ([Int])(1...30)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //delegate設定
-        picker.dataSource = self
-        picker.delegate = self
+        periodPicker.dataSource = self
+        periodPicker.delegate = self
         //UI調整
-        button.layer.cornerRadius = 20
-        Shadow.setTo(button)
+        saveButton.layer.cornerRadius = 20
+        saveButton.setShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         //テーマカラーを反映
         let theme = Data.user.object(forKey: "theme") ?? 1
-        button.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        saveButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
         //通知設定を初期値に反映
         let notificationCondition = Data.user.object(forKey: "notificationCondition") as? Int ?? 3
-        picker.selectRow(notificationCondition - 1 , inComponent: 0, animated: true)
+        periodPicker.selectRow(notificationCondition - 1 , inComponent: 0, animated: true)
     }
+    //通知設定を保存
+    @IBAction func notificationAction(_ sender: UIButton) {
+        let selected = periodPicker.selectedRow(inComponent: 0) + 1
+        Data.user.set(selected, forKey: "notificationCondition")
+        navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+extension NotificationViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     //Pickerの列の数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -44,11 +54,4 @@ class NotificationViewController: UIViewController, UIPickerViewDelegate, UIPick
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return String(pickerArray[row])
     }
-    //通知設定を保存
-    @IBAction func notificationAction(_ sender: UIButton) {
-        let selected = picker.selectedRow(inComponent: 0) + 1
-        Data.user.set(selected, forKey: "notificationCondition")
-        navigationController?.popViewController(animated: true)
-    }
-    
 }

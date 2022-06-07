@@ -7,13 +7,13 @@
 
 import UIKit
 
-class IconViewController: UICollectionViewController {
+class IconCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var layout: UICollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //コレクションのアイテムサイズ
+        //アイテムサイズ
         layout.itemSize = CGSize(width: (collectionView.bounds.width - 40)/3, height: (collectionView.bounds.width - 40)/3)
     }
     //セクションの数
@@ -26,10 +26,10 @@ class IconViewController: UICollectionViewController {
     }
     //アイテムの生成
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! IconCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! IconCollectionViewCell
         cell.setImage(row: indexPath.row)
         cell.layer.cornerRadius = 20
-        Shadow.setTo(cell)
+        cell.setShadow()
         return cell
     }
     //アイコンの変更

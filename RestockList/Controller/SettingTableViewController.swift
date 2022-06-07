@@ -10,7 +10,7 @@ import StoreKit
 import MessageUI
 import RevenueCat
 
-class SettingViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+class SettingTableViewController: UITableViewController {
     
     @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var proLabel: UILabel!
@@ -77,17 +77,24 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
                 guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
                 SKStoreReviewController.requestReview(in: scene)
             case 4://ご意見・ご要望
-                let mailViewController = MFMailComposeViewController()
-                mailViewController.mailComposeDelegate = self
-                mailViewController.setSubject("ご意見・ご要望")
-                mailViewController.setToRecipients(["yazujumusa@gmail.com"])
-                mailViewController.setMessageBody("\n\n\n\n\nーーーーーーーーーーーーーーー\nこの上へお気軽にご記入ください。\n消耗品リスト", isHTML: false)
-                present(mailViewController, animated: true, completion: nil)
+                showEmail()
             default: return
             }
         }
         //背景が黒くなるのをすぐに戻す
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+//メール関連
+extension SettingTableViewController: MFMailComposeViewControllerDelegate {
+    //メールフォームを表示
+    private func showEmail() {
+        let mailViewController = MFMailComposeViewController()
+        mailViewController.mailComposeDelegate = self
+        mailViewController.setSubject("ご意見・ご要望")
+        mailViewController.setToRecipients(["yazujumusa@gmail.com"])
+        mailViewController.setMessageBody("\n\n\n\n\nーーーーーーーーーーーーーーー\nこの上へお気軽にご記入ください。\n消耗品リスト", isHTML: false)
+        present(mailViewController, animated: true, completion: nil)
     }
     //メールフォームを閉じた後の処理
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {

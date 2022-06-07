@@ -8,14 +8,14 @@
 import UIKit
 import RealmSwift
 
-class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+class AddViewController: UIViewController {
         
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var textFieldBackground: UIView!
     @IBOutlet weak var periodPickerView: UIPickerView!
     
-    private let pickerArray = ([Int])(1...365)
+    private let periodArray = ([Int])(1...365)
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
         itemTextField.delegate = self
         periodPickerView.dataSource = self
         periodPickerView.delegate = self
-        Shadow.setTo(addButton)
+        addButton.setShadow()
         //TextField自動フォーカス
         itemTextField.becomeFirstResponder()
     }
@@ -35,42 +35,36 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIPickerViewDele
         addButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
         textFieldBackground.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }
-    //決定ボタンでキーボードを閉じる
+    //アイテムをrealmデータに追加
+    @IBAction func addAction(_ sender: Any) {
+        guard !itemTextField.text!.isEmpty else {
+            itemTextField.placeholder = "アイテム名を入力してください"
+            return
+        }
+        realmModel.addItem(name: itemTextField.text!, period: periodPickerView.selectedRow(inComponent: 0) + 1)
+        navigationController?.popViewController(animated: true)
+    }
+
+}
+//決定ボタンでキーボードを閉じる
+extension AddViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         itemTextField.endEditing(true)
         return true
     }
+}
+//Picker関連
+extension AddViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     //Pickerの列の数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     //Pickerの行の数
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerArray.count
+        return periodArray.count
     }
     //Pickerの選択項目
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(pickerArray[row])
+        return String(periodArray[row])
     }
-    //アイテムをrealmデータに追加
-    @IBAction func addAction(_ sender: Any) {
-        //アイテム名が空白の時はreturn
-        guard !itemTextField.text!.isEmpty else {
-            itemTextField.placeholder = "アイテム名を入力してください"
-            return
-        }
-        //アイテムを追加
-        let period = periodPickerView.selectedRow(inComponent: 0) + 1
-        let item = itemTextField.text!
-        let realm = Data.realm
-        realm.beginWrite()
-        let newItem = Item()
-        newItem.period = period
-        newItem.remainingTime = period
-        newItem.name = item
-        realm.add(newItem)
-        try! realm.commitWrite()
-        navigationController?.popViewController(animated: true)
-    }
-
 }

@@ -11,7 +11,16 @@ import StoreKit
 import RealmSwift
 import RevenueCat
 
-class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
+//アイテム編集ボタンを押した時にcellを判別する
+protocol EditProtocol {
+    func catchData(selectedCell: Int)
+}
+//cell内のボタンからTableViewを更新
+protocol UpdateProtocol {
+    func updateTableView()
+}
+
+class ItemTableViewController: UITableViewController, EditProtocol, UpdateProtocol {
 
     private var items = [Item]()
     
@@ -25,21 +34,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
             Data.user.set(true, forKey: "tutorial")
         }
         //日付が変わっていた場合アイテムの残り日数を更新
-        let realm = Data.realm
-        let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
-        if let lastDate = Data.user.object(forKey: "lastDate") as? Int {
-            let elapsedDays = currentDate - lastDate
-            guard elapsedDays > 0 else { return }
-            realm.beginWrite()
-            for Item in realm.objects(Item.self) {
-                Item.remainingTime -= elapsedDays
-                if Item.remainingTime < 0 {
-                    Item.remainingTime = 0
-                }
-            }
-            try! realm.commitWrite()
-        }
-        Data.user.set(currentDate, forKey: "lastDate")
+        realmModel.reflectElapsedDays()
         //アプリを20回起動する毎にレビューアラートを表示
         if Data.user.integer(forKey: "launchedTimes") > 20 {
             guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
@@ -57,8 +52,7 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         //realmからアイテムを取得
-        let realm = Data.realm
-        items = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+        items = realmModel.getItems()
         tableView.reloadData()
     }
     //セクションの数
@@ -67,9 +61,9 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
     }
     //セルの生成
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell") as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell") as! ItemTableViewCell
         //delegate設定
-        cell.delegate = self
+        cell.editDelegate = self
         cell.updateDelegate = self
         //realm情報をアイテムに反映
         cell.itemLabel.text = items[indexPath.row].name
@@ -138,5 +132,11 @@ class TableViewController: UITableViewController, EditProtocol, UpdateProtocol {
         } else {
             performSegue(withIdentifier: "AddSegue", sender: nil)
         }
+    }
+    //設定画面に遷移
+    @IBAction func settingAction(_ sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "SettingView", bundle: nil)
+        let viewcontroller = storyboard.instantiateViewController(withIdentifier: "SettingView")
+        self.navigationController?.pushViewController(viewcontroller, animated: true)
     }
 }

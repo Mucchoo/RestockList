@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PageViewController: UIPageViewController, UIPageViewControllerDataSource{
+class TutorialPageViewController: UIPageViewController {
     
     private var controllers: [UIViewController] = []
     private var pageControl: UIPageControl!
@@ -17,11 +17,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource{
         super.viewDidLoad()
         //表示するページを登録
         dataSource = self
-        let VC1 = storyboard!.instantiateViewController(withIdentifier: "Tutorial1")
-        let VC2 = storyboard!.instantiateViewController(withIdentifier: "Tutorial2")
-        let VC3 = storyboard!.instantiateViewController(withIdentifier: "Tutorial3")
-        let VC4 = storyboard!.instantiateViewController(withIdentifier: "Tutorial4")
-        controllers = [VC1, VC2, VC3, VC4]
+        let firstPage = storyboard!.instantiateViewController(withIdentifier: "Tutorial1")
+        let secondPage = storyboard!.instantiateViewController(withIdentifier: "Tutorial2")
+        let thirdPage = storyboard!.instantiateViewController(withIdentifier: "Tutorial3")
+        let fourthPage = storyboard!.instantiateViewController(withIdentifier: "Tutorial4")
+        controllers = [firstPage, secondPage, thirdPage, fourthPage]
         setViewControllers([controllers[0]], direction: .forward, animated: true)
         //使い方Labelを表示
         view.addSubview(usageLabel)
@@ -57,6 +57,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource{
         let theme = Data.user.object(forKey: "theme") ?? 1
         usageLabel.textColor = UIColor(named: "AccentColor\(theme)")
     }
+}
+//ページビュー関連
+extension TutorialPageViewController: UIPageViewControllerDataSource {
     //ページ数
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return 4

@@ -7,30 +7,30 @@
 
 import UIKit
 
-class Tutorial4ViewController: UIViewController {
+class TutorialFourthViewController: UIViewController {
 
-    @IBOutlet weak var card: UIView!
-    @IBOutlet weak var circle: UIView!
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var background: UIView!
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var circleView: UIView!
+    @IBOutlet weak var listImageView: UIImageView!
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //UI調整
-        card.layer.cornerRadius = 20
+        cardView.layer.cornerRadius = 20
         startButton.layer.cornerRadius = 20
-        circle.layer.cornerRadius = 400
-        Shadow.setTo(card)
-        Shadow.setTo(startButton)
+        circleView.layer.cornerRadius = 400
+        cardView.setShadow()
+        startButton.setShadow()
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
         let theme = Data.user.object(forKey: "theme") ?? 1
-        image.tintColor = UIColor(named: "AccentColor\(theme)")
-        background.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        listImageView.tintColor = UIColor(named: "AccentColor\(theme)")
+        backgroundView.backgroundColor = UIColor(named: "AccentColor\(theme)")
         startButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
-        circle.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        circleView.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }
     //チュートリアルを閉じる
     @IBAction func startAction(_ sender: UIButton) {

@@ -10,26 +10,26 @@ import RevenueCat
 
 class ProViewController: UIViewController {
 
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var purchaseButton: UIButton!
     @IBOutlet weak var restoreButton: UIButton!
     @IBOutlet var iconBackground: [UIView]!
-    @IBOutlet var image: [UIImageView]!
+    @IBOutlet var productImage: [UIImageView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //UI調整
-        iconBackground.forEach{ $0.layer.cornerRadius = 15}
-        image.forEach{ $0.layer.cornerRadius = 20 }
-        button.layer.cornerRadius = 20
+        iconBackground.forEach{ $0.layer.cornerRadius = 15 }
+        productImage.forEach{ $0.layer.cornerRadius = 20 }
+        purchaseButton.layer.cornerRadius = 20
         restoreButton.layer.cornerRadius = 20
-        Shadow.setTo(button)
-        Shadow.setTo(restoreButton)
+        purchaseButton.setShadow()
+        restoreButton.setShadow()
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
         let theme = Data.user.object(forKey: "theme") ?? 1
         iconBackground.forEach{ $0.backgroundColor = UIColor(named: "AccentColor\(theme)") }
-        button.backgroundColor = UIColor(named: "AccentColor\(theme)")
+        purchaseButton.backgroundColor = UIColor(named: "AccentColor\(theme)")
     }
     //内課金アイテムを購入
     @IBAction func purchaseAction(_ sender: UIButton) {
