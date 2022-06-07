@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RevenueCat
 
 class ProViewController: UIViewController {
 
@@ -27,41 +26,21 @@ class ProViewController: UIViewController {
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        iconBackground.forEach{ $0.backgroundColor = themeModel.color }
-        purchaseButton.backgroundColor = themeModel.color
+        iconBackground.forEach{ $0.backgroundColor = ThemeModel.color }
+        purchaseButton.backgroundColor = ThemeModel.color
     }
     //内課金アイテムを購入
     @IBAction func purchaseAction(_ sender: UIButton) {
-        Purchases.shared.getOfferings { (offerings, error) in
-            guard error == nil else {
-                print("offerings取得時のエラー\(error!)")
-                return
-            }
-            guard let package = offerings?.current?.lifetime?.storeProduct else { return }
-            Purchases.shared.purchase(product: package) { (transaction, customerInfo, error, userCancelled) in
-                guard error == nil else {
-                    print("内課金購入時のエラー\(error!)")
-                    return
-                }
-                if customerInfo?.entitlements.all["Pro"]?.isActive == true {
-                    self.navigationController?.popToRootViewController(animated: true)
-                }
-            }
-        }
+        PurchaseModel.purchase()
+        //ロード画面もつける
+        //購入したらpoptorootviewする
+        //self.navigationController?.popToRootViewController(animated: true)
     }
     //購入した内課金アイテムを復元
     @IBAction func restoreAction(_ sender: UIButton) {
-        Purchases.shared.restorePurchases { customerInfo, error in
-            guard error == nil else {
-                print("内課金復元時のエラー\(error!)")
-                return
-            }
-            guard !(customerInfo?.entitlements.all["Pro"]?.isActive)! else { return }
-            let alert = UIAlertController(title: "購入を復元しました", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
-                self.navigationController?.popToRootViewController(animated: true)
-            })
-            self.present(alert, animated: true)
-        }
+        PurchaseModel.restore()
+        //ロード画面もつける
+        //購入したらpoptorootviewする
+        //self.navigationController?.popToRootViewController(animated: true)
     }
 }

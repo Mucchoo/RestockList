@@ -22,7 +22,7 @@ class TutorialThirdViewController: UIViewController {
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        backgroundView.backgroundColor = themeModel.color
-        circleView.backgroundColor = themeModel.color
+        backgroundView.backgroundColor = ThemeModel.color
+        circleView.backgroundColor = ThemeModel.color
     }
 }

@@ -19,8 +19,8 @@
 		2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A11AD082819696E00170751 /* RestockListWidget.intentdefinition */; };
 		2A11AD102819696F00170751 /* RestockListWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A11ACFF2819696E00170751 /* RestockListWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A383D112817B820000BCAF0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Item.swift */; };
-		2A3C4C56284ED8CD00CA1F1C /* realmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C55284ED8CD00CA1F1C /* realmModel.swift */; };
-		2A3C4C58284EE1E300CA1F1C /* themeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C57284EE1E300CA1F1C /* themeModel.swift */; };
+		2A3C4C56284ED8CD00CA1F1C /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C55284ED8CD00CA1F1C /* RealmModel.swift */; };
+		2A3C4C58284EE1E300CA1F1C /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C57284EE1E300CA1F1C /* ThemeModel.swift */; };
 		2A43EEDA2817B2C4001BD791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EED92817B2C4001BD791 /* AppDelegate.swift */; };
 		2A43EEDC2817B2C4001BD791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEDB2817B2C4001BD791 /* SceneDelegate.swift */; };
 		2A43EEDE2817B2C4001BD791 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEDD2817B2C4001BD791 /* ItemTableViewController.swift */; };
@@ -38,8 +38,9 @@
 		2A628C2B2820A8B000952956 /* TutorialThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2A2820A8B000952956 /* TutorialThirdViewController.swift */; };
 		2A628C2D2820A8BD00952956 /* TutorialFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2C2820A8BD00952956 /* TutorialFourthViewController.swift */; };
 		2A628C2F2820A95100952956 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2E2820A95100952956 /* TutorialPageViewController.swift */; };
-		2A628C312821055300952956 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* Data.swift */; };
-		2A628C32282107BB00952956 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* Data.swift */; };
+		2A628C312821055300952956 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* DataModel.swift */; };
+		2A628C32282107BB00952956 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* DataModel.swift */; };
+		2A63B012284EE7310098EB09 /* PurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A63B011284EE7310098EB09 /* PurchaseModel.swift */; };
 		2A935CB92818EEE7001D9ED1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */; };
 		2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A967C10281EBCBF002A2210 /* ThemeViewController.swift */; };
 		2A9A8191281E6F6900186477 /* IconCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8190281E6F6900186477 /* IconCollectionViewController.swift */; };
@@ -84,8 +85,8 @@
 		2A11AD092819696F00170751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A11AD0B2819696F00170751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A383D102817B820000BCAF0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		2A3C4C55284ED8CD00CA1F1C /* realmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = realmModel.swift; sourceTree = "<group>"; };
-		2A3C4C57284EE1E300CA1F1C /* themeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = themeModel.swift; sourceTree = "<group>"; };
+		2A3C4C55284ED8CD00CA1F1C /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		2A3C4C57284EE1E300CA1F1C /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		2A43EED62817B2C4001BD791 /* RestockList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestockList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A43EED92817B2C4001BD791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A43EEDB2817B2C4001BD791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +105,8 @@
 		2A628C2A2820A8B000952956 /* TutorialThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialThirdViewController.swift; sourceTree = "<group>"; };
 		2A628C2C2820A8BD00952956 /* TutorialFourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFourthViewController.swift; sourceTree = "<group>"; };
 		2A628C2E2820A95100952956 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
-		2A628C302821055300952956 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		2A628C302821055300952956 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		2A63B011284EE7310098EB09 /* PurchaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseModel.swift; sourceTree = "<group>"; };
 		2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		2A967C10281EBCBF002A2210 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		2A9A8190281E6F6900186477 /* IconCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewController.swift; sourceTree = "<group>"; };
@@ -242,9 +244,10 @@
 			isa = PBXGroup;
 			children = (
 				2A383D102817B820000BCAF0 /* Item.swift */,
-				2A628C302821055300952956 /* Data.swift */,
-				2A3C4C55284ED8CD00CA1F1C /* realmModel.swift */,
-				2A3C4C57284EE1E300CA1F1C /* themeModel.swift */,
+				2A628C302821055300952956 /* DataModel.swift */,
+				2A3C4C55284ED8CD00CA1F1C /* RealmModel.swift */,
+				2A3C4C57284EE1E300CA1F1C /* ThemeModel.swift */,
+				2A63B011284EE7310098EB09 /* PurchaseModel.swift */,
 				2A52D2F3284E3ADB007A8A16 /* UIViewExtension.swift */,
 			);
 			path = Model;
@@ -369,7 +372,7 @@
 				2A11AD0C2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
 				2A45CF7D281BC74000671727 /* Item.swift in Sources */,
 				2A11AD072819696E00170751 /* RestockListWidget.swift in Sources */,
-				2A628C32282107BB00952956 /* Data.swift in Sources */,
+				2A628C32282107BB00952956 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,18 +390,19 @@
 				2A628C2D2820A8BD00952956 /* TutorialFourthViewController.swift in Sources */,
 				2A628C292820A8A300952956 /* TutorialSecondViewController.swift in Sources */,
 				2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */,
+				2A63B012284EE7310098EB09 /* PurchaseModel.swift in Sources */,
 				2A43EEDA2817B2C4001BD791 /* AppDelegate.swift in Sources */,
 				2A628C2B2820A8B000952956 /* TutorialThirdViewController.swift in Sources */,
 				2A43EEDC2817B2C4001BD791 /* SceneDelegate.swift in Sources */,
-				2A3C4C58284EE1E300CA1F1C /* themeModel.swift in Sources */,
+				2A3C4C58284EE1E300CA1F1C /* ThemeModel.swift in Sources */,
 				2A935CB92818EEE7001D9ED1 /* SettingTableViewController.swift in Sources */,
 				2A9A8193281E6FB000186477 /* IconCollectionViewCell.swift in Sources */,
 				2A628C2F2820A95100952956 /* TutorialPageViewController.swift in Sources */,
 				2A383D112817B820000BCAF0 /* Item.swift in Sources */,
 				2ACEE1112817FF1E001F84D4 /* ItemTableViewCell.swift in Sources */,
 				2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
-				2A3C4C56284ED8CD00CA1F1C /* realmModel.swift in Sources */,
-				2A628C312821055300952956 /* Data.swift in Sources */,
+				2A3C4C56284ED8CD00CA1F1C /* RealmModel.swift in Sources */,
+				2A628C312821055300952956 /* DataModel.swift in Sources */,
 				2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

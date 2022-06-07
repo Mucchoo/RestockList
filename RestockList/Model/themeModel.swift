@@ -7,9 +7,9 @@
 
 import UIKit
 //テーマカラー取得
-struct themeModel {
+struct ThemeModel {
     static var color: UIColor {
-        let theme = Data.user.object(forKey: "theme") ?? 1
+        let theme = DataModel.user.object(forKey: "theme") ?? 1
         return UIColor(named: "AccentColor\(theme)")!
     }
 }

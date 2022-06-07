@@ -9,7 +9,6 @@ import UIKit
 import SwiftUI
 import StoreKit
 import RealmSwift
-import RevenueCat
 
 //アイテム編集ボタンを押した時にcellを判別する
 protocol EditProtocol {
@@ -29,28 +28,28 @@ class ItemTableViewController: UITableViewController, EditProtocol, UpdateProtoc
         //delegate設定
         tableView.delegate = self
         //初回起動時にチュートリアルを表示
-        if Data.user.bool(forKey: "tutorial") == false {
+        if DataModel.user.bool(forKey: "tutorial") == false {
             performSegue(withIdentifier: "showTutorial", sender: nil)
-            Data.user.set(true, forKey: "tutorial")
+            DataModel.user.set(true, forKey: "tutorial")
         }
         //日付が変わっていた場合アイテムの残り日数を更新
-        realmModel.reflectElapsedDays()
+        RealmModel.reflectElapsedDays()
         //アプリを20回起動する毎にレビューアラートを表示
-        if Data.user.integer(forKey: "launchedTimes") > 20 {
+        if DataModel.user.integer(forKey: "launchedTimes") > 20 {
             guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
             SKStoreReviewController.requestReview(in: scene)
-            Data.user.set(0, forKey: "launchedTimes")
+            DataModel.user.set(0, forKey: "launchedTimes")
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = themeModel.color
+        appearance.backgroundColor = ThemeModel.color
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         //realmからアイテムを取得
-        items = realmModel.getItems()
+        items = RealmModel.getItems()
         tableView.reloadData()
     }
     //セクションの数
@@ -82,13 +81,13 @@ class ItemTableViewController: UITableViewController, EditProtocol, UpdateProtoc
         cell.minusButton.tag = items[indexPath.row].id
         cell.checkButton.tag = items[indexPath.row].id
         //テーマカラーを反映
-        cell.periodFrame.layer.borderColor = themeModel.color.cgColor
-        cell.progressBar.tintColor = themeModel.color
-        cell.editButton.tintColor = themeModel.color
-        cell.checkButton.tintColor = themeModel.color
-        cell.minusButton.tintColor = themeModel.color
-        cell.plusButton.tintColor = themeModel.color
-        cell.periodLabelRight.textColor = themeModel.color
+        cell.periodFrame.layer.borderColor = ThemeModel.color.cgColor
+        cell.progressBar.tintColor = ThemeModel.color
+        cell.editButton.tintColor = ThemeModel.color
+        cell.checkButton.tintColor = ThemeModel.color
+        cell.minusButton.tintColor = ThemeModel.color
+        cell.plusButton.tintColor = ThemeModel.color
+        cell.periodLabelRight.textColor = ThemeModel.color
         return cell
     }
     //編集ボタンを押したときに押されたアイテムの情報を送信
@@ -105,18 +104,8 @@ class ItemTableViewController: UITableViewController, EditProtocol, UpdateProtoc
     //アイテム追加アクション
     @IBAction func addAction(_ sender: UIBarButtonItem) {
         if items.count > 19 {
-            //内課金購入状態を取得
-            var isPro = false
-            Purchases.shared.getCustomerInfo { customerInfo, error in
-                guard error == nil else {
-                    print("内課金状態取得時のエラー\(error!)")
-                    return
-                }
-                guard (customerInfo?.entitlements["Pro"]?.isActive)! else { return }
-                isPro = true
-            }
             //非課金ユーザーは20個以上登録できない
-            if isPro {
+            if PurchaseModel.status {
                 performSegue(withIdentifier: "AddSegue", sender: nil)
             } else {
                 let alert = UIAlertController(title: "無料版で追加できるアイテムは20個です", message: "Proにアップグレードすれば、無制限に追加することができます。", preferredStyle:  UIAlertController.Style.alert)

@@ -21,13 +21,13 @@ struct Provider: TimelineProvider {
     }
     //毎日9時1分にwidgetを更新
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
-        let theme = Data.user.object(forKey: "theme") as? Int ?? 1
-        let realm = Data.realm
+        let theme = DataModel.user.object(forKey: "theme") as? Int ?? 1
+        let realm = DataModel.realm
         //アイテムを残り期間が少ない順に取得
         let items = realm.objects(Item.self).sorted(by: { $0.remainingTime < $1.remainingTime })
         //日付が変わっていた場合アイテムの残り日数を更新
         let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
-        if let lastDate = Data.user.object(forKey: "lastDate") as? Int {
+        if let lastDate = DataModel.user.object(forKey: "lastDate") as? Int {
             let elapsedDays = currentDate - lastDate
             if elapsedDays > 0 {
                 realm.beginWrite()
@@ -39,7 +39,7 @@ struct Provider: TimelineProvider {
                 try! realm.commitWrite()
             }
         }
-        Data.user.set(currentDate, forKey: "lastDate")
+        DataModel.user.set(currentDate, forKey: "lastDate")
         print("ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーアイテム\(items)")
         //毎日9時1分に更新
         var entries: [SimpleEntry] = []

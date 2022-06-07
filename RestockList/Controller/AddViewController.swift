@@ -31,8 +31,8 @@ class AddViewController: UIViewController {
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        addButton.backgroundColor = themeModel.color
-        textFieldBackground.backgroundColor = themeModel.color
+        addButton.backgroundColor = ThemeModel.color
+        textFieldBackground.backgroundColor = ThemeModel.color
     }
     //アイテムをrealmデータに追加
     @IBAction func addAction(_ sender: Any) {
@@ -40,7 +40,7 @@ class AddViewController: UIViewController {
             itemTextField.placeholder = "アイテム名を入力してください"
             return
         }
-        realmModel.addItem(name: itemTextField.text!, period: periodPickerView.selectedRow(inComponent: 0) + 1)
+        RealmModel.addItem(name: itemTextField.text!, period: periodPickerView.selectedRow(inComponent: 0) + 1)
         navigationController?.popViewController(animated: true)
     }
 

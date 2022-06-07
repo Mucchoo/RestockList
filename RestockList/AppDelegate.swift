@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //アプリ起動回数を記録
-        let launchedTimes = Data.user.object(forKey: "launchedTimes") as? Int ?? 0
-        Data.user.set(launchedTimes + 1, forKey: "launchedTimes")
+        let launchedTimes = DataModel.user.object(forKey: "launchedTimes") as? Int ?? 0
+        DataModel.user.set(launchedTimes + 1, forKey: "launchedTimes")
         //内課金有効化
         Purchases.configure(withAPIKey: "appl_iJTYZXESAQcDrvNZmKCudSLubQU")
         //バックグラウンド更新有効化
@@ -47,11 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //残り少ないアイテムを通知
     func handleAppRefresh(task: BGAppRefreshTask) {
         self.scheduleAppRefresh()
-        realmModel.reflectElapsedDays()
-        guard realmModel.getFewRemainingItems() != "" else { return }
+        RealmModel.reflectElapsedDays()
+        guard RealmModel.getFewRemainingItems() != "" else { return }
         let content = UNMutableNotificationContent()
         content.title = "無くなりそうなアイテムがあります"
-        content.body = "\(realmModel.getFewRemainingItems())が残りわずかです。"
+        content.body = "\(RealmModel.getFewRemainingItems())が残りわずかです。"
         content.sound = UNNotificationSound.default
         let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)

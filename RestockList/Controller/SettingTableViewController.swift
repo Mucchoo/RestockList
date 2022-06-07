@@ -8,7 +8,6 @@
 import UIKit
 import StoreKit
 import MessageUI
-import RevenueCat
 
 class SettingTableViewController: UITableViewController {
     
@@ -16,8 +15,6 @@ class SettingTableViewController: UITableViewController {
     @IBOutlet weak var proLabel: UILabel!
     @IBOutlet weak var themeView: UIView!
     @IBOutlet var iconBackground: [UIView]!
-
-    private var isPro = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,21 +23,16 @@ class SettingTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        iconBackground.forEach{ $0.backgroundColor = themeModel.color }
+        //テーマカラー反映
+        iconBackground.forEach{ $0.backgroundColor = ThemeModel.color }
         //課金状態で表示内容を変更
-        themeView.layer.opacity = 0.5
-        iconView.layer.opacity = 0.5
-        Purchases.shared.getCustomerInfo { customerInfo, error in
-            guard error == nil else {
-                print("内課金状態取得時のエラー\(error!)")
-                return
-            }
-            if customerInfo?.entitlements["Pro"]?.isActive == true {
-                self.isPro = true
-                self.proLabel.text = "Pro アンロック済み"
-                self.themeView.layer.opacity = 1
-                self.iconView.layer.opacity = 1
-            }
+        if PurchaseModel.status {
+            self.proLabel.text = "Pro アンロック済み"
+            self.themeView.layer.opacity = 1
+            self.iconView.layer.opacity = 1
+        } else {
+            themeView.layer.opacity = 0.5
+            iconView.layer.opacity = 0.5
         }
     }
     //cell選択時
@@ -49,11 +41,11 @@ class SettingTableViewController: UITableViewController {
         if indexPath.section == 0 {
             switch indexPath.row {
             case 0://Proをアンロック
-                if !isPro { performSegue(withIdentifier: "ProSegue", sender: nil) }
+                if !PurchaseModel.status { performSegue(withIdentifier: "ProSegue", sender: nil) }
             case 1://テーマカラー
-                if isPro { performSegue(withIdentifier: "ThemeSegue", sender: nil) }
+                if PurchaseModel.status { performSegue(withIdentifier: "ThemeSegue", sender: nil) }
             case 2://アイコン
-                if isPro { performSegue(withIdentifier: "IconSegue", sender: nil) }
+                if PurchaseModel.status { performSegue(withIdentifier: "IconSegue", sender: nil) }
             default: return
             }
         //アプリケーションセクション

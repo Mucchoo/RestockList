@@ -21,7 +21,7 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var periodLabelRight: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     
-    private let realm = Data.realm
+    private let realm = DataModel.realm
     var editDelegate: EditProtocol?
     var updateDelegate: UpdateProtocol?
     
@@ -40,17 +40,17 @@ class ItemTableViewCell: UITableViewCell {
     }
     //残り期間を1日増やす
     @IBAction func plusAction(_ sender: UIButton) {
-        realmModel.plusRemainingTime(to: sender.tag)
+        RealmModel.plusRemainingTime(to: sender.tag)
         updateDelegate?.updateTableView()
     }
     //残り期間を1日減らす
     @IBAction func minusAction(_ sender: UIButton) {
-        realmModel.minusRemainingTime(to: sender.tag)
+        RealmModel.minusRemainingTime(to: sender.tag)
         updateDelegate?.updateTableView()
     }
     //残り期間を完全に回復する
     @IBAction func checkAction(_ sender: UIButton) {
-        realmModel.fillRemainingTime(to: sender.tag)
+        RealmModel.fillRemainingTime(to: sender.tag)
         updateDelegate?.updateTableView()
     }
 }

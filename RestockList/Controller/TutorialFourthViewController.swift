@@ -26,10 +26,10 @@ class TutorialFourthViewController: UIViewController {
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        listImageView.tintColor = themeModel.color
-        backgroundView.backgroundColor = themeModel.color
-        startButton.backgroundColor = themeModel.color
-        circleView.backgroundColor = themeModel.color
+        listImageView.tintColor = ThemeModel.color
+        backgroundView.backgroundColor = ThemeModel.color
+        startButton.backgroundColor = ThemeModel.color
+        circleView.backgroundColor = ThemeModel.color
     }
     //チュートリアルを閉じる
     @IBAction func startAction(_ sender: UIButton) {

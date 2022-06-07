@@ -32,18 +32,18 @@ class EditViewController: UIViewController {
         saveButton.setShadow()
         deleteButton.setShadow()
         //編集中のアイテム情報を反映
-        let realm = Data.realm
+        let realm = DataModel.realm
         let period = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.period ?? 1
         periodPickerView.selectRow(period - 1 , inComponent: 0, animated: true)
         itemTextField.text = realm.object(ofType: Item.self, forPrimaryKey: selectedCell)?.name ?? ""
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        saveButton.backgroundColor = themeModel.color
-        deleteButton.tintColor = themeModel.color
-        deleteButton.layer.borderColor = themeModel.color.cgColor
-        textFieldBackground.backgroundColor = themeModel.color
-        itemTextField.tintColor = themeModel.color
+        saveButton.backgroundColor = ThemeModel.color
+        deleteButton.tintColor = ThemeModel.color
+        deleteButton.layer.borderColor = ThemeModel.color.cgColor
+        textFieldBackground.backgroundColor = ThemeModel.color
+        itemTextField.tintColor = ThemeModel.color
     }
     //編集内容を保存
     @IBAction func saveAction(_ sender: UIButton) {
@@ -51,12 +51,12 @@ class EditViewController: UIViewController {
             itemTextField.placeholder = "アイテム名を入力してください"
             return
         }
-        realmModel.editItem(to: selectedCell, name: itemTextField.text!, period: periodPickerView.selectedRow(inComponent: 0) + 1)
+        RealmModel.editItem(to: selectedCell, name: itemTextField.text!, period: periodPickerView.selectedRow(inComponent: 0) + 1)
         navigationController?.popToRootViewController(animated: true)
     }
     //アイテムを削除
     @IBAction func deleteAction(_ sender: UIButton) {
-        realmModel.deleteItem(to: selectedCell)
+        RealmModel.deleteItem(to: selectedCell)
         navigationController?.popViewController(animated: true)
     }
     
