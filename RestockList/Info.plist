@@ -4,7 +4,7 @@
 <dict>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
-		<string>com.yazujumusa.RestockList.refresh</string>
+		<string>com.yazujumusa.restock-list.refresh</string>
 	</array>
 	<key>CFBundleLocalizations</key>
 	<array>

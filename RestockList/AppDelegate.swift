@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //内課金有効化
         Purchases.configure(withAPIKey: "appl_iJTYZXESAQcDrvNZmKCudSLubQU")
         //バックグラウンド更新有効化
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.yazujumusa.RestockList.refresh", using: nil) { task in
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.yazujumusa.restock-list.refresh", using: nil) { task in
             self.handleAppRefresh(task: task as! BGAppRefreshTask)
         }
         //通知の許可
@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     //30分毎にバックグラウンド更新をセット
     func scheduleAppRefresh() {
-        let request = BGAppRefreshTaskRequest(identifier: "com.yazujumusa.RestockList.refresh")
+        let request = BGAppRefreshTaskRequest(identifier: "com.yazujumusa.restock-list.refresh")
         request.earliestBeginDate = Date(timeIntervalSinceNow: 30 * 60)
         do {
             try BGTaskScheduler.shared.submit(request)
