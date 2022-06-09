@@ -28,7 +28,7 @@ class ItemTableViewController: UITableViewController, EditProtocol, UpdateProtoc
         tableView.delegate = self
         //初回起動時にチュートリアルを表示
         if DataModel.user.bool(forKey: "tutorial") == false {
-            performSegue(withIdentifier: "showTutorial", sender: nil)
+            performSegue(withIdentifier: "ShowTutorial", sender: nil)
             DataModel.user.set(true, forKey: "tutorial")
         }
         //日付が変わっていた場合アイテムの残り日数を更新

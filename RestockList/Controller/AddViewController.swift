@@ -28,11 +28,23 @@ class AddViewController: UIViewController {
         addButton.setShadow()
         //TextField自動フォーカス
         itemTextField.becomeFirstResponder()
+        //背景タップ時にキーボード閉じる
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+        //キーボードに完了ボタンを追加
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 45))
+        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeKeyboard))
+        toolbar.setItems([spacelItem, doneItem], animated: true)
+        itemTextField.inputAccessoryView = toolbar
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
         addButton.backgroundColor = ThemeModel.color
         textFieldBackground.backgroundColor = ThemeModel.color
+    }
+    //完了ボタンタップ時
+    @objc func closeKeyboard() {
+        itemTextField.resignFirstResponder()
     }
     //アイテムをrealmデータに追加
     @IBAction func addAction(_ sender: Any) {
