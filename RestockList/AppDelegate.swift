@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let launchedTimes = DataModel.user.object(forKey: "launchedTimes") as? Int ?? 0
         DataModel.user.set(launchedTimes + 1, forKey: "launchedTimes")
         //内課金有効化
-        Purchases.configure(withAPIKey: "appl_iJTYZXESAQcDrvNZmKCudSLubQU")
+        Purchases.configure(withAPIKey: "appl_IhbaWZiMtSaCequMLmBVFnADNel")
         //バックグラウンド更新有効化
         BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.yazujumusa.restock-list.refresh", using: nil) { task in
             self.handleAppRefresh(task: task as! BGAppRefreshTask)
