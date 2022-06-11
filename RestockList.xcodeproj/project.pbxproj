@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A013624281A7F4B0083402F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A013623281A7F4B0083402F /* RealmSwift */; };
 		2A013626281A7F500083402F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2A013625281A7F500083402F /* Realm */; };
-		2A0D5B3928266BDD002F1542 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0D5B3828266BDD002F1542 /* RevenueCat */; };
 		2A0D5B3D28269385002F1542 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0D5B3C28269385002F1542 /* StoreKit.framework */; };
 		2A11AD022819696E00170751 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A11AD012819696E00170751 /* WidgetKit.framework */; };
 		2A11AD042819696E00170751 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A11AD032819696E00170751 /* SwiftUI.framework */; };
@@ -53,6 +52,7 @@
 		2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1122817FF38001F84D4 /* AddViewController.swift */; };
 		2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1142817FF51001F84D4 /* EditViewController.swift */; };
 		2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2ACEE11728180067001F84D4 /* RealmSwift */; };
+		2AE7CEEB2854B82A006344F4 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE7CEEA2854B82A006344F4 /* RevenueCat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +102,7 @@
 		2A52D2F3284E3ADB007A8A16 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		2A52D2F5284E40C2007A8A16 /* TutorialView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TutorialView.storyboard; sourceTree = "<group>"; };
 		2A52D2F7284E41F6007A8A16 /* SettingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingView.storyboard; sourceTree = "<group>"; };
+		2A5588032853900F000A2CEF /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = StoreKitTestCertificate.cer; path = ../StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		2A55FE40281D151600380AF0 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		2A628C2428200D2E00952956 /* ProViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
 		2A628C262820A88E00952956 /* TutorialFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFirstViewController.swift; sourceTree = "<group>"; };
@@ -141,8 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A0D5B3D28269385002F1542 /* StoreKit.framework in Frameworks */,
-				2A0D5B3928266BDD002F1542 /* RevenueCat in Frameworks */,
 				2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */,
+				2AE7CEEB2854B82A006344F4 /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +174,7 @@
 		2A43EECD2817B2C4001BD791 = {
 			isa = PBXGroup;
 			children = (
+				2A5588032853900F000A2CEF /* StoreKitTestCertificate.cer */,
 				2AB9A283281C332200698C11 /* RestockListWidgetExtension.entitlements */,
 				2A43EED82817B2C4001BD791 /* RestockList */,
 				2A11AD052819696E00170751 /* RestockListWidget */,
@@ -302,7 +304,7 @@
 			name = RestockList;
 			packageProductDependencies = (
 				2ACEE11728180067001F84D4 /* RealmSwift */,
-				2A0D5B3828266BDD002F1542 /* RevenueCat */,
+				2AE7CEEA2854B82A006344F4 /* RevenueCat */,
 			);
 			productName = RestockList;
 			productReference = 2A43EED62817B2C4001BD791 /* RestockList.app */;
@@ -337,7 +339,7 @@
 			mainGroup = 2A43EECD2817B2C4001BD791;
 			packageReferences = (
 				2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				2A0D5B3728266BDD002F1542 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+				2AE7CEE92854B82A006344F4 /* XCRemoteSwiftPackageReference "purchases-ios" */,
 			);
 			productRefGroup = 2A43EED72817B2C4001BD791 /* Products */;
 			projectDirPath = "";
@@ -735,20 +737,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2A0D5B3728266BDD002F1542 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
 				branch = master;
 				kind = branch;
+			};
+		};
+		2AE7CEE92854B82A006344F4 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -764,15 +766,15 @@
 			package = 2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		2A0D5B3828266BDD002F1542 /* RevenueCat */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2A0D5B3728266BDD002F1542 /* XCRemoteSwiftPackageReference "purchases-ios" */;
-			productName = RevenueCat;
-		};
 		2ACEE11728180067001F84D4 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		2AE7CEEA2854B82A006344F4 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AE7CEE92854B82A006344F4 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

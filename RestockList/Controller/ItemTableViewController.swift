@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 import StoreKit
 import RealmSwift
 //アイテム編集ボタンを押した時にcellを判別する

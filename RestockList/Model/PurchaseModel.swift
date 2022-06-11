@@ -30,7 +30,7 @@ struct PurchaseModel {
                     print("内課金購入時のエラー\(error!)")
                     return
                 }
-                if customerInfo?.entitlements["Pro"]?.isActive == true {
+                if customerInfo?.entitlements["pro"]?.isActive == true {
                     let alert = UIAlertController(title: "購入しました", message: "", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
                         view.navigationController?.popToRootViewController(animated: true)
@@ -50,7 +50,7 @@ struct PurchaseModel {
                 print("内課金復元時のエラー\(error!)")
                 return
             }
-            if customerInfo?.entitlements["Pro"]?.isActive == true {
+            if customerInfo?.entitlements["pro"]?.isActive == true {
                 let alert = UIAlertController(title: "購入を復元しました", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
                     view.navigationController?.popToRootViewController(animated: true)
@@ -67,7 +67,7 @@ struct PurchaseModel {
                 print("内課金状態取得時のエラー\(error!)")
                 return
             }
-            isPro = customerInfo?.entitlements["Pro"]?.isActive == true
+            isPro = customerInfo?.entitlements["pro"]?.isActive == true
         }
         return isPro
     }
