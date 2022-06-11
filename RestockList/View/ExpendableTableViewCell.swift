@@ -8,10 +8,10 @@
 import UIKit
 import RealmSwift
 
-class ItemTableViewCell: UITableViewCell {
+class ExpendableTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var itemFrame: UIView!
-    @IBOutlet weak var itemLabel: UILabel!
+    @IBOutlet weak var expendableFrame: UIView!
+    @IBOutlet weak var expendableLabel: UILabel!
     @IBOutlet weak var periodFrame: UIView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
@@ -27,8 +27,8 @@ class ItemTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         //UI調整
-        itemFrame.layer.cornerRadius = 15
-        itemFrame.setShadow()
+        expendableFrame.layer.cornerRadius = 15
+        expendableFrame.setShadow()
         periodFrame.layer.borderWidth = 3
         periodFrame.layer.borderColor = ThemeModel.color.cgColor
         progressBar.transform = CGAffineTransform(scaleX: 1, y: 10)

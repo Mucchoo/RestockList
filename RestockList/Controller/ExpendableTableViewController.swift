@@ -17,9 +17,9 @@ protocol UpdateProtocol {
     func updateTableView()
 }
 
-class ItemTableViewController: UITableViewController, EditProtocol, UpdateProtocol {
+class ExpendableTableViewController: UITableViewController, EditProtocol, UpdateProtocol {
 
-    private var items = [Item]()
+    private var expendables = [Expendable]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,37 +47,37 @@ class ItemTableViewController: UITableViewController, EditProtocol, UpdateProtoc
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         //realmからアイテムを取得
-        items = RealmModel.items
+        expendables = RealmModel.expendables
         tableView.reloadData()
     }
     //セクションの数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return expendables.count
     }
     //セルの生成
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell") as! ItemTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell") as! ExpendableTableViewCell
         //delegate設定
         cell.editDelegate = self
         cell.updateDelegate = self
         //realm情報をアイテムに反映
-        cell.itemLabel.text = items[indexPath.row].name
-        cell.progressBar.progress = Float(items[indexPath.row].remainingTime) / Float(items[indexPath.row].period)
+        cell.expendableLabel.text = expendables[indexPath.row].name
+        cell.progressBar.progress = Float(expendables[indexPath.row].remainingTime) / Float(expendables[indexPath.row].period)
         //残り期間が半分あるかどうかで残り日数の場所を切り替え
-        if Float(items[indexPath.row].remainingTime) / Float(items[indexPath.row].period) < 0.5 {
-            cell.periodLabelRight.text = "残り\(items[indexPath.row].remainingTime)日"
+        if Float(expendables[indexPath.row].remainingTime) / Float(expendables[indexPath.row].period) < 0.5 {
+            cell.periodLabelRight.text = "残り\(expendables[indexPath.row].remainingTime)日"
             cell.periodLabelLeft.text = ""
 
         } else {
-            cell.periodLabelLeft.text = "残り\(items[indexPath.row].remainingTime)日"
+            cell.periodLabelLeft.text = "残り\(expendables[indexPath.row].remainingTime)日"
             cell.periodLabelRight.text = ""
 
         }
         //cell内のボタンの判別用タグ設定
-        cell.editButton.tag = items[indexPath.row].id
-        cell.plusButton.tag = items[indexPath.row].id
-        cell.minusButton.tag = items[indexPath.row].id
-        cell.checkButton.tag = items[indexPath.row].id
+        cell.editButton.tag = expendables[indexPath.row].id
+        cell.plusButton.tag = expendables[indexPath.row].id
+        cell.minusButton.tag = expendables[indexPath.row].id
+        cell.checkButton.tag = expendables[indexPath.row].id
         //テーマカラーを反映
         cell.periodFrame.layer.borderColor = ThemeModel.color.cgColor
         cell.progressBar.tintColor = ThemeModel.color
@@ -101,7 +101,7 @@ class ItemTableViewController: UITableViewController, EditProtocol, UpdateProtoc
     }
     //アイテム追加アクション
     @IBAction func addAction(_ sender: UIBarButtonItem) {
-        if items.count > 19 {
+        if expendables.count > 19 {
             //非課金ユーザーは20個以上登録できない
             if PurchaseModel.status {
                 performSegue(withIdentifier: "AddSegue", sender: nil)

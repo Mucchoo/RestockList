@@ -11,7 +11,7 @@ import RealmSwift
 class AddViewController: UIViewController {
         
     @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var itemTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var textFieldBackground: UIView!
     @IBOutlet weak var periodPickerView: UIPickerView!
     
@@ -22,12 +22,12 @@ class AddViewController: UIViewController {
         //UI調整
         textFieldBackground.layer.cornerRadius = 10
         addButton.layer.cornerRadius = 20
-        itemTextField.delegate = self
+        nameTextField.delegate = self
         periodPickerView.dataSource = self
         periodPickerView.delegate = self
         addButton.setShadow()
         //TextField自動フォーカス
-        itemTextField.becomeFirstResponder()
+        nameTextField.becomeFirstResponder()
         //背景タップ時にキーボード閉じる
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
         //キーボードに完了ボタンを追加
@@ -35,7 +35,7 @@ class AddViewController: UIViewController {
         let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeKeyboard))
         toolbar.setItems([spacelItem, doneItem], animated: true)
-        itemTextField.inputAccessoryView = toolbar
+        nameTextField.inputAccessoryView = toolbar
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
@@ -44,15 +44,15 @@ class AddViewController: UIViewController {
     }
     //完了ボタンタップ時
     @objc func closeKeyboard() {
-        itemTextField.resignFirstResponder()
+        nameTextField.resignFirstResponder()
     }
     //アイテムをrealmデータに追加
     @IBAction func addAction(_ sender: Any) {
-        guard !itemTextField.text!.isEmpty else {
-            itemTextField.placeholder = "アイテム名を入力してください"
+        guard !nameTextField.text!.isEmpty else {
+            nameTextField.placeholder = "アイテム名を入力してください"
             return
         }
-        RealmModel.addItem(name: itemTextField.text!, period: periodPickerView.selectedRow(inComponent: 0) + 1)
+        RealmModel.addExpendable(name: nameTextField.text!, period: periodPickerView.selectedRow(inComponent: 0) + 1)
         navigationController?.popViewController(animated: true)
     }
 
@@ -60,7 +60,7 @@ class AddViewController: UIViewController {
 //決定ボタンでキーボードを閉じる
 extension AddViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        itemTextField.endEditing(true)
+        nameTextField.endEditing(true)
         return true
     }
 }

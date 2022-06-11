@@ -12,7 +12,7 @@ class EditViewController: UIViewController {
         
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var itemTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var textFieldBackground: UIView!
     @IBOutlet weak var periodPickerView: UIPickerView!
 
@@ -22,7 +22,7 @@ class EditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //delegate設定
-        itemTextField.delegate = self
+        nameTextField.delegate = self
         periodPickerView.dataSource = self
         periodPickerView.delegate = self
         //UI調整
@@ -32,8 +32,8 @@ class EditViewController: UIViewController {
         saveButton.setShadow()
         deleteButton.setShadow()
         //編集中のアイテム情報を反映
-        periodPickerView.selectRow(RealmModel.getItemPeriod(from: selectedCell) - 1 , inComponent: 0, animated: true)
-        itemTextField.text = RealmModel.getItemName(from: selectedCell)
+        periodPickerView.selectRow(RealmModel.getExpendablePeriod(from: selectedCell) - 1 , inComponent: 0, animated: true)
+        nameTextField.text = RealmModel.getExpendableName(from: selectedCell)
         //背景タップ時にキーボード閉じる
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
         //キーボードに完了ボタンを追加
@@ -41,7 +41,7 @@ class EditViewController: UIViewController {
         let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeKeyboard))
         toolbar.setItems([spacelItem, doneItem], animated: true)
-        itemTextField.inputAccessoryView = toolbar
+        nameTextField.inputAccessoryView = toolbar
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
@@ -49,24 +49,24 @@ class EditViewController: UIViewController {
         deleteButton.tintColor = ThemeModel.color
         deleteButton.layer.borderColor = ThemeModel.color.cgColor
         textFieldBackground.backgroundColor = ThemeModel.color
-        itemTextField.tintColor = ThemeModel.color
+        nameTextField.tintColor = ThemeModel.color
     }
     //完了ボタンタップ時
     @objc func closeKeyboard() {
-        itemTextField.resignFirstResponder()
+        nameTextField.resignFirstResponder()
     }
     //編集内容を保存
     @IBAction func saveAction(_ sender: UIButton) {
-        guard !itemTextField.text!.isEmpty else {
-            itemTextField.placeholder = "アイテム名を入力してください"
+        guard !nameTextField.text!.isEmpty else {
+            nameTextField.placeholder = "アイテム名を入力してください"
             return
         }
-        RealmModel.editItem(to: selectedCell, name: itemTextField.text!, period: periodPickerView.selectedRow(inComponent: 0) + 1)
+        RealmModel.editExpendable(to: selectedCell, name: nameTextField.text!, period: periodPickerView.selectedRow(inComponent: 0) + 1)
         navigationController?.popToRootViewController(animated: true)
     }
     //アイテムを削除
     @IBAction func deleteAction(_ sender: UIButton) {
-        RealmModel.deleteItem(to: selectedCell)
+        RealmModel.deleteExpendable(to: selectedCell)
         navigationController?.popViewController(animated: true)
     }
     
@@ -74,7 +74,7 @@ class EditViewController: UIViewController {
 //決定ボタンでキーボードを閉じる
 extension EditViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        itemTextField.endEditing(true)
+        nameTextField.endEditing(true)
         return true
     }
 }

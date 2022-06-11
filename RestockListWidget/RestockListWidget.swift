@@ -12,11 +12,11 @@ import RealmSwift
 struct Provider: TimelineProvider {
     //ほとんど使われない情報
     func placeholder(in context: Context) -> SimpleEntry {
-        return SimpleEntry(date: Date(), items: [])
+        return SimpleEntry(date: Date(), expendables: [])
     }
     //widget追加時に表示される情報
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let entry = SimpleEntry(date: Date(), items: [])
+        let entry = SimpleEntry(date: Date(), expendables: [])
         completion(entry)
     }
     //毎日9時1分にwidgetを更新
@@ -25,7 +25,7 @@ struct Provider: TimelineProvider {
         RealmModel.reflectElapsedDays()
         //毎日9時1分に更新
         var entries: [SimpleEntry] = []
-        let entry = SimpleEntry(date: Date(), items: RealmModel.items)
+        let entry = SimpleEntry(date: Date(), expendables: RealmModel.expendables)
         entries.append(entry)
         let morning = Calendar.current.date(from: DateComponents(hour: 9, minute: 1))!
         let timeline = Timeline(entries: entries, policy: .after(morning))
@@ -36,17 +36,17 @@ struct Provider: TimelineProvider {
 //widget更新時に受け取る情報
 struct SimpleEntry: TimelineEntry {
     var date: Date
-    let items: [Item]
+    let expendables: [Expendable]
 }
 
 struct WidgetEntryView : View {
     @Environment(\.widgetFamily) var family
-    var items: [Item]
+    var expendables: [Expendable]
     var entry: Provider.Entry
     //更新時に受け取った情報を反映
     init(entry: Provider.Entry){
         self.entry = entry
-        items = entry.items
+        expendables = entry.expendables
     }
     
     var body: some View {
@@ -59,29 +59,29 @@ struct WidgetEntryView : View {
                 //widget小
                 if family == .systemSmall {
                     //アイテムが5個以上あるときは5個だけ表示
-                    if items.count > 5 {
+                    if expendables.count > 5 {
                         ForEach(0..<5){ num in
                             HStack(spacing: 0) {
-                                Text("\(items[num].name) ")
+                                Text("\(expendables[num].name) ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
                                 Spacer()
-                                Text("\(items[num].remainingTime)日 ")
+                                Text("\(expendables[num].remainingTime)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                             }.padding(.bottom, 2)
                         }
                     //アイテムが5個ないときはあるだけ表示
                     } else {
-                        ForEach(0..<items.count, id: \.self){ num in
+                        ForEach(0..<expendables.count, id: \.self){ num in
                             HStack(spacing: 0) {
-                                Text("\(items[num].name) ")
+                                Text("\(expendables[num].name) ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
                                 Spacer()
-                                Text("\(items[num].remainingTime)日 ")
+                                Text("\(expendables[num].remainingTime)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                             }.padding(.bottom, 2)
@@ -90,15 +90,15 @@ struct WidgetEntryView : View {
                 //widget中
                 } else if family == .systemMedium {
                     //アイテムが4個以上あるときは4個だけ表示
-                    if items.count > 4 {
+                    if expendables.count > 4 {
                         ForEach(0..<4){ num in
                             HStack(spacing: 0){
-                                Text("\(items[num].name) ")
+                                Text("\(expendables[num].name) ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
                                 Spacer()
-                                Text("\(items[num].remainingTime)日 ")
+                                Text("\(expendables[num].remainingTime)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                             }
@@ -109,14 +109,14 @@ struct WidgetEntryView : View {
                         }
                     //アイテムが4個ないときはあるだけ表示
                     } else {
-                        ForEach(0..<items.count, id: \.self){ num in
+                        ForEach(0..<expendables.count, id: \.self){ num in
                             HStack(spacing: 0){
-                                Text("\(items[num].name) ")
+                                Text("\(expendables[num].name) ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
                                 Spacer()
-                                Text("\(items[num].remainingTime)日 ")
+                                Text("\(expendables[num].remainingTime)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                             }
@@ -129,15 +129,15 @@ struct WidgetEntryView : View {
                 //widget大
                 } else {
                     //アイテムが10個以上あるときは10個だけ表示
-                    if items.count > 10 {
+                    if expendables.count > 10 {
                         ForEach(0..<10){ num in
                             HStack(spacing: 0){
-                                Text("\(items[num].name) ")
+                                Text("\(expendables[num].name) ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
                                 Spacer()
-                                Text("\(items[num].remainingTime)日 ")
+                                Text("\(expendables[num].remainingTime)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                             }
@@ -149,14 +149,14 @@ struct WidgetEntryView : View {
                         }
                     //アイテムが10個ないときはあるだけ表示
                     } else {
-                        ForEach(0..<items.count, id: \.self){ num in
+                        ForEach(0..<expendables.count, id: \.self){ num in
                             HStack(spacing: 0){
-                                Text("\(items[num].name) ")
+                                Text("\(expendables[num].name) ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
                                 Spacer()
-                                Text("\(items[num].remainingTime)日 ")
+                                Text("\(expendables[num].remainingTime)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                             }

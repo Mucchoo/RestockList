@@ -17,16 +17,16 @@
 		2A11AD0C2819696F00170751 /* RestockListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A11AD082819696E00170751 /* RestockListWidget.intentdefinition */; };
 		2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A11AD082819696E00170751 /* RestockListWidget.intentdefinition */; };
 		2A11AD102819696F00170751 /* RestockListWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A11ACFF2819696E00170751 /* RestockListWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2A383D112817B820000BCAF0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Item.swift */; };
+		2A383D112817B820000BCAF0 /* Expendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Expendable.swift */; };
 		2A3C4C56284ED8CD00CA1F1C /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C55284ED8CD00CA1F1C /* RealmModel.swift */; };
 		2A3C4C58284EE1E300CA1F1C /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C57284EE1E300CA1F1C /* ThemeModel.swift */; };
 		2A43EEDA2817B2C4001BD791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EED92817B2C4001BD791 /* AppDelegate.swift */; };
 		2A43EEDC2817B2C4001BD791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEDB2817B2C4001BD791 /* SceneDelegate.swift */; };
-		2A43EEDE2817B2C4001BD791 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEDD2817B2C4001BD791 /* ItemTableViewController.swift */; };
+		2A43EEDE2817B2C4001BD791 /* ExpendableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A43EEDD2817B2C4001BD791 /* ExpendableTableViewController.swift */; };
 		2A43EEE12817B2C4001BD791 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A43EEDF2817B2C4001BD791 /* Main.storyboard */; };
 		2A43EEE32817B2C5001BD791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A43EEE22817B2C5001BD791 /* Assets.xcassets */; };
 		2A43EEE62817B2C5001BD791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A43EEE42817B2C5001BD791 /* LaunchScreen.storyboard */; };
-		2A45CF7D281BC74000671727 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Item.swift */; };
+		2A45CF7D281BC74000671727 /* Expendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A383D102817B820000BCAF0 /* Expendable.swift */; };
 		2A52D2F4284E3ADB007A8A16 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A52D2F3284E3ADB007A8A16 /* UIViewExtension.swift */; };
 		2A52D2F6284E40C2007A8A16 /* TutorialView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A52D2F5284E40C2007A8A16 /* TutorialView.storyboard */; };
 		2A52D2F8284E41F6007A8A16 /* SettingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A52D2F7284E41F6007A8A16 /* SettingView.storyboard */; };
@@ -48,7 +48,7 @@
 		2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A967C10281EBCBF002A2210 /* ThemeViewController.swift */; };
 		2A9A8191281E6F6900186477 /* IconCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8190281E6F6900186477 /* IconCollectionViewController.swift */; };
 		2A9A8193281E6FB000186477 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8192281E6FB000186477 /* IconCollectionViewCell.swift */; };
-		2ACEE1112817FF1E001F84D4 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1102817FF1E001F84D4 /* ItemTableViewCell.swift */; };
+		2ACEE1112817FF1E001F84D4 /* ExpendableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1102817FF1E001F84D4 /* ExpendableTableViewCell.swift */; };
 		2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1122817FF38001F84D4 /* AddViewController.swift */; };
 		2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1142817FF51001F84D4 /* EditViewController.swift */; };
 		2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2ACEE11728180067001F84D4 /* RealmSwift */; };
@@ -88,13 +88,13 @@
 		2A11AD082819696E00170751 /* RestockListWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = RestockListWidget.intentdefinition; sourceTree = "<group>"; };
 		2A11AD092819696F00170751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A11AD0B2819696F00170751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A383D102817B820000BCAF0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		2A383D102817B820000BCAF0 /* Expendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expendable.swift; sourceTree = "<group>"; };
 		2A3C4C55284ED8CD00CA1F1C /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		2A3C4C57284EE1E300CA1F1C /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		2A43EED62817B2C4001BD791 /* RestockList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestockList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A43EED92817B2C4001BD791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A43EEDB2817B2C4001BD791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A43EEDD2817B2C4001BD791 /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
+		2A43EEDD2817B2C4001BD791 /* ExpendableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpendableTableViewController.swift; sourceTree = "<group>"; };
 		2A43EEE02817B2C4001BD791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A43EEE22817B2C5001BD791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A43EEE52817B2C5001BD791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		2A9A8192281E6FB000186477 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		2AB9A282281C331B00698C11 /* RestockList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RestockList.entitlements; sourceTree = "<group>"; };
 		2AB9A283281C332200698C11 /* RestockListWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RestockListWidgetExtension.entitlements; sourceTree = "<group>"; };
-		2ACEE1102817FF1E001F84D4 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		2ACEE1102817FF1E001F84D4 /* ExpendableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpendableTableViewCell.swift; sourceTree = "<group>"; };
 		2ACEE1122817FF38001F84D4 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		2ACEE1142817FF51001F84D4 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,7 +227,7 @@
 				2A628C2428200D2E00952956 /* ProViewController.swift */,
 				2A9A8190281E6F6900186477 /* IconCollectionViewController.swift */,
 				2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */,
-				2A43EEDD2817B2C4001BD791 /* ItemTableViewController.swift */,
+				2A43EEDD2817B2C4001BD791 /* ExpendableTableViewController.swift */,
 				2A967C10281EBCBF002A2210 /* ThemeViewController.swift */,
 				2A628C262820A88E00952956 /* TutorialFirstViewController.swift */,
 				2A628C282820A8A300952956 /* TutorialSecondViewController.swift */,
@@ -242,7 +242,7 @@
 		2ACEE11C28183171001F84D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2ACEE1102817FF1E001F84D4 /* ItemTableViewCell.swift */,
+				2ACEE1102817FF1E001F84D4 /* ExpendableTableViewCell.swift */,
 				2A9A8192281E6FB000186477 /* IconCollectionViewCell.swift */,
 			);
 			path = View;
@@ -251,7 +251,7 @@
 		2ACEE11D281831AB001F84D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2A383D102817B820000BCAF0 /* Item.swift */,
+				2A383D102817B820000BCAF0 /* Expendable.swift */,
 				2A63B01B284F2D3E0098EB09 /* LoadModel.swift */,
 				2A628C302821055300952956 /* DataModel.swift */,
 				2A3C4C55284ED8CD00CA1F1C /* RealmModel.swift */,
@@ -381,7 +381,7 @@
 			files = (
 				2A11AD0C2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
 				2A63B01A284F2A150098EB09 /* RealmModel.swift in Sources */,
-				2A45CF7D281BC74000671727 /* Item.swift in Sources */,
+				2A45CF7D281BC74000671727 /* Expendable.swift in Sources */,
 				2A63B019284F23C90098EB09 /* ThemeModel.swift in Sources */,
 				2A11AD072819696E00170751 /* RestockListWidget.swift in Sources */,
 				2A628C32282107BB00952956 /* DataModel.swift in Sources */,
@@ -392,7 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A43EEDE2817B2C4001BD791 /* ItemTableViewController.swift in Sources */,
+				2A43EEDE2817B2C4001BD791 /* ExpendableTableViewController.swift in Sources */,
 				2A52D2F4284E3ADB007A8A16 /* UIViewExtension.swift in Sources */,
 				2A628C272820A88E00952956 /* TutorialFirstViewController.swift in Sources */,
 				2A628C2528200D2E00952956 /* ProViewController.swift in Sources */,
@@ -412,8 +412,8 @@
 				2A935CB92818EEE7001D9ED1 /* SettingTableViewController.swift in Sources */,
 				2A9A8193281E6FB000186477 /* IconCollectionViewCell.swift in Sources */,
 				2A628C2F2820A95100952956 /* TutorialPageViewController.swift in Sources */,
-				2A383D112817B820000BCAF0 /* Item.swift in Sources */,
-				2ACEE1112817FF1E001F84D4 /* ItemTableViewCell.swift in Sources */,
+				2A383D112817B820000BCAF0 /* Expendable.swift in Sources */,
+				2ACEE1112817FF1E001F84D4 /* ExpendableTableViewCell.swift in Sources */,
 				2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
 				2A3C4C56284ED8CD00CA1F1C /* RealmModel.swift in Sources */,
 				2A628C312821055300952956 /* DataModel.swift in Sources */,

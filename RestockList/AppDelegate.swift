@@ -48,10 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func handleAppRefresh(task: BGAppRefreshTask) {
         self.scheduleAppRefresh()
         RealmModel.reflectElapsedDays()
-        guard RealmModel.getFewRemainingItems() != "" else { return }
+        guard RealmModel.getFewRemainingExpendables() != "" else { return }
         let content = UNMutableNotificationContent()
         content.title = "無くなりそうなアイテムがあります"
-        content.body = "\(RealmModel.getFewRemainingItems())が残りわずかです。"
+        content.body = "\(RealmModel.getFewRemainingExpendables())が残りわずかです。"
         content.sound = UNNotificationSound.default
         let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
