@@ -323,49 +323,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xGk-J3-mGs">
-                                        <rect key="frame" x="20" y="378" width="374" height="46.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xGk-J3-mGs" id="XS8-1G-KRI">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="レビューで応援！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nz1-nu-cuq">
-                                                    <rect key="frame" x="60" y="13" width="139" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="FontColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tO6-ip-9ck">
-                                                    <rect key="frame" x="20" y="8" width="30" height="30.5"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="D9m-hE-829">
-                                                            <rect key="frame" x="5" y="4.5" width="20" height="20.5"/>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" name="AccentColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="D9m-hE-829" secondAttribute="trailing" constant="5" id="AEd-rI-jkF"/>
-                                                        <constraint firstAttribute="bottom" secondItem="D9m-hE-829" secondAttribute="bottom" constant="5" id="gkg-Cu-3Rw"/>
-                                                        <constraint firstItem="D9m-hE-829" firstAttribute="top" secondItem="tO6-ip-9ck" secondAttribute="top" constant="5" id="jaJ-Ju-Pid"/>
-                                                        <constraint firstAttribute="width" constant="30" id="sT9-t1-h1A"/>
-                                                        <constraint firstAttribute="height" constant="30" id="tSB-31-lWq"/>
-                                                        <constraint firstItem="D9m-hE-829" firstAttribute="leading" secondItem="tO6-ip-9ck" secondAttribute="leading" constant="5" id="ww6-2y-Kjj"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="nz1-nu-cuq" firstAttribute="leading" secondItem="tO6-ip-9ck" secondAttribute="trailing" constant="10" id="CZ1-SJ-8Zf"/>
-                                                <constraint firstItem="tO6-ip-9ck" firstAttribute="leading" secondItem="XS8-1G-KRI" secondAttribute="leading" constant="20" id="PCk-bG-zbE"/>
-                                                <constraint firstItem="tO6-ip-9ck" firstAttribute="top" secondItem="XS8-1G-KRI" secondAttribute="top" constant="8" id="gmh-x5-H1D"/>
-                                                <constraint firstItem="nz1-nu-cuq" firstAttribute="centerY" secondItem="XS8-1G-KRI" secondAttribute="centerY" id="prw-6N-J8S"/>
-                                                <constraint firstAttribute="bottom" secondItem="tO6-ip-9ck" secondAttribute="bottom" constant="8" id="waR-bR-6yy"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="3" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="M20-tf-tfB">
-                                        <rect key="frame" x="20" y="424.5" width="374" height="46.5"/>
+                                        <rect key="frame" x="20" y="378" width="374" height="46.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M20-tf-tfB" id="k29-Zh-8ln">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
@@ -424,7 +383,6 @@
                         <outletCollection property="iconBackground" destination="DOA-jz-rZN" collectionClass="NSMutableArray" id="nol-69-HxJ"/>
                         <outletCollection property="iconBackground" destination="yff-01-MyA" collectionClass="NSMutableArray" id="am9-CD-bsb"/>
                         <outletCollection property="iconBackground" destination="c4j-u7-kiJ" collectionClass="NSMutableArray" id="K3e-Oy-FwP"/>
-                        <outletCollection property="iconBackground" destination="tO6-ip-9ck" collectionClass="NSMutableArray" id="jn9-Uz-UE9"/>
                         <outletCollection property="iconBackground" destination="cPZ-Bm-mO6" collectionClass="NSMutableArray" id="6i1-8K-Lbj"/>
                         <segue destination="9vK-Vx-DQO" kind="show" identifier="ProSegue" id="Ds8-o4-rQp"/>
                         <segue destination="S4E-CM-Iwd" kind="show" identifier="ThemeSegue" id="5zw-Se-Gi8"/>
@@ -856,7 +814,6 @@
         <image name="paintbrush.pointed" catalog="system" width="128" height="116"/>
         <image name="questionmark" catalog="system" width="96" height="128"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">
             <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -873,7 +830,7 @@
             <color red="0.77647058823529413" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor5">
-            <color red="0.8666666666666667" green="0.13725490196078433" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.86699998378753662" green="0.13699999451637268" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor6">
             <color red="0.85490196078431369" green="0.32156862745098042" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

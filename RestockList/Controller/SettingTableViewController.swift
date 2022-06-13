@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import StoreKit
 import MessageUI
 
 class SettingTableViewController: UITableViewController {
@@ -62,10 +61,7 @@ class SettingTableViewController: UITableViewController {
                 let windowScenes = scenes.first as? UIWindowScene
                 let window = windowScenes?.keyWindow
                 window?.rootViewController?.present(av, animated: true, completion: nil)
-            case 3://レビューで応援！
-                guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                SKStoreReviewController.requestReview(in: scene)
-            case 4://ご意見・ご要望
+            case 3://ご意見・ご要望
                 showEmail()
             default: return
             }

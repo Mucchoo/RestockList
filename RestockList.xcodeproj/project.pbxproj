@@ -102,7 +102,6 @@
 		2A52D2F3284E3ADB007A8A16 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		2A52D2F5284E40C2007A8A16 /* TutorialView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TutorialView.storyboard; sourceTree = "<group>"; };
 		2A52D2F7284E41F6007A8A16 /* SettingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingView.storyboard; sourceTree = "<group>"; };
-		2A5588032853900F000A2CEF /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = StoreKitTestCertificate.cer; path = ../StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		2A55FE40281D151600380AF0 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		2A628C2428200D2E00952956 /* ProViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProViewController.swift; sourceTree = "<group>"; };
 		2A628C262820A88E00952956 /* TutorialFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFirstViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +173,6 @@
 		2A43EECD2817B2C4001BD791 = {
 			isa = PBXGroup;
 			children = (
-				2A5588032853900F000A2CEF /* StoreKitTestCertificate.cer */,
 				2AB9A283281C332200698C11 /* RestockListWidgetExtension.entitlements */,
 				2A43EED82817B2C4001BD791 /* RestockList */,
 				2A11AD052819696E00170751 /* RestockListWidget */,
@@ -225,10 +223,10 @@
 				2ACEE1122817FF38001F84D4 /* AddViewController.swift */,
 				2ACEE1142817FF51001F84D4 /* EditViewController.swift */,
 				2A628C2428200D2E00952956 /* ProViewController.swift */,
-				2A9A8190281E6F6900186477 /* IconCollectionViewController.swift */,
-				2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */,
-				2A43EEDD2817B2C4001BD791 /* ExpendableTableViewController.swift */,
 				2A967C10281EBCBF002A2210 /* ThemeViewController.swift */,
+				2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */,
+				2A9A8190281E6F6900186477 /* IconCollectionViewController.swift */,
+				2A43EEDD2817B2C4001BD791 /* ExpendableTableViewController.swift */,
 				2A628C262820A88E00952956 /* TutorialFirstViewController.swift */,
 				2A628C282820A8A300952956 /* TutorialSecondViewController.swift */,
 				2A628C2A2820A8B000952956 /* TutorialThirdViewController.swift */,
