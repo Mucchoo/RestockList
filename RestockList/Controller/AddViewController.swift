@@ -49,7 +49,7 @@ class AddViewController: UIViewController {
     //アイテムをrealmデータに追加
     @IBAction func addAction(_ sender: Any) {
         guard !nameTextField.text!.isEmpty else {
-            nameTextField.placeholder = "アイテム名を入力してください"
+            nameTextField.placeholder = R.string.localizable.namePlaceholder()
             return
         }
         RealmModel.addExpendable(name: nameTextField.text!, period: periodPickerView.selectedRow(inComponent: 0) + 1)

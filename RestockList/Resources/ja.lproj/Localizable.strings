@@ -1,0 +1,64 @@
+/* 
+  Localizable.strings
+  RestockList
+
+  Created by Musa Yazuju on 2022/06/13.
+  
+*/
+//identifier
+"pro" = "pro";
+"cell" = "Cell";
+"main" = "Main";
+"addSegue" = "AddSegue";
+"proSegue" = "ProSegue";
+"tutorial1" = "Tutorial1";
+"tutorial2" = "Tutorial2";
+"tutorial3" = "Tutorial3";
+"tutorial4" = "Tutorial4";
+"iconSegue" = "IconSegue";
+"themeSegue" = "ThemeSegue";
+"settingView" = "SettingView";
+"immediately" = "immediately";
+"appURL" = "shorturl.at/azQW5";
+"showTutorial" = "ShowTutorial";
+"reusableCell" = "ReusableCell";
+"tutorialSegue" = "TutorialSegue";
+"editStoryboard" = "EditStoryboard";
+"proFromTopSegue" = "ProFromTopSegue";
+"notificationSegue" = "NotificationSegue";
+"refresh" = "com.yazujumusa.restock-list.refresh";
+"purchaseAPI" = "appl_IhbaWZiMtSaCequMLmBVFnADNel";
+//userDefaults
+"theme" = "theme";
+"lastDate" = "lastDate";
+"tutorial" = "tutorial";
+"launchedTimes" = "launchedTimes";
+"notificationCondition" = "notificationCondition";
+//notification
+"isFewLeft" = "が残りわずかです。";
+"itemWillBeLost" = "無くなりそうなアイテムがあります";
+//alert
+"ok" = "OK";
+"close" = "閉じる";
+"seePro" = "Proを見る";
+"purchased" = "購入しました";
+"restored" = "購入を復元しました";
+"sendEmail" = "メールを送信しました";
+"cannotSendEmail" = "メールを送信できませんでした";
+"tryAgain" = "時間を置いてからもう一度お試しください。";
+"twentyItemsAvailableInFree" = "無料版で追加できるアイテムは20個です";
+"unlimitedIfJoinPro" = "Proにアップグレードすれば、無制限に追加することができます。";
+//asset
+"icon" = "Icon";
+"appIcon" = "AppIcon";
+//textField
+"namePlaceholder" = "アイテム名を入力してください";
+//label
+"day" = "日";
+"remain" = "残り";
+"usage" = "使い方";
+"unlockedPro" = "Pro アンロック済み";
+//messageUI
+"messageSubject" = "ご意見・ご要望";
+"messageRecipient" = "yazujumusa@gmail.com";
+"messageBody" = "\n\n\n\n\nーーーーーーーーーーーーーーー\nこの上へお気軽にご記入ください。\n消耗品リスト";

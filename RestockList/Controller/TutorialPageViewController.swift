@@ -17,16 +17,16 @@ class TutorialPageViewController: UIPageViewController {
         super.viewDidLoad()
         //表示するページを登録
         dataSource = self
-        let firstPage = storyboard!.instantiateViewController(withIdentifier: "Tutorial1")
-        let secondPage = storyboard!.instantiateViewController(withIdentifier: "Tutorial2")
-        let thirdPage = storyboard!.instantiateViewController(withIdentifier: "Tutorial3")
-        let fourthPage = storyboard!.instantiateViewController(withIdentifier: "Tutorial4")
+        let firstPage = storyboard!.instantiateViewController(withIdentifier: R.string.localizable.tutorial1())
+        let secondPage = storyboard!.instantiateViewController(withIdentifier: R.string.localizable.tutorial2())
+        let thirdPage = storyboard!.instantiateViewController(withIdentifier: R.string.localizable.tutorial3())
+        let fourthPage = storyboard!.instantiateViewController(withIdentifier: R.string.localizable.tutorial4())
         controllers = [firstPage, secondPage, thirdPage, fourthPage]
         setViewControllers([controllers[0]], direction: .forward, animated: true)
         //使い方Labelを表示
         view.addSubview(usageLabel)
         usageLabel.layer.cornerRadius = 20
-        usageLabel.text = "使い方"
+        usageLabel.text = R.string.localizable.usage()
         usageLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         usageLabel.textAlignment = .center
         usageLabel.backgroundColor = .white

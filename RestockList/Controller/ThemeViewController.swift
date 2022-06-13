@@ -14,7 +14,7 @@ class ThemeViewController: UIViewController {
     }
     //テーマカラーを更新
     @IBAction func themeAction(_ sender: UIButton) {
-        DataModel.user.set(sender.tag, forKey: "theme")
+        DataModel.user.set(sender.tag, forKey: R.string.localizable.theme())
         navigationController?.popToRootViewController(animated: true)
     }
 }

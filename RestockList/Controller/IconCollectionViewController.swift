@@ -26,7 +26,7 @@ class IconCollectionViewController: UICollectionViewController {
     }
     //アイテムの生成
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! IconCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.cell, for: indexPath)!
         cell.setImage(row: indexPath.row)
         cell.layer.cornerRadius = 20
         cell.setShadow()
@@ -37,6 +37,6 @@ class IconCollectionViewController: UICollectionViewController {
         if indexPath.row == 0 {
             UIApplication.shared.setAlternateIconName(nil)
         }
-        UIApplication.shared.setAlternateIconName("AppIcon\(indexPath.row)")
+        UIApplication.shared.setAlternateIconName(R.string.localizable.appIcon() + String(indexPath.row))
     }
 }

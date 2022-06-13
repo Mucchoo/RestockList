@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  RestockList
+
+  Created by Musa Yazuju on 2022/06/13.
+  
+*/
+//Identifier
+"pro" = "pro";
+"appGroup" = "group.com.yazujumusa.restock-list";
+//Realm
+"id" = "id";
+"db" = "db.realm";
+//userDefaults
+"theme" = "theme";
+"lastDate" = "lastDate";
+"notificationCondition" = "notificationCondition";
+//assets
+"accentColor" = "AccentColor";
+//alert
+"purchased" = "購入しました";

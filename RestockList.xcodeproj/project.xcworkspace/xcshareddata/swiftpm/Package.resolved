@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "r.swift.library",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mac-cain13/R.swift.Library.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "3a64127e8113cc33179504dfadc91b361d55a0b1"
+      }
+    },
+    {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core",

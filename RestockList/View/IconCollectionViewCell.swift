@@ -10,6 +10,6 @@ import UIKit
 class IconCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var iconImage: UIImageView!
     func setImage(row: Int){
-        iconImage.image = UIImage(named: "Icon\(row)")
+        iconImage.image = UIImage(named: R.string.localizable.icon() + String(row))
     }
 }

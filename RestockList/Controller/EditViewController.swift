@@ -58,7 +58,7 @@ class EditViewController: UIViewController {
     //編集内容を保存
     @IBAction func saveAction(_ sender: UIButton) {
         guard !nameTextField.text!.isEmpty else {
-            nameTextField.placeholder = "アイテム名を入力してください"
+            nameTextField.placeholder = R.string.localizable.namePlaceholder()
             return
         }
         RealmModel.editExpendable(to: selectedCell, name: nameTextField.text!, period: periodPickerView.selectedRow(inComponent: 0) + 1)

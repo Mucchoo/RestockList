@@ -26,17 +26,17 @@ class ExpendableTableViewController: UITableViewController, EditProtocol, Update
         //delegate設定
         tableView.delegate = self
         //初回起動時にチュートリアルを表示
-        if DataModel.user.bool(forKey: "tutorial") == false {
-            performSegue(withIdentifier: "ShowTutorial", sender: nil)
-            DataModel.user.set(true, forKey: "tutorial")
+        if DataModel.user.bool(forKey: R.string.localizable.tutorial()) == false {
+            performSegue(withIdentifier: R.string.localizable.showTutorial(), sender: nil)
+            DataModel.user.set(true, forKey: R.string.localizable.tutorial())
         }
         //日付が変わっていた場合アイテムの残り日数を更新
         RealmModel.reflectElapsedDays()
         //アプリを20回起動する毎にレビューアラートを表示
-        if DataModel.user.integer(forKey: "launchedTimes") > 20 {
+        if DataModel.user.integer(forKey: R.string.localizable.launchedTimes()) > 20 {
             guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
             SKStoreReviewController.requestReview(in: scene)
-            DataModel.user.set(0, forKey: "launchedTimes")
+            DataModel.user.set(0, forKey: R.string.localizable.launchedTimes())
         }
     }
     
@@ -56,7 +56,7 @@ class ExpendableTableViewController: UITableViewController, EditProtocol, Update
     }
     //セルの生成
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell") as! ExpendableTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.reusableCell, for: indexPath)!
         //delegate設定
         cell.editDelegate = self
         cell.updateDelegate = self
@@ -65,11 +65,11 @@ class ExpendableTableViewController: UITableViewController, EditProtocol, Update
         cell.progressBar.progress = Float(expendables[indexPath.row].remainingTime) / Float(expendables[indexPath.row].period)
         //残り期間が半分あるかどうかで残り日数の場所を切り替え
         if Float(expendables[indexPath.row].remainingTime) / Float(expendables[indexPath.row].period) < 0.5 {
-            cell.periodLabelRight.text = "残り\(expendables[indexPath.row].remainingTime)日"
+            cell.periodLabelRight.text = R.string.localizable.remain() + String(expendables[indexPath.row].remainingTime) + R.string.localizable.day()
             cell.periodLabelLeft.text = ""
 
         } else {
-            cell.periodLabelLeft.text = "残り\(expendables[indexPath.row].remainingTime)日"
+            cell.periodLabelLeft.text = R.string.localizable.remain() + String(expendables[indexPath.row].remainingTime) + R.string.localizable.day()
             cell.periodLabelRight.text = ""
 
         }
@@ -90,8 +90,8 @@ class ExpendableTableViewController: UITableViewController, EditProtocol, Update
     }
     //編集ボタンを押したときに押されたアイテムの情報を送信
     func catchData(selectedCell: Int) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextStoryboard = storyboard.instantiateViewController(withIdentifier: "EditStoryboard") as! EditViewController
+        let storyboard = R.storyboard.main()
+        let nextStoryboard = storyboard.instantiateViewController(withIdentifier: R.string.localizable.editStoryboard()) as! EditViewController
         nextStoryboard.selectedCell = selectedCell
         self.show(nextStoryboard, sender: self)
     }
@@ -104,23 +104,23 @@ class ExpendableTableViewController: UITableViewController, EditProtocol, Update
         if expendables.count > 19 {
             //非課金ユーザーは20個以上登録できない
             if PurchaseModel.status {
-                performSegue(withIdentifier: "AddSegue", sender: nil)
+                performSegue(withIdentifier: R.string.localizable.addSegue(), sender: nil)
             } else {
-                let alert = UIAlertController(title: "無料版で追加できるアイテムは20個です", message: "Proにアップグレードすれば、無制限に追加することができます。", preferredStyle:  UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "閉じる", style: .default))
-                alert.addAction(UIAlertAction(title: "Proを見る", style: .default) { action in
-                    self.performSegue(withIdentifier: "ProFromTopSegue", sender: nil)
+                let alert = UIAlertController(title: R.string.localizable.twentyItemsAvailableInFree(), message: R.string.localizable.unlimitedIfJoinPro(), preferredStyle:  UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: R.string.localizable.close(), style: .default))
+                alert.addAction(UIAlertAction(title: R.string.localizable.seePro(), style: .default) { action in
+                    self.performSegue(withIdentifier: R.string.localizable.proFromTopSegue(), sender: nil)
                 })
                 present(alert, animated: true)
             }
         } else {
-            performSegue(withIdentifier: "AddSegue", sender: nil)
+            performSegue(withIdentifier: R.string.localizable.addSegue(), sender: nil)
         }
     }
     //設定画面に遷移
     @IBAction func settingAction(_ sender: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: "SettingView", bundle: nil)
-        let viewcontroller = storyboard.instantiateViewController(withIdentifier: "SettingView")
+        let storyboard = R.storyboard.settingView()
+        let viewcontroller = storyboard.instantiateViewController(withIdentifier: R.string.localizable.settingView())
         self.navigationController?.pushViewController(viewcontroller, animated: true)
     }
 }

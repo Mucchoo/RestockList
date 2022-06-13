@@ -1,0 +1,72 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4cM-re-RYZ"; */
+"4cM-re-RYZ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6Of-ft-48j"; */
+"6Of-ft-48j.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "アイテムを編集"; ObjectID = "DJK-Ts-bDh"; */
+"DJK-Ts-bDh.title" = "アイテムを編集";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HD3-qb-QrA"; */
+"HD3-qb-QrA.text" = "Label";
+
+/* Class = "UILabel"; text = "日"; ObjectID = "Hq3-fB-7Js"; */
+"Hq3-fB-7Js.text" = "日";
+
+/* Class = "UILabel"; text = "消費期間"; ObjectID = "Ldo-Lv-Y43"; */
+"Ldo-Lv-Y43.text" = "消費期間";
+
+/* Class = "UIButton"; configuration.title = "削除"; ObjectID = "R0x-nF-cnA"; */
+"R0x-nF-cnA.configuration.title" = "削除";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "R0x-nF-cnA"; */
+"R0x-nF-cnA.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "アイテム名"; ObjectID = "Rhl-ZN-zop"; */
+"Rhl-ZN-zop.text" = "アイテム名";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "V00-Nx-ABL"; */
+"V00-Nx-ABL.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "消耗品リスト"; ObjectID = "YFM-aQ-jwO"; */
+"YFM-aQ-jwO.title" = "消耗品リスト";
+
+/* Class = "UILabel"; text = "日"; ObjectID = "YeZ-Vz-4xX"; */
+"YeZ-Vz-4xX.text" = "日";
+
+/* Class = "UINavigationItem"; title = "アイテムを追加"; ObjectID = "Yob-7P-ti3"; */
+"Yob-7P-ti3.title" = "アイテムを追加";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YuL-EP-SLh"; */
+"YuL-EP-SLh.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "追加"; ObjectID = "h2r-eK-pYQ"; */
+"h2r-eK-pYQ.configuration.title" = "追加";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "h2r-eK-pYQ"; */
+"h2r-eK-pYQ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "消費期間"; ObjectID = "hDI-XY-IGD"; */
+"hDI-XY-IGD.text" = "消費期間";
+
+/* Class = "UILabel"; text = "アイテム名"; ObjectID = "kbu-DC-TLg"; */
+"kbu-DC-TLg.text" = "アイテム名";
+
+/* Class = "UIButton"; configuration.title = "完了"; ObjectID = "lMM-ZT-MAr"; */
+"lMM-ZT-MAr.configuration.title" = "完了";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "lMM-ZT-MAr"; */
+"lMM-ZT-MAr.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "アイテム名"; ObjectID = "nKl-1K-KIM"; */
+"nKl-1K-KIM.text" = "アイテム名";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "nKs-21-GJP"; */
+"nKs-21-GJP.normalTitle" = "Button";
+
+/* Class = "UIViewController"; title = "アイテムを編集"; ObjectID = "oYV-Dc-2yJ"; */
+"oYV-Dc-2yJ.title" = "アイテムを編集";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wy3-Ta-eQZ"; */
+"wy3-Ta-eQZ.normalTitle" = "Button";
