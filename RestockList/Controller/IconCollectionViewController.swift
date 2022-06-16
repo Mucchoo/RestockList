@@ -10,10 +10,9 @@ import UIKit
 class IconCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var layout: UICollectionViewFlowLayout!
-    
+    //アイテムサイズ
     override func viewDidLoad() {
         super.viewDidLoad()
-        //アイテムサイズ
         layout.itemSize = CGSize(width: (collectionView.bounds.width - 40)/3, height: (collectionView.bounds.width - 40)/3)
     }
     //セクションの数
@@ -28,6 +27,8 @@ class IconCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.cell, for: indexPath)!
         cell.setImage(row: indexPath.row)
+        cell.iconImage.layer.cornerRadius = 20
+        cell.layer.masksToBounds = false
         cell.layer.cornerRadius = 20
         cell.setShadow()
         return cell

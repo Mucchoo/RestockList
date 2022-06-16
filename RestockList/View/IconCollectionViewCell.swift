@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//IconViewControllerのカスタムセル
+//IconCollectionViewControllerのカスタムセル
 class IconCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var iconImage: UIImageView!
     func setImage(row: Int){

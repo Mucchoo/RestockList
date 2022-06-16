@@ -43,7 +43,6 @@
                                         <constraint firstAttribute="bottom" secondItem="013-2k-H5W" secondAttribute="bottom" id="wff-2j-APC"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <color key="backgroundColor" name="AccentColor"/>
                                 <connections>
                                     <outlet property="iconImage" destination="013-2k-H5W" id="WGr-aJ-0JA"/>
                                 </connections>
@@ -608,7 +607,7 @@
                                                 <rect key="frame" x="20" y="20" width="30" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3ea-DJ-TgA">
-                                                        <rect key="frame" x="5" y="5" width="19" height="19"/>
+                                                        <rect key="frame" x="5" y="4" width="20" height="20"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                 </subviews>
@@ -616,10 +615,10 @@
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="3ea-DJ-TgA" secondAttribute="bottom" constant="6" id="G6X-kl-boq"/>
                                                     <constraint firstItem="3ea-DJ-TgA" firstAttribute="leading" secondItem="3h8-7o-XZW" secondAttribute="leading" constant="5" id="HvU-cR-EVx"/>
-                                                    <constraint firstItem="3ea-DJ-TgA" firstAttribute="top" secondItem="3h8-7o-XZW" secondAttribute="top" constant="5" id="VVe-5Y-MKp"/>
+                                                    <constraint firstItem="3ea-DJ-TgA" firstAttribute="top" secondItem="3h8-7o-XZW" secondAttribute="top" constant="4" id="VVe-5Y-MKp"/>
                                                     <constraint firstAttribute="width" constant="30" id="f49-DV-Fb4"/>
                                                     <constraint firstAttribute="height" constant="30" id="fVP-YT-FwV"/>
-                                                    <constraint firstAttribute="trailing" secondItem="3ea-DJ-TgA" secondAttribute="trailing" constant="6" id="oWl-Mm-NNx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3ea-DJ-TgA" secondAttribute="trailing" constant="5" id="oWl-Mm-NNx"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイコン解放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBm-Xv-8VR">
