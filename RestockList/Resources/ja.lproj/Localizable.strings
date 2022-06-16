@@ -33,6 +33,7 @@
 "lastDate" = "lastDate";
 "tutorial" = "tutorial";
 "launchedTimes" = "launchedTimes";
+"purchaseStatus" = "purchaseStatus";
 "notificationCondition" = "notificationCondition";
 //notification
 "isFewLeft" = "が残りわずかです。";
@@ -46,6 +47,7 @@
 "sendEmail" = "メールを送信しました";
 "cannotSendEmail" = "メールを送信できませんでした";
 "tryAgain" = "時間を置いてからもう一度お試しください。";
+"unlockedAllFeatures" = "全てのアイテムがアンロックされました。";
 "twentyItemsAvailableInFree" = "無料版で追加できるアイテムは20個です";
 "unlimitedIfJoinPro" = "Proにアップグレードすれば、無制限に追加することができます。";
 //asset

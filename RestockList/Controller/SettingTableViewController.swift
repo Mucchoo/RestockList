@@ -15,6 +15,9 @@ class SettingTableViewController: UITableViewController {
     @IBOutlet weak var themeView: UIView!
     @IBOutlet var iconBackground: [UIView]!
     
+    private var storeModel = StoreModel()
+    private var purchaseStatus = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //UI調整
@@ -25,7 +28,8 @@ class SettingTableViewController: UITableViewController {
         //テーマカラー反映
         iconBackground.forEach{ $0.backgroundColor = ThemeModel.color }
         //課金状態で表示内容を変更
-        if PurchaseModel.status {
+        purchaseStatus = DataModel.user.bool(forKey: R.string.localizable.purchaseStatus())
+        if purchaseStatus {
             self.proLabel.text = R.string.localizable.unlockedPro()
             self.themeView.layer.opacity = 1
             self.iconView.layer.opacity = 1
@@ -40,11 +44,11 @@ class SettingTableViewController: UITableViewController {
         if indexPath.section == 0 {
             switch indexPath.row {
             case 0://Proをアンロック
-                if !PurchaseModel.status { performSegue(withIdentifier: R.string.localizable.proSegue(), sender: nil) }
+                if !purchaseStatus { performSegue(withIdentifier: R.string.localizable.proSegue(), sender: nil) }
             case 1://テーマカラー
-                if PurchaseModel.status { performSegue(withIdentifier: R.string.localizable.themeSegue(), sender: nil) }
+                if purchaseStatus { performSegue(withIdentifier: R.string.localizable.themeSegue(), sender: nil) }
             case 2://アイコン
-                if PurchaseModel.status { performSegue(withIdentifier: R.string.localizable.iconSegue(), sender: nil) }
+                if purchaseStatus { performSegue(withIdentifier: R.string.localizable.iconSegue(), sender: nil) }
             default: return
             }
         //アプリケーションセクション

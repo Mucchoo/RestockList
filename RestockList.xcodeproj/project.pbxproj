@@ -39,7 +39,7 @@
 		2A628C2F2820A95100952956 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C2E2820A95100952956 /* TutorialPageViewController.swift */; };
 		2A628C312821055300952956 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* DataModel.swift */; };
 		2A628C32282107BB00952956 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A628C302821055300952956 /* DataModel.swift */; };
-		2A63B012284EE7310098EB09 /* PurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A63B011284EE7310098EB09 /* PurchaseModel.swift */; };
+		2A63B012284EE7310098EB09 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A63B011284EE7310098EB09 /* StoreModel.swift */; };
 		2A63B019284F23C90098EB09 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C57284EE1E300CA1F1C /* ThemeModel.swift */; };
 		2A63B01A284F2A150098EB09 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C55284ED8CD00CA1F1C /* RealmModel.swift */; };
 		2A63B01C284F2D3E0098EB09 /* LoadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A63B01B284F2D3E0098EB09 /* LoadModel.swift */; };
@@ -48,14 +48,15 @@
 		2A6CBFC2285721560009937D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6CBFC1285721560009937D /* R.generated.swift */; };
 		2A6CBFC5285723080009937D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A6CBFC7285723080009937D /* Localizable.strings */; };
 		2A935CB92818EEE7001D9ED1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */; };
+		2A959E242859B8E9007F04E5 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A959E232859B8E9007F04E5 /* UIButtonExtension.swift */; };
 		2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A967C10281EBCBF002A2210 /* ThemeViewController.swift */; };
 		2A9A8191281E6F6900186477 /* IconCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8190281E6F6900186477 /* IconCollectionViewController.swift */; };
 		2A9A8193281E6FB000186477 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A8192281E6FB000186477 /* IconCollectionViewCell.swift */; };
+		2AA30BBE28589D9000320C81 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 2AA30BBD28589D9000320C81 /* Configuration.storekit */; };
 		2ACEE1112817FF1E001F84D4 /* ExpendableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1102817FF1E001F84D4 /* ExpendableTableViewCell.swift */; };
 		2ACEE1132817FF38001F84D4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1122817FF38001F84D4 /* AddViewController.swift */; };
 		2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE1142817FF51001F84D4 /* EditViewController.swift */; };
 		2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2ACEE11728180067001F84D4 /* RealmSwift */; };
-		2AE7CEEB2854B82A006344F4 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE7CEEA2854B82A006344F4 /* RevenueCat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +114,7 @@
 		2A628C2C2820A8BD00952956 /* TutorialFourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFourthViewController.swift; sourceTree = "<group>"; };
 		2A628C2E2820A95100952956 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		2A628C302821055300952956 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		2A63B011284EE7310098EB09 /* PurchaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseModel.swift; sourceTree = "<group>"; };
+		2A63B011284EE7310098EB09 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		2A63B01B284F2D3E0098EB09 /* LoadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadModel.swift; sourceTree = "<group>"; };
 		2A63B01D284F343B0098EB09 /* WindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowModel.swift; sourceTree = "<group>"; };
 		2A6CBFC1285721560009937D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -121,9 +122,11 @@
 		2A6CBFC9285723210009937D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2A6CBFCA285723220009937D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		2A959E232859B8E9007F04E5 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		2A967C10281EBCBF002A2210 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		2A9A8190281E6F6900186477 /* IconCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewController.swift; sourceTree = "<group>"; };
 		2A9A8192281E6FB000186477 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
+		2AA30BBD28589D9000320C81 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		2AB9A282281C331B00698C11 /* RestockList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RestockList.entitlements; sourceTree = "<group>"; };
 		2AB9A283281C332200698C11 /* RestockListWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RestockListWidgetExtension.entitlements; sourceTree = "<group>"; };
 		2ACEE1102817FF1E001F84D4 /* ExpendableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpendableTableViewCell.swift; sourceTree = "<group>"; };
@@ -150,7 +153,6 @@
 				2A0D5B3D28269385002F1542 /* StoreKit.framework in Frameworks */,
 				2A6CBFBE285720820009937D /* Rswift in Frameworks */,
 				2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */,
-				2AE7CEEB2854B82A006344F4 /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				2AB9A283281C332200698C11 /* RestockListWidgetExtension.entitlements */,
+				2AA30BBD28589D9000320C81 /* Configuration.storekit */,
 				2A43EED82817B2C4001BD791 /* RestockList */,
 				2A11AD052819696E00170751 /* RestockListWidget */,
 				2A6CBFC0285721560009937D /* generated */,
@@ -270,11 +273,12 @@
 				2A383D102817B820000BCAF0 /* Expendable.swift */,
 				2A63B01B284F2D3E0098EB09 /* LoadModel.swift */,
 				2A628C302821055300952956 /* DataModel.swift */,
+				2A63B011284EE7310098EB09 /* StoreModel.swift */,
 				2A3C4C55284ED8CD00CA1F1C /* RealmModel.swift */,
 				2A3C4C57284EE1E300CA1F1C /* ThemeModel.swift */,
 				2A63B01D284F343B0098EB09 /* WindowModel.swift */,
-				2A63B011284EE7310098EB09 /* PurchaseModel.swift */,
 				2A52D2F3284E3ADB007A8A16 /* UIViewExtension.swift */,
+				2A959E232859B8E9007F04E5 /* UIButtonExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,7 +325,6 @@
 			name = RestockList;
 			packageProductDependencies = (
 				2ACEE11728180067001F84D4 /* RealmSwift */,
-				2AE7CEEA2854B82A006344F4 /* RevenueCat */,
 				2A6CBFBD285720820009937D /* Rswift */,
 			);
 			productName = RestockList;
@@ -384,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA30BBE28589D9000320C81 /* Configuration.storekit in Resources */,
 				2A52D2F8284E41F6007A8A16 /* SettingView.storyboard in Resources */,
 				2A6CBFC5285723080009937D /* Localizable.strings in Resources */,
 				2A43EEE62817B2C5001BD791 /* LaunchScreen.storyboard in Resources */,
@@ -446,7 +450,7 @@
 				2A628C2D2820A8BD00952956 /* TutorialFourthViewController.swift in Sources */,
 				2A628C292820A8A300952956 /* TutorialSecondViewController.swift in Sources */,
 				2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */,
-				2A63B012284EE7310098EB09 /* PurchaseModel.swift in Sources */,
+				2A63B012284EE7310098EB09 /* StoreModel.swift in Sources */,
 				2A43EEDA2817B2C4001BD791 /* AppDelegate.swift in Sources */,
 				2A63B01C284F2D3E0098EB09 /* LoadModel.swift in Sources */,
 				2A628C2B2820A8B000952956 /* TutorialThirdViewController.swift in Sources */,
@@ -461,6 +465,7 @@
 				2ACEE1112817FF1E001F84D4 /* ExpendableTableViewCell.swift in Sources */,
 				2A11AD0D2819696F00170751 /* RestockListWidget.intentdefinition in Sources */,
 				2A3C4C56284ED8CD00CA1F1C /* RealmModel.swift in Sources */,
+				2A959E242859B8E9007F04E5 /* UIButtonExtension.swift in Sources */,
 				2A628C312821055300952956 /* DataModel.swift in Sources */,
 				2ACEE1152817FF51001F84D4 /* EditViewController.swift in Sources */,
 			);
@@ -713,7 +718,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yazujumusa.restock-list";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -750,7 +755,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yazujumusa.restock-list";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -840,11 +845,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
-		};
-		2AE7CEEA2854B82A006344F4 /* RevenueCat */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2AE7CEE92854B82A006344F4 /* XCRemoteSwiftPackageReference "purchases-ios" */;
-			productName = RevenueCat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

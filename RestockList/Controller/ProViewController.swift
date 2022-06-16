@@ -13,6 +13,7 @@ class ProViewController: UIViewController {
     @IBOutlet weak var restoreButton: UIButton!
     @IBOutlet var iconBackground: [UIView]!
     @IBOutlet var productImage: [UIImageView]!
+    private let storeModel = StoreModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class ProViewController: UIViewController {
         restoreButton.layer.cornerRadius = 20
         purchaseButton.setShadow()
         restoreButton.setShadow()
+        //内課金
+        storeModel.setup()
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
@@ -31,10 +34,12 @@ class ProViewController: UIViewController {
     }
     //内課金アイテムを購入
     @IBAction func purchaseAction(_ sender: UIButton) {
-        PurchaseModel.purchase(view: self)
+        storeModel.purchase()
+        sender.transparentForAMoment()
     }
     //購入した内課金アイテムを復元
     @IBAction func restoreAction(_ sender: UIButton) {
-        PurchaseModel.restore(view: self)
+        storeModel.restore()
+        sender.transparentForAMoment()
     }
 }

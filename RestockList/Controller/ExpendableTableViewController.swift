@@ -20,6 +20,7 @@ protocol UpdateProtocol {
 class ExpendableTableViewController: UITableViewController, EditProtocol, UpdateProtocol {
 
     private var expendables = [Expendable]()
+    private var storeModel = StoreModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +104,7 @@ class ExpendableTableViewController: UITableViewController, EditProtocol, Update
     @IBAction func addAction(_ sender: UIBarButtonItem) {
         if expendables.count > 19 {
             //非課金ユーザーは20個以上登録できない
-            if PurchaseModel.status {
+            if DataModel.user.bool(forKey: R.string.localizable.purchaseStatus()) {
                 performSegue(withIdentifier: R.string.localizable.addSegue(), sender: nil)
             } else {
                 let alert = UIAlertController(title: R.string.localizable.twentyItemsAvailableInFree(), message: R.string.localizable.unlimitedIfJoinPro(), preferredStyle:  UIAlertController.Style.alert)

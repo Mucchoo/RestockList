@@ -1,0 +1,38 @@
+{
+  "identifier" : "1D1F15C1",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "98D2D209",
+      "localizations" : [
+        {
+          "description" : "Unlock all features",
+          "displayName" : "pro",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "アプリアイコン、テーマカラー、アイテム数の解放",
+          "displayName" : "pro",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "pro",
+      "referenceName" : "pro",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 2
+  }
+}

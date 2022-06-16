@@ -6,8 +6,8 @@
 //
 
 import UIKit
+import StoreKit
 import WidgetKit
-import RevenueCat
 import RealmSwift
 import BackgroundTasks
 import UserNotifications
@@ -19,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //アプリ起動回数を記録
         let launchedTimes = DataModel.user.object(forKey: R.string.localizable.launchedTimes()) as? Int ?? 0
         DataModel.user.set(launchedTimes + 1, forKey: R.string.localizable.launchedTimes())
-        //内課金有効化
-        Purchases.configure(withAPIKey: R.string.localizable.purchaseAPI())
         //バックグラウンド更新有効化
         BGTaskScheduler.shared.register(forTaskWithIdentifier: R.string.localizable.refresh(), using: nil) { task in
             self.handleAppRefresh(task: task as! BGAppRefreshTask)
