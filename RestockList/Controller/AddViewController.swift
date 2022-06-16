@@ -25,7 +25,7 @@ class AddViewController: UIViewController {
         periodPickerView.delegate = self
         //UI調整
         textFieldBackground.layer.cornerRadius = 10
-        textFieldBackground.layer.opacity = 0.3
+        textFieldBackground.layer.opacity = 0.1
         addButton.layer.cornerRadius = 20
         addButton.setShadow()
         //TextField自動フォーカス
