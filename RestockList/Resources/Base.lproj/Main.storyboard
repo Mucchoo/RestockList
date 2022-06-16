@@ -19,15 +19,15 @@
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="140" id="9bB-1S-YM4" customClass="ExpendableTableViewCell" customModule="RestockList" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="140"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="130" id="9bB-1S-YM4" customClass="ExpendableTableViewCell" customModule="RestockList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9bB-1S-YM4" id="DXO-74-8pb">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqf-R9-T7z">
-                                            <rect key="frame" x="10" y="10" width="394" height="125"/>
+                                            <rect key="frame" x="10" y="8" width="394" height="114"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YuL-EP-SLh">
                                                     <rect key="frame" x="344" y="10" width="35" height="35"/>
@@ -60,7 +60,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-Ta-eQZ">
-                                                    <rect key="frame" x="349" y="80" width="30" height="30"/>
+                                                    <rect key="frame" x="349" y="69" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="hb1-Un-1dg"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="lVd-90-cLF"/>
@@ -75,7 +75,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKs-21-GJP">
-                                                    <rect key="frame" x="15" y="80" width="30" height="30"/>
+                                                    <rect key="frame" x="15" y="69" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="a1U-BC-y4s"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="u4A-k9-Bwd"/>
@@ -96,7 +96,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnH-Uc-xai">
-                                                    <rect key="frame" x="55" y="80" width="284" height="30"/>
+                                                    <rect key="frame" x="55" y="69" width="284" height="30"/>
                                                     <subviews>
                                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FjO-38-gaZ">
                                                             <rect key="frame" x="0.0" y="14.5" width="284" height="2.5"/>
@@ -142,7 +142,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="Rhl-ZN-zop" secondAttribute="trailing" constant="60" id="Iwd-h1-bSA"/>
                                                 <constraint firstAttribute="trailing" secondItem="wy3-Ta-eQZ" secondAttribute="trailing" constant="15" id="LXc-1M-caB"/>
                                                 <constraint firstAttribute="bottom" secondItem="nKs-21-GJP" secondAttribute="bottom" constant="15" id="Mod-K2-vS4"/>
-                                                <constraint firstAttribute="height" constant="110" id="Sjn-jW-ORc"/>
                                                 <constraint firstAttribute="bottom" secondItem="cnH-Uc-xai" secondAttribute="bottom" constant="15" id="Xi9-VY-LVl"/>
                                                 <constraint firstItem="Rhl-ZN-zop" firstAttribute="leading" secondItem="4cM-re-RYZ" secondAttribute="trailing" constant="5" id="YI0-rL-e6y"/>
                                                 <constraint firstItem="cnH-Uc-xai" firstAttribute="leading" secondItem="nKs-21-GJP" secondAttribute="trailing" constant="10" id="YJa-cg-m9G"/>
@@ -153,9 +152,9 @@
                                     </subviews>
                                     <color key="backgroundColor" name="BackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="eqf-R9-T7z" secondAttribute="bottom" constant="5" id="6ya-IT-dfH"/>
+                                        <constraint firstAttribute="bottom" secondItem="eqf-R9-T7z" secondAttribute="bottom" constant="8" id="6ya-IT-dfH"/>
                                         <constraint firstAttribute="trailing" secondItem="eqf-R9-T7z" secondAttribute="trailing" constant="10" id="DwO-iB-lyu"/>
-                                        <constraint firstItem="eqf-R9-T7z" firstAttribute="top" secondItem="DXO-74-8pb" secondAttribute="top" constant="10" id="PVb-mu-UEc"/>
+                                        <constraint firstItem="eqf-R9-T7z" firstAttribute="top" secondItem="DXO-74-8pb" secondAttribute="top" constant="8" id="PVb-mu-UEc"/>
                                         <constraint firstItem="eqf-R9-T7z" firstAttribute="leading" secondItem="DXO-74-8pb" secondAttribute="leading" constant="10" id="WeP-aM-V4f"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -470,10 +469,10 @@
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
-            <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <namedColor name="AccentColor1">
-            <color red="0.082352941176470587" green="0.70980392156862748" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
             <color red="0.94509803921568625" green="0.94509803921568625" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
