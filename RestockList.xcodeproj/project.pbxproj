@@ -118,7 +118,6 @@
 		2A63B01B284F2D3E0098EB09 /* LoadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadModel.swift; sourceTree = "<group>"; };
 		2A63B01D284F343B0098EB09 /* WindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowModel.swift; sourceTree = "<group>"; };
 		2A6CBFC1285721560009937D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		2A6CBFC8285723210009937D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		2A6CBFCA285723220009937D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		2A959E232859B8E9007F04E5 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -486,7 +485,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				2A43EEE02817B2C4001BD791 /* Base */,
-				2A6CBFC8285723210009937D /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

@@ -512,6 +512,9 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="notificationAction:" destination="46O-HF-Hyh" eventType="touchUpInside" id="S5B-LG-LLg"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzA-37-HA0">
                                 <rect key="frame" x="157" y="172" width="100" height="216"/>
@@ -751,6 +754,7 @@
                         <outletCollection property="iconBackground" destination="3h8-7o-XZW" collectionClass="NSMutableArray" id="xaV-tI-KI8"/>
                         <outletCollection property="iconBackground" destination="Jb5-Jj-Gx4" collectionClass="NSMutableArray" id="doF-qT-Py8"/>
                         <outletCollection property="iconBackground" destination="g82-Jb-6D0" collectionClass="NSMutableArray" id="Qqg-FH-v0D"/>
+                        <outletCollection property="productImage" destination="lCm-B9-Vrw" collectionClass="NSMutableArray" id="NKh-Uh-Xpi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekX-zh-0Ug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

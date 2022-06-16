@@ -29,7 +29,7 @@ class TutorialPageViewController: UIPageViewController {
         usageLabel.text = R.string.localizable.usage()
         usageLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         usageLabel.textAlignment = .center
-        usageLabel.backgroundColor = .white
+        usageLabel.backgroundColor = R.color.clearColor()
         usageLabel.layer.cornerRadius = 20
         usageLabel.clipsToBounds = true
         usageLabel.translatesAutoresizingMaskIntoConstraints = false

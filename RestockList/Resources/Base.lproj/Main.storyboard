@@ -211,20 +211,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイテム名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKl-1K-KIM">
-                                <rect key="frame" x="20" y="54" width="71.5" height="17"/>
+                                <rect key="frame" x="30" y="64" width="71.5" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xq6-4a-pxv">
-                                <rect key="frame" x="20" y="81" width="374" height="50"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xq6-4a-pxv">
+                                <rect key="frame" x="20" y="91" width="374" height="50"/>
+                                <color key="backgroundColor" name="AccentColor1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vaC-aR-qtL"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pBb-2c-6qg">
-                                <rect key="frame" x="30" y="81" width="354" height="50"/>
+                                <rect key="frame" x="30" y="91" width="354" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ahU-4A-LVj"/>
                                 </constraints>
@@ -233,13 +233,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2QX-AS-OcE">
-                                <rect key="frame" x="157" y="131" width="100" height="216"/>
+                                <rect key="frame" x="157" y="141" width="100" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="S03-h7-Wd1"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMM-ZT-MAr">
-                                <rect key="frame" x="20" y="347" width="374" height="70"/>
+                                <rect key="frame" x="20" y="357" width="374" height="70"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="adL-44-tt5"/>
@@ -251,16 +251,17 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="completeAction:" destination="oYV-Dc-2yJ" eventType="touchUpInside" id="A5X-pM-3pp"/>
+                                    <action selector="saveAction:" destination="oYV-Dc-2yJ" eventType="touchUpInside" id="OAv-GP-ArP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeZ-Vz-4xX">
-                                <rect key="frame" x="277" y="231" width="14.5" height="17"/>
+                                <rect key="frame" x="277" y="241" width="14.5" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0x-nF-cnA">
-                                <rect key="frame" x="20" y="437" width="374" height="70"/>
+                                <rect key="frame" x="20" y="447" width="374" height="70"/>
                                 <color key="backgroundColor" name="ClearColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="dBM-cC-sNO"/>
@@ -274,7 +275,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消費期間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDI-XY-IGD">
-                                <rect key="frame" x="79.5" y="231" width="57.5" height="17"/>
+                                <rect key="frame" x="79.5" y="241" width="57.5" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
@@ -292,10 +293,10 @@
                             <constraint firstItem="R0x-nF-cnA" firstAttribute="top" secondItem="lMM-ZT-MAr" secondAttribute="bottom" constant="20" id="Dr7-Am-bXF"/>
                             <constraint firstItem="YeZ-Vz-4xX" firstAttribute="top" secondItem="pBb-2c-6qg" secondAttribute="bottom" constant="100" id="WsH-4a-tN4"/>
                             <constraint firstItem="2QX-AS-OcE" firstAttribute="centerX" secondItem="ZS0-dm-h4i" secondAttribute="centerX" id="Z6s-ne-pf0"/>
-                            <constraint firstItem="nKl-1K-KIM" firstAttribute="top" secondItem="BUR-d2-bEq" secondAttribute="top" constant="10" id="Zqa-D8-fHA"/>
+                            <constraint firstItem="nKl-1K-KIM" firstAttribute="top" secondItem="BUR-d2-bEq" secondAttribute="top" constant="20" id="Zqa-D8-fHA"/>
                             <constraint firstItem="BUR-d2-bEq" firstAttribute="trailing" secondItem="xq6-4a-pxv" secondAttribute="trailing" constant="20" id="aFl-DG-3X4"/>
                             <constraint firstItem="lMM-ZT-MAr" firstAttribute="top" secondItem="2QX-AS-OcE" secondAttribute="bottom" id="b6n-I2-b0N"/>
-                            <constraint firstItem="nKl-1K-KIM" firstAttribute="leading" secondItem="BUR-d2-bEq" secondAttribute="leading" constant="20" id="beC-Hg-bFz"/>
+                            <constraint firstItem="nKl-1K-KIM" firstAttribute="leading" secondItem="BUR-d2-bEq" secondAttribute="leading" constant="30" id="beC-Hg-bFz"/>
                             <constraint firstItem="BUR-d2-bEq" firstAttribute="trailing" secondItem="R0x-nF-cnA" secondAttribute="trailing" constant="20" id="fA2-k8-oTJ"/>
                             <constraint firstItem="lMM-ZT-MAr" firstAttribute="leading" secondItem="BUR-d2-bEq" secondAttribute="leading" constant="20" id="fqP-48-Jjo"/>
                             <constraint firstItem="xq6-4a-pxv" firstAttribute="top" secondItem="nKl-1K-KIM" secondAttribute="bottom" constant="10" id="kbc-Jo-Kj4"/>
@@ -365,9 +366,9 @@
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dl-vY-nAN">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dl-vY-nAN">
                                 <rect key="frame" x="20" y="47" width="374" height="50"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" name="AccentColor1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7dH-Ud-vdb"/>
                                 </constraints>
@@ -472,7 +473,7 @@
             <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor1">
-            <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.082352941176470587" green="0.70980392156862748" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
             <color red="0.94509803921568625" green="0.94509803921568625" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

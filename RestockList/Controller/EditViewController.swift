@@ -27,10 +27,11 @@ class EditViewController: UIViewController {
         periodPickerView.delegate = self
         //UI調整
         textFieldBackground.layer.cornerRadius = 10
-        saveButton.layer.cornerRadius = 20
+        textFieldBackground.layer.opacity = 0.3
         deleteButton.layer.cornerRadius = 20
-        saveButton.setShadow()
+        saveButton.layer.cornerRadius = 20
         deleteButton.setShadow()
+        saveButton.setShadow()
         //編集中のアイテム情報を反映
         periodPickerView.selectRow(RealmModel.getExpendablePeriod(from: selectedCell) - 1 , inComponent: 0, animated: true)
         nameTextField.text = RealmModel.getExpendableName(from: selectedCell)

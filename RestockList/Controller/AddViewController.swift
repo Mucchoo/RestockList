@@ -19,12 +19,14 @@ class AddViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        //UI調整
-        textFieldBackground.layer.cornerRadius = 10
-        addButton.layer.cornerRadius = 20
+        //delegate
         nameTextField.delegate = self
         periodPickerView.dataSource = self
         periodPickerView.delegate = self
+        //UI調整
+        textFieldBackground.layer.cornerRadius = 10
+        textFieldBackground.layer.opacity = 0.3
+        addButton.layer.cornerRadius = 20
         addButton.setShadow()
         //TextField自動フォーカス
         nameTextField.becomeFirstResponder()
