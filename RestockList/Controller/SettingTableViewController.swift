@@ -46,9 +46,9 @@ class SettingTableViewController: UITableViewController {
             case 0://Proをアンロック
                 if !purchaseStatus { performSegue(withIdentifier: R.string.localizable.proSegue(), sender: nil) }
             case 1://テーマカラー
-                performSegue(withIdentifier: R.string.localizable.themeSegue(), sender: nil)
+                if purchaseStatus { performSegue(withIdentifier: R.string.localizable.themeSegue(), sender: nil) }
             case 2://アイコン
-                performSegue(withIdentifier: R.string.localizable.iconSegue(), sender: nil)
+                if purchaseStatus { performSegue(withIdentifier: R.string.localizable.iconSegue(), sender: nil) }
             default: return
             }
         //アプリケーションセクション
