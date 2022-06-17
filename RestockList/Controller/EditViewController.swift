@@ -16,6 +16,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var textFieldBackground: UIView!
     @IBOutlet weak var periodPickerView: UIPickerView!
 
+    private let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeKeyboard))
     private var periodArray = ([Int])(1...365)
     var selectedCell = 0
     
@@ -40,17 +41,16 @@ class EditViewController: UIViewController {
         //キーボードに完了ボタンを追加
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 45))
         let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeKeyboard))
         toolbar.setItems([spacelItem, doneItem], animated: true)
         nameTextField.inputAccessoryView = toolbar
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        saveButton.backgroundColor = ThemeModel.color
-        deleteButton.tintColor = ThemeModel.color
-        deleteButton.layer.borderColor = ThemeModel.color.cgColor
         textFieldBackground.backgroundColor = ThemeModel.color
+        saveButton.backgroundColor = ThemeModel.color
         nameTextField.tintColor = ThemeModel.color
+        deleteButton.tintColor = ThemeModel.color
+        doneItem.tintColor = ThemeModel.color
     }
     //完了ボタンタップ時
     @objc func closeKeyboard() {

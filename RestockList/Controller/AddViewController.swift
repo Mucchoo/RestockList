@@ -15,6 +15,7 @@ class AddViewController: UIViewController {
     @IBOutlet weak var textFieldBackground: UIView!
     @IBOutlet weak var periodPickerView: UIPickerView!
     
+    private let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: AddViewController.self, action: #selector(closeKeyboard))
     private let periodArray = ([Int])(1...365)
         
     override func viewDidLoad() {
@@ -35,12 +36,12 @@ class AddViewController: UIViewController {
         //キーボードに完了ボタンを追加
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 45))
         let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeKeyboard))
         toolbar.setItems([spacelItem, doneItem], animated: true)
         nameTextField.inputAccessoryView = toolbar
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
+        doneItem.tintColor = ThemeModel.color
         addButton.backgroundColor = ThemeModel.color
         textFieldBackground.backgroundColor = ThemeModel.color
     }
