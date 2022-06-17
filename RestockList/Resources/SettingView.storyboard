@@ -397,13 +397,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ybm-95-Pdd">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XR7-tV-yV2">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="387"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vr6-h2-Nem">
-                                                <rect key="frame" x="0.0" y="0.0" width="138" height="387"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="448"/>
                                                 <color key="backgroundColor" name="AccentColor1"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
@@ -412,7 +412,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awm-SA-dlm">
-                                                <rect key="frame" x="138" y="0.0" width="138" height="387"/>
+                                                <rect key="frame" x="138" y="0.0" width="138" height="448"/>
                                                 <color key="backgroundColor" name="AccentColor2"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
@@ -421,7 +421,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnX-nX-h8t">
-                                                <rect key="frame" x="276" y="0.0" width="138" height="387"/>
+                                                <rect key="frame" x="276" y="0.0" width="138" height="448"/>
                                                 <color key="backgroundColor" name="AccentColor3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
@@ -432,10 +432,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pGN-gO-MHo">
-                                        <rect key="frame" x="0.0" y="387" width="414" height="387"/>
+                                        <rect key="frame" x="0.0" y="448" width="414" height="448"/>
                                         <subviews>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lp-Sz-nTM">
-                                                <rect key="frame" x="0.0" y="0.0" width="138" height="387"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="448"/>
                                                 <color key="backgroundColor" name="AccentColor4"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
@@ -444,7 +444,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtM-9h-onJ">
-                                                <rect key="frame" x="138" y="0.0" width="138" height="387"/>
+                                                <rect key="frame" x="138" y="0.0" width="138" height="448"/>
                                                 <color key="backgroundColor" name="AccentColor5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
@@ -453,7 +453,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qh-ud-hwl">
-                                                <rect key="frame" x="276" y="0.0" width="138" height="387"/>
+                                                <rect key="frame" x="276" y="0.0" width="138" height="448"/>
                                                 <color key="backgroundColor" name="AccentColor6"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
@@ -466,13 +466,12 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Tmm-r0-xfV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Tmm-r0-xfV" firstAttribute="trailing" secondItem="Ybm-95-Pdd" secondAttribute="trailing" id="5O1-mj-A4L"/>
-                            <constraint firstItem="Tmm-r0-xfV" firstAttribute="bottom" secondItem="Ybm-95-Pdd" secondAttribute="bottom" id="6Li-l6-gaV"/>
-                            <constraint firstItem="Ybm-95-Pdd" firstAttribute="leading" secondItem="Tmm-r0-xfV" secondAttribute="leading" id="SxR-5S-bb5"/>
-                            <constraint firstItem="Ybm-95-Pdd" firstAttribute="top" secondItem="Tmm-r0-xfV" secondAttribute="top" id="dSu-Jy-RZz"/>
+                            <constraint firstAttribute="trailing" secondItem="Ybm-95-Pdd" secondAttribute="trailing" id="5O1-mj-A4L"/>
+                            <constraint firstAttribute="bottom" secondItem="Ybm-95-Pdd" secondAttribute="bottom" id="6Li-l6-gaV"/>
+                            <constraint firstItem="Ybm-95-Pdd" firstAttribute="leading" secondItem="Bcc-bY-SD3" secondAttribute="leading" id="SxR-5S-bb5"/>
+                            <constraint firstItem="Ybm-95-Pdd" firstAttribute="top" secondItem="Bcc-bY-SD3" secondAttribute="top" id="mEL-fv-Iqo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="テーマカラー" id="SEn-gW-hOz"/>
@@ -825,7 +824,7 @@
         <image name="questionmark" catalog="system" width="96" height="128"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="AccentColor">
-            <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <namedColor name="AccentColor1">
             <color red="0.082352941176470587" green="0.70980392156862748" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -834,16 +833,16 @@
             <color red="0.0" green="0.45882352941176469" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor3">
-            <color red="0.25882352941176473" green="0.27058823529411763" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.25900000333786011" green="0.27099999785423279" blue="0.6470000147819519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor4">
             <color red="0.77647058823529413" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor5">
-            <color red="0.8666666666666667" green="0.13725490196078433" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.86699998378753662" green="0.13699999451637268" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor6">
-            <color red="0.85500001907348633" green="0.32199999690055847" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.85490196078431369" green="0.32156862745098042" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="FontColor">
             <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

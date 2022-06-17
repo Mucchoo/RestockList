@@ -31,27 +31,27 @@
                                 <rect key="frame" x="20" y="64" width="374" height="768"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2cO-wV-gjH">
-                                        <rect key="frame" x="172" y="226.5" width="30" height="29"/>
+                                        <rect key="frame" x="172" y="222.5" width="30" height="29"/>
                                         <color key="tintColor" name="AccentColor1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="3Eh-8V-oSr"/>
                                             <constraint firstAttribute="width" constant="30" id="cPX-OL-ngR"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial1" translatesAutoresizingMaskIntoConstraints="NO" id="q0C-rN-Aha">
-                                        <rect key="frame" x="20" y="131" width="334" height="75"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial1" translatesAutoresizingMaskIntoConstraints="NO" id="q0C-rN-Aha">
+                                        <rect key="frame" x="20" y="127" width="334" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="q0C-rN-Aha" secondAttribute="height" multiplier="334:75" id="mwL-tF-4Wp"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial2" translatesAutoresizingMaskIntoConstraints="NO" id="KqR-Ei-cHf">
-                                        <rect key="frame" x="20" y="276" width="334" height="176"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial2" translatesAutoresizingMaskIntoConstraints="NO" id="KqR-Ei-cHf">
+                                        <rect key="frame" x="20" y="272" width="334" height="184"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="KqR-Ei-cHf" secondAttribute="height" multiplier="167:88" id="rrE-ez-O9p"/>
+                                            <constraint firstAttribute="width" secondItem="KqR-Ei-cHf" secondAttribute="height" multiplier="167:92" id="hvn-CZ-TuR"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="まずは右上の＋ボタンからアイテムを追加しましょう" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkg-Mr-gB2">
-                                        <rect key="frame" x="20" y="472" width="334" height="36"/>
+                                        <rect key="frame" x="20" y="476" width="334" height="36"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" name="FontColor"/>
                                         <nil key="highlightedColor"/>
@@ -100,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojQ-Yq-Vnz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="451" y="1037"/>
+            <point key="canvasLocation" x="450.72463768115944" y="1036.6071428571429"/>
         </scene>
         <!--Tutorial Second View Controller-->
         <scene sceneID="J3r-Tp-HYy">
@@ -114,27 +114,27 @@
                                 <rect key="frame" x="20" y="64" width="374" height="768"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Oiz-Ci-SkK">
-                                        <rect key="frame" x="172" y="282.5" width="30" height="29"/>
+                                        <rect key="frame" x="172" y="287.5" width="30" height="29"/>
                                         <color key="tintColor" name="AccentColor1"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="BV7-ZB-8It"/>
                                             <constraint firstAttribute="height" constant="30" id="bgc-77-PNr"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial3" translatesAutoresizingMaskIntoConstraints="NO" id="GcD-dE-kYG">
-                                        <rect key="frame" x="20" y="160" width="334" height="102"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial3" translatesAutoresizingMaskIntoConstraints="NO" id="GcD-dE-kYG">
+                                        <rect key="frame" x="20" y="172" width="334" height="95"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="GcD-dE-kYG" secondAttribute="height" multiplier="167:51" id="fsl-sG-pL8"/>
+                                            <constraint firstAttribute="width" secondItem="GcD-dE-kYG" secondAttribute="height" multiplier="334:95" id="Tiv-Hb-Il2"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial4" translatesAutoresizingMaskIntoConstraints="NO" id="8xE-tj-nFs">
-                                        <rect key="frame" x="20" y="332" width="334" height="104"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial4" translatesAutoresizingMaskIntoConstraints="NO" id="8xE-tj-nFs">
+                                        <rect key="frame" x="20" y="337" width="334" height="94"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="8xE-tj-nFs" secondAttribute="height" multiplier="167:52" id="VRS-mY-cpV"/>
+                                            <constraint firstAttribute="width" secondItem="8xE-tj-nFs" secondAttribute="height" multiplier="167:47" id="zm3-Lh-aCv"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="入荷したアイテムは✔︎を押して残り期間をリセットできます" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvZ-Ky-2Yl">
-                                        <rect key="frame" x="20" y="456" width="334" height="36"/>
+                                        <rect key="frame" x="20" y="451" width="334" height="36"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" name="FontColor"/>
                                         <color key="highlightedColor" systemColor="labelColor"/>
@@ -179,6 +179,8 @@
                         <outlet property="backgroundView" destination="kaK-6a-SCD" id="8KR-nn-A6R"/>
                         <outlet property="cardView" destination="Ojn-Vz-Qt8" id="L7k-cM-x0f"/>
                         <outlet property="circleView" destination="URl-WR-hwG" id="kI7-ee-VM8"/>
+                        <outletCollection property="itemImage" destination="GcD-dE-kYG" collectionClass="NSMutableArray" id="pbu-Vo-kuT"/>
+                        <outletCollection property="itemImage" destination="8xE-tj-nFs" collectionClass="NSMutableArray" id="7So-wl-z7K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ZD-MS-gNU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -230,7 +232,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1100" y="1037"/>
+            <point key="canvasLocation" x="1098.5507246376812" y="1036.6071428571429"/>
         </scene>
         <!--Tutorial Third View Controller-->
         <scene sceneID="P2S-yb-0xk">
@@ -383,15 +385,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Tutorial1" width="827" height="181"/>
-        <image name="Tutorial2" width="828" height="435"/>
-        <image name="Tutorial3" width="828" height="241"/>
-        <image name="Tutorial4" width="828" height="244"/>
-        <image name="Tutorial5" width="370" height="388"/>
+        <image name="Tutorial1" width="414" height="92"/>
+        <image name="Tutorial2" width="828" height="450"/>
+        <image name="Tutorial3" width="788" height="220"/>
+        <image name="Tutorial4" width="788" height="218"/>
+        <image name="Tutorial5" width="359" height="378"/>
         <image name="arrow.down.circle.fill" catalog="system" width="128" height="121"/>
         <image name="list.bullet.rectangle.fill" catalog="system" width="128" height="93"/>
         <namedColor name="AccentColor">
-            <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <namedColor name="AccentColor1">
             <color red="0.082352941176470587" green="0.70980392156862748" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
