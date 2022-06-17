@@ -19,7 +19,6 @@
 "themeSegue" = "ThemeSegue";
 "settingView" = "SettingView";
 "immediately" = "immediately";
-"appURL" = "shorturl.at/azQW5";
 "showTutorial" = "ShowTutorial";
 "reusableCell" = "ReusableCell";
 "tutorialSegue" = "TutorialSegue";
@@ -28,6 +27,7 @@
 "notificationSegue" = "NotificationSegue";
 "refresh" = "com.yazujumusa.restock-list.refresh";
 "purchaseAPI" = "appl_IhbaWZiMtSaCequMLmBVFnADNel";
+"appURL" = "https://itunes.apple.com/jp/app/id1628820821?mt=8";
 //userDefaults
 "theme" = "theme";
 "lastDate" = "lastDate";

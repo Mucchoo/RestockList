@@ -50,7 +50,7 @@ class TutorialPageViewController: UIPageViewController {
         pageControl.isUserInteractionEnabled = false
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = .gray
-        appearance.currentPageIndicatorTintColor = .white
+        appearance.currentPageIndicatorTintColor = R.color.clearColor()
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {

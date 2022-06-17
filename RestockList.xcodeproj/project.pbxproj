@@ -42,7 +42,6 @@
 		2A63B012284EE7310098EB09 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A63B011284EE7310098EB09 /* StoreModel.swift */; };
 		2A63B019284F23C90098EB09 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C57284EE1E300CA1F1C /* ThemeModel.swift */; };
 		2A63B01A284F2A150098EB09 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C55284ED8CD00CA1F1C /* RealmModel.swift */; };
-		2A63B01C284F2D3E0098EB09 /* LoadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A63B01B284F2D3E0098EB09 /* LoadModel.swift */; };
 		2A63B01E284F343B0098EB09 /* WindowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A63B01D284F343B0098EB09 /* WindowModel.swift */; };
 		2A6CBFBE285720820009937D /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6CBFBD285720820009937D /* Rswift */; };
 		2A6CBFC2285721560009937D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6CBFC1285721560009937D /* R.generated.swift */; };
@@ -115,7 +114,6 @@
 		2A628C2E2820A95100952956 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		2A628C302821055300952956 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		2A63B011284EE7310098EB09 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
-		2A63B01B284F2D3E0098EB09 /* LoadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadModel.swift; sourceTree = "<group>"; };
 		2A63B01D284F343B0098EB09 /* WindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowModel.swift; sourceTree = "<group>"; };
 		2A6CBFC1285721560009937D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		2A6CBFCA285723220009937D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -269,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				2A383D102817B820000BCAF0 /* Expendable.swift */,
-				2A63B01B284F2D3E0098EB09 /* LoadModel.swift */,
 				2A628C302821055300952956 /* DataModel.swift */,
 				2A63B011284EE7310098EB09 /* StoreModel.swift */,
 				2A3C4C55284ED8CD00CA1F1C /* RealmModel.swift */,
@@ -450,7 +447,6 @@
 				2A967C11281EBCBF002A2210 /* ThemeViewController.swift in Sources */,
 				2A63B012284EE7310098EB09 /* StoreModel.swift in Sources */,
 				2A43EEDA2817B2C4001BD791 /* AppDelegate.swift in Sources */,
-				2A63B01C284F2D3E0098EB09 /* LoadModel.swift in Sources */,
 				2A628C2B2820A8B000952956 /* TutorialThirdViewController.swift in Sources */,
 				2A43EEDC2817B2C4001BD791 /* SceneDelegate.swift in Sources */,
 				2A63B01E284F343B0098EB09 /* WindowModel.swift in Sources */,
