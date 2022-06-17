@@ -24,8 +24,9 @@ class ExpendableTableViewController: UITableViewController, EditProtocol, Update
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //delegate設定
+        //tableView設定
         tableView.delegate = self
+        tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
         //初回起動時にチュートリアルを表示
         if DataModel.user.bool(forKey: R.string.localizable.tutorial()) == false {
             performSegue(withIdentifier: R.string.localizable.showTutorial(), sender: nil)
