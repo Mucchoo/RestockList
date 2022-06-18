@@ -16,7 +16,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var textFieldBackground: UIView!
     @IBOutlet weak var periodPickerView: UIPickerView!
 
-    private let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeKeyboard))
+    private var doneItem = UIBarButtonItem()
     private var periodArray = ([Int])(1...365)
     var selectedCell = 0
     
@@ -41,6 +41,7 @@ class EditViewController: UIViewController {
         //キーボードに完了ボタンを追加
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 45))
         let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeKeyboard))
         toolbar.setItems([spacelItem, doneItem], animated: true)
         nameTextField.inputAccessoryView = toolbar
     }
