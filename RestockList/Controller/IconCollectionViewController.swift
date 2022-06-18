@@ -38,7 +38,7 @@ class IconCollectionViewController: UICollectionViewController {
         if indexPath.row == 0 {
             UIApplication.shared.setAlternateIconName(nil)
         }
-        navigationController?.popViewController(animated: true)
         UIApplication.shared.setAlternateIconName(R.string.localizable.appIcon() + String(indexPath.row))
+        navigationController?.popViewController(animated: true)
     }
 }
