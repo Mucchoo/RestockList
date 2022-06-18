@@ -1,12 +1,7 @@
-# 消耗品リスト
+# 消耗品リスト <img src="https://img.shields.io/badge/-Xcode13-000.svg?logo=xcode&style=flat"> <img src="https://img.shields.io/badge/-Swift5-000.svg?logo=swift&style=flat"> <img src="https://img.shields.io/badge/-Realm-000.svg?logo=realm&style=flat"> <img src="https://img.shields.io/badge/-iOS15~-000.svg?logo=apple&style=flat"> <img src="https://img.shields.io/badge/-MVC-000.svg?&style=flat">
 僕はシャンプーやティッシュなどの日用品がいつの間にか無くなっていて困ることが何度もあります。
 そこで、定期的に購入するものをデータで管理し残り少ない物は買い忘れないようにリマインドできるアプリを開発しました。
 
 ただ、このアプリを作る上で問題だったのが自分で設定した消費期間と実際の消費期間に必ずズレが生じることでした。
 なので、期間の微調整や再設定はとにかく簡単に素早く出来るようにデザインしています。
-# 使用技術
-* UIKit
-* Realm
-* MVC Architecture
-# アプリURL
-https://apps.apple.com/us/app/%E7%AD%8B%E3%83%88%E3%83%AC%E8%A8%98%E9%8C%B2-%E7%AD%8B%E8%82%89%E3%81%AE%E6%88%90%E9%95%B7%E3%82%92%E3%83%87%E3%83%BC%E3%82%BF%E5%8C%96-%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E8%A8%98%E9%8C%B2/id1622549301?itsct=apps_box_link&itscg=30200
+[App Storeで見る](https://itunes.apple.com/jp/app/id1628820821?mt=8)
