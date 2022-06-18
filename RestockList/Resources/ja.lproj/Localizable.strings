@@ -26,7 +26,6 @@
 "proFromTopSegue" = "ProFromTopSegue";
 "notificationSegue" = "NotificationSegue";
 "refresh" = "com.yazujumusa.restock-list.refresh";
-"purchaseAPI" = "appl_IhbaWZiMtSaCequMLmBVFnADNel";
 "appURL" = "https://itunes.apple.com/jp/app/id1628820821?mt=8";
 //userDefaults
 "theme" = "theme";
