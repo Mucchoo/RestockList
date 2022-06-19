@@ -15,7 +15,6 @@ class AddViewController: UIViewController {
     @IBOutlet weak var textFieldBackground: UIView!
     @IBOutlet weak var periodPickerView: UIPickerView!
     
-    private var doneItem = UIBarButtonItem()
     private let periodArray = ([Int])(1...365)
         
     override func viewDidLoad() {
@@ -33,22 +32,11 @@ class AddViewController: UIViewController {
         nameTextField.becomeFirstResponder()
         //背景タップ時にキーボード閉じる
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
-        //キーボードに完了ボタンを追加
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 45))
-        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeKeyboard))
-        toolbar.setItems([spacelItem, doneItem], animated: true)
-        nameTextField.inputAccessoryView = toolbar
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
-        doneItem.tintColor = ThemeModel.color
         addButton.backgroundColor = ThemeModel.color
         textFieldBackground.backgroundColor = ThemeModel.color
-    }
-    //完了ボタンタップ時
-    @objc func closeKeyboard() {
-        nameTextField.resignFirstResponder()
     }
     //アイテムをrealmデータに追加
     @IBAction func addAction(_ sender: Any) {

@@ -16,7 +16,6 @@ class EditViewController: UIViewController {
     @IBOutlet weak var textFieldBackground: UIView!
     @IBOutlet weak var periodPickerView: UIPickerView!
 
-    private var doneItem = UIBarButtonItem()
     private var periodArray = ([Int])(1...365)
     var selectedCell = 0
     
@@ -38,12 +37,6 @@ class EditViewController: UIViewController {
         nameTextField.text = RealmModel.getExpendableName(from: selectedCell)
         //背景タップ時にキーボード閉じる
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
-        //キーボードに完了ボタンを追加
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 45))
-        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeKeyboard))
-        toolbar.setItems([spacelItem, doneItem], animated: true)
-        nameTextField.inputAccessoryView = toolbar
     }
     //テーマカラーを反映
     override func viewWillAppear(_ animated: Bool) {
@@ -51,11 +44,6 @@ class EditViewController: UIViewController {
         saveButton.backgroundColor = ThemeModel.color
         nameTextField.tintColor = ThemeModel.color
         deleteButton.tintColor = ThemeModel.color
-        doneItem.tintColor = ThemeModel.color
-    }
-    //完了ボタンタップ時
-    @objc func closeKeyboard() {
-        nameTextField.resignFirstResponder()
     }
     //編集内容を保存
     @IBAction func saveAction(_ sender: UIButton) {
