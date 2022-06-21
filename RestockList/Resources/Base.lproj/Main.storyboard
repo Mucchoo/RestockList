@@ -469,7 +469,7 @@
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
-            <color red="0.082000002264976501" green="0.70999997854232788" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <namedColor name="AccentColor1">
             <color red="0.082352941176470587" green="0.70980392156862748" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
