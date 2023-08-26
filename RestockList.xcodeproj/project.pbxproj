@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A013624281A7F4B0083402F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A013623281A7F4B0083402F /* RealmSwift */; };
 		2A013626281A7F500083402F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2A013625281A7F500083402F /* Realm */; };
+		2A02E55F2A99A81200C6CBBE /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 2A02E55E2A99A81200C6CBBE /* RswiftLibrary */; };
 		2A0D5B3D28269385002F1542 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0D5B3C28269385002F1542 /* StoreKit.framework */; };
 		2A0FEF33285C56530003DD76 /* RestockListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A0FEF36285C56530003DD76 /* RestockListWidget.intentdefinition */; };
 		2A0FEF34285C56530003DD76 /* RestockListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A0FEF36285C56530003DD76 /* RestockListWidget.intentdefinition */; };
@@ -43,8 +44,6 @@
 		2A63B019284F23C90098EB09 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C57284EE1E300CA1F1C /* ThemeModel.swift */; };
 		2A63B01A284F2A150098EB09 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4C55284ED8CD00CA1F1C /* RealmModel.swift */; };
 		2A63B01E284F343B0098EB09 /* WindowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A63B01D284F343B0098EB09 /* WindowModel.swift */; };
-		2A6CBFBE285720820009937D /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6CBFBD285720820009937D /* Rswift */; };
-		2A6CBFC2285721560009937D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6CBFC1285721560009937D /* R.generated.swift */; };
 		2A6CBFC5285723080009937D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A6CBFC7285723080009937D /* Localizable.strings */; };
 		2A935CB92818EEE7001D9ED1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */; };
 		2A959E242859B8E9007F04E5 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A959E232859B8E9007F04E5 /* UIButtonExtension.swift */; };
@@ -115,7 +114,6 @@
 		2A628C302821055300952956 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		2A63B011284EE7310098EB09 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		2A63B01D284F343B0098EB09 /* WindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowModel.swift; sourceTree = "<group>"; };
-		2A6CBFC1285721560009937D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		2A6CBFCA285723220009937D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2A935CB82818EEE7001D9ED1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		2A959E232859B8E9007F04E5 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -147,8 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A0D5B3D28269385002F1542 /* StoreKit.framework in Frameworks */,
-				2A6CBFBE285720820009937D /* Rswift in Frameworks */,
 				2ACEE11828180067001F84D4 /* RealmSwift in Frameworks */,
+				2A02E55F2A99A81200C6CBBE /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +181,6 @@
 				2AA30BBD28589D9000320C81 /* Configuration.storekit */,
 				2A43EED82817B2C4001BD791 /* RestockList */,
 				2A11AD052819696E00170751 /* RestockListWidget */,
-				2A6CBFC0285721560009937D /* generated */,
 				2A11AD002819696E00170751 /* Frameworks */,
 				2A43EED72817B2C4001BD791 /* Products */,
 			);
@@ -224,14 +221,6 @@
 				2A6CBFC7285723080009937D /* Localizable.strings */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		2A6CBFC0285721560009937D /* generated */ = {
-			isa = PBXGroup;
-			children = (
-				2A6CBFC1285721560009937D /* R.generated.swift */,
-			);
-			path = generated;
 			sourceTree = "<group>";
 		};
 		2ACEE11B2818311B001F84D4 /* Controller */ = {
@@ -306,7 +295,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A43EEEA2817B2C5001BD791 /* Build configuration list for PBXNativeTarget "RestockList" */;
 			buildPhases = (
-				2A6CBFBF285720910009937D /* ShellScript */,
 				2A43EED22817B2C4001BD791 /* Sources */,
 				2A43EED32817B2C4001BD791 /* Frameworks */,
 				2A43EED42817B2C4001BD791 /* Resources */,
@@ -315,12 +303,13 @@
 			buildRules = (
 			);
 			dependencies = (
+				2A080CEC2A99AA48005CA966 /* PBXTargetDependency */,
 				2A11AD0F2819696F00170751 /* PBXTargetDependency */,
 			);
 			name = RestockList;
 			packageProductDependencies = (
 				2ACEE11728180067001F84D4 /* RealmSwift */,
-				2A6CBFBD285720820009937D /* Rswift */,
+				2A02E55E2A99A81200C6CBBE /* RswiftLibrary */,
 			);
 			productName = RestockList;
 			productReference = 2A43EED62817B2C4001BD791 /* RestockList.app */;
@@ -357,7 +346,7 @@
 			packageReferences = (
 				2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				2AE7CEE92854B82A006344F4 /* XCRemoteSwiftPackageReference "purchases-ios" */,
-				2A6CBFBC285720820009937D /* XCRemoteSwiftPackageReference "R.swift.Library" */,
+				2A02E55D2A99A81200C6CBBE /* XCRemoteSwiftPackageReference "R.swift" */,
 			);
 			productRefGroup = 2A43EED72817B2C4001BD791 /* Products */;
 			projectDirPath = "";
@@ -393,29 +382,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2A6CBFBF285720910009937D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$TEMP_DIR/rswift-lastrun",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				$SRCROOT/generated/R.generated.swift,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "rswift generate \"$SRCROOT/generated/R.generated.swift\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A11ACFB2819696E00170751 /* Sources */ = {
@@ -454,7 +420,6 @@
 				2A935CB92818EEE7001D9ED1 /* SettingTableViewController.swift in Sources */,
 				2A9A8193281E6FB000186477 /* IconCollectionViewCell.swift in Sources */,
 				2A628C2F2820A95100952956 /* TutorialPageViewController.swift in Sources */,
-				2A6CBFC2285721560009937D /* R.generated.swift in Sources */,
 				2A383D112817B820000BCAF0 /* Expendable.swift in Sources */,
 				2ACEE1112817FF1E001F84D4 /* ExpendableTableViewCell.swift in Sources */,
 				2A0FEF33285C56530003DD76 /* RestockListWidget.intentdefinition in Sources */,
@@ -468,6 +433,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2A080CEC2A99AA48005CA966 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 2A080CEB2A99AA48005CA966 /* RswiftGenerateInternalResources */;
+		};
 		2A11AD0F2819696F00170751 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
@@ -718,7 +687,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yazujumusa.restock-list";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -755,7 +724,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yazujumusa.restock-list";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -799,11 +768,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2A6CBFBC285720820009937D /* XCRemoteSwiftPackageReference "R.swift.Library" */ = {
+		2A02E55D2A99A81200C6CBBE /* XCRemoteSwiftPackageReference "R.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mac-cain13/R.swift.Library.git";
+			repositoryURL = "https://github.com/mac-cain13/R.swift.git";
 			requirement = {
-				branch = master;
+				branch = main;
 				kind = branch;
 			};
 		};
@@ -836,10 +805,14 @@
 			package = 2ACEE11628180067001F84D4 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		2A6CBFBD285720820009937D /* Rswift */ = {
+		2A02E55E2A99A81200C6CBBE /* RswiftLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2A6CBFBC285720820009937D /* XCRemoteSwiftPackageReference "R.swift.Library" */;
-			productName = Rswift;
+			package = 2A02E55D2A99A81200C6CBBE /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = RswiftLibrary;
+		};
+		2A080CEB2A99AA48005CA966 /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
 		};
 		2ACEE11728180067001F84D4 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;

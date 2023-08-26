@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qxT-VM-bMj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qxT-VM-bMj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,13 +15,13 @@
             <objects>
                 <tableViewController storyboardIdentifier="Main" id="mnu-J1-1eu" customClass="ExpendableTableViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="120" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="acE-1b-0fM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="804"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="130" id="9bB-1S-YM4" customClass="ExpendableTableViewCell" customModule="RestockList" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9bB-1S-YM4" id="DXO-74-8pb">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
@@ -90,7 +91,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイテム名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhl-ZN-zop">
-                                                    <rect key="frame" x="40" y="15" width="294" height="17"/>
+                                                    <rect key="frame" x="40" y="15" width="294" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" name="FontColor"/>
                                                     <nil key="highlightedColor"/>
@@ -103,13 +104,13 @@
                                                             <color key="tintColor" name="AccentColor"/>
                                                         </progressView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Of-ft-48j">
-                                                            <rect key="frame" x="10" y="6.5" width="37" height="17"/>
+                                                            <rect key="frame" x="10" y="5" width="43.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HD3-qb-QrA">
-                                                            <rect key="frame" x="237" y="6.5" width="37" height="17"/>
+                                                            <rect key="frame" x="230.5" y="5" width="43.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" name="AccentColor"/>
                                                             <nil key="highlightedColor"/>
@@ -204,26 +205,26 @@
         <!--アイテムを編集-->
         <scene sceneID="mL8-ZY-Zt5">
             <objects>
-                <viewController storyboardIdentifier="EditStoryboard" title="アイテムを編集" id="oYV-Dc-2yJ" customClass="EditViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditViewController" title="アイテムを編集" id="oYV-Dc-2yJ" customClass="EditViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZS0-dm-h4i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイテム名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKl-1K-KIM">
-                                <rect key="frame" x="30" y="64" width="71.5" height="17"/>
+                                <rect key="frame" x="30" y="68" width="87" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xq6-4a-pxv">
-                                <rect key="frame" x="20" y="91" width="374" height="50"/>
+                                <rect key="frame" x="20" y="98.5" width="374" height="50"/>
                                 <color key="backgroundColor" name="AccentColor1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vaC-aR-qtL"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pBb-2c-6qg">
-                                <rect key="frame" x="30" y="91" width="354" height="50"/>
+                                <rect key="frame" x="30" y="98.5" width="354" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ahU-4A-LVj"/>
                                 </constraints>
@@ -232,13 +233,13 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2QX-AS-OcE">
-                                <rect key="frame" x="157" y="141" width="100" height="216"/>
+                                <rect key="frame" x="157" y="148.5" width="100" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="S03-h7-Wd1"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMM-ZT-MAr">
-                                <rect key="frame" x="20" y="357" width="374" height="70"/>
+                                <rect key="frame" x="20" y="364.5" width="374" height="70"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="adL-44-tt5"/>
@@ -253,13 +254,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeZ-Vz-4xX">
-                                <rect key="frame" x="277" y="241" width="14.5" height="17"/>
+                                <rect key="frame" x="277" y="248.5" width="17.5" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0x-nF-cnA">
-                                <rect key="frame" x="20" y="447" width="374" height="70"/>
+                                <rect key="frame" x="20" y="454.5" width="374" height="70"/>
                                 <color key="backgroundColor" name="ClearColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="dBM-cC-sNO"/>
@@ -273,7 +274,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消費期間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDI-XY-IGD">
-                                <rect key="frame" x="79.5" y="241" width="57.5" height="17"/>
+                                <rect key="frame" x="67.5" y="248.5" width="69.5" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
@@ -322,29 +323,29 @@
             <objects>
                 <viewController id="NPC-Ev-kK3" customClass="AddViewController" customModule="RestockList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="obU-gV-sbZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="804"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイテム名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbu-DC-TLg">
-                                <rect key="frame" x="30" y="20" width="71.5" height="17"/>
+                                <rect key="frame" x="30" y="20" width="87" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消費期間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldo-Lv-Y43">
-                                <rect key="frame" x="79.5" y="197" width="57.5" height="17"/>
+                                <rect key="frame" x="67.5" y="200.5" width="69.5" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2u-az-0dz">
-                                <rect key="frame" x="157" y="97" width="100" height="216"/>
+                                <rect key="frame" x="157" y="100.5" width="100" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="OAl-yP-l8a"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2r-eK-pYQ">
-                                <rect key="frame" x="20" y="313" width="374" height="70"/>
+                                <rect key="frame" x="20" y="316.5" width="374" height="70"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="5ta-JE-e5S"/>
@@ -359,20 +360,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hq3-fB-7Js">
-                                <rect key="frame" x="277" y="197" width="14.5" height="17"/>
+                                <rect key="frame" x="277" y="200.5" width="17.5" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dl-vY-nAN">
-                                <rect key="frame" x="20" y="47" width="374" height="50"/>
+                                <rect key="frame" x="20" y="50.5" width="374" height="50"/>
                                 <color key="backgroundColor" name="AccentColor1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7dH-Ud-vdb"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YkB-CK-2Ld">
-                                <rect key="frame" x="30" y="47" width="354" height="50"/>
+                                <rect key="frame" x="30" y="50.5" width="354" height="50"/>
                                 <color key="tintColor" name="AccentColor1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="D6F-QA-j27"/>
@@ -422,7 +423,7 @@
             <objects>
                 <navigationController id="qxT-VM-bMj" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="aGo-cy-M9e">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="AccentColor1"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -463,10 +464,10 @@
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
-        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
-        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
+        <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
+        <image name="minus" catalog="system" width="128" height="26"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

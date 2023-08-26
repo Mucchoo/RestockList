@@ -92,10 +92,9 @@ class ExpendableTableViewController: UITableViewController, EditProtocol, Update
     }
     //編集ボタンを押したときに押されたアイテムの情報を送信
     func catchData(selectedCell: Int) {
-        let storyboard = R.storyboard.main()
-        let nextStoryboard = storyboard.instantiateViewController(withIdentifier: R.string.localizable.editStoryboard()) as! EditViewController
-        nextStoryboard.selectedCell = selectedCell
-        self.show(nextStoryboard, sender: self)
+        guard let vc = R.storyboard.main.editViewController() else { return }
+        vc.selectedCell = selectedCell
+        self.show(vc, sender: self)
     }
     //cell内のボタンを押したときにTableViewを更新
     func updateTableView() {
@@ -121,8 +120,7 @@ class ExpendableTableViewController: UITableViewController, EditProtocol, Update
     }
     //設定画面に遷移
     @IBAction func settingAction(_ sender: UIBarButtonItem) {
-        let storyboard = R.storyboard.settingView()
-        let viewcontroller = storyboard.instantiateViewController(withIdentifier: R.string.localizable.settingView())
-        self.navigationController?.pushViewController(viewcontroller, animated: true)
+        guard let vc = R.storyboard.settingView.settingView() else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
