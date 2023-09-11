@@ -11,8 +11,22 @@ import RealmSwift
 class Expendable: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var period: Int = 1
-    @objc dynamic var remainingTime = 0
     @objc dynamic var id = UUID().hashValue
+    @objc dynamic var expireDate: Date = Date()
+    
+    var remainingDateCount: Int {
+        let calendar = Calendar.current
+        
+        let startOfDayExpireDate = calendar.startOfDay(for: self.expireDate)
+        let startOfDayCurrentDate = calendar.startOfDay(for: Date())
+        
+        if let daysUntilExpire = calendar.dateComponents([.day], from: startOfDayCurrentDate, to: startOfDayExpireDate).day {
+            return daysUntilExpire
+        }
+        
+        return 0
+    }
+
     override static func primaryKey() -> String? {
         return "id"
     }

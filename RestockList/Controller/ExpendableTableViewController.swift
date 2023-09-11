@@ -32,8 +32,6 @@ class ExpendableTableViewController: UITableViewController, EditProtocol, Update
             performSegue(withIdentifier: R.string.localizable.showTutorial(), sender: nil)
             DataModel.user.set(true, forKey: R.string.localizable.tutorial())
         }
-        //日付が変わっていた場合アイテムの残り日数を更新
-        RealmModel.reflectElapsedDays()
         //アプリを20回起動する毎にレビューアラートを表示
         if DataModel.user.integer(forKey: R.string.localizable.launchedTimes()) > 20 {
             guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
@@ -64,14 +62,14 @@ class ExpendableTableViewController: UITableViewController, EditProtocol, Update
         cell.updateDelegate = self
         //realm情報をアイテムに反映
         cell.expendableLabel.text = expendables[indexPath.row].name
-        cell.progressBar.progress = Float(expendables[indexPath.row].remainingTime) / Float(expendables[indexPath.row].period)
+        cell.progressBar.progress = Float(expendables[indexPath.row].remainingDateCount) / Float(expendables[indexPath.row].period)
         //残り期間が半分あるかどうかで残り日数の場所を切り替え
-        if Float(expendables[indexPath.row].remainingTime) / Float(expendables[indexPath.row].period) < 0.5 {
-            cell.periodLabelRight.text = R.string.localizable.remain() + String(expendables[indexPath.row].remainingTime) + R.string.localizable.day()
+        if Float(expendables[indexPath.row].remainingDateCount) / Float(expendables[indexPath.row].period) < 0.5 {
+            cell.periodLabelRight.text = R.string.localizable.remain() + String(expendables[indexPath.row].remainingDateCount) + R.string.localizable.day()
             cell.periodLabelLeft.text = ""
 
         } else {
-            cell.periodLabelLeft.text = R.string.localizable.remain() + String(expendables[indexPath.row].remainingTime) + R.string.localizable.day()
+            cell.periodLabelLeft.text = R.string.localizable.remain() + String(expendables[indexPath.row].remainingDateCount) + R.string.localizable.day()
             cell.periodLabelRight.text = ""
 
         }

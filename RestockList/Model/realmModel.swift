@@ -9,69 +9,72 @@ import UIKit
 import RealmSwift
 
 struct RealmModel {
-    //日付が変わっていた場合アイテムの残り日数を更新
-    static func reflectElapsedDays() {
-        let realm = DataModel.realm
-        let currentDate = Int(floor(Date().timeIntervalSince1970)/86400)
-        guard let lastDate = DataModel.user.object(forKey: "lastDate") as? Int else { return }
-        let elapsedDays = currentDate - lastDate
-        guard elapsedDays > 0 else { return }
-        realm.beginWrite()
-        for expendable in realm.objects(Expendable.self) {
-            expendable.remainingTime -= elapsedDays
-            if expendable.remainingTime < 0 {
-                expendable.remainingTime = 0
-            }
-        }
-        try! realm.commitWrite()
-        DataModel.user.set(currentDate, forKey: "lastDate")
-    }
     //残り少ないアイテムを取得
     static func getFewRemainingExpendables() -> String {
         let realm = DataModel.realm
-        let expendables = realm.objects(Expendable.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+        let expendables = realm.objects(Expendable.self).sorted(by: { $0.remainingDateCount < $1.remainingDateCount })
         var expendableNotRemaining = ""
         let notificationCondition = DataModel.user.object(forKey: "notificationCondition") as? Int ?? 3
-        expendables.filter({$0.remainingTime < notificationCondition + 1}).forEach({ expendable in
+        expendables.filter({$0.remainingDateCount < notificationCondition + 1}).forEach({ expendable in
             expendableNotRemaining += "\(expendable.name) "
         })
         return expendableNotRemaining
     }
-    //残り日数を1日増やす
-    static func plusRemainingTime(to: Int) {
+    //残り日数を1日増やす・減らす
+    static func updateRemainingDateCount(to id: Int, by days: Int) {
         let realm = DataModel.realm
-        if realm.object(ofType: Expendable.self, forPrimaryKey: to)!.remainingTime < realm.object(ofType: Expendable.self, forPrimaryKey: to)!.period {
-            realm.beginWrite()
-            realm.object(ofType: Expendable.self, forPrimaryKey: to)!.remainingTime += 1
-            try! realm.commitWrite()
-            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+        if let expendable = realm.object(ofType: Expendable.self, forPrimaryKey: id) {
+            do {
+                try realm.write {
+                    let calendar = Calendar.current
+                    if let newExpireDate = calendar.date(byAdding: .day, value: days, to: expendable.expireDate) {
+                        expendable.expireDate = newExpireDate
+                    }
+                }
+                UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+            } catch {
+                print("Failed updateRemainingDateCount: \(error)")
+            }
         }
+    }
+    //残り日数を1日増やす
+    static func plusRemainingDateCount(to id: Int) {
+        updateRemainingDateCount(to: id, by: 1)
     }
     //残り日数を1日減らす
-    static func minusRemainingTime(to: Int) {
-        let realm = DataModel.realm
-        if realm.object(ofType: Expendable.self, forPrimaryKey: to)!.remainingTime > 0 {
-            realm.beginWrite()
-            realm.object(ofType: Expendable.self, forPrimaryKey: to)!.remainingTime -= 1
-            try! realm.commitWrite()
-            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-        }
+    static func minusRemainingDateCount(to id: Int) {
+        updateRemainingDateCount(to: id, by: -1)
     }
     //残り日数を完全に回復
-    static func fillRemainingTime(to: Int) {
+    static func fillremainingDateCount(to: Int) {
         let realm = DataModel.realm
+        guard let expendable = realm.object(ofType: Expendable.self, forPrimaryKey: to) else { return }
+        
         realm.beginWrite()
-        realm.object(ofType: Expendable.self, forPrimaryKey: to)!.remainingTime = realm.object(ofType: Expendable.self, forPrimaryKey: to)!.period
-        try! realm.commitWrite()
+        if let newExpireDate = Calendar.current.date(byAdding: .day, value: expendable.period, to: Date()) {
+            expendable.expireDate = newExpireDate
+        }
+        
+        do {
+            try realm.commitWrite()
+        } catch {
+            print("Failed fillremainingDateCount: \(error)")
+        }
+        
         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
     }
     //アイテムを追加
     static func addExpendable(name: String, period: Int) {
         let realm = DataModel.realm
         realm.beginWrite()
+        
         let newExpendable = Expendable()
         newExpendable.period = period
-        newExpendable.remainingTime = period
+        
+        if let newExpireDate = Calendar.current.date(byAdding: .day, value: period, to: Date()) {
+            newExpendable.expireDate = newExpireDate
+        }
+        
         newExpendable.name = name
         realm.add(newExpendable)
         try! realm.commitWrite()
@@ -83,10 +86,17 @@ struct RealmModel {
         let editingExpendable = realm.object(ofType: Expendable.self, forPrimaryKey: to)!
         editingExpendable.period = period
         editingExpendable.name = name
-        if editingExpendable.period < editingExpendable.remainingTime {
-            editingExpendable.remainingTime = editingExpendable.period
+        
+        if editingExpendable.period < editingExpendable.remainingDateCount,
+           let newExpireDate = Calendar.current.date(byAdding: .day, value: period, to: Date()) {
+            editingExpendable.expireDate = newExpireDate
         }
-        try! realm.commitWrite()
+        
+        do {
+            try realm.commitWrite()
+        } catch {
+            print("Failed editExpendable: \(error)")
+        }
     }
     //アイテムを削除
     static func deleteExpendable(to: Int) {
@@ -98,7 +108,7 @@ struct RealmModel {
     //アイテムを取得
     static var expendables: [Expendable] {
         let realm = DataModel.realm
-        return realm.objects(Expendable.self).sorted(by: { $0.remainingTime < $1.remainingTime })
+        return realm.objects(Expendable.self).sorted(by: { $0.remainingDateCount < $1.remainingDateCount })
     }
     //アイテムの期間取得
     static func getExpendablePeriod(from: Int) -> Int {

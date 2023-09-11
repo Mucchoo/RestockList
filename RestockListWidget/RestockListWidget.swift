@@ -21,9 +21,6 @@ struct Provider: TimelineProvider {
     }
     //毎日9時1分にwidgetを更新
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
-        //日付が変わっていた場合アイテムの残り日数を更新
-        RealmModel.reflectElapsedDays()
-        //毎日9時1分に更新
         var entries: [SimpleEntry] = []
         let entry = SimpleEntry(date: Date(), expendables: RealmModel.expendables)
         entries.append(entry)
@@ -67,7 +64,7 @@ struct WidgetEntryView : View {
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
                                 Spacer()
-                                Text("\(expendables[num].remainingTime)日 ")
+                                Text("\(expendables[num].remainingDateCount)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                             }.padding(.bottom, 2)
@@ -81,7 +78,7 @@ struct WidgetEntryView : View {
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
                                 Spacer()
-                                Text("\(expendables[num].remainingTime)日 ")
+                                Text("\(expendables[num].remainingDateCount)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                             }.padding(.bottom, 2)
@@ -98,7 +95,7 @@ struct WidgetEntryView : View {
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
                                 Spacer()
-                                Text("\(expendables[num].remainingTime)日 ")
+                                Text("\(expendables[num].remainingDateCount)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                             }
@@ -116,7 +113,7 @@ struct WidgetEntryView : View {
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
                                 Spacer()
-                                Text("\(expendables[num].remainingTime)日 ")
+                                Text("\(expendables[num].remainingDateCount)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                             }
@@ -137,7 +134,7 @@ struct WidgetEntryView : View {
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
                                 Spacer()
-                                Text("\(expendables[num].remainingTime)日 ")
+                                Text("\(expendables[num].remainingDateCount)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                             }
@@ -156,7 +153,7 @@ struct WidgetEntryView : View {
                                     .font(.system(size: 14, weight: .bold))
                                     .lineLimit(1)
                                 Spacer()
-                                Text("\(expendables[num].remainingTime)日 ")
+                                Text("\(expendables[num].remainingDateCount)日 ")
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
                             }

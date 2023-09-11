@@ -45,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //残り少ないアイテムを通知
     func handleAppRefresh(task: BGAppRefreshTask) {
         self.scheduleAppRefresh()
-        RealmModel.reflectElapsedDays()
         guard RealmModel.getFewRemainingExpendables() != "" else { return }
         let content = UNMutableNotificationContent()
         content.title = R.string.localizable.itemWillBeLost()

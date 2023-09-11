@@ -39,17 +39,17 @@ class ExpendableTableViewCell: UITableViewCell {
     }
     //残り期間を1日増やす
     @IBAction func plusAction(_ sender: UIButton) {
-        RealmModel.plusRemainingTime(to: sender.tag)
+        RealmModel.plusRemainingDateCount(to: sender.tag)
         updateDelegate?.updateTableView()
     }
     //残り期間を1日減らす
     @IBAction func minusAction(_ sender: UIButton) {
-        RealmModel.minusRemainingTime(to: sender.tag)
+        RealmModel.minusRemainingDateCount(to: sender.tag)
         updateDelegate?.updateTableView()
     }
     //残り期間を完全に回復する
     @IBAction func checkAction(_ sender: UIButton) {
-        RealmModel.fillRemainingTime(to: sender.tag)
+        RealmModel.fillremainingDateCount(to: sender.tag)
         updateDelegate?.updateTableView()
     }
 }
