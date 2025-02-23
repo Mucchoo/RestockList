@@ -2,7 +2,6 @@
 <img width="1122" alt="Screen Shot 2022-06-18 at 21 40 31" src="https://user-images.githubusercontent.com/97211329/174438127-2aaf9e6c-dce3-41ce-b319-e401c001b937.png">
 
 アプリの全体を簡単に理解するため、こちらに[40秒程度のアプリ使用動画](https://www.youtube.com/shorts/_azhmCOIYH4)をアップロードしましたので、ぜひご覧ください。
-
-日用品がいつの間にか無くなっていて困ることがあります。そこで、定期的に購入するものを管理し残り少ない物は買い忘れないようにリマインドできるアプリを開発しました。 
+定期的に購入するものを管理し残り少ない物は買い忘れないようにリマインドできるアプリを開発しました。 
 
 [App Storeで見る](https://itunes.apple.com/jp/app/id1628820821?mt=8)
